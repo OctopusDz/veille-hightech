@@ -1,7 +1,8 @@
 'use strict';
 /* Interface de consultation des lots high-tech d'encheres-domaine.gouv.fr.
  * Lit site/data/lots.json (produit par la collecte) — aucun appel au site ici.
- * Deux onglets : Vente en cours (statut 14) / Vente à venir (statut 13).
+ * Les ventes en cours et à venir sont regroupées par dépôt. Les lots écartés
+ * restent récupérables dans une vue dédiée, eux aussi regroupés par dépôt.
  * Dans chaque onglet, les lots sont regroupés par VILLE DE DÉPÔT, avec les
  * dates de début et de fin d'enchères. Un clic sur un dépôt ouvre ses lots. */
 
@@ -27,7 +28,14 @@ let LOTS = [];
 let ARCH = [];
 let COTES = new Map();
 let HOME = '';
-let state = { status: 14, q: '', depot: null, showTrash: false, dateFilter: 'all' };
+let state = {
+  status: 14,
+  q: '',
+  depot: null,
+  dateFilter: 'all',
+  trashDepot: 'all',
+  trashStatus: 'all',
+};
 
 function renderCote(lot) {
   const cote = COTES.get(String(lot.id));
@@ -108,9 +116,10 @@ function passeDate(end) {
 // Les dates proposées dépendent de l'onglet : on reconstruit la liste à chaque fois.
 function majFiltreDates() {
   const sel = $('#fdate');
-  const dates = [...new Set(LOTS.filter((l) => l.status === state.status).map((l) => l.end))]
+  const actifs = LOTS.filter((l) => l.status === state.status && !TRASH.has(l.id));
+  const dates = [...new Set(actifs.map((l) => l.end))]
     .filter(Boolean).sort((a, b) => new Date(a) - new Date(b));
-  const nb = (d) => LOTS.filter((l) => l.status === state.status && l.end === d).length;
+  const nb = (d) => actifs.filter((l) => l.end === d).length;
 
   sel.innerHTML = `<option value="all">Toutes les clôtures</option>
     <option value="today">Clôture aujourd'hui</option>
@@ -218,6 +227,7 @@ function majSync() {
 function visible() {
   const q = state.q.trim().toLowerCase();
   return LOTS.filter((l) => l.status === state.status)
+    .filter((l) => !TRASH.has(l.id))
     .filter((l) => passeDate(l.end))
     .filter((l) => {
       if (!q) return true;
@@ -272,20 +282,16 @@ function renderDepots() {
 
   $('#depots').innerHTML = groups.map((g) => {
     const live = state.status === 14;
-    const gardes = g.lots.filter((l) => !TRASH.has(l.id));
-    const ecartes = g.lots.length - gardes.length;
-    const src = gardes.length ? gardes : g.lots;
-    const shots = src.filter((l) => l.img).slice(0, 5);
+    const shots = g.lots.filter((l) => l.img).slice(0, 5);
     const strip = shots.map((l) => `<div style="background-image:url('${esc(l.img)}')"></div>`).join('')
-      + (src.length > 5 ? `<div class="more">+${src.length - 5}</div>` : '');
+      + (g.lots.length > 5 ? `<div class="more">+${g.lots.length - 5}</div>` : '');
     return `<article class="dep" data-key="${esc(g.key)}">
       <div class="dtop">
         <div class="city">${esc(g.city)}<span class="cp">${esc(g.cp)}</span></div>
         <div class="dname">${esc(g.depot || '')}${g.street ? ' · ' + esc(g.street) : ''}</div>
         <div class="drow">
           ${g.km != null ? `<span class="pill km">${g.km} km · ${fmtTrajet(g.heures)}</span>` : ''}
-          <span class="pill n">${gardes.length} lot${gardes.length > 1 ? 's' : ''}</span>
-          ${ecartes ? `<span class="pill trash">${ecartes} écarté${ecartes > 1 ? 's' : ''}</span>` : ''}
+          <span class="pill n">${g.lots.length} lot${g.lots.length > 1 ? 's' : ''}</span>
           <span class="pill ${live ? 'live' : 'soon'}">${live ? 'Vente en cours' : 'Vente à venir'}</span>
           ${g.org ? `<span class="pill org">${esc(g.org)}</span>` : ''}
         </div>
@@ -348,14 +354,63 @@ function renderFin() {
   }));
 }
 
+function depotKey(l) { return `${l.city}|${l.cp}`; }
+
+function updateCounters() {
+  $('#n14').textContent = LOTS.filter((l) => l.status === 14 && !TRASH.has(l.id)).length;
+  $('#n13').textContent = LOTS.filter((l) => l.status === 13 && !TRASH.has(l.id)).length;
+  $('#ntrash').textContent = LOTS.filter((l) => TRASH.has(l.id)).length;
+}
+
+// Vue dédiée : tous les lots écartés, regroupés par dépôt.
+function renderTrash() {
+  const tous = LOTS.filter((l) => TRASH.has(l.id));
+  const depotSelect = $('#trash-depot');
+  const depotGroups = groupByDepot(tous);
+  const options = depotGroups.map((g) =>
+    `<option value="${esc(g.key)}">${esc(g.city)} (${esc(g.cp)}) — ${g.lots.length}</option>`
+  ).join('');
+  depotSelect.innerHTML = `<option value="all">Tous les dépôts (${depotGroups.length})</option>${options}`;
+  if (![...depotSelect.options].some((o) => o.value === state.trashDepot)) state.trashDepot = 'all';
+  depotSelect.value = state.trashDepot;
+
+  const q = state.q.trim().toLowerCase();
+  const liste = tous
+    .filter((l) => state.trashStatus === 'all' || l.status === Number(state.trashStatus))
+    .filter((l) => state.trashDepot === 'all' || depotKey(l) === state.trashDepot)
+    .filter((l) => !q || [l.name, l.desc, l.city, l.depot, l.org, l.lot].join(' ').toLowerCase().includes(q));
+  const groups = groupByDepot(liste);
+
+  $('#trash-empty').hidden = liste.length > 0;
+  $('#hint-trash').textContent = liste.length
+    ? `${liste.length} lot${liste.length > 1 ? 's' : ''} écarté${liste.length > 1 ? 's' : ''} dans ${groups.length} dépôt${groups.length > 1 ? 's' : ''}. La recherche en haut s'applique aussi ici.`
+    : '';
+  $('#trash-groups').innerHTML = groups.map((g) => `<section class="trash-depot-group">
+    <header>
+      <div><h2>${esc(g.city)} <span>${esc(g.cp)}</span></h2><p>${esc(g.depot || '')}${g.street ? ' · ' + esc(g.street) : ''}</p></div>
+      <span class="pill trash">${g.lots.length} écarté${g.lots.length > 1 ? 's' : ''}</span>
+    </header>
+    <div class="grid-lots">${g.lots
+      .slice()
+      .sort((a, b) => (a.lot || 0) - (b.lot || 0))
+      .map((l) => renderLotCard(l, true)).join('')}</div>
+  </section>`).join('');
+
+  bindLotCards($('#trash-groups'), renderTrash);
+}
+
 // Affiche la bonne vue selon l'onglet.
 function afficherOnglet() {
   const fin = state.status === 'fin';
+  const trash = state.status === 'trash';
   $('#view-fin').hidden = !fin;
-  $('#view-depots').hidden = fin || !!state.depot;
-  $('#view-lots').hidden = fin || !state.depot;
-  $('#fdate').hidden = fin;
-  if (fin) renderFin(); else renderDepots();
+  $('#view-trash').hidden = !trash;
+  $('#view-depots').hidden = fin || trash || !!state.depot;
+  $('#view-lots').hidden = fin || trash || !state.depot;
+  $('#fdate').hidden = fin || trash;
+  if (fin) renderFin();
+  else if (trash) renderTrash();
+  else renderDepots();
 }
 
 // --- Vue 2 : les lots d'un dépôt ------------------------------------------
@@ -373,10 +428,11 @@ function openDepot(key, silent) {
   }
   if (!g) return false;
   state.depot = key;
-  state.showTrash = false;
   // URL propre : un dépôt = une adresse, qu'on peut mettre en favori.
   if (!silent) location.hash = state.status + '/' + encodeURIComponent(key);
   $('#view-depots').hidden = true;
+  $('#view-trash').hidden = true;
+  $('#view-fin').hidden = true;
   $('#view-lots').hidden = false;
   window.scrollTo(0, 0);
 
@@ -400,83 +456,75 @@ function openDepot(key, silent) {
   return true;
 }
 
-// Liste des lots d'un dépôt : les retenus, ou la poubelle si on l'a ouverte.
-function renderDepotLots(g) {
-  const tries = g.lots.slice().sort((a, b) => (a.lot || 0) - (b.lot || 0));
-  const gardes = tries.filter((l) => !TRASH.has(l.id));
-  const ecartes = tries.filter((l) => TRASH.has(l.id));
-  // Poubelle vidée pendant qu'on la regarde : on revient tout seul à la liste,
-  // sinon on reste bloqué sur un écran vide.
-  if (state.showTrash && !ecartes.length) state.showTrash = false;
-  const liste = state.showTrash ? ecartes : gardes;
+function renderLotCard(l, discarded = false) {
+  const n = (l.photos || []).length;
+  const bid = l.bid != null && l.bid !== '';
+  const action = discarded ? 'Remettre ce lot dans sa vente' : 'Écarter ce lot';
+  return `<article class="lot${discarded ? ' ecarte' : ''}">
+    <div class="ph" data-id="${l.id}" style="background-image:url('${esc(l.img || (l.photos || [])[0] || '')}')">
+      <div class="tags">${l.pro ? '<span class="tag pro">PRO</span>' : ''}<span class="tag">n°${esc(l.lot)}</span></div>
+      <button class="photo-bin${discarded ? ' restore' : ''}" data-bin="${l.id}" aria-label="${action}" title="${action}">${discarded ? '↩' : '🗑'}</button>
+      ${n > 1 ? `<span class="nph">${n} photos</span>` : ''}
+    </div>
+    <div class="body">
+      <h3>${esc(l.name)}</h3>
+      <div class="price"><span class="v">${euro(bid ? l.bid : l.price)}</span>
+        <span class="k">${bid ? 'enchère en cours' : 'mise à prix'}</span></div>
+      ${renderCote(l)}
+      ${l.desc ? `<div class="desc">${esc(l.desc)}</div>
+        <button class="more-btn">Lire la suite</button>` : ''}
+    </div>
+    <a class="go" href="${esc(l.url)}" target="_blank" rel="noopener">Voir l'annonce officielle ↗</a>
+  </article>`;
+}
 
-  // Dans la poubelle, le retour doit ramener aux lots retenus DE CE DÉPÔT,
-  // pas à la liste de tous les dépôts.
-  const barre = state.showTrash
-    ? `<div class="bar">
-        <button class="tgl retour" id="tgl-trash">← Retour aux ${gardes.length} lot${gardes.length > 1 ? 's' : ''} retenu${gardes.length > 1 ? 's' : ''}</button>
-        <span class="cnt">🗑 Poubelle — ${ecartes.length} lot${ecartes.length > 1 ? 's' : ''} écarté${ecartes.length > 1 ? 's' : ''}</span>
-        <span class="note">« ↩ Remettre » les fait revenir dans la liste.</span>
-      </div>`
-    : `<div class="bar">
-        <span class="cnt">${gardes.length} lot${gardes.length > 1 ? 's' : ''} retenu${gardes.length > 1 ? 's' : ''}</span>
-        ${ecartes.length ? `<button class="tgl" id="tgl-trash">🗑 Poubelle (${ecartes.length})</button>` : ''}
-      </div>`;
-
-  const cartes = liste.map((l) => {
-    const n = (l.photos || []).length;
-    const bid = l.bid != null && l.bid !== '';
-    const dans = TRASH.has(l.id);
-    return `<article class="lot${dans ? ' ecarte' : ''}">
-      <div class="ph" data-id="${l.id}" style="background-image:url('${esc(l.img || (l.photos || [])[0] || '')}')">
-        <div class="tags">${l.pro ? '<span class="tag pro">PRO</span>' : ''}<span class="tag">n°${esc(l.lot)}</span></div>
-        ${n > 1 ? `<span class="nph">${n} photos</span>` : ''}
-      </div>
-      <div class="body">
-        <h3>${esc(l.name)}</h3>
-        <div class="price"><span class="v">${euro(bid ? l.bid : l.price)}</span>
-          <span class="k">${bid ? 'enchère en cours' : 'mise à prix'}</span></div>
-        ${renderCote(l)}
-        ${l.desc ? `<div class="desc">${esc(l.desc)}</div>
-          <button class="more-btn">Lire la suite</button>` : ''}
-      </div>
-      <div class="actions">
-        <button class="bin" data-bin="${l.id}">${dans ? '↩ Remettre' : '🗑 Écarter'}</button>
-        <a class="go" href="${esc(l.url)}" target="_blank" rel="noopener">Annonce officielle ↗</a>
-      </div>
-    </article>`;
-  }).join('');
-
-  const vide = !liste.length
-    ? `<p class="empty">${state.showTrash ? 'La poubelle est vide.' : 'Tous les lots de ce dépôt sont écartés. Ouvre la poubelle pour en récupérer.'}</p>`
-    : '';
-
-  $('#lots').innerHTML = barre + `<div class="grid-lots">${cartes}</div>` + vide;
-
-  const tgl = $('#tgl-trash');
-  if (tgl) tgl.addEventListener('click', () => { state.showTrash = !state.showTrash; renderDepotLots(g); });
-
-  document.querySelectorAll('[data-bin]').forEach((b) => b.addEventListener('click', (e) => {
+function bindLotCards(root, onToggle) {
+  root.querySelectorAll('[data-bin]').forEach((b) => b.addEventListener('click', (e) => {
     e.stopPropagation();
     TRASH.toggle(b.dataset.bin);
-    renderDepotLots(g);
+    updateCounters();
+    onToggle();
   }));
-  document.querySelectorAll('.more-btn').forEach((b) => b.addEventListener('click', () => {
+  root.querySelectorAll('.more-btn').forEach((b) => b.addEventListener('click', () => {
     const d = b.previousElementSibling;
     d.classList.toggle('open');
     b.textContent = d.classList.contains('open') ? 'Réduire' : 'Lire la suite';
   }));
-  document.querySelectorAll('.lot .ph').forEach((p) => p.addEventListener('click', () => {
+  root.querySelectorAll('.lot .ph').forEach((p) => p.addEventListener('click', () => {
     const lot = LOTS.find((x) => String(x.id) === p.dataset.id);
     if (lot && (lot.photos || []).length) openViewer(lot.photos);
   }));
 }
 
+// Liste claire des lots conservés du dépôt. Les écartés ont leur propre écran.
+function renderDepotLots(g) {
+  const gardes = g.lots
+    .filter((l) => !TRASH.has(l.id))
+    .sort((a, b) => (a.lot || 0) - (b.lot || 0));
+
+  if (!gardes.length) {
+    closeDepot();
+    renderDepots();
+    return;
+  }
+
+  $('#lots').innerHTML = `<div class="bar">
+      <span class="cnt">${gardes.length} lot${gardes.length > 1 ? 's' : ''} à examiner</span>
+      <span class="note">Pour écarter un lot, touche la poubelle en haut à droite de sa photo.</span>
+    </div>
+    <div class="grid-lots">${gardes.map((l) => renderLotCard(l)).join('')}</div>`;
+
+  bindLotCards($('#lots'), () => {
+    majFiltreDates();
+    renderDepotLots(g);
+  });
+}
+
 function closeDepot(silent) {
   state.depot = null;
   $('#view-lots').hidden = true;
-  $('#view-depots').hidden = false;
-  if (!silent && location.hash) history.replaceState(null, '', location.pathname);
+  $('#view-depots').hidden = state.status === 'fin' || state.status === 'trash';
+  if (!silent && location.hash) history.replaceState(null, '', location.pathname + location.search);
 }
 
 // --- Visionneuse photo -----------------------------------------------------
@@ -492,20 +540,25 @@ $('#vprev').addEventListener('click', () => step(-1));
 $('#vnext').addEventListener('click', () => step(1));
 $('#viewer').addEventListener('click', (e) => { if (e.target.id === 'viewer') $('#viewer').hidden = true; });
 document.addEventListener('keydown', (e) => {
-  if ($('#viewer').hidden) { if (e.key === 'Escape' && state.depot) closeDepot(); return; }
+  if ($('#viewer').hidden) {
+    if (e.key === 'Escape' && state.depot) { closeDepot(); renderDepots(); }
+    return;
+  }
   if (e.key === 'Escape') $('#viewer').hidden = true;
   if (e.key === 'ArrowLeft') step(-1);
   if (e.key === 'ArrowRight') step(1);
 });
 
 // --- Navigation ------------------------------------------------------------
-$('#back').addEventListener('click', closeDepot);
+$('#back').addEventListener('click', () => { closeDepot(); renderDepots(); });
 document.querySelectorAll('.tab').forEach((t) => t.addEventListener('click', () => {
   document.querySelectorAll('.tab').forEach((x) => x.classList.remove('active'));
   t.classList.add('active');
-  state.status = t.dataset.st === 'fin' ? 'fin' : +t.dataset.st;
+  state.status = t.dataset.st === 'fin' || t.dataset.st === 'trash' ? t.dataset.st : +t.dataset.st;
   closeDepot(true);
-  if (state.status !== 'fin') majFiltreDates();
+  if (state.status === 13 || state.status === 14) majFiltreDates();
+  if (state.status === 'fin' || state.status === 'trash') location.hash = state.status;
+  else if (location.hash) history.replaceState(null, '', location.pathname + location.search);
   afficherOnglet();
 }));
 $('#fdate').addEventListener('change', (e) => {
@@ -518,6 +571,14 @@ $('#q').addEventListener('input', (e) => {
   state.q = e.target.value;
   if (state.depot) closeDepot();
   afficherOnglet();
+});
+$('#trash-status').addEventListener('change', (e) => {
+  state.trashStatus = e.target.value;
+  renderTrash();
+});
+$('#trash-depot').addEventListener('change', (e) => {
+  state.trashDepot = e.target.value;
+  renderTrash();
 });
 
 // --- Réglages : jeton GitHub pour la poubelle synchronisée ------------------
@@ -540,6 +601,8 @@ dlgSet.addEventListener('close', async () => {
   if (TRASH.etat === 'ok' && locale.size && TRASH.set.size === 0) {
     TRASH.set = locale; TRASH.persist(); await TRASH.push();
   }
+  updateCounters();
+  if (state.status === 13 || state.status === 14) majFiltreDates();
   afficherOnglet();
 });
 
@@ -562,14 +625,13 @@ dlgSet.addEventListener('close', async () => {
   $('#upd').insertAdjacentHTML('beforeend', ' <span id="sync" class="sync"></span>');
   await TRASH.pull();
   majSync();
-  $('#n14').textContent = LOTS.filter((l) => l.status === 14).length;
-  $('#n13').textContent = LOTS.filter((l) => l.status === 13).length;
+  updateCounters();
 
-  // Reprise depuis l'URL : #fin (terminés) ou #<statut>/<ville|cp>
+  // Reprise depuis l'URL : #fin, #trash ou #<statut>/<ville|cp>
   const h = decodeURIComponent(location.hash.slice(1));
-  if (h === 'fin') {
-    state.status = 'fin';
-    document.querySelectorAll('.tab').forEach((t) => t.classList.toggle('active', t.dataset.st === 'fin'));
+  if (h === 'fin' || h === 'trash') {
+    state.status = h;
+    document.querySelectorAll('.tab').forEach((t) => t.classList.toggle('active', t.dataset.st === h));
     afficherOnglet();
     return;
   }

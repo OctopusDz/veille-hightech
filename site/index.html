@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Enchères High-Tech — Domaine</title>
-<link rel="stylesheet" href="style.css?v=20260911d" />
+<link rel="stylesheet" href="style.css?v=20260911e" />
 </head>
 <body>
 
@@ -24,6 +24,7 @@
   <div class="wrap tabsin">
     <button class="tab active" data-st="14">En cours <span class="b" id="n14">0</span></button>
     <button class="tab" data-st="13">À venir <span class="b" id="n13">0</span></button>
+    <button class="tab trash-tab" data-st="trash">Écartés <span class="b" id="ntrash">0</span></button>
     <button class="tab" data-st="fin">Terminés <span class="b" id="nfin">0</span></button>
   </div>
 </nav>
@@ -36,7 +37,32 @@
     <p id="empty" class="empty" hidden>Aucun lot ne correspond à cette recherche.</p>
   </section>
 
-  <!-- Vue 3 : les lots terminés (archive) -->
+  <!-- Vue 3 : tous les lots écartés, regroupés et filtrables par dépôt -->
+  <section id="view-trash" hidden>
+    <div class="trash-toolbar">
+      <div>
+        <h1>Lots écartés</h1>
+        <p>Retrouve ici tous les lots masqués. Le bouton ↩ sur la photo remet un lot dans sa vente.</p>
+      </div>
+      <div class="trash-filters">
+        <label>Vente
+          <select id="trash-status">
+            <option value="all">Toutes</option>
+            <option value="14">En cours</option>
+            <option value="13">À venir</option>
+          </select>
+        </label>
+        <label>Dépôt
+          <select id="trash-depot"><option value="all">Tous les dépôts</option></select>
+        </label>
+      </div>
+    </div>
+    <p class="hint" id="hint-trash"></p>
+    <div id="trash-groups"></div>
+    <p id="trash-empty" class="empty" hidden>Aucun lot écarté avec ces filtres.</p>
+  </section>
+
+  <!-- Vue 4 : les lots terminés (archive) -->
   <section id="view-fin" hidden>
     <p class="hint" id="hint-fin"></p>
     <div id="fin" class="grid-lots"></div>
@@ -81,6 +107,6 @@
   <div class="vcount" id="vcount"></div>
 </div>
 
-<script src="app.js?v=20260911d"></script>
+<script src="app.js?v=20260911e"></script>
 </body>
 </html>

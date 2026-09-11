@@ -31,7 +31,7 @@ a{color:var(--link)}
 .upd{margin-left:auto;color:var(--muted);font-size:12px;white-space:nowrap}
 
 .tabs{background:var(--bg);border-bottom:1px solid var(--line);position:sticky;top:65px;z-index:19}
-.tabsin{display:flex;gap:4px;padding:0 24px}
+.tabsin{display:flex;gap:4px;padding:0 24px;overflow-x:auto}
 .tab{background:none;border:none;border-bottom:2px solid transparent;color:var(--muted);
   padding:13px 18px;font-size:15px;font-weight:600;cursor:pointer}
 .tab:hover{color:var(--txt)}
@@ -39,6 +39,8 @@ a{color:var(--link)}
 .b{display:inline-block;min-width:22px;padding:1px 7px;margin-left:6px;background:var(--panel2);
   border-radius:999px;font-size:12px;color:var(--muted)}
 .tab.active .b{background:var(--accent);color:#1a1200}
+.tab.trash-tab.active{border-bottom-color:var(--danger)}
+.tab.trash-tab.active .b{background:var(--danger);color:#fff}
 
 main{padding:24px 0 60px}
 .hint{color:var(--muted);font-size:13px;margin:0 0 18px}
@@ -87,29 +89,22 @@ main{padding:24px 0 60px}
 /* ---- Lots ---- */
 .grid-lots{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:18px}
 
-/* Barre « retenus / poubelle » */
+/* Barre d'aide dans un dépôt */
 .bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px}
 .bar .cnt{font-size:15px;font-weight:600}
 .bar .note{color:var(--muted);font-size:13px}
-.tgl{background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:7px 14px;
-  border-radius:8px;cursor:pointer;font-size:13px;font-weight:600}
-.tgl:hover{border-color:var(--danger);color:var(--txt)}
-.tgl.retour{background:var(--accent);border-color:var(--accent);color:#201400;font-size:14px}
-.tgl.retour:hover{filter:brightness(1.1);color:#201400}
 .pill.trash{background:transparent;color:var(--danger);border:1px solid rgba(248,81,73,.45)}
 
-/* Pied de carte : écarter / annonce officielle */
-.actions{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
-.bin{background:var(--panel2);border:none;border-right:1px solid var(--line);color:var(--muted);
-  padding:11px 8px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
-.bin:hover{background:rgba(248,81,73,.18);color:#ffc9c5}
-.lot.ecarte .bin{color:var(--live)}
-.lot.ecarte .bin:hover{background:rgba(63,185,80,.18);color:#bff5cd}
-.lot.ecarte{opacity:.6}
-.lot.ecarte:hover{opacity:1}
 .lot{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;
   display:flex;flex-direction:column}
+.lot.ecarte{border-color:rgba(248,81,73,.38)}
 .lot .ph{position:relative;aspect-ratio:4/3;background:#0a0e14 center/cover no-repeat;cursor:zoom-in}
+.photo-bin{position:absolute;right:9px;top:9px;z-index:3;width:42px;height:42px;border-radius:10px;
+  border:1px solid rgba(255,255,255,.28);background:rgba(9,12,18,.88);color:#fff;font-size:19px;
+  display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.38)}
+.photo-bin:hover,.photo-bin:focus-visible{background:var(--danger);border-color:#ff938d;outline:none;transform:scale(1.04)}
+.photo-bin.restore{background:rgba(25,80,39,.94);border-color:rgba(63,185,80,.7);color:#d8ffe2;font-size:22px}
+.photo-bin.restore:hover,.photo-bin.restore:focus-visible{background:var(--live);color:#07140a;border-color:#8eea9f}
 .lot .nph{position:absolute;right:8px;bottom:8px;background:rgba(0,0,0,.72);color:#fff;
   font-size:11px;padding:3px 8px;border-radius:6px}
 .lot .tags{position:absolute;left:8px;top:8px;display:flex;gap:6px}
@@ -162,6 +157,24 @@ main{padding:24px 0 60px}
   background:var(--panel2);color:var(--link);text-decoration:none;font-weight:600;font-size:13px}
 .lot .go:hover{background:#222b3d}
 
+/* ---- Écartés ---- */
+.trash-toolbar{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:16px}
+.trash-toolbar h1{font-size:22px;margin:0 0 3px}
+.trash-toolbar p{color:var(--muted);font-size:13px;margin:0}
+.trash-filters{display:flex;align-items:flex-end;gap:10px;flex-wrap:wrap}
+.trash-filters label{display:flex;flex-direction:column;gap:5px;color:var(--muted);font-size:12px;font-weight:600}
+.trash-filters select{min-width:150px;padding:9px 11px;background:var(--bg);border:1px solid var(--line);
+  border-radius:8px;color:var(--txt);font-size:14px;cursor:pointer}
+.trash-filters label:last-child select{min-width:260px}
+.trash-filters select:focus{outline:none;border-color:var(--danger)}
+.trash-depot-group{margin:0 0 30px}
+.trash-depot-group>header{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:0 2px 10px;border-bottom:1px solid var(--line);margin-bottom:14px}
+.trash-depot-group h2{font-size:18px;margin:0}
+.trash-depot-group h2 span{color:var(--muted);font-size:13px;font-weight:400;margin-left:5px}
+.trash-depot-group p{color:var(--muted);font-size:12px;margin:2px 0 0}
+
 /* ---- Visionneuse ---- */
 .viewer{position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:50;
   display:flex;align-items:center;justify-content:center}
@@ -183,6 +196,9 @@ main{padding:24px 0 60px}
   .tabs{top:auto;position:static}
   .tabsin{padding:0 14px}
   .depots,.grid-lots{grid-template-columns:1fr}
+  .trash-toolbar{align-items:stretch;flex-direction:column;padding:15px}
+  .trash-filters{display:grid;grid-template-columns:1fr 1fr}
+  .trash-filters select,.trash-filters label:last-child select{min-width:0;width:100%}
 }
 
 /* ---- Terminés ---- */
