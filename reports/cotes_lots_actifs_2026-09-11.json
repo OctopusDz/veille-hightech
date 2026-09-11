@@ -1,0 +1,4113 @@
+{
+  "snapshot_date": "2026-09-11",
+  "generated_at": "2026-09-11T20:49:18+00:00",
+  "currency": "EUR",
+  "lot_count": 112,
+  "photo_count": 588,
+  "auction_fee_rate_percent": 11.0,
+  "totals": {
+    "current_auction_eur": 29720.0,
+    "auction_fees_eur": 3269.2,
+    "vat_eur": 0.0,
+    "purchase_total_eur": 32989.2,
+    "quick_sale_lot_eur": 76065.0,
+    "normal_resale_gross_eur": 130410.0
+  },
+  "definitions": {
+    "purchase_total_eur": "Prix d'enchère courant ou mise à prix + 11 % de frais d'enchère + TVA uniquement si son application et son taux sont explicitement indiqués dans la description.",
+    "quick_sale_lot_eur": "Prix brut plausible pour céder rapidement le lot dans son état annoncé, sans garantie.",
+    "normal_resale_gross_eur": "Recette brute plausible après contrôle, nettoyage et ventes séparées lorsque pertinent; transport, réparations, commissions de revente et temps de travail non déduits.",
+    "quick_margin_before_other_costs_eur": "Cote de vente rapide moins le coût d'achat incluant les 11 % de frais d'enchère et l'éventuelle TVA explicitement indiquée.",
+    "normal_margin_before_other_costs_eur": "Cote de revente normale moins le coût d'achat incluant les 11 % de frais d'enchère et l'éventuelle TVA explicitement indiquée.",
+    "confidence_percent": "Confiance dans l'ordre de grandeur, pas probabilité de vente."
+  },
+  "limitations": [
+    "Les frais d'enchère sont calculés au taux demandé de 11 % sur le prix courant. Aucune TVA n'est ajoutée sans mention explicite dans la description du lot.",
+    "Les prix leboncoin relevés sont surtout des prix demandés, pas des prix de transaction certifiés.",
+    "La date de mise en ligne et le délai réel de vente ne sont pas exposés de façon fiable pour chaque comparable; aucun délai n'est présenté comme une mesure leboncoin exacte.",
+    "Les lots non testés, bloqués ou incomplets peuvent valoir nettement moins après contrôle.",
+    "Les valeurs sont un instantané de marché, pas une garantie ni une expertise officielle."
+  ],
+  "sources": {
+    "lbc_dell_7490": {
+      "title": "Dell Latitude 7490 i5 d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/ck/ordinateurs/pc-portable-dell-latitude-7490-i5",
+      "observed": "54 annonces; exemples 150 à 259 EUR selon état, RAM et garantie."
+    },
+    "bm_e595": {
+      "title": "Lenovo ThinkPad E595 Ryzen 5 16/256 — Back Market",
+      "url": "https://www.backmarket.fr/fr-fr/p/lenovo-e595-15-ryzen-5-3500u-ghz-ssd-256-go-16-go/7c3dcefc-9ebf-48df-8d27-50ff8082cddb",
+      "observed": "407 EUR reconditionné avec chargeur et garantie; la valeur entre particuliers ou en gros est inférieure."
+    },
+    "lbc_iphone16": {
+      "title": "iPhone 16 128 Go d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/c/telephones_objets_connectes/phone_brand%3Aapple%2Bphone_memory%3A128go%2Bphone_model%3Aiphone16",
+      "observed": "1 476 annonces; majorité des exemples pertinents entre 460 et 600 EUR."
+    },
+    "lbc_iphone13pm": {
+      "title": "iPhone 13 Pro Max d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/ck/telephones_objets_connectes/iphone13-pro-max",
+      "observed": "Exemples courants autour de 320 à 500 EUR selon capacité, batterie et état."
+    },
+    "lbc_iphone14pro": {
+      "title": "iPhone 14 Pro d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/c/telephones_objets_connectes/phone_brand%3Aapple%2Bphone_model%3Aiphone14pro",
+      "observed": "Marché actif mais très concurrentiel; prix fortement dépendant de la capacité, de la batterie et du verrouillage."
+    },
+    "lbc_ipad10": {
+      "title": "iPad 10e génération d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/ck/tablettes_liseuses/ipad-10eme-generation",
+      "observed": "313 annonces; exemples 64 Go autour de 250 à 280 EUR, 256 Go autour de 400 EUR."
+    },
+    "lbc_ipadpro12": {
+      "title": "iPad Pro 12,9 pouces Cellular d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/ck/ordinateurs/ipad-pro-12-9-cellular",
+      "observed": "6 annonces dans la recherche ciblée; 6e génération vue entre 650 et 939 EUR."
+    },
+    "lbc_ps5": {
+      "title": "Console Sony PS5 d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/c/consoles/console_brand%3Asony%2Bconsole_model%3Aps5",
+      "observed": "Exemples de consoles autour de 330 à 400 EUR; annonces atypiques exclues."
+    },
+    "lbc_ps5_bundles": {
+      "title": "PS5 avec jeux et manettes — leboncoin",
+      "url": "https://www.leboncoin.fr/ck/consoles/ps5-jeux-manettes",
+      "observed": "3 462 annonces; packs comparables principalement autour de 400 à 500 EUR, davantage pour gros packs."
+    },
+    "lbc_switch_oled": {
+      "title": "Nintendo Switch OLED d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/ck/consoles/nintendo-switch-oled",
+      "observed": "5 132 annonces; console couramment affichée entre 150 et 210 EUR; packs avec jeux plus élevés."
+    },
+    "lbc_xbox_x": {
+      "title": "Xbox Series X avec deux manettes — leboncoin",
+      "url": "https://www.leboncoin.fr/ck/consoles/xbox-serie-x-avec-2-manette",
+      "observed": "513 annonces; exemples simples autour de 400 à 540 EUR."
+    },
+    "lbc_xbox_s": {
+      "title": "Xbox Series S d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/c/consoles/console_brand%3Amicrosoft%2Bconsole_model%3Axboxseriess%2Bvideo_game_type%3Aconsole",
+      "observed": "3 798 annonces; exemples pertinents autour de 170 à 230 EUR."
+    },
+    "lbc_gopro10": {
+      "title": "GoPro Hero 10 Black d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/ck/photo_audio_video/gopro-10-black",
+      "observed": "412 annonces; nombreux exemples autour de 180 à 250 EUR; accessoires valorisés séparément."
+    },
+    "lbc_fuji_xt20": {
+      "title": "Fujifilm X-T20 d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/ck/photo_audio_video/fujifilm-x-t20",
+      "observed": "66 annonces; boîtier et kit 18-55 très dispersés, exemples pertinents autour de 450 à 800 EUR."
+    },
+    "lbc_sony_a6000": {
+      "title": "Sony Alpha 6000 d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/ck/photo_audio_video/sony-alpha-6000",
+      "observed": "135 annonces; kit 16-50 généralement affiché autour de 390 à 450 EUR."
+    },
+    "lbc_ddj_rev7": {
+      "title": "Pioneer DDJ-REV7 d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/ck/photo_audio_video/ddj-rev7",
+      "observed": "22 annonces; contrôleur autour de 1 300 à 1 750 EUR, flight-case seul autour de 220 à 250 EUR."
+    },
+    "lbc_marshall": {
+      "title": "Marshall Stanmore d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/ck/photo_audio_video/enceinte-marshall-stanmore",
+      "observed": "109 annonces; versions I/II en bon état généralement autour de 150 à 220 EUR."
+    },
+    "lbc_xiaomi_4k": {
+      "title": "Xiaomi Mi Laser Projector 150 d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/ck/photo_audio_video/xiaomi-mi-laser",
+      "observed": "28 annonces; 4K fonctionnel souvent affiché autour de 700 à 1 200 EUR; pour pièces vu à 180 EUR."
+    },
+    "lbc_aruba": {
+      "title": "Matériel Aruba d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/ck/accessoires_informatique/aruba/p-3",
+      "observed": "552 annonces; 2530-24G PoE+ vu à 70-131 EUR et 2920-48G à 110 EUR."
+    },
+    "lbc_jbl": {
+      "title": "JBL Charge 5 d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/ck/photo_audio_video/jbl-charge-5",
+      "observed": "590 annonces; la majorité des exemples pertinents est autour de 80 à 120 EUR."
+    },
+    "lbc_sony_xm4": {
+      "title": "Sony WH-1000XM4 d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/ck/photo_audio_video/casque-sony-wh-1000xm4",
+      "observed": "250 annonces; exemples principalement autour de 120 à 180 EUR."
+    },
+    "lbc_g435": {
+      "title": "Logitech G435 d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/ck/photo_audio_video/casque-g435",
+      "observed": "45 annonces; majorité autour de 20 à 35 EUR, dont une annonce marquée vendue à 25 EUR."
+    },
+    "lbc_macbook_m1": {
+      "title": "MacBook Air M1 A2337 d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/ck/ordinateurs/macbook-air-a2337",
+      "observed": "95 annonces; fonctionnel souvent 350 à 560 EUR, pour pièces fréquemment 70 à 270 EUR."
+    }
+  },
+  "lots": [
+    {
+      "id": "302468",
+      "sku": "260633BR302468",
+      "lot": 271,
+      "name": "Lot de 19 ordinateurs portables DYNABOOK Satellite Pro C40",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lotde19pcportabledynabook-sanschargeurs-sacoches-1.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 1150.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 126.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 1276.5,
+      "photo_count": 1,
+      "quick_sale_lot_eur": 1805,
+      "normal_resale_gross_eur": 2850,
+      "quick_margin_before_other_costs_eur": 528.5,
+      "normal_margin_before_other_costs_eur": 1573.5,
+      "confidence_percent": 68,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 75,
+      "valuation_method": "95 EUR/unité en sortie de lot; 150 EUR/unité testée et vendue séparément.",
+      "main_risks": "Chargeurs absents; état fonctionnel non garanti; modèle peu présent sur leboncoin.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_dell_7490"
+      ],
+      "source_titles": [
+        "Dell Latitude 7490 i5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/pc-portable-dell-latitude-7490-i5"
+      ]
+    },
+    {
+      "id": "302466",
+      "sku": "260633BR302466",
+      "lot": 272,
+      "name": "Lot de 30 ordinateurs portable DYNABOOK Satellite Pro C40",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lotde30pcportabledynabook-sanschargeurs-sacoches-1.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 1600.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 176.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 1776.0,
+      "photo_count": 2,
+      "quick_sale_lot_eur": 2850,
+      "normal_resale_gross_eur": 4500,
+      "quick_margin_before_other_costs_eur": 1074.0,
+      "normal_margin_before_other_costs_eur": 2724.0,
+      "confidence_percent": 68,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 75,
+      "valuation_method": "95 EUR/unité en sortie de lot; 150 EUR/unité testée et vendue séparément.",
+      "main_risks": "Chargeurs absents; état fonctionnel non garanti; modèle peu présent sur leboncoin.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_dell_7490"
+      ],
+      "source_titles": [
+        "Dell Latitude 7490 i5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/pc-portable-dell-latitude-7490-i5"
+      ]
+    },
+    {
+      "id": "302464",
+      "sku": "260633BR302464",
+      "lot": 273,
+      "name": "Lot de 20 ordinateurs portables DYNABOOK Satellite Pro C40",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lotde20pcportabledynabook-sanschargeurs-sacoches-1.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 1200.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 132.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 1332.0,
+      "photo_count": 2,
+      "quick_sale_lot_eur": 1900,
+      "normal_resale_gross_eur": 3000,
+      "quick_margin_before_other_costs_eur": 568.0,
+      "normal_margin_before_other_costs_eur": 1668.0,
+      "confidence_percent": 68,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 75,
+      "valuation_method": "95 EUR/unité en sortie de lot; 150 EUR/unité testée et vendue séparément.",
+      "main_risks": "Chargeurs absents; état fonctionnel non garanti; modèle peu présent sur leboncoin.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_dell_7490"
+      ],
+      "source_titles": [
+        "Dell Latitude 7490 i5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/pc-portable-dell-latitude-7490-i5"
+      ]
+    },
+    {
+      "id": "302462",
+      "sku": "260633BR302462",
+      "lot": 274,
+      "name": "Lot de 11 ordinateurs portables  DELL avec station d'accueil",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lotde11pcportabledell-8stationd-accueil-1.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 300.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 33.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 333.0,
+      "photo_count": 1,
+      "quick_sale_lot_eur": 1600,
+      "normal_resale_gross_eur": 2350,
+      "quick_margin_before_other_costs_eur": 1267.0,
+      "normal_margin_before_other_costs_eur": 2017.0,
+      "confidence_percent": 74,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 60,
+      "valuation_method": "Mélange de 11 Latitude à 130-210 EUR testés, plus 8 docks; décote de lot.",
+      "main_risks": "Répartition exacte 7400/7490/7480/E7470 et état batteries inconnus.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_dell_7490"
+      ],
+      "source_titles": [
+        "Dell Latitude 7490 i5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/pc-portable-dell-latitude-7490-i5"
+      ]
+    },
+    {
+      "id": "302459",
+      "sku": "260633BR302459",
+      "lot": 275,
+      "name": "Lot de switch ARUBA et HP",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lotde19switch-arubaethp-1.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 100.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 11.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 111.0,
+      "photo_count": 11,
+      "quick_sale_lot_eur": 1000,
+      "normal_resale_gross_eur": 1800,
+      "quick_margin_before_other_costs_eur": 889.0,
+      "normal_margin_before_other_costs_eur": 1689.0,
+      "confidence_percent": 61,
+      "demand": "faible",
+      "estimated_sale_days_min": 30,
+      "estimated_sale_days_max": 150,
+      "valuation_method": "Somme des valeurs par modèle avec forte décote de gros et d'obsolescence.",
+      "main_risks": "Références PoE/non-PoE ambiguës; matériel non présenté comme testé; acheteurs spécialisés.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_aruba"
+      ],
+      "source_titles": [
+        "Matériel Aruba d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/accessoires_informatique/aruba/p-3"
+      ]
+    },
+    {
+      "id": "302453",
+      "sku": "260633BR302453",
+      "lot": 276,
+      "name": "Lot de 27 bornes Wifi ARUBA",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lotde27borneswifiaruba-1.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 80.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 8.8,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 88.8,
+      "photo_count": 1,
+      "quick_sale_lot_eur": 120,
+      "normal_resale_gross_eur": 300,
+      "quick_margin_before_other_costs_eur": 31.2,
+      "normal_margin_before_other_costs_eur": 211.2,
+      "confidence_percent": 58,
+      "demand": "faible",
+      "estimated_sale_days_min": 45,
+      "estimated_sale_days_max": 180,
+      "valuation_method": "Anciennes bornes 802.11n valorisées 4-11 EUR/unité selon vente en bloc ou détail.",
+      "main_risks": "AP-105 obsolètes, alimentations absentes, configuration entreprise potentiellement bloquante.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_aruba"
+      ],
+      "source_titles": [
+        "Matériel Aruba d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/accessoires_informatique/aruba/p-3"
+      ]
+    },
+    {
+      "id": "302452",
+      "sku": "260633BR302452",
+      "lot": 277,
+      "name": "Lot de 10 ordinateurs portables TOSHIBA",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lotde10pcportabletoshiba-1-doo-1.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 200.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 22.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 222.0,
+      "photo_count": 5,
+      "quick_sale_lot_eur": 500,
+      "normal_resale_gross_eur": 800,
+      "quick_margin_before_other_costs_eur": 278.0,
+      "normal_margin_before_other_costs_eur": 578.0,
+      "confidence_percent": 66,
+      "demand": "faible",
+      "estimated_sale_days_min": 30,
+      "estimated_sale_days_max": 120,
+      "valuation_method": "50 EUR/unité en lot; 70-90 EUR/unité testée avec chargeur.",
+      "main_risks": "Machines anciennes à disque dur mécanique; batteries et RAM non précisées.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_dell_7490"
+      ],
+      "source_titles": [
+        "Dell Latitude 7490 i5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/pc-portable-dell-latitude-7490-i5"
+      ]
+    },
+    {
+      "id": "302451",
+      "sku": "260633BR302451",
+      "lot": 278,
+      "name": "Lot de 14 ordinaterus portables TOSHIBA R50",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lotde14pcportabletoshiba-1.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 350.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 38.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 388.5,
+      "photo_count": 4,
+      "quick_sale_lot_eur": 630,
+      "normal_resale_gross_eur": 1050,
+      "quick_margin_before_other_costs_eur": 241.5,
+      "normal_margin_before_other_costs_eur": 661.5,
+      "confidence_percent": 67,
+      "demand": "faible",
+      "estimated_sale_days_min": 30,
+      "estimated_sale_days_max": 120,
+      "valuation_method": "45 EUR/unité en lot; 75 EUR/unité après test et nettoyage.",
+      "main_risks": "Core i3 de génération non précisée, HDD 500 Go, batterie inconnue.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_dell_7490"
+      ],
+      "source_titles": [
+        "Dell Latitude 7490 i5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/pc-portable-dell-latitude-7490-i5"
+      ]
+    },
+    {
+      "id": "302450",
+      "sku": "260633BR302450",
+      "lot": 279,
+      "name": "Lot de 13 ordinateurs portables TOSHIBA R50",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lotde13pcportabletoshiba-1.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 320.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 35.2,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 355.2,
+      "photo_count": 3,
+      "quick_sale_lot_eur": 585,
+      "normal_resale_gross_eur": 975,
+      "quick_margin_before_other_costs_eur": 229.8,
+      "normal_margin_before_other_costs_eur": 619.8,
+      "confidence_percent": 67,
+      "demand": "faible",
+      "estimated_sale_days_min": 30,
+      "estimated_sale_days_max": 120,
+      "valuation_method": "45 EUR/unité en lot; 75 EUR/unité après test et nettoyage.",
+      "main_risks": "Core i3 de génération non précisée, HDD 500 Go, batterie inconnue.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_dell_7490"
+      ],
+      "source_titles": [
+        "Dell Latitude 7490 i5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/pc-portable-dell-latitude-7490-i5"
+      ]
+    },
+    {
+      "id": "302449",
+      "sku": "260633BR302449",
+      "lot": 280,
+      "name": "Lot de 10 ordinateurs portables TOSHIBA R50",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lotde10pcportabletoshiba-1.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 250.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 27.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 277.5,
+      "photo_count": 2,
+      "quick_sale_lot_eur": 450,
+      "normal_resale_gross_eur": 750,
+      "quick_margin_before_other_costs_eur": 172.5,
+      "normal_margin_before_other_costs_eur": 472.5,
+      "confidence_percent": 67,
+      "demand": "faible",
+      "estimated_sale_days_min": 30,
+      "estimated_sale_days_max": 120,
+      "valuation_method": "45 EUR/unité en lot; 75 EUR/unité après test et nettoyage.",
+      "main_risks": "Core i3 de génération non précisée, HDD 500 Go, batterie inconnue.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_dell_7490"
+      ],
+      "source_titles": [
+        "Dell Latitude 7490 i5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/pc-portable-dell-latitude-7490-i5"
+      ]
+    },
+    {
+      "id": "302446",
+      "sku": "260633BR302446",
+      "lot": 281,
+      "name": "Lot de 11 ordinateurs portables TOSHIBA R40",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lotde11pcportabletoshiba-1.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 260.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 28.6,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 288.6,
+      "photo_count": 1,
+      "quick_sale_lot_eur": 495,
+      "normal_resale_gross_eur": 825,
+      "quick_margin_before_other_costs_eur": 206.4,
+      "normal_margin_before_other_costs_eur": 536.4,
+      "confidence_percent": 67,
+      "demand": "faible",
+      "estimated_sale_days_min": 30,
+      "estimated_sale_days_max": 120,
+      "valuation_method": "45 EUR/unité en lot; 75 EUR/unité après test et nettoyage.",
+      "main_risks": "Core i3 de génération non précisée, HDD 500 Go, batterie inconnue.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_dell_7490"
+      ],
+      "source_titles": [
+        "Dell Latitude 7490 i5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/pc-portable-dell-latitude-7490-i5"
+      ]
+    },
+    {
+      "id": "302443",
+      "sku": "260633BR302443",
+      "lot": 282,
+      "name": "Lot de 20 ordinateurs portables TOSHIBA R40",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lotde20pcportabletoshiba-1.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 500.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 55.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 555.0,
+      "photo_count": 2,
+      "quick_sale_lot_eur": 900,
+      "normal_resale_gross_eur": 1500,
+      "quick_margin_before_other_costs_eur": 345.0,
+      "normal_margin_before_other_costs_eur": 945.0,
+      "confidence_percent": 67,
+      "demand": "faible",
+      "estimated_sale_days_min": 30,
+      "estimated_sale_days_max": 120,
+      "valuation_method": "45 EUR/unité en lot; 75 EUR/unité après test et nettoyage.",
+      "main_risks": "Core i3 de génération non précisée, HDD 500 Go, batterie inconnue.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_dell_7490"
+      ],
+      "source_titles": [
+        "Dell Latitude 7490 i5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/pc-portable-dell-latitude-7490-i5"
+      ]
+    },
+    {
+      "id": "302442",
+      "sku": "260633BR302442",
+      "lot": 283,
+      "name": "Lot de 6 ordinateurs portables DYNABOOK Satellite Pro C40",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lotde6pcportabledynabook-1.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 200.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 22.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 222.0,
+      "photo_count": 3,
+      "quick_sale_lot_eur": 720,
+      "normal_resale_gross_eur": 1020,
+      "quick_margin_before_other_costs_eur": 498.0,
+      "normal_margin_before_other_costs_eur": 798.0,
+      "confidence_percent": 70,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 60,
+      "valuation_method": "120 EUR/unité en lot; 170 EUR/unité testée avec chargeur et sacoche.",
+      "main_risks": "État batterie et génération exacte du Core i3 à confirmer.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_dell_7490"
+      ],
+      "source_titles": [
+        "Dell Latitude 7490 i5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/pc-portable-dell-latitude-7490-i5"
+      ]
+    },
+    {
+      "id": "302440",
+      "sku": "260633BR302440",
+      "lot": 284,
+      "name": "Lot de 17 ordinateurs portables DYNABOOK Satellite Pro C40",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lotde17pcportabledynabook-1.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 1000.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 110.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 1110.0,
+      "photo_count": 3,
+      "quick_sale_lot_eur": 2210,
+      "normal_resale_gross_eur": 3060,
+      "quick_margin_before_other_costs_eur": 1100.0,
+      "normal_margin_before_other_costs_eur": 1950.0,
+      "confidence_percent": 70,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 75,
+      "valuation_method": "130 EUR/unité en lot; 180 EUR/unité testée avec chargeur/sacoche.",
+      "main_risks": "État batteries non documenté; forte quantité du même modèle sur le marché local.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_dell_7490"
+      ],
+      "source_titles": [
+        "Dell Latitude 7490 i5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/pc-portable-dell-latitude-7490-i5"
+      ]
+    },
+    {
+      "id": "302439",
+      "sku": "260633BR302439",
+      "lot": 285,
+      "name": "Lot de 20 ordinateurs portables DYNABOOK Satellite Pro C40",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lotde20pcportabledynabook-sacoches-1.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 1200.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 132.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 1332.0,
+      "photo_count": 4,
+      "quick_sale_lot_eur": 2600,
+      "normal_resale_gross_eur": 3600,
+      "quick_margin_before_other_costs_eur": 1268.0,
+      "normal_margin_before_other_costs_eur": 2268.0,
+      "confidence_percent": 70,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 75,
+      "valuation_method": "130 EUR/unité en lot; 180 EUR/unité testée avec chargeur/sacoche.",
+      "main_risks": "État batteries non documenté; forte quantité du même modèle sur le marché local.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_dell_7490"
+      ],
+      "source_titles": [
+        "Dell Latitude 7490 i5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/pc-portable-dell-latitude-7490-i5"
+      ]
+    },
+    {
+      "id": "302437",
+      "sku": "260633BR302437",
+      "lot": 286,
+      "name": "Lot de 21 ordinateurs  portables  DYNABOOK Satellite Pro C40",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lotde21pcportabledynabook-sacoches-1.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 600.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 66.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 666.0,
+      "photo_count": 3,
+      "quick_sale_lot_eur": 2300,
+      "normal_resale_gross_eur": 3150,
+      "quick_margin_before_other_costs_eur": 1634.0,
+      "normal_margin_before_other_costs_eur": 2484.0,
+      "confidence_percent": 68,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 75,
+      "valuation_method": "110 EUR/unité en lot; 150 EUR/unité testée pour le C40-H-115.",
+      "main_risks": "Génération plus ancienne et état batteries non documenté.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_dell_7490"
+      ],
+      "source_titles": [
+        "Dell Latitude 7490 i5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/pc-portable-dell-latitude-7490-i5"
+      ]
+    },
+    {
+      "id": "302436",
+      "sku": "260633BR302436",
+      "lot": 287,
+      "name": "Lot de 11 ordinateurs portables DYNABOOK  Satellite Pro C40",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lotde11pcportabledynabook-sacoches-1.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 650.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 71.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 721.5,
+      "photo_count": 4,
+      "quick_sale_lot_eur": 1430,
+      "normal_resale_gross_eur": 1980,
+      "quick_margin_before_other_costs_eur": 708.5,
+      "normal_margin_before_other_costs_eur": 1258.5,
+      "confidence_percent": 70,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 75,
+      "valuation_method": "130 EUR/unité en lot; 180 EUR/unité testée avec chargeur/sacoche.",
+      "main_risks": "État batteries non documenté; forte quantité du même modèle sur le marché local.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_dell_7490"
+      ],
+      "source_titles": [
+        "Dell Latitude 7490 i5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/pc-portable-dell-latitude-7490-i5"
+      ]
+    },
+    {
+      "id": "302434",
+      "sku": "260633BR302434",
+      "lot": 288,
+      "name": "Lot de 19 ordinateurs portables DYNABOOK",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lotde19pcportabledynabook-sacoches-1.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 1100.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 121.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 1221.0,
+      "photo_count": 4,
+      "quick_sale_lot_eur": 2470,
+      "normal_resale_gross_eur": 3420,
+      "quick_margin_before_other_costs_eur": 1249.0,
+      "normal_margin_before_other_costs_eur": 2199.0,
+      "confidence_percent": 70,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 75,
+      "valuation_method": "130 EUR/unité en lot; 180 EUR/unité testée avec chargeur/sacoche.",
+      "main_risks": "État batteries non documenté; forte quantité du même modèle sur le marché local.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_dell_7490"
+      ],
+      "source_titles": [
+        "Dell Latitude 7490 i5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/pc-portable-dell-latitude-7490-i5"
+      ]
+    },
+    {
+      "id": "302433",
+      "sku": "260633BR302433",
+      "lot": 289,
+      "name": "Lot de 16 ordinateurs portables DYNABOOK  Satellite Pro C40",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lotde16pcportabledynabook-sacoches-1.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 950.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 104.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 1054.5,
+      "photo_count": 4,
+      "quick_sale_lot_eur": 2080,
+      "normal_resale_gross_eur": 2880,
+      "quick_margin_before_other_costs_eur": 1025.5,
+      "normal_margin_before_other_costs_eur": 1825.5,
+      "confidence_percent": 70,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 75,
+      "valuation_method": "130 EUR/unité en lot; 180 EUR/unité testée avec chargeur/sacoche.",
+      "main_risks": "État batteries non documenté; forte quantité du même modèle sur le marché local.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_dell_7490"
+      ],
+      "source_titles": [
+        "Dell Latitude 7490 i5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/pc-portable-dell-latitude-7490-i5"
+      ]
+    },
+    {
+      "id": "302432",
+      "sku": "260633BR302432",
+      "lot": 290,
+      "name": "Lot de 10 ordinateurs portables DYNABOOK Satellite Pro C40",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lotde10pcportabledynabook-1.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 600.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 66.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 666.0,
+      "photo_count": 4,
+      "quick_sale_lot_eur": 1300,
+      "normal_resale_gross_eur": 1800,
+      "quick_margin_before_other_costs_eur": 634.0,
+      "normal_margin_before_other_costs_eur": 1134.0,
+      "confidence_percent": 70,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 75,
+      "valuation_method": "130 EUR/unité en lot; 180 EUR/unité testée avec chargeur/sacoche.",
+      "main_risks": "État batteries non documenté; forte quantité du même modèle sur le marché local.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_dell_7490"
+      ],
+      "source_titles": [
+        "Dell Latitude 7490 i5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/pc-portable-dell-latitude-7490-i5"
+      ]
+    },
+    {
+      "id": "302420",
+      "sku": "260633BR302420",
+      "lot": 291,
+      "name": "Lot de 59 PC fixes",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lotde59pcfixes-1.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 300.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 33.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 333.0,
+      "photo_count": 6,
+      "quick_sale_lot_eur": 3500,
+      "normal_resale_gross_eur": 6000,
+      "quick_margin_before_other_costs_eur": 3167.0,
+      "normal_margin_before_other_costs_eur": 5667.0,
+      "confidence_percent": 58,
+      "demand": "faible",
+      "estimated_sale_days_min": 45,
+      "estimated_sale_days_max": 180,
+      "valuation_method": "Valorisation moyenne 60-100 EUR par tour selon configuration, avec décote logistique.",
+      "main_risks": "CPU/RAM/stockage non détaillés, câbles absents, transport de 59 unités.",
+      "device_checks": [],
+      "source_ids": [
+        "bm_e595"
+      ],
+      "source_titles": [
+        "Lenovo ThinkPad E595 Ryzen 5 16/256 — Back Market"
+      ],
+      "source_urls": [
+        "https://www.backmarket.fr/fr-fr/p/lenovo-e595-15-ryzen-5-3500u-ghz-ssd-256-go-16-go/7c3dcefc-9ebf-48df-8d27-50ff8082cddb"
+      ]
+    },
+    {
+      "id": "338394",
+      "sku": "260833BA338394",
+      "lot": 300,
+      "name": "Trottinette électrique WISPEED X1030",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/trottinette-electrique-wispeed-x1030.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 40.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 4.4,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 44.4,
+      "photo_count": 10,
+      "quick_sale_lot_eur": 120,
+      "normal_resale_gross_eur": 220,
+      "quick_margin_before_other_costs_eur": 75.6,
+      "normal_margin_before_other_costs_eur": 175.6,
+      "confidence_percent": 69,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 60,
+      "valuation_method": "Valeur d'une X1030 non testée avec petit défaut mécanique, contre une revente testée.",
+      "main_risks": "Batterie et moteur non testés; vis de guidon manquante; transport contraignant.",
+      "device_checks": [],
+      "source_ids": [],
+      "source_titles": [],
+      "source_urls": []
+    },
+    {
+      "id": "300850",
+      "sku": "260433BA270842",
+      "lot": 302,
+      "name": "Drone DJI Matrice 210",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/drone-dji-matrice-210-1.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 1000.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 110.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 1110.0,
+      "photo_count": 11,
+      "quick_sale_lot_eur": 1800,
+      "normal_resale_gross_eur": 3000,
+      "quick_margin_before_other_costs_eur": 690.0,
+      "normal_margin_before_other_costs_eur": 1890.0,
+      "confidence_percent": 56,
+      "demand": "faible",
+      "estimated_sale_days_min": 45,
+      "estimated_sale_days_max": 240,
+      "valuation_method": "Plateforme M210, Cendence, écran, batteries et valise; décote forte car sans caméra/payload récent.",
+      "main_risks": "Ancienne plateforme entreprise, batteries TB55 vieillissantes, aucune caméra Zenmuse listée, marché étroit.",
+      "device_checks": [],
+      "source_ids": [],
+      "source_titles": [],
+      "source_urls": []
+    },
+    {
+      "id": "297104",
+      "sku": "260633BA297104",
+      "lot": 304,
+      "name": "TV LG et console de jeu SONY PS5",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-tv-lg-et-console-de-jeu-ps5.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 100.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 11.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 111.0,
+      "photo_count": 3,
+      "quick_sale_lot_eur": 250,
+      "normal_resale_gross_eur": 420,
+      "quick_margin_before_other_costs_eur": 139.0,
+      "normal_margin_before_other_costs_eur": 309.0,
+      "confidence_percent": 70,
+      "demand": "forte",
+      "estimated_sale_days_min": 7,
+      "estimated_sale_days_max": 30,
+      "valuation_method": "PS5 et deux manettes dominent la valeur; TV LG endommagée presque sans valeur.",
+      "main_risks": "PS5 non testée et sans câble; TV rayée et pieds défectueux.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ps5",
+        "lbc_ps5_bundles"
+      ],
+      "source_titles": [
+        "Console Sony PS5 d'occasion — leboncoin",
+        "PS5 avec jeux et manettes — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/c/consoles/console_brand%3Asony%2Bconsole_model%3Aps5",
+        "https://www.leboncoin.fr/ck/consoles/ps5-jeux-manettes"
+      ]
+    },
+    {
+      "id": "297230",
+      "sku": "260633BA297230",
+      "lot": 305,
+      "name": "Lot TV SONY, console de jeu SONY PS4 et jeux vidéos",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-tv-sony-console-de-jeu-ps4-et-jeux-videos.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 80.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 8.8,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 88.8,
+      "photo_count": 7,
+      "quick_sale_lot_eur": 220,
+      "normal_resale_gross_eur": 350,
+      "quick_margin_before_other_costs_eur": 131.2,
+      "normal_margin_before_other_costs_eur": 261.2,
+      "confidence_percent": 66,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 60,
+      "valuation_method": "PS4, deux manettes, home-cinéma et 17 jeux anciens valorisés séparément.",
+      "main_risks": "Jeux de plateformes différentes; TV ancienne sans télécommande.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ps5_bundles"
+      ],
+      "source_titles": [
+        "PS5 avec jeux et manettes — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/consoles/ps5-jeux-manettes"
+      ]
+    },
+    {
+      "id": "324131",
+      "sku": "260733BA324131",
+      "lot": 306,
+      "name": "Lot TV et consoles de jeux",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-tv-et-consoles-de-jeux.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 50.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 5.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 55.5,
+      "photo_count": 4,
+      "quick_sale_lot_eur": 300,
+      "normal_resale_gross_eur": 520,
+      "quick_margin_before_other_costs_eur": 244.5,
+      "normal_margin_before_other_costs_eur": 464.5,
+      "confidence_percent": 67,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 60,
+      "valuation_method": "PS4, Xbox One S et TV 55 pouces, avec décote de lot encombrant.",
+      "main_risks": "Deux consoles non testées; TV sans télécommande; enlèvement local.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ps5_bundles",
+        "lbc_xbox_s"
+      ],
+      "source_titles": [
+        "PS5 avec jeux et manettes — leboncoin",
+        "Xbox Series S d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/consoles/ps5-jeux-manettes",
+        "https://www.leboncoin.fr/c/consoles/console_brand%3Amicrosoft%2Bconsole_model%3Axboxseriess%2Bvideo_game_type%3Aconsole"
+      ]
+    },
+    {
+      "id": "324273",
+      "sku": "260733BA324273",
+      "lot": 307,
+      "name": "Lot TV SAMSUNG et consoles de jeux",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-tv-samsung-et-console-de-jeux.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 50.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 5.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 55.5,
+      "photo_count": 4,
+      "quick_sale_lot_eur": 280,
+      "normal_resale_gross_eur": 500,
+      "quick_margin_before_other_costs_eur": 224.5,
+      "normal_margin_before_other_costs_eur": 444.5,
+      "confidence_percent": 64,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 75,
+      "valuation_method": "Deux PS4 et deux manettes représentent l'essentiel de la valeur.",
+      "main_risks": "Consoles non testées; TV rayée et encombrante.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ps5_bundles"
+      ],
+      "source_titles": [
+        "PS5 avec jeux et manettes — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/consoles/ps5-jeux-manettes"
+      ]
+    },
+    {
+      "id": "324364",
+      "sku": "260733BA324364",
+      "lot": 308,
+      "name": "Lot TV LG et console de jeux",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-tv-lg-et-console-de-jeux.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 30.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 3.3,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 33.3,
+      "photo_count": 4,
+      "quick_sale_lot_eur": 150,
+      "normal_resale_gross_eur": 260,
+      "quick_margin_before_other_costs_eur": 116.7,
+      "normal_margin_before_other_costs_eur": 226.7,
+      "confidence_percent": 68,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 60,
+      "valuation_method": "PS4 avec manette; TV décotée pour défaut de dalle.",
+      "main_risks": "Console non testée; ligne verticale de pixels sur la TV.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ps5_bundles"
+      ],
+      "source_titles": [
+        "PS5 avec jeux et manettes — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/consoles/ps5-jeux-manettes"
+      ]
+    },
+    {
+      "id": "324538",
+      "sku": "260733BA324538",
+      "lot": 309,
+      "name": "Lot TV SAMSUNG et console de jeux",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-tv-samsung-et-console-de-jeux-doo-1.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 30.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 3.3,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 33.3,
+      "photo_count": 3,
+      "quick_sale_lot_eur": 170,
+      "normal_resale_gross_eur": 300,
+      "quick_margin_before_other_costs_eur": 136.7,
+      "normal_margin_before_other_costs_eur": 266.7,
+      "confidence_percent": 67,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 60,
+      "valuation_method": "PS4, deux manettes et casque; TV ancienne fortement décotée.",
+      "main_risks": "Ensemble non testé, câble console absent, TV rayée.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ps5_bundles"
+      ],
+      "source_titles": [
+        "PS5 avec jeux et manettes — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/consoles/ps5-jeux-manettes"
+      ]
+    },
+    {
+      "id": "297974",
+      "sku": "260633BA297974",
+      "lot": 310,
+      "name": "Lot informatique : écran, unité centrale et accessoires",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-informatique-ecran-unite-centrale-et-accessoires.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 80.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 8.8,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 88.8,
+      "photo_count": 8,
+      "quick_sale_lot_eur": 400,
+      "normal_resale_gross_eur": 800,
+      "quick_margin_before_other_costs_eur": 311.2,
+      "normal_margin_before_other_costs_eur": 711.2,
+      "confidence_percent": 54,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 21,
+      "estimated_sale_days_max": 90,
+      "valuation_method": "Écran gaming, tour inconnue, manette Astro C40, disques LaCie et petit matériel.",
+      "main_risks": "CPU/RAM de la tour inconnus; tout est non testé; nombreuses petites pièces lentes à écouler.",
+      "device_checks": [],
+      "source_ids": [],
+      "source_titles": [],
+      "source_urls": []
+    },
+    {
+      "id": "302000",
+      "sku": "260633BA302000",
+      "lot": 311,
+      "name": "APPLE iPhone 16 et batterie externe",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/apple-iphone-16-doo-1.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 80.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 8.8,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 88.8,
+      "photo_count": 6,
+      "quick_sale_lot_eur": 350,
+      "normal_resale_gross_eur": 520,
+      "quick_margin_before_other_costs_eur": 261.2,
+      "normal_margin_before_other_costs_eur": 431.2,
+      "confidence_percent": 70,
+      "demand": "forte",
+      "estimated_sale_days_min": 7,
+      "estimated_sale_days_max": 30,
+      "valuation_method": "iPhone 16 128 Go non testé, avec décote activation/batterie; batterie externe marginale.",
+      "main_risks": "Activation, IMEI, batterie et fonctionnement non vérifiés.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_iphone16"
+      ],
+      "source_titles": [
+        "iPhone 16 128 Go d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/c/telephones_objets_connectes/phone_brand%3Aapple%2Bphone_memory%3A128go%2Bphone_model%3Aiphone16"
+      ]
+    },
+    {
+      "id": "296119",
+      "sku": "260633BA296119",
+      "lot": 312,
+      "name": "Lot APPLE",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-apple-doo-4.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 20.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 2.2,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 22.2,
+      "photo_count": 10,
+      "quick_sale_lot_eur": 180,
+      "normal_resale_gross_eur": 350,
+      "quick_margin_before_other_costs_eur": 157.8,
+      "normal_margin_before_other_costs_eur": 327.8,
+      "confidence_percent": 48,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 30,
+      "estimated_sale_days_max": 120,
+      "valuation_method": "Valeur pièces du MacBook, de trois iPad mini et d'un iPhone X/XS cassés.",
+      "main_risks": "Écrans HS, modèles/capacités incomplets, aucun chargeur, tout non testé.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_macbook_m1"
+      ],
+      "source_titles": [
+        "MacBook Air M1 A2337 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/macbook-air-a2337"
+      ]
+    },
+    {
+      "id": "324620",
+      "sku": "260733BA324620",
+      "lot": 313,
+      "name": "Lot multimédia",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-multimedia-doo-6.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 50.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 5.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 55.5,
+      "photo_count": 4,
+      "quick_sale_lot_eur": 180,
+      "normal_resale_gross_eur": 340,
+      "quick_margin_before_other_costs_eur": 124.5,
+      "normal_margin_before_other_costs_eur": 284.5,
+      "confidence_percent": 59,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 75,
+      "valuation_method": "AirPods Pro, deux Jabra Elite 5 et deux anciennes GoPro valorisés après test.",
+      "main_risks": "Authenticité, batteries et fonctionnement non vérifiés.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_gopro10"
+      ],
+      "source_titles": [
+        "GoPro Hero 10 Black d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/photo_audio_video/gopro-10-black"
+      ]
+    },
+    {
+      "id": "340395",
+      "sku": "260833BA340395",
+      "lot": 314,
+      "name": "Lot de casques de musique LOGITECH",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-de-casque-de-musique-logitech.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 200.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 22.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 222.0,
+      "photo_count": 8,
+      "quick_sale_lot_eur": 600,
+      "normal_resale_gross_eur": 950,
+      "quick_margin_before_other_costs_eur": 378.0,
+      "normal_margin_before_other_costs_eur": 728.0,
+      "confidence_percent": 78,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 21,
+      "estimated_sale_days_max": 120,
+      "valuation_method": "Environ 21 EUR/unité pour écoulement en lot; 34 EUR/unité en ventes séparées.",
+      "main_risks": "28 unités non testées; risque de retours; concurrence élevée malgré emballages.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_g435"
+      ],
+      "source_titles": [
+        "Logitech G435 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/photo_audio_video/casque-g435"
+      ]
+    },
+    {
+      "id": "311011",
+      "sku": "260733BA311011",
+      "lot": 317,
+      "name": "Enceinte MARSHALL",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/enceinte-marshall.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 30.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 3.3,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 33.3,
+      "photo_count": 3,
+      "quick_sale_lot_eur": 120,
+      "normal_resale_gross_eur": 180,
+      "quick_margin_before_other_costs_eur": 86.7,
+      "normal_margin_before_other_costs_eur": 146.7,
+      "confidence_percent": 80,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 7,
+      "estimated_sale_days_max": 30,
+      "valuation_method": "Enceinte visuellement proche d'une Stanmore, annoncée fonctionnelle, avec défaut cosmétique.",
+      "main_risks": "Version exacte non inscrite dans l'annonce; cuir abîmé.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_marshall"
+      ],
+      "source_titles": [
+        "Marshall Stanmore d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/photo_audio_video/enceinte-marshall-stanmore"
+      ]
+    },
+    {
+      "id": "341436",
+      "sku": "260833BA341436",
+      "lot": 319,
+      "name": "Lot HIFI",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-hifi.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 20.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 2.2,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 22.2,
+      "photo_count": 10,
+      "quick_sale_lot_eur": 100,
+      "normal_resale_gross_eur": 220,
+      "quick_margin_before_other_costs_eur": 77.8,
+      "normal_margin_before_other_costs_eur": 197.8,
+      "confidence_percent": 55,
+      "demand": "faible",
+      "estimated_sale_days_min": 30,
+      "estimated_sale_days_max": 120,
+      "valuation_method": "Somme prudente du Sony GTK, des éléments LG et des petites enceintes.",
+      "main_risks": "Tout non testé, câbles LG absents, ensemble hétérogène et encombrant.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_jbl"
+      ],
+      "source_titles": [
+        "JBL Charge 5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/photo_audio_video/jbl-charge-5"
+      ]
+    },
+    {
+      "id": "306147",
+      "sku": "260633BA306147",
+      "lot": 321,
+      "name": "PC Gamer et souris sans fil",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/pc-gamer-et-souris-sans-fils.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 40.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 4.4,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 44.4,
+      "photo_count": 4,
+      "quick_sale_lot_eur": 180,
+      "normal_resale_gross_eur": 350,
+      "quick_margin_before_other_costs_eur": 135.6,
+      "normal_margin_before_other_costs_eur": 305.6,
+      "confidence_percent": 46,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 21,
+      "estimated_sale_days_max": 90,
+      "valuation_method": "RTX 2060 et disque 1 To donnent une valeur plancher; bonus si configuration complète correcte.",
+      "main_risks": "CPU, RAM, carte mère et alimentation inconnus; PC poussiéreux et non testé.",
+      "device_checks": [],
+      "source_ids": [],
+      "source_titles": [],
+      "source_urls": []
+    },
+    {
+      "id": "303750",
+      "sku": "260633BA303750",
+      "lot": 344,
+      "name": "Table de mixage PIONEER DJ DDJ-REV7",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/table-de-mixage-pioneer-dans-sa-boite-metallique-et-accessoires-connectiques-associes.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 500.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 55.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 555.0,
+      "photo_count": 9,
+      "quick_sale_lot_eur": 1200,
+      "normal_resale_gross_eur": 1650,
+      "quick_margin_before_other_costs_eur": 645.0,
+      "normal_margin_before_other_costs_eur": 1095.0,
+      "confidence_percent": 83,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 60,
+      "valuation_method": "DDJ-REV7 décoté car non testé, flight-case et casque inclus.",
+      "main_risks": "Contrôleur non testé; réparation potentiellement chère; enlèvement spécialisé.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ddj_rev7"
+      ],
+      "source_titles": [
+        "Pioneer DDJ-REV7 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/photo_audio_video/ddj-rev7"
+      ]
+    },
+    {
+      "id": "304500",
+      "sku": "260535BR286517",
+      "lot": 305,
+      "name": "Matériel de vidéo conférence",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/videoconference-2.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 50.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 5.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 55.5,
+      "photo_count": 1,
+      "quick_sale_lot_eur": 20,
+      "normal_resale_gross_eur": 80,
+      "quick_margin_before_other_costs_eur": -35.5,
+      "normal_margin_before_other_costs_eur": 24.5,
+      "confidence_percent": 25,
+      "demand": "faible",
+      "estimated_sale_days_min": 60,
+      "estimated_sale_days_max": 240,
+      "valuation_method": "Valeur de récupération d'un ancien ensemble Tandberg non inventorié.",
+      "main_risks": "Modèles, complétude et fonctionnement inconnus; technologie probablement obsolète.",
+      "device_checks": [],
+      "source_ids": [],
+      "source_titles": [],
+      "source_urls": []
+    },
+    {
+      "id": "299305",
+      "sku": "260635BA299305",
+      "lot": 292,
+      "name": "Divers informatique",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/divers-informatique.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 50.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 5.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 55.5,
+      "photo_count": 2,
+      "quick_sale_lot_eur": 3200,
+      "normal_resale_gross_eur": 6200,
+      "quick_margin_before_other_costs_eur": 3144.5,
+      "normal_margin_before_other_costs_eur": 6144.5,
+      "confidence_percent": 58,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 30,
+      "estimated_sale_days_max": 180,
+      "valuation_method": "24 E595, deux Latitude 5300, 10 barrettes 16 Go et disques, avec forte décote non-testé/gros.",
+      "main_risks": "Configurations E595 non précisées; 26 portables non testés; travail de tri et d'effacement.",
+      "device_checks": [],
+      "source_ids": [
+        "bm_e595",
+        "lbc_dell_7490"
+      ],
+      "source_titles": [
+        "Lenovo ThinkPad E595 Ryzen 5 16/256 — Back Market",
+        "Dell Latitude 7490 i5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.backmarket.fr/fr-fr/p/lenovo-e595-15-ryzen-5-3500u-ghz-ssd-256-go-16-go/7c3dcefc-9ebf-48df-8d27-50ff8082cddb",
+        "https://www.leboncoin.fr/ck/ordinateurs/pc-portable-dell-latitude-7490-i5"
+      ]
+    },
+    {
+      "id": "319895",
+      "sku": "260613BA305232",
+      "lot": 405,
+      "name": "Lot de disques BEATLES",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-de-disques-beatles-1.html",
+      "auction_end": "2026-09-24T08:00:00+00:00",
+      "current_auction_eur": 75.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 8.25,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 83.25,
+      "photo_count": 14,
+      "quick_sale_lot_eur": 200,
+      "normal_resale_gross_eur": 360,
+      "quick_margin_before_other_costs_eur": 116.75,
+      "normal_margin_before_other_costs_eur": 276.75,
+      "confidence_percent": 67,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 21,
+      "estimated_sale_days_max": 90,
+      "valuation_method": "Douze rééditions Beatles, pour la plupart scellées, plus photo de faible valeur.",
+      "main_risks": "Pressages/années exacts inconnus; état des pochettes à vérifier.",
+      "device_checks": [],
+      "source_ids": [],
+      "source_titles": [],
+      "source_urls": []
+    },
+    {
+      "id": "315491",
+      "sku": "260713BA315491",
+      "lot": 406,
+      "name": "SONY Playstation 5",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/console-ps5-doo-1.html",
+      "auction_end": "2026-09-24T08:00:00+00:00",
+      "current_auction_eur": 200.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 22.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 222.0,
+      "photo_count": 12,
+      "quick_sale_lot_eur": 260,
+      "normal_resale_gross_eur": 400,
+      "quick_margin_before_other_costs_eur": 38.0,
+      "normal_margin_before_other_costs_eur": 178.0,
+      "confidence_percent": 74,
+      "demand": "forte",
+      "estimated_sale_days_min": 7,
+      "estimated_sale_days_max": 30,
+      "valuation_method": "PS5, DualSense camouflage et trois jeux de sport anciens.",
+      "main_risks": "Fonctionnement inconnu; jeux annuels à faible valeur résiduelle.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ps5",
+        "lbc_ps5_bundles"
+      ],
+      "source_titles": [
+        "Console Sony PS5 d'occasion — leboncoin",
+        "PS5 avec jeux et manettes — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/c/consoles/console_brand%3Asony%2Bconsole_model%3Aps5",
+        "https://www.leboncoin.fr/ck/consoles/ps5-jeux-manettes"
+      ]
+    },
+    {
+      "id": "322440",
+      "sku": "260720BA322440",
+      "lot": 407,
+      "name": "2 consoles XBOX 360S",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/2-consoles-xbox-360s-doo-1.html",
+      "auction_end": "2026-09-24T08:00:00+00:00",
+      "current_auction_eur": 100.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 11.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 111.0,
+      "photo_count": 10,
+      "quick_sale_lot_eur": 60,
+      "normal_resale_gross_eur": 130,
+      "quick_margin_before_other_costs_eur": -51.0,
+      "normal_margin_before_other_costs_eur": 19.0,
+      "confidence_percent": 75,
+      "demand": "faible",
+      "estimated_sale_days_min": 21,
+      "estimated_sale_days_max": 90,
+      "valuation_method": "Deux Xbox 360 S 4 Go, deux manettes et câblage.",
+      "main_risks": "Faible stockage, consoles anciennes, état seulement décrit comme usage.",
+      "device_checks": [],
+      "source_ids": [],
+      "source_titles": [],
+      "source_urls": []
+    },
+    {
+      "id": "322018",
+      "sku": "260713BA322018",
+      "lot": 408,
+      "name": "SONY Playstation 5",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/sony-playstation-5-doo-3.html",
+      "auction_end": "2026-09-24T08:00:00+00:00",
+      "current_auction_eur": 150.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 16.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 166.5,
+      "photo_count": 11,
+      "quick_sale_lot_eur": 250,
+      "normal_resale_gross_eur": 380,
+      "quick_margin_before_other_costs_eur": 83.5,
+      "normal_margin_before_other_costs_eur": 213.5,
+      "confidence_percent": 74,
+      "demand": "forte",
+      "estimated_sale_days_min": 7,
+      "estimated_sale_days_max": 30,
+      "valuation_method": "PS5 avec boîte, câbles et Modern Warfare III.",
+      "main_risks": "État de fonctionnement inconnu; manette non explicitement listée.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ps5",
+        "lbc_ps5_bundles"
+      ],
+      "source_titles": [
+        "Console Sony PS5 d'occasion — leboncoin",
+        "PS5 avec jeux et manettes — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/c/consoles/console_brand%3Asony%2Bconsole_model%3Aps5",
+        "https://www.leboncoin.fr/ck/consoles/ps5-jeux-manettes"
+      ]
+    },
+    {
+      "id": "351136",
+      "sku": "260920BA351136",
+      "lot": 409,
+      "name": "Lot d'écouteurs APPLE",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-d-ecouteurs-apple-doo-3.html",
+      "auction_end": "2026-09-24T08:00:00+00:00",
+      "current_auction_eur": 100.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 11.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 111.0,
+      "photo_count": 3,
+      "quick_sale_lot_eur": 170,
+      "normal_resale_gross_eur": 260,
+      "quick_margin_before_other_costs_eur": 59.0,
+      "normal_margin_before_other_costs_eur": 149.0,
+      "confidence_percent": 72,
+      "demand": "forte",
+      "estimated_sale_days_min": 7,
+      "estimated_sale_days_max": 30,
+      "valuation_method": "AirPods 3 et AirPods Pro 2 en parfait état annoncé, avec boîtes.",
+      "main_risks": "Authenticité et santé des batteries à vérifier; description des AirPods 3 contient des fonctions incohérentes.",
+      "device_checks": [],
+      "source_ids": [],
+      "source_titles": [],
+      "source_urls": []
+    },
+    {
+      "id": "322431",
+      "sku": "260113BA205866",
+      "lot": 410,
+      "name": "Drône DJI Phantom",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/drone-dji-phantom-5.html",
+      "auction_end": "2026-09-24T08:00:00+00:00",
+      "current_auction_eur": 50.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 5.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 55.5,
+      "photo_count": 12,
+      "quick_sale_lot_eur": 80,
+      "normal_resale_gross_eur": 180,
+      "quick_margin_before_other_costs_eur": 24.5,
+      "normal_margin_before_other_costs_eur": 124.5,
+      "confidence_percent": 48,
+      "demand": "faible",
+      "estimated_sale_days_min": 30,
+      "estimated_sale_days_max": 120,
+      "valuation_method": "DJI Phantom ancien avec radiocommande, valorisé surtout après test.",
+      "main_risks": "Version/compatibilité de la radiocommande ambiguë, batterie et chargeur non listés.",
+      "device_checks": [],
+      "source_ids": [],
+      "source_titles": [],
+      "source_urls": []
+    },
+    {
+      "id": "336780",
+      "sku": "260813BA336780",
+      "lot": 411,
+      "name": "Lot accessoires électroniques",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-accessoires-electroniques.html",
+      "auction_end": "2026-09-24T08:00:00+00:00",
+      "current_auction_eur": 150.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 16.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 166.5,
+      "photo_count": 7,
+      "quick_sale_lot_eur": 100,
+      "normal_resale_gross_eur": 250,
+      "quick_margin_before_other_costs_eur": -66.5,
+      "normal_margin_before_other_costs_eur": 83.5,
+      "confidence_percent": 43,
+      "demand": "faible",
+      "estimated_sale_days_min": 30,
+      "estimated_sale_days_max": 150,
+      "valuation_method": "Trois Kindle, sept casques et quatre montres inconnues vendus après tri.",
+      "main_risks": "Modèles partiels, aucun chargeur et tout non testé.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_sony_xm4"
+      ],
+      "source_titles": [
+        "Sony WH-1000XM4 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/photo_audio_video/casque-sony-wh-1000xm4"
+      ]
+    },
+    {
+      "id": "319661",
+      "sku": "260113BA194018",
+      "lot": 412,
+      "name": "Défibrillateur de formation AED Trainer",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/defribillateur-de-formation-aed-trainer-xft-d0009-1.html",
+      "auction_end": "2026-09-24T08:00:00+00:00",
+      "current_auction_eur": 25.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 2.75,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 27.75,
+      "photo_count": 5,
+      "quick_sale_lot_eur": 20,
+      "normal_resale_gross_eur": 40,
+      "quick_margin_before_other_costs_eur": -7.75,
+      "normal_margin_before_other_costs_eur": 12.25,
+      "confidence_percent": 80,
+      "demand": "faible",
+      "estimated_sale_days_min": 30,
+      "estimated_sale_days_max": 120,
+      "valuation_method": "Petit AED Trainer de formation, pas un défibrillateur médical opérationnel.",
+      "main_risks": "Marché de niche; faible valeur unitaire neuve.",
+      "device_checks": [],
+      "source_ids": [],
+      "source_titles": [],
+      "source_urls": []
+    },
+    {
+      "id": "336845",
+      "sku": "260813BA336845",
+      "lot": 413,
+      "name": "Lot de 2 appareils photo et 1 camera numérique",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-de-2-appareils-photo-et-1-camera-numerique.html",
+      "auction_end": "2026-09-24T08:00:00+00:00",
+      "current_auction_eur": 70.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 7.7,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 77.7,
+      "photo_count": 8,
+      "quick_sale_lot_eur": 200,
+      "normal_resale_gross_eur": 420,
+      "quick_margin_before_other_costs_eur": 122.3,
+      "normal_margin_before_other_costs_eur": 342.3,
+      "confidence_percent": 62,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 21,
+      "estimated_sale_days_max": 90,
+      "valuation_method": "Canon 450D avec deux objectifs, Sony HDR-PJ540 et Lumix TZ10.",
+      "main_risks": "Tout non testé, sans chargeurs; batteries anciennes.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_sony_a6000"
+      ],
+      "source_titles": [
+        "Sony Alpha 6000 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/photo_audio_video/sony-alpha-6000"
+      ]
+    },
+    {
+      "id": "348147",
+      "sku": "260913BA348147",
+      "lot": 414,
+      "name": "Lot appareils photo argentiques",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-appareil-photo-argentique.html",
+      "auction_end": "2026-09-24T08:00:00+00:00",
+      "current_auction_eur": 90.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 9.9,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 99.9,
+      "photo_count": 11,
+      "quick_sale_lot_eur": 160,
+      "normal_resale_gross_eur": 350,
+      "quick_margin_before_other_costs_eur": 60.1,
+      "normal_margin_before_other_costs_eur": 250.1,
+      "confidence_percent": 58,
+      "demand": "faible",
+      "estimated_sale_days_min": 30,
+      "estimated_sale_days_max": 150,
+      "valuation_method": "Rollei 35 domine la valeur, complété par Nikon F65, Yashica et flash.",
+      "main_risks": "Tout non testé; cellule, obturateur et optiques à contrôler.",
+      "device_checks": [],
+      "source_ids": [],
+      "source_titles": [],
+      "source_urls": []
+    },
+    {
+      "id": "336701",
+      "sku": "260813BA336701",
+      "lot": 415,
+      "name": "Lot de 10 APPLE Iphone",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-de-10-apple-iphone.html",
+      "auction_end": "2026-09-24T08:00:00+00:00",
+      "current_auction_eur": 110.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 12.1,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 122.1,
+      "photo_count": 3,
+      "quick_sale_lot_eur": 1250,
+      "normal_resale_gross_eur": 2500,
+      "quick_margin_before_other_costs_eur": 1127.9,
+      "normal_margin_before_other_costs_eur": 2377.9,
+      "confidence_percent": 43,
+      "demand": "forte",
+      "estimated_sale_days_min": 21,
+      "estimated_sale_days_max": 120,
+      "valuation_method": "Somme prudente de dix générations d'iPhone, avec coefficient de risque non-testé/activation.",
+      "main_risks": "Aucune capacité ni batterie; blocage iCloud/IMEI et pannes possibles; mini-réplique sans valeur.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_iphone16",
+        "lbc_iphone14pro",
+        "lbc_iphone13pm"
+      ],
+      "source_titles": [
+        "iPhone 16 128 Go d'occasion — leboncoin",
+        "iPhone 14 Pro d'occasion — leboncoin",
+        "iPhone 13 Pro Max d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/c/telephones_objets_connectes/phone_brand%3Aapple%2Bphone_memory%3A128go%2Bphone_model%3Aiphone16",
+        "https://www.leboncoin.fr/c/telephones_objets_connectes/phone_brand%3Aapple%2Bphone_model%3Aiphone14pro",
+        "https://www.leboncoin.fr/ck/telephones_objets_connectes/iphone13-pro-max"
+      ]
+    },
+    {
+      "id": "336751",
+      "sku": "260813BA336751",
+      "lot": 416,
+      "name": "Lot de 10 téléphones portable",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-de-10-telephones-portable.html",
+      "auction_end": "2026-09-24T08:00:00+00:00",
+      "current_auction_eur": 110.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 12.1,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 122.1,
+      "photo_count": 3,
+      "quick_sale_lot_eur": 350,
+      "normal_resale_gross_eur": 750,
+      "quick_margin_before_other_costs_eur": 227.9,
+      "normal_margin_before_other_costs_eur": 627.9,
+      "confidence_percent": 48,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 30,
+      "estimated_sale_days_max": 150,
+      "valuation_method": "Dix Android de générations variées, A54/A55/Edge 30 étant les principaux contributeurs.",
+      "main_risks": "Tout non testé, aucune capacité, aucun chargeur, risque de comptes/verrouillages.",
+      "device_checks": [],
+      "source_ids": [],
+      "source_titles": [],
+      "source_urls": []
+    },
+    {
+      "id": "288890",
+      "sku": "260613BA288890",
+      "lot": 417,
+      "name": "Lot tablettes APPLE SAMSUNG et LENOVO",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-tablettes-ipad-samsung-et-lenovo.html",
+      "auction_end": "2026-09-24T08:00:00+00:00",
+      "current_auction_eur": 170.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 18.7,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 188.7,
+      "photo_count": 2,
+      "quick_sale_lot_eur": 450,
+      "normal_resale_gross_eur": 850,
+      "quick_margin_before_other_costs_eur": 261.3,
+      "normal_margin_before_other_costs_eur": 661.3,
+      "confidence_percent": 54,
+      "demand": "forte",
+      "estimated_sale_days_min": 21,
+      "estimated_sale_days_max": 90,
+      "valuation_method": "Deux iPad 10, iPad 9, Tab S4, Lenovo M10 et P11 après décote non-testé.",
+      "main_risks": "Capacités inconnues, aucun chargeur, activation et batteries non vérifiées.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ipad10"
+      ],
+      "source_titles": [
+        "iPad 10e génération d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/tablettes_liseuses/ipad-10eme-generation"
+      ]
+    },
+    {
+      "id": "340354",
+      "sku": "260813BA340354",
+      "lot": 418,
+      "name": "Lot de 7 APPLE Iphone",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-de-7-apple-iphone.html",
+      "auction_end": "2026-09-24T08:00:00+00:00",
+      "current_auction_eur": 140.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 15.4,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 155.4,
+      "photo_count": 7,
+      "quick_sale_lot_eur": 600,
+      "normal_resale_gross_eur": 1100,
+      "quick_margin_before_other_costs_eur": 444.6,
+      "normal_margin_before_other_costs_eur": 944.6,
+      "confidence_percent": 49,
+      "demand": "forte",
+      "estimated_sale_days_min": 21,
+      "estimated_sale_days_max": 120,
+      "valuation_method": "Sept iPhone, dont 14 Pro et deux 13, avec décote importante non-testé.",
+      "main_risks": "Capacités, batteries, IMEI et activation inconnus; aucun chargeur.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_iphone14pro",
+        "lbc_iphone13pm"
+      ],
+      "source_titles": [
+        "iPhone 14 Pro d'occasion — leboncoin",
+        "iPhone 13 Pro Max d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/c/telephones_objets_connectes/phone_brand%3Aapple%2Bphone_model%3Aiphone14pro",
+        "https://www.leboncoin.fr/ck/telephones_objets_connectes/iphone13-pro-max"
+      ]
+    },
+    {
+      "id": "340341",
+      "sku": "260813BA340341",
+      "lot": 419,
+      "name": "Lot de 8 smartphones",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-de-8-smartphones.html",
+      "auction_end": "2026-09-24T08:00:00+00:00",
+      "current_auction_eur": 160.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 17.6,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 177.6,
+      "photo_count": 2,
+      "quick_sale_lot_eur": 450,
+      "normal_resale_gross_eur": 900,
+      "quick_margin_before_other_costs_eur": 272.4,
+      "normal_margin_before_other_costs_eur": 722.4,
+      "confidence_percent": 49,
+      "demand": "forte",
+      "estimated_sale_days_min": 21,
+      "estimated_sale_days_max": 120,
+      "valuation_method": "S25 et S22 portent l'essentiel de la valeur; six smartphones milieu/entrée de gamme.",
+      "main_risks": "Tout non testé; authenticité du S25, capacités, comptes et IMEI à contrôler.",
+      "device_checks": [],
+      "source_ids": [],
+      "source_titles": [],
+      "source_urls": []
+    },
+    {
+      "id": "336669",
+      "sku": "260813BA336669",
+      "lot": 420,
+      "name": "Lot Tablettes",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-tablettes.html",
+      "auction_end": "2026-09-24T08:00:00+00:00",
+      "current_auction_eur": 250.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 27.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 277.5,
+      "photo_count": 2,
+      "quick_sale_lot_eur": 750,
+      "normal_resale_gross_eur": 1450,
+      "quick_margin_before_other_costs_eur": 472.5,
+      "normal_margin_before_other_costs_eur": 1172.5,
+      "confidence_percent": 49,
+      "demand": "forte",
+      "estimated_sale_days_min": 21,
+      "estimated_sale_days_max": 120,
+      "valuation_method": "Dix tablettes, dont iPad récents et Air 5, valorisées après test individuel.",
+      "main_risks": "Modèle 'iPad A16' ambigu, capacités et activation inconnues, aucun chargeur.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ipad10",
+        "lbc_ipadpro12"
+      ],
+      "source_titles": [
+        "iPad 10e génération d'occasion — leboncoin",
+        "iPad Pro 12,9 pouces Cellular d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/tablettes_liseuses/ipad-10eme-generation",
+        "https://www.leboncoin.fr/ck/ordinateurs/ipad-pro-12-9-cellular"
+      ]
+    },
+    {
+      "id": "340268",
+      "sku": "260813BA340268",
+      "lot": 421,
+      "name": "Lot 7 tablettes APPLE",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-7-tablettes-apple.html",
+      "auction_end": "2026-09-24T08:00:00+00:00",
+      "current_auction_eur": 320.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 35.2,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 355.2,
+      "photo_count": 2,
+      "quick_sale_lot_eur": 650,
+      "normal_resale_gross_eur": 1300,
+      "quick_margin_before_other_costs_eur": 294.8,
+      "normal_margin_before_other_costs_eur": 944.8,
+      "confidence_percent": 44,
+      "demand": "forte",
+      "estimated_sale_days_min": 21,
+      "estimated_sale_days_max": 120,
+      "valuation_method": "Sept iPad; deux Pro non identifiés représentent la plus grande incertitude.",
+      "main_risks": "Générations/capacités des Pro et Air inconnues; activation, batteries et écrans non testés.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ipad10",
+        "lbc_ipadpro12"
+      ],
+      "source_titles": [
+        "iPad 10e génération d'occasion — leboncoin",
+        "iPad Pro 12,9 pouces Cellular d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/tablettes_liseuses/ipad-10eme-generation",
+        "https://www.leboncoin.fr/ck/ordinateurs/ipad-pro-12-9-cellular"
+      ]
+    },
+    {
+      "id": "328386",
+      "sku": "260713BR328386",
+      "lot": 422,
+      "name": "Lot 5 ordinateurs portables",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/portable-1-doo-317.html",
+      "auction_end": "2026-09-24T08:00:00+00:00",
+      "current_auction_eur": 500.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 55.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 555.0,
+      "photo_count": 14,
+      "quick_sale_lot_eur": 1000,
+      "normal_resale_gross_eur": 2300,
+      "quick_margin_before_other_costs_eur": 445.0,
+      "normal_margin_before_other_costs_eur": 1745.0,
+      "confidence_percent": 38,
+      "demand": "forte",
+      "estimated_sale_days_min": 30,
+      "estimated_sale_days_max": 150,
+      "valuation_method": "Cinq portables récents/premium, dont MacBook Pro A3401 et Air A3114, très décotés car non testés.",
+      "main_risks": "Spécifications/capacités inconnues, aucun chargeur, activation Apple et pannes possibles.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_macbook_m1"
+      ],
+      "source_titles": [
+        "MacBook Air M1 A2337 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/macbook-air-a2337"
+      ]
+    },
+    {
+      "id": "300877",
+      "sku": "260533BR282757",
+      "lot": 292,
+      "name": "Photocopieur Multifonctions HP laser",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/multifonctionshplaserjetm806-2.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 300.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 33.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 333.0,
+      "photo_count": 1,
+      "quick_sale_lot_eur": 350,
+      "normal_resale_gross_eur": 800,
+      "quick_margin_before_other_costs_eur": 17.0,
+      "normal_margin_before_other_costs_eur": 467.0,
+      "confidence_percent": 58,
+      "demand": "faible",
+      "estimated_sale_days_min": 45,
+      "estimated_sale_days_max": 180,
+      "valuation_method": "M806 annoncé en marche; décote forte pour manutention, transport et clientèle professionnelle.",
+      "main_risks": "Compteur pages, consommables et options non indiqués; machine très lourde.",
+      "device_checks": [],
+      "source_ids": [],
+      "source_titles": [],
+      "source_urls": []
+    },
+    {
+      "id": "300859",
+      "sku": "260533BR272488",
+      "lot": 293,
+      "name": "Lot de 30 imprimantes HP",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lotde30imprimanteshp-2.html",
+      "auction_end": "2026-09-17T08:00:00+00:00",
+      "current_auction_eur": 250.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 27.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 277.5,
+      "photo_count": 1,
+      "quick_sale_lot_eur": 600,
+      "normal_resale_gross_eur": 1200,
+      "quick_margin_before_other_costs_eur": 322.5,
+      "normal_margin_before_other_costs_eur": 922.5,
+      "confidence_percent": 56,
+      "demand": "faible",
+      "estimated_sale_days_min": 45,
+      "estimated_sale_days_max": 180,
+      "valuation_method": "30 OfficeJet 8210/8100 annoncées en marche, 20-40 EUR/unité selon canal.",
+      "main_risks": "Annonce les appelle LaserJet à tort; état des têtes/cartouches inconnu; trois palettes à transporter.",
+      "device_checks": [],
+      "source_ids": [],
+      "source_titles": [],
+      "source_urls": []
+    },
+    {
+      "id": "314403",
+      "sku": "260735BR314403",
+      "lot": 318,
+      "name": "Apple iPad SILVER (7th generation)",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot12-ipad-apple-ipadsilver-7thgeneration-wi-fi-cellular32gb-1.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 100.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 11.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 111.0,
+      "photo_count": 2,
+      "quick_sale_lot_eur": 100,
+      "normal_resale_gross_eur": 150,
+      "quick_margin_before_other_costs_eur": -11.0,
+      "normal_margin_before_other_costs_eur": 39.0,
+      "confidence_percent": 78,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 45,
+      "valuation_method": "iPad 7 Cellular 32 Go sans chargeur ni boîte.",
+      "main_risks": "État/batterie non qualifiés; activation à vérifier.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ipad10"
+      ],
+      "source_titles": [
+        "iPad 10e génération d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/tablettes_liseuses/ipad-10eme-generation"
+      ]
+    },
+    {
+      "id": "314391",
+      "sku": "260735BR314391",
+      "lot": 319,
+      "name": "PEN TABLET WACOM Intuos Pro médium PTH-651",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot10-pentabletteintuos-wacom-pht-651-tbon-1.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 50.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 5.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 55.5,
+      "photo_count": 2,
+      "quick_sale_lot_eur": 60,
+      "normal_resale_gross_eur": 100,
+      "quick_margin_before_other_costs_eur": 4.5,
+      "normal_margin_before_other_costs_eur": 44.5,
+      "confidence_percent": 72,
+      "demand": "faible",
+      "estimated_sale_days_min": 21,
+      "estimated_sale_days_max": 90,
+      "valuation_method": "Ancienne Intuos Pro Medium PTH-651.",
+      "main_risks": "Stylet et câbles non explicitement listés; génération ancienne.",
+      "device_checks": [],
+      "source_ids": [],
+      "source_titles": [],
+      "source_urls": []
+    },
+    {
+      "id": "314385",
+      "sku": "260735BR314385",
+      "lot": 320,
+      "name": "Apple Magic Keyboard for iPad Pro 12.9 (2021) avec boite",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot9-magickeyboard-apple-magickeyboardforipadpro12-9-2021-av-1.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 130.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 14.3,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 144.3,
+      "photo_count": 1,
+      "quick_sale_lot_eur": 90,
+      "normal_resale_gross_eur": 140,
+      "quick_margin_before_other_costs_eur": -54.3,
+      "normal_margin_before_other_costs_eur": -4.3,
+      "confidence_percent": 80,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 60,
+      "valuation_method": "Magic Keyboard 12,9 pouces 2021 avec boîte.",
+      "main_risks": "État cosmétique et disposition clavier à confirmer.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ipadpro12"
+      ],
+      "source_titles": [
+        "iPad Pro 12,9 pouces Cellular d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/ipad-pro-12-9-cellular"
+      ]
+    },
+    {
+      "id": "314379",
+      "sku": "260735BR314379",
+      "lot": 321,
+      "name": "APPLE iPad Pro 12.9-inch (6th Gen) Wifi + Cell avec boite",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/ipadpro12-9-inch-6thgen-wifi-cellavecboite-bon-16-janv-24-j-1.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 500.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 55.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 555.0,
+      "photo_count": 1,
+      "quick_sale_lot_eur": 600,
+      "normal_resale_gross_eur": 800,
+      "quick_margin_before_other_costs_eur": 45.0,
+      "normal_margin_before_other_costs_eur": 245.0,
+      "confidence_percent": 72,
+      "demand": "forte",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 45,
+      "valuation_method": "iPad Pro 12,9 M2 Cellular avec boîte; valeur médiane faute de capacité indiquée.",
+      "main_risks": "Capacité de stockage, batterie et présence du chargeur non indiquées.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ipadpro12"
+      ],
+      "source_titles": [
+        "iPad Pro 12,9 pouces Cellular d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/ipad-pro-12-9-cellular"
+      ]
+    },
+    {
+      "id": "314372",
+      "sku": "260735BR314372",
+      "lot": 322,
+      "name": "APPLE iPad SILVER (7th generation) Wi-Fi + Cellular 32 GB avec boite",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/ipadsilver-7thgeneration-wi-fi-cellular32gbavecboite-bon-cla-1.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 100.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 11.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 111.0,
+      "photo_count": 1,
+      "quick_sale_lot_eur": 110,
+      "normal_resale_gross_eur": 170,
+      "quick_margin_before_other_costs_eur": -1.0,
+      "normal_margin_before_other_costs_eur": 59.0,
+      "confidence_percent": 79,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 45,
+      "valuation_method": "iPad 7 Cellular 32 Go en bon état, boîte/clavier/chargeur inclus.",
+      "main_risks": "Batterie et activation à vérifier; clavier probablement tiers.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ipad10"
+      ],
+      "source_titles": [
+        "iPad 10e génération d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/tablettes_liseuses/ipad-10eme-generation"
+      ]
+    },
+    {
+      "id": "314336",
+      "sku": "260735BR314336",
+      "lot": 323,
+      "name": "iPad SILVER 10\"2(7th generation) Wi-Fi + Cellular 32 GB avec boite",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/ipadsilver10-2-7thgeneration-wi-fi-cellular32gbavecboite-bon-1.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 100.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 11.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 111.0,
+      "photo_count": 1,
+      "quick_sale_lot_eur": 110,
+      "normal_resale_gross_eur": 170,
+      "quick_margin_before_other_costs_eur": -1.0,
+      "normal_margin_before_other_costs_eur": 59.0,
+      "confidence_percent": 79,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 45,
+      "valuation_method": "iPad 7 Cellular 32 Go en bon état, boîte/clavier/chargeur inclus.",
+      "main_risks": "Batterie et activation à vérifier; clavier probablement tiers.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ipad10"
+      ],
+      "source_titles": [
+        "iPad 10e génération d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/tablettes_liseuses/ipad-10eme-generation"
+      ]
+    },
+    {
+      "id": "314296",
+      "sku": "260735BR314296",
+      "lot": 324,
+      "name": "iPad Rose 10\"2 (7th generation) Wi-Fi + Cellular 32 GB avec boite et clavier",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/ipadrose10-2-7thgeneration-wi-fi-cellular32gbavecboiteetclav-1.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 100.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 11.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 111.0,
+      "photo_count": 1,
+      "quick_sale_lot_eur": 110,
+      "normal_resale_gross_eur": 170,
+      "quick_margin_before_other_costs_eur": -1.0,
+      "normal_margin_before_other_costs_eur": 59.0,
+      "confidence_percent": 79,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 45,
+      "valuation_method": "iPad 7 Cellular 32 Go en bon état, boîte/clavier/chargeur inclus.",
+      "main_risks": "Batterie et activation à vérifier; clavier probablement tiers.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ipad10"
+      ],
+      "source_titles": [
+        "iPad 10e génération d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/tablettes_liseuses/ipad-10eme-generation"
+      ]
+    },
+    {
+      "id": "314295",
+      "sku": "260735BR314295",
+      "lot": 325,
+      "name": "NAS Apple OBS,Time Capsule 802.11n A1409 (4th Gen) 2TB sans boite",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/nasappleobs-timecapsule802-11na1409-4thgen-2tbsansboite-cord-1.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 80.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 8.8,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 88.8,
+      "photo_count": 2,
+      "quick_sale_lot_eur": 30,
+      "normal_resale_gross_eur": 60,
+      "quick_margin_before_other_costs_eur": -58.8,
+      "normal_margin_before_other_costs_eur": -28.8,
+      "confidence_percent": 82,
+      "demand": "faible",
+      "estimated_sale_days_min": 30,
+      "estimated_sale_days_max": 120,
+      "valuation_method": "Time Capsule A1409 2 To fonctionnelle supposée, avec cordon.",
+      "main_risks": "Produit réseau 2012 obsolète; disque dur ancien.",
+      "device_checks": [],
+      "source_ids": [],
+      "source_titles": [],
+      "source_urls": []
+    },
+    {
+      "id": "314274",
+      "sku": "260735BR314274",
+      "lot": 326,
+      "name": "APPLE iPhone 13 pro max",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/iphone-apple-13promax-1.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 50.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 5.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 55.5,
+      "photo_count": 2,
+      "quick_sale_lot_eur": 180,
+      "normal_resale_gross_eur": 300,
+      "quick_margin_before_other_costs_eur": 124.5,
+      "normal_margin_before_other_costs_eur": 244.5,
+      "confidence_percent": 73,
+      "demand": "forte",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 60,
+      "valuation_method": "iPhone 13 Pro Max avec vitre arrière à remplacer et écran rayé.",
+      "main_risks": "Capacité, batterie, Face ID et activation non indiqués; coût de réparation.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_iphone13pm"
+      ],
+      "source_titles": [
+        "iPhone 13 Pro Max d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/telephones_objets_connectes/iphone13-pro-max"
+      ]
+    },
+    {
+      "id": "314267",
+      "sku": "260735BR314267",
+      "lot": 327,
+      "name": "APPLE iPhone 13 pro max graphite sans boite",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/iphone-apple-13promaxgraphitesansboite-1.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 200.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 22.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 222.0,
+      "photo_count": 2,
+      "quick_sale_lot_eur": 330,
+      "normal_resale_gross_eur": 430,
+      "quick_margin_before_other_costs_eur": 108.0,
+      "normal_margin_before_other_costs_eur": 208.0,
+      "confidence_percent": 82,
+      "demand": "forte",
+      "estimated_sale_days_min": 7,
+      "estimated_sale_days_max": 30,
+      "valuation_method": "iPhone 13 Pro Max en bon état avec chargeur, capacité médiane supposée 128 Go.",
+      "main_risks": "Capacité et santé batterie non indiquées; activation à confirmer.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_iphone13pm"
+      ],
+      "source_titles": [
+        "iPhone 13 Pro Max d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/telephones_objets_connectes/iphone13-pro-max"
+      ]
+    },
+    {
+      "id": "314363",
+      "sku": "260735BR314363",
+      "lot": 328,
+      "name": "APPLE iPad Space Gris (7th generation) Wi-Fi + Cellular 32 GB SANS boite",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot11-ipad-apple-ipadspacegris-7thgeneration-wi-fi-cellular3-1.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 100.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 11.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 111.0,
+      "photo_count": 2,
+      "quick_sale_lot_eur": 100,
+      "normal_resale_gross_eur": 150,
+      "quick_margin_before_other_costs_eur": -11.0,
+      "normal_margin_before_other_costs_eur": 39.0,
+      "confidence_percent": 78,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 45,
+      "valuation_method": "iPad 7 Cellular 32 Go avec clavier, sans chargeur ni boîte.",
+      "main_risks": "Batterie et activation à vérifier.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ipad10"
+      ],
+      "source_titles": [
+        "iPad 10e génération d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/tablettes_liseuses/ipad-10eme-generation"
+      ]
+    },
+    {
+      "id": "304783",
+      "sku": "260635BA304783",
+      "lot": 5,
+      "name": "24 téléphones",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/24-telephones.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 125.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 13.75,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 138.75,
+      "photo_count": 4,
+      "quick_sale_lot_eur": 350,
+      "normal_resale_gross_eur": 900,
+      "quick_margin_before_other_costs_eur": 211.25,
+      "normal_margin_before_other_costs_eur": 761.25,
+      "confidence_percent": 35,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 45,
+      "estimated_sale_days_max": 180,
+      "valuation_method": "Valeur pièces d'un lot de 24 téléphones, dont plusieurs iPhone/Samsung, après tri.",
+      "main_risks": "Nombreux écrans/coques cassés; certains bloqués; tout non testé; réparation chronophage.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_iphone13pm",
+        "lbc_iphone14pro"
+      ],
+      "source_titles": [
+        "iPhone 13 Pro Max d'occasion — leboncoin",
+        "iPhone 14 Pro d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/telephones_objets_connectes/iphone13-pro-max",
+        "https://www.leboncoin.fr/c/telephones_objets_connectes/phone_brand%3Aapple%2Bphone_model%3Aiphone14pro"
+      ]
+    },
+    {
+      "id": "306168",
+      "sku": "260635BA306168",
+      "lot": 6,
+      "name": "6 téléphones",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/6-telephones-doo-2.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 200.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 22.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 222.0,
+      "photo_count": 2,
+      "quick_sale_lot_eur": 500,
+      "normal_resale_gross_eur": 1100,
+      "quick_margin_before_other_costs_eur": 278.0,
+      "normal_margin_before_other_costs_eur": 878.0,
+      "confidence_percent": 36,
+      "demand": "forte",
+      "estimated_sale_days_min": 30,
+      "estimated_sale_days_max": 150,
+      "valuation_method": "Six téléphones dominés par iPhone 16 Pro Max, iPhone 16 et iPhone 14.",
+      "main_risks": "Deux écrans à revoir, blocages possibles, capacités et batteries inconnues.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_iphone16",
+        "lbc_iphone14pro"
+      ],
+      "source_titles": [
+        "iPhone 16 128 Go d'occasion — leboncoin",
+        "iPhone 14 Pro d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/c/telephones_objets_connectes/phone_brand%3Aapple%2Bphone_memory%3A128go%2Bphone_model%3Aiphone16",
+        "https://www.leboncoin.fr/c/telephones_objets_connectes/phone_brand%3Aapple%2Bphone_model%3Aiphone14pro"
+      ]
+    },
+    {
+      "id": "308035",
+      "sku": "260635BA308035",
+      "lot": 7,
+      "name": "17 téléphones",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/17-telephones.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 500.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 55.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 555.0,
+      "photo_count": 4,
+      "quick_sale_lot_eur": 1400,
+      "normal_resale_gross_eur": 3200,
+      "quick_margin_before_other_costs_eur": 845.0,
+      "normal_margin_before_other_costs_eur": 2645.0,
+      "confidence_percent": 30,
+      "demand": "forte",
+      "estimated_sale_days_min": 45,
+      "estimated_sale_days_max": 210,
+      "valuation_method": "Dix-sept téléphones récents, dont iPhone 17/17 Pro Max déclarés, 14 Pro Max et S23, avec décote extrême.",
+      "main_risks": "Plusieurs écrans/coques endommagés, IMEI manquants, blocages possibles et modèles à authentifier.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_iphone16",
+        "lbc_iphone14pro",
+        "lbc_iphone13pm"
+      ],
+      "source_titles": [
+        "iPhone 16 128 Go d'occasion — leboncoin",
+        "iPhone 14 Pro d'occasion — leboncoin",
+        "iPhone 13 Pro Max d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/c/telephones_objets_connectes/phone_brand%3Aapple%2Bphone_memory%3A128go%2Bphone_model%3Aiphone16",
+        "https://www.leboncoin.fr/c/telephones_objets_connectes/phone_brand%3Aapple%2Bphone_model%3Aiphone14pro",
+        "https://www.leboncoin.fr/ck/telephones_objets_connectes/iphone13-pro-max"
+      ]
+    },
+    {
+      "id": "176842",
+      "sku": "251235BA176842",
+      "lot": 9,
+      "name": "NINTENDO Switch Oled",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/nintendo-switch-oled.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 90.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 9.9,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 99.9,
+      "photo_count": 3,
+      "quick_sale_lot_eur": 110,
+      "normal_resale_gross_eur": 170,
+      "quick_margin_before_other_costs_eur": 10.1,
+      "normal_margin_before_other_costs_eur": 70.1,
+      "confidence_percent": 72,
+      "demand": "forte",
+      "estimated_sale_days_min": 7,
+      "estimated_sale_days_max": 30,
+      "valuation_method": "Switch OLED non testée; valeur basse faute d'accessoires explicitement confirmés.",
+      "main_risks": "Fonctionnement, dock, chargeur et Joy-Con à confirmer.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_switch_oled"
+      ],
+      "source_titles": [
+        "Nintendo Switch OLED d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/consoles/nintendo-switch-oled"
+      ]
+    },
+    {
+      "id": "308277",
+      "sku": "260635BA308277",
+      "lot": 10,
+      "name": "NINTENDO Switch et manette",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/nitendo-swith-et-manette.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 110.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 12.1,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 122.1,
+      "photo_count": 5,
+      "quick_sale_lot_eur": 170,
+      "normal_resale_gross_eur": 260,
+      "quick_margin_before_other_costs_eur": 47.9,
+      "normal_margin_before_other_costs_eur": 137.9,
+      "confidence_percent": 76,
+      "demand": "forte",
+      "estimated_sale_days_min": 7,
+      "estimated_sale_days_max": 30,
+      "valuation_method": "Switch OLED avec manette Pro, ensemble non testé.",
+      "main_risks": "État écran, Joy-Con, dock et batterie à contrôler.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_switch_oled"
+      ],
+      "source_titles": [
+        "Nintendo Switch OLED d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/consoles/nintendo-switch-oled"
+      ]
+    },
+    {
+      "id": "308310",
+      "sku": "260635BA308310",
+      "lot": 11,
+      "name": "NINTENDO Switch et 8 jeux",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/nitendo-switch-et-8-jeux.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 125.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 13.75,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 138.75,
+      "photo_count": 4,
+      "quick_sale_lot_eur": 180,
+      "normal_resale_gross_eur": 320,
+      "quick_margin_before_other_costs_eur": 41.25,
+      "normal_margin_before_other_costs_eur": 181.25,
+      "confidence_percent": 70,
+      "demand": "forte",
+      "estimated_sale_days_min": 7,
+      "estimated_sale_days_max": 45,
+      "valuation_method": "Switch standard et huit jeux, sans accessoires clairement listés.",
+      "main_risks": "Ensemble non testé; titres/boîtes/accessoires à confirmer.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_switch_oled"
+      ],
+      "source_titles": [
+        "Nintendo Switch OLED d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/consoles/nintendo-switch-oled"
+      ]
+    },
+    {
+      "id": "308750",
+      "sku": "260635BA308750",
+      "lot": 12,
+      "name": "SONY Playstation 5 et divers",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/playstation-5-et-divers.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 250.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 27.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 277.5,
+      "photo_count": 13,
+      "quick_sale_lot_eur": 600,
+      "normal_resale_gross_eur": 950,
+      "quick_margin_before_other_costs_eur": 322.5,
+      "normal_margin_before_other_costs_eur": 672.5,
+      "confidence_percent": 71,
+      "demand": "forte",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 75,
+      "valuation_method": "PS5, trois manettes, quinze jeux PS5, PS TV et casque, après décote non-testé.",
+      "main_risks": "Tout non testé; titres des jeux non détaillés; vente séparée nécessaire pour atteindre la cote normale.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ps5_bundles"
+      ],
+      "source_titles": [
+        "PS5 avec jeux et manettes — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/consoles/ps5-jeux-manettes"
+      ]
+    },
+    {
+      "id": "309602",
+      "sku": "260635BA309602",
+      "lot": 13,
+      "name": "XBOX Series X 1882 et accessoires",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/xbox-series-x.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 220.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 24.2,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 244.2,
+      "photo_count": 4,
+      "quick_sale_lot_eur": 270,
+      "normal_resale_gross_eur": 400,
+      "quick_margin_before_other_costs_eur": 25.8,
+      "normal_margin_before_other_costs_eur": 155.8,
+      "confidence_percent": 78,
+      "demand": "forte",
+      "estimated_sale_days_min": 7,
+      "estimated_sale_days_max": 30,
+      "valuation_method": "Xbox Series X récente avec deux manettes et chargeur, non testée.",
+      "main_risks": "Fonctionnement et état des manettes non vérifiés.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_xbox_x"
+      ],
+      "source_titles": [
+        "Xbox Series X avec deux manettes — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/consoles/xbox-serie-x-avec-2-manette"
+      ]
+    },
+    {
+      "id": "309616",
+      "sku": "260635BA309616",
+      "lot": 14,
+      "name": "XBOX Series S 1883 et accessoires",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/xbox-series-s-et-accessoires.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 50.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 5.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 55.5,
+      "photo_count": 7,
+      "quick_sale_lot_eur": 120,
+      "normal_resale_gross_eur": 200,
+      "quick_margin_before_other_costs_eur": 64.5,
+      "normal_margin_before_other_costs_eur": 144.5,
+      "confidence_percent": 76,
+      "demand": "forte",
+      "estimated_sale_days_min": 7,
+      "estimated_sale_days_max": 30,
+      "valuation_method": "Xbox Series S avec manette et casque, non testée.",
+      "main_risks": "Capacité 512 Go/1 To non indiquée; fonctionnement inconnu.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_xbox_s"
+      ],
+      "source_titles": [
+        "Xbox Series S d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/c/consoles/console_brand%3Amicrosoft%2Bconsole_model%3Axboxseriess%2Bvideo_game_type%3Aconsole"
+      ]
+    },
+    {
+      "id": "309654",
+      "sku": "260635BA309654",
+      "lot": 15,
+      "name": "XBOX Series X 1882 et accessoires",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/xbox-series-x-et-accessoires.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 120.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 13.2,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 133.2,
+      "photo_count": 5,
+      "quick_sale_lot_eur": 250,
+      "normal_resale_gross_eur": 360,
+      "quick_margin_before_other_costs_eur": 116.8,
+      "normal_margin_before_other_costs_eur": 226.8,
+      "confidence_percent": 78,
+      "demand": "forte",
+      "estimated_sale_days_min": 7,
+      "estimated_sale_days_max": 30,
+      "valuation_method": "Xbox Series X avec manette, casque Sony et câbles.",
+      "main_risks": "Fonctionnement non testé; une seule manette.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_xbox_x"
+      ],
+      "source_titles": [
+        "Xbox Series X avec deux manettes — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/consoles/xbox-serie-x-avec-2-manette"
+      ]
+    },
+    {
+      "id": "309881",
+      "sku": "260735BA309881",
+      "lot": 16,
+      "name": "2 APPLE Watch et divers",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/2-apple-watch-et-divers.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 30.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 3.3,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 33.3,
+      "photo_count": 11,
+      "quick_sale_lot_eur": 150,
+      "normal_resale_gross_eur": 300,
+      "quick_margin_before_other_costs_eur": 116.7,
+      "normal_margin_before_other_costs_eur": 266.7,
+      "confidence_percent": 39,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 30,
+      "estimated_sale_days_max": 120,
+      "valuation_method": "Deux Apple Watch inconnues, JBL Flip 6 et mini-imprimante LG.",
+      "main_risks": "Modèles/tailles des montres inconnus, boîtes parfois vides, tout non testé.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_jbl"
+      ],
+      "source_titles": [
+        "JBL Charge 5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/photo_audio_video/jbl-charge-5"
+      ]
+    },
+    {
+      "id": "304101",
+      "sku": "260635BA304101",
+      "lot": 20,
+      "name": "SONY Playstation 5",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/playstation-4-sony.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 150.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 16.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 166.5,
+      "photo_count": 2,
+      "quick_sale_lot_eur": 300,
+      "normal_resale_gross_eur": 420,
+      "quick_margin_before_other_costs_eur": 133.5,
+      "normal_margin_before_other_costs_eur": 253.5,
+      "confidence_percent": 79,
+      "demand": "forte",
+      "estimated_sale_days_min": 7,
+      "estimated_sale_days_max": 30,
+      "valuation_method": "PS5 Slim CFI-2016 et deux manettes, non testées.",
+      "main_risks": "Fonctionnement et dérive des sticks non vérifiés.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ps5",
+        "lbc_ps5_bundles"
+      ],
+      "source_titles": [
+        "Console Sony PS5 d'occasion — leboncoin",
+        "PS5 avec jeux et manettes — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/c/consoles/console_brand%3Asony%2Bconsole_model%3Aps5",
+        "https://www.leboncoin.fr/ck/consoles/ps5-jeux-manettes"
+      ]
+    },
+    {
+      "id": "310961",
+      "sku": "260735BA310961",
+      "lot": 21,
+      "name": "Divers informatique",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/divers-informatique-doo-1.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 30.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 3.3,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 33.3,
+      "photo_count": 9,
+      "quick_sale_lot_eur": 220,
+      "normal_resale_gross_eur": 420,
+      "quick_margin_before_other_costs_eur": 186.7,
+      "normal_margin_before_other_costs_eur": 386.7,
+      "confidence_percent": 62,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 21,
+      "estimated_sale_days_max": 90,
+      "valuation_method": "Écrans BenQ XL2540K/AOC 24G1, portable Asus ancien et disque 1 To.",
+      "main_risks": "Tout non testé; configuration du portable inconnue.",
+      "device_checks": [],
+      "source_ids": [],
+      "source_titles": [],
+      "source_urls": []
+    },
+    {
+      "id": "311309",
+      "sku": "260735BA311309",
+      "lot": 23,
+      "name": "2 tablettes et 2 caméras",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/2-tablettes-et-2-cameras.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 50.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 5.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 55.5,
+      "photo_count": 13,
+      "quick_sale_lot_eur": 180,
+      "normal_resale_gross_eur": 350,
+      "quick_margin_before_other_costs_eur": 124.5,
+      "normal_margin_before_other_costs_eur": 294.5,
+      "confidence_percent": 60,
+      "demand": "forte",
+      "estimated_sale_days_min": 21,
+      "estimated_sale_days_max": 90,
+      "valuation_method": "Galaxy Tab A9+ SM-X210, iPad 10 A2696 et deux caméras génériques.",
+      "main_risks": "Capacités, activation et fonctionnement non testés; caméras mal identifiées.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ipad10"
+      ],
+      "source_titles": [
+        "iPad 10e génération d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/tablettes_liseuses/ipad-10eme-generation"
+      ]
+    },
+    {
+      "id": "309023",
+      "sku": "250835BA95836",
+      "lot": 29,
+      "name": "APPLE Iphone 15",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/iphone-15-blanc-5.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 50.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 5.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 55.5,
+      "photo_count": 2,
+      "quick_sale_lot_eur": 180,
+      "normal_resale_gross_eur": 350,
+      "quick_margin_before_other_costs_eur": 124.5,
+      "normal_margin_before_other_costs_eur": 294.5,
+      "confidence_percent": 45,
+      "demand": "forte",
+      "estimated_sale_days_min": 21,
+      "estimated_sale_days_max": 90,
+      "valuation_method": "iPhone 15 valorisé comme appareil à risque/éventuellement pour pièces.",
+      "main_risks": "Potentiellement bloqué, non testé, capacité et batterie inconnues.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_iphone16"
+      ],
+      "source_titles": [
+        "iPhone 16 128 Go d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/c/telephones_objets_connectes/phone_brand%3Aapple%2Bphone_memory%3A128go%2Bphone_model%3Aiphone16"
+      ]
+    },
+    {
+      "id": "317922",
+      "sku": "260735BA317922",
+      "lot": 31,
+      "name": "60 casques et divers",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/60-casques-et-divers.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 200.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 22.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 222.0,
+      "photo_count": 15,
+      "quick_sale_lot_eur": 700,
+      "normal_resale_gross_eur": 1800,
+      "quick_margin_before_other_costs_eur": 478.0,
+      "normal_margin_before_other_costs_eur": 1578.0,
+      "confidence_percent": 46,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 60,
+      "estimated_sale_days_max": 240,
+      "valuation_method": "58 casques dont plusieurs Bose/Sony haut de gamme, deux écouteurs, baladeurs et 30 vinyles.",
+      "main_risks": "Tout non testé; batteries/coussinets; inventaire textuel possiblement imprécis; très nombreuses ventes.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_sony_xm4"
+      ],
+      "source_titles": [
+        "Sony WH-1000XM4 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/photo_audio_video/casque-sony-wh-1000xm4"
+      ]
+    },
+    {
+      "id": "318200",
+      "sku": "260735BA318200",
+      "lot": 32,
+      "name": "22 enceintes et divers",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/22-enceintes-et-divers.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 100.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 11.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 111.0,
+      "photo_count": 3,
+      "quick_sale_lot_eur": 350,
+      "normal_resale_gross_eur": 750,
+      "quick_margin_before_other_costs_eur": 239.0,
+      "normal_margin_before_other_costs_eur": 639.0,
+      "confidence_percent": 52,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 45,
+      "estimated_sale_days_max": 180,
+      "valuation_method": "Neuf JBL dont Charge 4/5, treize enceintes entrée de gamme et trois baladeurs.",
+      "main_risks": "Modèles JBL incomplets, batteries et fonctionnement non testés.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_jbl"
+      ],
+      "source_titles": [
+        "JBL Charge 5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/photo_audio_video/jbl-charge-5"
+      ]
+    },
+    {
+      "id": "318313",
+      "sku": "260735BA318313",
+      "lot": 33,
+      "name": "32 tablettes et 23 liseuses",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/32-tablettes-et-23-liseuses.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 400.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 44.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 444.0,
+      "photo_count": 7,
+      "quick_sale_lot_eur": 1500,
+      "normal_resale_gross_eur": 3500,
+      "quick_margin_before_other_costs_eur": 1056.0,
+      "normal_margin_before_other_costs_eur": 3056.0,
+      "confidence_percent": 42,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 90,
+      "estimated_sale_days_max": 300,
+      "valuation_method": "22 iPad, 10 autres tablettes, 14 Kindle et 8 Kobo, selon valeurs par numéro de modèle.",
+      "main_risks": "55 appareils non testés, activation/batteries/écrans inconnus; vente et effacement très chronophages.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ipad10",
+        "lbc_ipadpro12"
+      ],
+      "source_titles": [
+        "iPad 10e génération d'occasion — leboncoin",
+        "iPad Pro 12,9 pouces Cellular d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/tablettes_liseuses/ipad-10eme-generation",
+        "https://www.leboncoin.fr/ck/ordinateurs/ipad-pro-12-9-cellular"
+      ]
+    },
+    {
+      "id": "318327",
+      "sku": "260735BA318327",
+      "lot": 34,
+      "name": "5 consoles et 2 jeux",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/5-consoles-et-2-jeux.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 230.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 25.3,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 255.3,
+      "photo_count": 4,
+      "quick_sale_lot_eur": 300,
+      "normal_resale_gross_eur": 600,
+      "quick_margin_before_other_costs_eur": 44.7,
+      "normal_margin_before_other_costs_eur": 344.7,
+      "confidence_percent": 61,
+      "demand": "forte",
+      "estimated_sale_days_min": 21,
+      "estimated_sale_days_max": 90,
+      "valuation_method": "PS5, Switch, 3DS XL, 3DS, Wii et deux jeux.",
+      "main_risks": "Tout non testé; accessoires et chargeurs non détaillés.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ps5",
+        "lbc_switch_oled"
+      ],
+      "source_titles": [
+        "Console Sony PS5 d'occasion — leboncoin",
+        "Nintendo Switch OLED d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/c/consoles/console_brand%3Asony%2Bconsole_model%3Aps5",
+        "https://www.leboncoin.fr/ck/consoles/nintendo-switch-oled"
+      ]
+    },
+    {
+      "id": "318370",
+      "sku": "260735BA318370",
+      "lot": 35,
+      "name": "Divers appareils et ustensiles",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/divers-doo-2.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 60.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 6.6,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 66.6,
+      "photo_count": 11,
+      "quick_sale_lot_eur": 250,
+      "normal_resale_gross_eur": 550,
+      "quick_margin_before_other_costs_eur": 183.4,
+      "normal_margin_before_other_costs_eur": 483.4,
+      "confidence_percent": 49,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 45,
+      "estimated_sale_days_max": 180,
+      "valuation_method": "Projecteur Epson, micro AT2035, cinq appareils photo, caméscope et divers.",
+      "main_risks": "Tout non testé; objets hétérogènes; nombreuses ventes de faible montant.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_sony_a6000"
+      ],
+      "source_titles": [
+        "Sony Alpha 6000 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/photo_audio_video/sony-alpha-6000"
+      ]
+    },
+    {
+      "id": "318430",
+      "sku": "260735BA318430",
+      "lot": 36,
+      "name": "6 PC portables et divers",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/6-portables-et-divers.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 200.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 22.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 222.0,
+      "photo_count": 4,
+      "quick_sale_lot_eur": 500,
+      "normal_resale_gross_eur": 1050,
+      "quick_margin_before_other_costs_eur": 278.0,
+      "normal_margin_before_other_costs_eur": 828.0,
+      "confidence_percent": 41,
+      "demand": "forte",
+      "estimated_sale_days_min": 45,
+      "estimated_sale_days_max": 180,
+      "valuation_method": "Six portables dont deux MacBook Air 2020/M1 et un Pro, plus accessoires.",
+      "main_risks": "Tout non testé; spécifications et activation inconnues; seul une partie a des chargeurs.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_macbook_m1"
+      ],
+      "source_titles": [
+        "MacBook Air M1 A2337 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/macbook-air-a2337"
+      ]
+    },
+    {
+      "id": "318523",
+      "sku": "260735BA318523",
+      "lot": 37,
+      "name": "5 PC portables et divers",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/5-portables-et-divers.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 50.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 5.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 55.5,
+      "photo_count": 5,
+      "quick_sale_lot_eur": 450,
+      "normal_resale_gross_eur": 950,
+      "quick_margin_before_other_costs_eur": 394.5,
+      "normal_margin_before_other_costs_eur": 894.5,
+      "confidence_percent": 39,
+      "demand": "forte",
+      "estimated_sale_days_min": 45,
+      "estimated_sale_days_max": 180,
+      "valuation_method": "Cinq portables dont MacBook Air M1 et Asus récent, plus petite tour/écran/tablette.",
+      "main_risks": "Tout non testé; modèle du second MacBook Air et configurations inconnus.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_macbook_m1"
+      ],
+      "source_titles": [
+        "MacBook Air M1 A2337 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/macbook-air-a2337"
+      ]
+    },
+    {
+      "id": "318544",
+      "sku": "260735BA318544",
+      "lot": 38,
+      "name": "13 PC portables",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/13-portables.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 200.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 22.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 222.0,
+      "photo_count": 6,
+      "quick_sale_lot_eur": 850,
+      "normal_resale_gross_eur": 1900,
+      "quick_margin_before_other_costs_eur": 628.0,
+      "normal_margin_before_other_costs_eur": 1678.0,
+      "confidence_percent": 44,
+      "demand": "forte",
+      "estimated_sale_days_min": 60,
+      "estimated_sale_days_max": 240,
+      "valuation_method": "Treize portables hétérogènes, dont T14, T480s, HP 855 G7, Surface 1960 et MacBook.",
+      "main_risks": "Tout non testé; configurations/activation inconnues; travail de tri important.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_dell_7490",
+        "lbc_macbook_m1"
+      ],
+      "source_titles": [
+        "Dell Latitude 7490 i5 d'occasion — leboncoin",
+        "MacBook Air M1 A2337 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/pc-portable-dell-latitude-7490-i5",
+        "https://www.leboncoin.fr/ck/ordinateurs/macbook-air-a2337"
+      ]
+    },
+    {
+      "id": "336599",
+      "sku": "260835BA336599",
+      "lot": 40,
+      "name": "3 tablettes et divers",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/3-tablettes-et-divers-doo-1.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 30.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 3.3,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 33.3,
+      "photo_count": 9,
+      "quick_sale_lot_eur": 120,
+      "normal_resale_gross_eur": 280,
+      "quick_margin_before_other_costs_eur": 86.7,
+      "normal_margin_before_other_costs_eur": 246.7,
+      "confidence_percent": 48,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 30,
+      "estimated_sale_days_max": 120,
+      "valuation_method": "iPad 9 A2602, ancienne Samsung/Logicom, Olympus E-P2 et petite enceinte.",
+      "main_risks": "Tout non testé; référence Samsung probablement mal saisie.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ipad10"
+      ],
+      "source_titles": [
+        "iPad 10e génération d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/tablettes_liseuses/ipad-10eme-generation"
+      ]
+    },
+    {
+      "id": "282679",
+      "sku": "2605JUSTBA282679",
+      "lot": 16,
+      "name": "Console Nintendo Switch OLED",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/v456-007.html",
+      "auction_end": "2026-09-22T12:00:00+00:00",
+      "current_auction_eur": 180.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 19.8,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 199.8,
+      "photo_count": 9,
+      "quick_sale_lot_eur": 320,
+      "normal_resale_gross_eur": 500,
+      "quick_margin_before_other_costs_eur": 120.2,
+      "normal_margin_before_other_costs_eur": 300.2,
+      "confidence_percent": 84,
+      "demand": "forte",
+      "estimated_sale_days_min": 7,
+      "estimated_sale_days_max": 30,
+      "valuation_method": "Switch OLED Splatoon complète, sept jeux et deux sacoches.",
+      "main_risks": "Fonctionnement non explicitement garanti; titres des jeux à pondérer selon demande.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_switch_oled"
+      ],
+      "source_titles": [
+        "Nintendo Switch OLED d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/consoles/nintendo-switch-oled"
+      ]
+    },
+    {
+      "id": "309638",
+      "sku": "2601JUSTBA199748",
+      "lot": 17,
+      "name": "Console SONY PlayStation 5",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/v461-57.html",
+      "auction_end": "2026-09-22T12:00:00+00:00",
+      "current_auction_eur": 250.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 27.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 277.5,
+      "photo_count": 6,
+      "quick_sale_lot_eur": 300,
+      "normal_resale_gross_eur": 380,
+      "quick_margin_before_other_costs_eur": 22.5,
+      "normal_margin_before_other_costs_eur": 102.5,
+      "confidence_percent": 84,
+      "demand": "forte",
+      "estimated_sale_days_min": 7,
+      "estimated_sale_days_max": 30,
+      "valuation_method": "PS5 complète en boîte avec manette et câbles.",
+      "main_risks": "Modèle disque/digital et fonctionnement à vérifier.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ps5"
+      ],
+      "source_titles": [
+        "Console Sony PS5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/c/consoles/console_brand%3Asony%2Bconsole_model%3Aps5"
+      ]
+    },
+    {
+      "id": "84173",
+      "sku": "2507JUSTBA84173",
+      "lot": 18,
+      "name": "Console NINTENDO Switch",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/v447-002-console-de-jeux.html",
+      "auction_end": "2026-09-22T12:00:00+00:00",
+      "current_auction_eur": 150.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 16.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 166.5,
+      "photo_count": 7,
+      "quick_sale_lot_eur": 250,
+      "normal_resale_gross_eur": 380,
+      "quick_margin_before_other_costs_eur": 83.5,
+      "normal_margin_before_other_costs_eur": 213.5,
+      "confidence_percent": 82,
+      "demand": "forte",
+      "estimated_sale_days_min": 7,
+      "estimated_sale_days_max": 30,
+      "valuation_method": "Switch complète, quatre Joy-Con et six jeux.",
+      "main_risks": "Version de la Switch, dérive des Joy-Con et titres à vérifier.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_switch_oled"
+      ],
+      "source_titles": [
+        "Nintendo Switch OLED d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/consoles/nintendo-switch-oled"
+      ]
+    },
+    {
+      "id": "309642",
+      "sku": "2511JUSTBA166921",
+      "lot": 19,
+      "name": "Console SONY PlayStation 5",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/v443-7.html",
+      "auction_end": "2026-09-22T12:00:00+00:00",
+      "current_auction_eur": 300.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 33.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 333.0,
+      "photo_count": 8,
+      "quick_sale_lot_eur": 300,
+      "normal_resale_gross_eur": 380,
+      "quick_margin_before_other_costs_eur": -33.0,
+      "normal_margin_before_other_costs_eur": 47.0,
+      "confidence_percent": 84,
+      "demand": "forte",
+      "estimated_sale_days_min": 7,
+      "estimated_sale_days_max": 30,
+      "valuation_method": "PS5 complète en boîte avec manette et câbles.",
+      "main_risks": "Modèle disque/digital et fonctionnement à vérifier.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_ps5"
+      ],
+      "source_titles": [
+        "Console Sony PS5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/c/consoles/console_brand%3Asony%2Bconsole_model%3Aps5"
+      ]
+    },
+    {
+      "id": "347811",
+      "sku": "2609JUSTBA347811",
+      "lot": 48,
+      "name": "Caméra GoPro Hero 10 Black",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/v480-001-camera-gopro-hero-10-black-et-ses-accessoires.html",
+      "auction_end": "2026-09-22T12:00:00+00:00",
+      "current_auction_eur": 100.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 11.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 111.0,
+      "photo_count": 7,
+      "quick_sale_lot_eur": 180,
+      "normal_resale_gross_eur": 250,
+      "quick_margin_before_other_costs_eur": 69.0,
+      "normal_margin_before_other_costs_eur": 139.0,
+      "confidence_percent": 86,
+      "demand": "forte",
+      "estimated_sale_days_min": 7,
+      "estimated_sale_days_max": 30,
+      "valuation_method": "GoPro Hero 10 et accessoires visibles.",
+      "main_risks": "Batterie, étanchéité et liste exacte des accessoires à tester.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_gopro10"
+      ],
+      "source_titles": [
+        "GoPro Hero 10 Black d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/photo_audio_video/gopro-10-black"
+      ]
+    },
+    {
+      "id": "347828",
+      "sku": "2609JUSTBA347828",
+      "lot": 49,
+      "name": "Appareil photo hybride Fujifilm X-T20",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/v480-002-apn-fujifilm-x-t20-et-son-objectif-18-55mm-1-2-8-4.html",
+      "auction_end": "2026-09-22T12:00:00+00:00",
+      "current_auction_eur": 200.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 22.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 222.0,
+      "photo_count": 6,
+      "quick_sale_lot_eur": 500,
+      "normal_resale_gross_eur": 700,
+      "quick_margin_before_other_costs_eur": 278.0,
+      "normal_margin_before_other_costs_eur": 478.0,
+      "confidence_percent": 83,
+      "demand": "forte",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 45,
+      "valuation_method": "Fujifilm X-T20 avec objectif XF 18-55 f/2.8-4.",
+      "main_risks": "Déclenchements, capteur, autofocus et état optique à vérifier.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_fuji_xt20"
+      ],
+      "source_titles": [
+        "Fujifilm X-T20 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/photo_audio_video/fujifilm-x-t20"
+      ]
+    },
+    {
+      "id": "347842",
+      "sku": "2609JUSTBA347842",
+      "lot": 50,
+      "name": "Appareil photo hybride SONY Alpha 6000",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/v480-003-apn-sony-alpha-6000-et-son-objectif-e-3-5-5-6-pz-16-50mm-oss.html",
+      "auction_end": "2026-09-22T12:00:00+00:00",
+      "current_auction_eur": 250.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 27.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 277.5,
+      "photo_count": 5,
+      "quick_sale_lot_eur": 300,
+      "normal_resale_gross_eur": 400,
+      "quick_margin_before_other_costs_eur": 22.5,
+      "normal_margin_before_other_costs_eur": 122.5,
+      "confidence_percent": 86,
+      "demand": "forte",
+      "estimated_sale_days_min": 7,
+      "estimated_sale_days_max": 30,
+      "valuation_method": "Sony A6000 et objectif kit 16-50 OSS.",
+      "main_risks": "Déclenchements, capteur, autofocus et batterie à vérifier.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_sony_a6000"
+      ],
+      "source_titles": [
+        "Sony Alpha 6000 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/photo_audio_video/sony-alpha-6000"
+      ]
+    },
+    {
+      "id": "303291",
+      "sku": "2606JUSTBA303291",
+      "lot": 51,
+      "name": "Ordinateur portable HP",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/v482-004.html",
+      "auction_end": "2026-09-22T12:00:00+00:00",
+      "current_auction_eur": 150.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 16.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 166.5,
+      "photo_count": 7,
+      "quick_sale_lot_eur": 350,
+      "normal_resale_gross_eur": 500,
+      "quick_margin_before_other_costs_eur": 183.5,
+      "normal_margin_before_other_costs_eur": 333.5,
+      "confidence_percent": 64,
+      "demand": "forte",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 45,
+      "valuation_method": "ProBook 450 G9 professionnel récent avec chargeur, valeur médiane faute de spécifications.",
+      "main_risks": "CPU, RAM et SSD non indiqués; compte BIOS/entreprise et batterie à vérifier.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_dell_7490"
+      ],
+      "source_titles": [
+        "Dell Latitude 7490 i5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/pc-portable-dell-latitude-7490-i5"
+      ]
+    },
+    {
+      "id": "41076",
+      "sku": "2506JUSTBA41076",
+      "lot": 52,
+      "name": "Ordinateur portable LENOVO",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/2409justba01003-doo-1.html",
+      "auction_end": "2026-09-22T12:00:00+00:00",
+      "current_auction_eur": 100.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 11.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 111.0,
+      "photo_count": 7,
+      "quick_sale_lot_eur": 150,
+      "normal_resale_gross_eur": 220,
+      "quick_margin_before_other_costs_eur": 39.0,
+      "normal_margin_before_other_costs_eur": 109.0,
+      "confidence_percent": 78,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 45,
+      "valuation_method": "IdeaPad Slim 3 Chromebook 14IAN8, 8/128 Go avec chargeur.",
+      "main_risks": "État batterie et éventuelle gestion scolaire/entreprise à vérifier.",
+      "device_checks": [],
+      "source_ids": [],
+      "source_titles": [],
+      "source_urls": []
+    },
+    {
+      "id": "126221",
+      "sku": "2509JUSTBA126221",
+      "lot": 53,
+      "name": "Ordinateur portable ASUS",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/v448-010.html",
+      "auction_end": "2026-09-22T12:00:00+00:00",
+      "current_auction_eur": 150.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 16.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 166.5,
+      "photo_count": 8,
+      "quick_sale_lot_eur": 140,
+      "normal_resale_gross_eur": 220,
+      "quick_margin_before_other_costs_eur": -26.5,
+      "normal_margin_before_other_costs_eur": 53.5,
+      "confidence_percent": 65,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 14,
+      "estimated_sale_days_max": 60,
+      "valuation_method": "Asus M509D 8/512 Go avec chargeur, estimation médiane faute de CPU.",
+      "main_risks": "Processeur exact, batterie et état écran non indiqués.",
+      "device_checks": [],
+      "source_ids": [],
+      "source_titles": [],
+      "source_urls": []
+    },
+    {
+      "id": "338443",
+      "sku": "260854BA338443",
+      "lot": 9,
+      "name": "Lot de deux téléphones APPLE",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-de-deux-telephones-apple.html",
+      "auction_end": "2026-09-14T08:00:00+00:00",
+      "current_auction_eur": 50.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 5.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 55.5,
+      "photo_count": 7,
+      "quick_sale_lot_eur": 60,
+      "normal_resale_gross_eur": 100,
+      "quick_margin_before_other_costs_eur": 4.5,
+      "normal_margin_before_other_costs_eur": 44.5,
+      "confidence_percent": 64,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 21,
+      "estimated_sale_days_max": 90,
+      "valuation_method": "Cote de sécurité sans supposer aucun fonctionnement: iPhone 12 FMI ON et iPhone 11 Pro non testé sont tous deux valorisés pour pièces. Toute valeur d'usage de l'iPhone 11 Pro reste exclue jusqu'à un test concluant et un statut FMI OFF.",
+      "main_risks": "Le statut FMI peut changer si le propriétaire d'origine retire l'appareil de son compte; capacité, batterie et état des deux téléphones restent inconnus.",
+      "device_checks": [
+        {
+          "device": "iPhone 12 A2403",
+          "imei_suffix": "4229",
+          "find_my_iphone": "ON",
+          "checked_on": "2026-09-11",
+          "source": "IMEICheck.com — résultat communiqué par l'utilisateur",
+          "valuation_effect": "Appareil valorisé uniquement pour pièces tant que le propriétaire d'origine ne retire pas le verrouillage d'activation."
+        }
+      ],
+      "source_ids": [
+        "lbc_iphone13pm"
+      ],
+      "source_titles": [
+        "iPhone 13 Pro Max d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/telephones_objets_connectes/iphone13-pro-max"
+      ]
+    },
+    {
+      "id": "343959",
+      "sku": "260854BA343959",
+      "lot": 10,
+      "name": "Lot de téléphones",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-de-telephone.html",
+      "auction_end": "2026-09-14T08:00:00+00:00",
+      "current_auction_eur": 30.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 3.3,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 33.3,
+      "photo_count": 2,
+      "quick_sale_lot_eur": 350,
+      "normal_resale_gross_eur": 600,
+      "quick_margin_before_other_costs_eur": 316.7,
+      "normal_margin_before_other_costs_eur": 566.7,
+      "confidence_percent": 36,
+      "demand": "forte",
+      "estimated_sale_days_min": 21,
+      "estimated_sale_days_max": 90,
+      "valuation_method": "iPhone 14 Pro et second téléphone visuellement OnePlus/Samsung non identifié.",
+      "main_risks": "Modèle 'SAMSUNG ONE' incohérent, capacités, batteries et activation inconnues.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_iphone14pro"
+      ],
+      "source_titles": [
+        "iPhone 14 Pro d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/c/telephones_objets_connectes/phone_brand%3Aapple%2Bphone_model%3Aiphone14pro"
+      ]
+    },
+    {
+      "id": "321714",
+      "sku": "260754BA321714",
+      "lot": 15,
+      "name": "Lot de 3 consoles de jeux",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/lot-de-3-consoles-de-jeux-doo-1.html",
+      "auction_end": "2026-09-14T08:00:00+00:00",
+      "current_auction_eur": 20.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 2.2,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 22.2,
+      "photo_count": 19,
+      "quick_sale_lot_eur": 80,
+      "normal_resale_gross_eur": 170,
+      "quick_margin_before_other_costs_eur": 57.8,
+      "normal_margin_before_other_costs_eur": 147.8,
+      "confidence_percent": 68,
+      "demand": "faible",
+      "estimated_sale_days_min": 30,
+      "estimated_sale_days_max": 120,
+      "valuation_method": "Wii, PS3 Slim, DS Lite et casque filaire.",
+      "main_risks": "Tout non testé; câbles PS3 absents; faible valeur unitaire.",
+      "device_checks": [],
+      "source_ids": [],
+      "source_titles": [],
+      "source_urls": []
+    },
+    {
+      "id": "329193",
+      "sku": "260454BR253611",
+      "lot": 16,
+      "name": "Rétro-projecteur XIAOMI Mi 4K Laser Projector 150",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/retro-projecteur-2.html",
+      "auction_end": "2026-09-14T08:00:00+00:00",
+      "current_auction_eur": 390.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 42.9,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 432.9,
+      "photo_count": 2,
+      "quick_sale_lot_eur": 350,
+      "normal_resale_gross_eur": 750,
+      "quick_margin_before_other_costs_eur": -82.9,
+      "normal_margin_before_other_costs_eur": 317.1,
+      "confidence_percent": 62,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 21,
+      "estimated_sale_days_max": 90,
+      "valuation_method": "Xiaomi Mi 4K Laser Projector 150, décoté comme non testé sans cordon.",
+      "main_risks": "Panne laser/DMD coûteuse possible; télécommande et cordon absents/non listés.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_xiaomi_4k"
+      ],
+      "source_titles": [
+        "Xiaomi Mi Laser Projector 150 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/photo_audio_video/xiaomi-mi-laser"
+      ]
+    },
+    {
+      "id": "304620",
+      "sku": "260635BA304620",
+      "lot": 301,
+      "name": "Informatique divers",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/informatique-divers.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 50.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 5.5,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 55.5,
+      "photo_count": 5,
+      "quick_sale_lot_eur": 200,
+      "normal_resale_gross_eur": 500,
+      "quick_margin_before_other_costs_eur": 144.5,
+      "normal_margin_before_other_costs_eur": 444.5,
+      "confidence_percent": 43,
+      "demand": "faible",
+      "estimated_sale_days_min": 60,
+      "estimated_sale_days_max": 240,
+      "valuation_method": "Douze anciennes tours Acer, vingt alimentations et sept cartes graphiques anciennes.",
+      "main_risks": "Configurations et fonctionnement inconnus; GPU 512 Mo obsolètes; logistique lourde.",
+      "device_checks": [],
+      "source_ids": [],
+      "source_titles": [],
+      "source_urls": []
+    },
+    {
+      "id": "294796",
+      "sku": "260635BR294796",
+      "lot": 408,
+      "name": "100 PC portables LENOVO E595",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/ordinateursportableslenovo-1.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 3100.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 341.0,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 3441.0,
+      "photo_count": 1,
+      "quick_sale_lot_eur": 10000,
+      "normal_resale_gross_eur": 18000,
+      "quick_margin_before_other_costs_eur": 6559.0,
+      "normal_margin_before_other_costs_eur": 14559.0,
+      "confidence_percent": 72,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 45,
+      "estimated_sale_days_max": 240,
+      "valuation_method": "100 E595 complets: 100 EUR/unité en sortie professionnelle, 180 EUR/unité testée/vendue.",
+      "main_risks": "Très gros volume, pas d'OS, batteries à contrôler; recette normale exige 100 ventes et une garantie vendeur.",
+      "device_checks": [],
+      "source_ids": [
+        "bm_e595"
+      ],
+      "source_titles": [
+        "Lenovo ThinkPad E595 Ryzen 5 16/256 — Back Market"
+      ],
+      "source_urls": [
+        "https://www.backmarket.fr/fr-fr/p/lenovo-e595-15-ryzen-5-3500u-ghz-ssd-256-go-16-go/7c3dcefc-9ebf-48df-8d27-50ff8082cddb"
+      ]
+    },
+    {
+      "id": "294805",
+      "sku": "260635BR294805",
+      "lot": 409,
+      "name": "12 PC portables LENOVO",
+      "auction_url": "https://encheres-domaine.gouv.fr/lot/12pcportableslenovo-1.html",
+      "auction_end": "2026-09-15T08:00:00+00:00",
+      "current_auction_eur": 440.0,
+      "auction_fee_rate_percent": 11.0,
+      "auction_fees_eur": 48.4,
+      "vat_status": "non_mentionnee",
+      "vat_rate_percent": null,
+      "vat_eur": 0.0,
+      "purchase_total_eur": 488.4,
+      "photo_count": 2,
+      "quick_sale_lot_eur": 1200,
+      "normal_resale_gross_eur": 1900,
+      "quick_margin_before_other_costs_eur": 711.6,
+      "normal_margin_before_other_costs_eur": 1411.6,
+      "confidence_percent": 72,
+      "demand": "moyenne",
+      "estimated_sale_days_min": 30,
+      "estimated_sale_days_max": 150,
+      "valuation_method": "11 L580 i5-8250U et un L570, environ 100 EUR/unité en lot et 155-165 EUR au détail.",
+      "main_risks": "Pas d'OS; état des batteries/écrans à vérifier; volume de 12 unités.",
+      "device_checks": [],
+      "source_ids": [
+        "lbc_dell_7490"
+      ],
+      "source_titles": [
+        "Dell Latitude 7490 i5 d'occasion — leboncoin"
+      ],
+      "source_urls": [
+        "https://www.leboncoin.fr/ck/ordinateurs/pc-portable-dell-latitude-7490-i5"
+      ]
+    }
+  ]
+}

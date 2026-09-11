@@ -7,7 +7,7 @@
 
 const $ = (s) => document.querySelector(s);
 const esc = (s) => (s == null ? '' : String(s)).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const euro = (v) => (v == null || v === '') ? '—' : Number(v).toLocaleString('fr-FR') + ' €';
+const euro = (v) => (v == null || v === '') ? '—' : Number(v).toLocaleString('fr-FR', { maximumFractionDigits: 2 }) + ' €';
 
 const DT = new Intl.DateTimeFormat('fr-FR', { weekday: 'short', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
 const fmt = (s) => { const d = new Date(s); return isNaN(d) ? '—' : DT.format(d); };
@@ -25,8 +25,63 @@ function remain(end) {
 
 let LOTS = [];
 let ARCH = [];
+let COTES = new Map();
 let HOME = '';
 let state = { status: 14, q: '', depot: null, showTrash: false, dateFilter: 'all' };
+
+function renderCote(lot) {
+  const cote = COTES.get(String(lot.id));
+  if (!cote) return '<div class="cote missing">Cote indisponible pour ce lot.</div>';
+
+  // Les cotes restent fixes pour cet instantané de marché, mais le coût d'achat
+  // suit l'enchère courante de lots.json à chaque actualisation du SaaS.
+  const current = Number(lot.bid != null && lot.bid !== '' ? lot.bid : lot.price) || 0;
+  const feeRate = Number(cote.auction_fee_rate_percent) || 11;
+  const fees = Math.round(current * feeRate) / 100;
+  const vatRate = cote.vat_status === 'mentionnee_a_ajouter' && cote.vat_rate_percent != null
+    ? Number(cote.vat_rate_percent)
+    : null;
+  const vat = vatRate == null ? 0 : Math.round((current + fees) * vatRate) / 100;
+  const purchaseTotal = Math.round((current + fees + vat) * 100) / 100;
+  const quickMargin = Number(cote.quick_sale_lot_eur) - purchaseTotal;
+  const normalMargin = Number(cote.normal_resale_gross_eur) - purchaseTotal;
+  const marginClass = quickMargin >= 0 ? 'positive' : 'negative';
+  const vatLabel = cote.vat_status === 'mentionnee_a_ajouter'
+    ? (vatRate == null ? 'TVA mentionnée : taux à vérifier' : `TVA ${vatRate} % : ${euro(vat)}`)
+    : 'TVA non mentionnée : 0 €';
+  const sources = (cote.source_urls || []).map((url, index) =>
+    `<a href="${esc(url)}" target="_blank" rel="noopener">source ${index + 1}</a>`
+  ).join(' · ');
+  const deviceChecks = (cote.device_checks || []).map((check) =>
+    `<div class="cote-alert"><b>⚠ ${esc(check.device)} : Find My iPhone ${esc(check.find_my_iphone)}</b>
+      <span>IMEI ••••${esc(check.imei_suffix)} · ${esc(check.valuation_effect)}</span></div>`
+  ).join('');
+
+  return `<section class="cote" aria-label="Cote de revente estimée">
+    <div class="cote-head"><strong>Cote revente</strong><span>${cote.confidence_percent} % confiance</span></div>
+    ${deviceChecks}
+    <div class="cote-values">
+      <div><span>Vente rapide</span><b>${euro(cote.quick_sale_lot_eur)}</b></div>
+      <div><span>Revente normale</span><b>${euro(cote.normal_resale_gross_eur)}</b></div>
+    </div>
+    <div class="cote-cost">
+      <div><span>Coût d'achat estimé</span><strong>${euro(purchaseTotal)}</strong></div>
+      <small>${euro(current)} + ${euro(fees)} de frais (${feeRate} %) · ${vatLabel}</small>
+    </div>
+    <div class="cote-margin ${marginClass}">
+      <span>Écart brut rapide <b>${euro(quickMargin)}</b></span>
+      <span>normal <b>${euro(normalMargin)}</b></span>
+    </div>
+    <div class="cote-meta">Demande ${esc(cote.demand)} · vente estimée ${cote.estimated_sale_days_min}–${cote.estimated_sale_days_max} jours</div>
+    <details class="cote-details">
+      <summary>Méthode, risques et sources</summary>
+      <p><b>Méthode :</b> ${esc(cote.valuation_method)}</p>
+      <p><b>Risques :</b> ${esc(cote.main_risks)}</p>
+      ${sources ? `<p><b>Comparables :</b> ${sources}</p>` : '<p>Estimation par inventaire et décote de risque, sans comparable direct retenu.</p>'}
+      <p class="cote-warning">Cotes brutes : transport, réparation, commissions de revente et temps de travail restent à déduire.</p>
+    </details>
+  </section>`;
+}
 
 // Filtre sur la date de clôture. Valeurs : 'all', 'today', 'd3', 'd7',
 // ou une date de clôture exacte (chaîne ISO telle qu'elle vient des données).
@@ -377,6 +432,7 @@ function renderDepotLots(g) {
         <h3>${esc(l.name)}</h3>
         <div class="price"><span class="v">${euro(bid ? l.bid : l.price)}</span>
           <span class="k">${bid ? 'enchère en cours' : 'mise à prix'}</span></div>
+        ${renderCote(l)}
         ${l.desc ? `<div class="desc">${esc(l.desc)}</div>
           <button class="more-btn">Lire la suite</button>` : ''}
       </div>
@@ -493,6 +549,10 @@ dlgSet.addEventListener('close', async () => {
       ? 'Données du ' + new Date(raw.updated).toLocaleString('fr-FR')
       : '';
   } catch { LOTS = []; $('#upd').textContent = 'données introuvables'; }
+  try {
+    const rawCotes = await (await fetch('data/cotes.json?_=' + Date.now())).json();
+    COTES = new Map((rawCotes.lots || []).map((cote) => [String(cote.id), cote]));
+  } catch { COTES = new Map(); }
   try { ARCH = (await (await fetch('data/archive.json?_=' + Date.now())).json()).lots || []; } catch { ARCH = []; }
   $('#nfin').textContent = ARCH.length;
   $('#upd').insertAdjacentHTML('beforeend', ' <span id="sync" class="sync"></span>');
