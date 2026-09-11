@@ -77,6 +77,8 @@ function renderCote(lot) {
   // Les cotes restent fixes pour cet instantané de marché, mais le coût d'achat
   // suit l'enchère courante de lots.json à chaque actualisation du SaaS.
   const { current, feeRate, fees, vatRate, vat, purchaseTotal, quickMargin, normalMargin } = valuationNumbers(lot);
+  const maxBid = Number(cote.recommended_max_bid_eur);
+  const maxBidExceeded = Number.isFinite(maxBid) && current > maxBid;
   const marginClass = quickMargin >= 0 ? 'positive' : 'negative';
   const vatLabel = cote.vat_status === 'mentionnee_a_ajouter'
     ? (vatRate == null ? 'TVA mentionnée : taux à vérifier' : `TVA ${vatRate} % : ${euro(vat)}`)
@@ -104,6 +106,11 @@ function renderCote(lot) {
       <div><span>Coût d'achat estimé</span><strong>${euro(purchaseTotal)}</strong></div>
       <small>${euro(current)} + ${euro(fees)} de frais (${feeRate} %) · ${vatLabel}</small>
     </div>
+    ${Number.isFinite(maxBid) ? `<div class="cote-max${maxBidExceeded ? ' exceeded' : ''}">
+      <div><span>Enchère max conseillée</span><small>montant marteau · hors 11 %</small></div>
+      <strong>${euro(maxBid)}</strong>
+      ${maxBidExceeded ? `<em>dépassée de ${euro(current - maxBid)}</em>` : ''}
+    </div>` : ''}
     <div class="cote-margin ${marginClass}">
       <span>Écart brut rapide <b>${euro(quickMargin)}</b></span>
       <span>normal <b>${euro(normalMargin)}</b></span>

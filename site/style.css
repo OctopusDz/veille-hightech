@@ -141,6 +141,15 @@ main{padding:24px 0 60px}
 .cote-cost span{font-size:12px;color:#b9d9ff;font-weight:600}
 .cote-cost strong{font-size:18px;color:var(--accent)}
 .cote-cost small{display:block;color:var(--muted);font-size:10px;margin-top:2px}
+.cote-max{display:grid;grid-template-columns:1fr auto;align-items:center;gap:2px 12px;padding:9px 11px;
+  border-top:1px solid rgba(63,185,80,.24);background:rgba(63,185,80,.11)}
+.cote-max div{display:flex;flex-direction:column;gap:2px}
+.cote-max span{color:#bce8c6;font-size:12px;font-weight:700}
+.cote-max small{color:var(--muted);font-size:10px}
+.cote-max strong{color:#8eea9f;font-size:20px}
+.cote-max em{grid-column:1/-1;color:#ffb2ad;font-size:11px;font-style:normal;font-weight:700}
+.cote-max.exceeded{background:rgba(248,81,73,.12);border-top-color:rgba(248,81,73,.36)}
+.cote-max.exceeded span,.cote-max.exceeded strong{color:#ffc1bd}
 .cote-margin{display:flex;justify-content:space-between;gap:10px;padding:7px 11px;
   background:rgba(63,185,80,.08);font-size:11px;color:#a9d9b5}
 .cote-margin.negative{background:rgba(248,81,73,.1);color:#ffc1bd}
