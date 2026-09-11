@@ -28,21 +28,29 @@ let LOTS = [];
 let ARCH = [];
 let COTES = new Map();
 let HOME = '';
+const DEPOT_SORTS = ['lot', 'confidence', 'quick-margin', 'confidence-margin'];
+function savedDepotSort() {
+  try {
+    const value = localStorage.getItem('depotSort');
+    return DEPOT_SORTS.includes(value) ? value : 'lot';
+  } catch { return 'lot'; }
+}
 let state = {
   status: 14,
   q: '',
   depot: null,
+  depotSort: savedDepotSort(),
   dateFilter: 'all',
   trashDepot: 'all',
   trashStatus: 'all',
 };
 
-function renderCote(lot) {
+// Chiffres dynamiques d'une cote : l'enchère courante peut bouger après la
+// création de l'estimation, donc le tri utilise le même calcul que la carte.
+function valuationNumbers(lot) {
   const cote = COTES.get(String(lot.id));
-  if (!cote) return '<div class="cote missing">Cote indisponible pour ce lot.</div>';
+  if (!cote) return { confidence: -1, quickMargin: -Infinity, adjustedMargin: -Infinity };
 
-  // Les cotes restent fixes pour cet instantané de marché, mais le coût d'achat
-  // suit l'enchère courante de lots.json à chaque actualisation du SaaS.
   const current = Number(lot.bid != null && lot.bid !== '' ? lot.bid : lot.price) || 0;
   const feeRate = Number(cote.auction_fee_rate_percent) || 11;
   const fees = Math.round(current * feeRate) / 100;
@@ -51,8 +59,24 @@ function renderCote(lot) {
     : null;
   const vat = vatRate == null ? 0 : Math.round((current + fees) * vatRate) / 100;
   const purchaseTotal = Math.round((current + fees + vat) * 100) / 100;
+  const confidence = Number(cote.confidence_percent) || 0;
   const quickMargin = Number(cote.quick_sale_lot_eur) - purchaseTotal;
-  const normalMargin = Number(cote.normal_resale_gross_eur) - purchaseTotal;
+
+  return {
+    current, feeRate, fees, vatRate, vat, purchaseTotal, confidence, quickMargin,
+    normalMargin: Number(cote.normal_resale_gross_eur) - purchaseTotal,
+    // Marge rapide pondérée par la fiabilité de l'estimation.
+    adjustedMargin: quickMargin * confidence / 100,
+  };
+}
+
+function renderCote(lot) {
+  const cote = COTES.get(String(lot.id));
+  if (!cote) return '<div class="cote missing">Cote indisponible pour ce lot.</div>';
+
+  // Les cotes restent fixes pour cet instantané de marché, mais le coût d'achat
+  // suit l'enchère courante de lots.json à chaque actualisation du SaaS.
+  const { current, feeRate, fees, vatRate, vat, purchaseTotal, quickMargin, normalMargin } = valuationNumbers(lot);
   const marginClass = quickMargin >= 0 ? 'positive' : 'negative';
   const vatLabel = cote.vat_status === 'mentionnee_a_ajouter'
     ? (vatRate == null ? 'TVA mentionnée : taux à vérifier' : `TVA ${vatRate} % : ${euro(vat)}`)
@@ -498,9 +522,17 @@ function bindLotCards(root, onToggle) {
 
 // Liste claire des lots conservés du dépôt. Les écartés ont leur propre écran.
 function renderDepotLots(g) {
+  const tieBreak = (a, b) => (Number(a.lot) || 0) - (Number(b.lot) || 0);
+  const compare = (a, b) => {
+    const av = valuationNumbers(a), bv = valuationNumbers(b);
+    if (state.depotSort === 'confidence') return bv.confidence - av.confidence || tieBreak(a, b);
+    if (state.depotSort === 'quick-margin') return bv.quickMargin - av.quickMargin || tieBreak(a, b);
+    if (state.depotSort === 'confidence-margin') return bv.adjustedMargin - av.adjustedMargin || tieBreak(a, b);
+    return tieBreak(a, b);
+  };
   const gardes = g.lots
     .filter((l) => !TRASH.has(l.id))
-    .sort((a, b) => (a.lot || 0) - (b.lot || 0));
+    .sort(compare);
 
   if (!gardes.length) {
     closeDepot();
@@ -510,9 +542,23 @@ function renderDepotLots(g) {
 
   $('#lots').innerHTML = `<div class="bar">
       <span class="cnt">${gardes.length} lot${gardes.length > 1 ? 's' : ''} à examiner</span>
+      <label class="sort-label">Trier par
+        <select id="depot-sort" aria-label="Trier les lots du dépôt">
+          <option value="lot"${state.depotSort === 'lot' ? ' selected' : ''}>Numéro de lot</option>
+          <option value="confidence"${state.depotSort === 'confidence' ? ' selected' : ''}>Confiance : élevée → faible</option>
+          <option value="quick-margin"${state.depotSort === 'quick-margin' ? ' selected' : ''}>Écart brut rapide : élevé → faible</option>
+          <option value="confidence-margin"${state.depotSort === 'confidence-margin' ? ' selected' : ''}>Confiance + écart : meilleur d'abord</option>
+        </select>
+      </label>
       <span class="note">Pour écarter un lot, touche la poubelle en haut à droite de sa photo.</span>
     </div>
     <div class="grid-lots">${gardes.map((l) => renderLotCard(l)).join('')}</div>`;
+
+  $('#depot-sort').addEventListener('change', (e) => {
+    state.depotSort = e.target.value;
+    try { localStorage.setItem('depotSort', state.depotSort); } catch {}
+    renderDepotLots(g);
+  });
 
   bindLotCards($('#lots'), () => {
     majFiltreDates();
