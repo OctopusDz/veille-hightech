@@ -25,6 +25,9 @@ a{color:var(--link)}
 .collect{padding:9px 14px;background:var(--panel);border:1px solid var(--line);border-radius:8px;
   color:var(--txt);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
 .collect:hover{border-color:var(--accent);color:var(--accent)}
+.gear{background:var(--panel);border:1px solid var(--line);border-radius:8px;width:40px;height:40px;
+  font-size:17px;cursor:pointer;color:var(--txt)}
+.gear:hover{border-color:var(--accent)}
 .upd{margin-left:auto;color:var(--muted);font-size:12px;white-space:nowrap}
 
 .tabs{background:var(--bg);border-bottom:1px solid var(--line);position:sticky;top:65px;z-index:19}
@@ -150,3 +153,34 @@ main{padding:24px 0 60px}
   .tabsin{padding:0 14px}
   .depots,.grid-lots{grid-template-columns:1fr}
 }
+
+/* ---- Terminés ---- */
+.fin .res{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:6px;font-size:13px;
+  background:var(--panel2);border-radius:8px;padding:8px 10px}
+.fin .res .k{color:var(--muted);font-size:11px;display:block}
+.fin .res .v{font-weight:700;font-size:15px}
+.fin .res .arrow{color:var(--muted);font-size:18px}
+.fin .res .v.win{color:var(--live)}
+.fin .res .v.lost{color:var(--muted)}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px}
+.badge.ok{background:rgba(63,185,80,.15);color:var(--live);border:1px solid rgba(63,185,80,.4)}
+.badge.ko{background:rgba(139,152,171,.15);color:var(--muted);border:1px solid var(--line)}
+.fin .where{font-size:12px;color:var(--muted)}
+.fin .ph{cursor:default}
+
+/* ---- Réglages ---- */
+dialog{background:var(--panel);color:var(--txt);border:1px solid var(--line);border-radius:14px;
+  width:min(520px,92vw);padding:0}
+dialog::backdrop{background:rgba(0,0,0,.65)}
+.setform{padding:20px 22px;display:flex;flex-direction:column;gap:12px}
+.setform h3{margin:0;font-size:18px}
+.setform label{display:flex;flex-direction:column;gap:6px;font-size:14px}
+.setform input{padding:10px 12px;background:var(--bg);border:1px solid var(--line);border-radius:8px;
+  color:var(--txt);font-size:14px;font-family:ui-monospace,Menlo,monospace}
+.muted{color:var(--muted)} .small{font-size:12px}
+.row-end{display:flex;gap:8px;justify-content:flex-end}
+.btn{padding:9px 14px;background:var(--panel2);border:1px solid var(--line);color:var(--txt);
+  border-radius:8px;font-weight:600;cursor:pointer;font-size:14px}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#201400}
+.sync{font-size:11px;color:var(--muted);margin-left:8px}
+.sync.ok{color:var(--live)} .sync.ko{color:var(--danger)}

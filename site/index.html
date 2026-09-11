@@ -15,6 +15,7 @@
     <select id="fdate" autocomplete="off" title="Filtrer par date de clôture"></select>
     <a class="collect" href="https://github.com/OctopusDz/veille-hightech/actions/workflows/veille.yml"
        target="_blank" rel="noopener" title="Lance une collecte immédiate sur GitHub (≈ 3 min)">🔄 Collecter</a>
+    <button class="gear" id="btn-set" title="Réglages (synchronisation de la poubelle)">⚙️</button>
     <div class="upd" id="upd"></div>
   </div>
 </header>
@@ -23,6 +24,7 @@
   <div class="wrap tabsin">
     <button class="tab active" data-st="14">En cours <span class="b" id="n14">0</span></button>
     <button class="tab" data-st="13">À venir <span class="b" id="n13">0</span></button>
+    <button class="tab" data-st="fin">Terminés <span class="b" id="nfin">0</span></button>
   </div>
 </nav>
 
@@ -34,6 +36,13 @@
     <p id="empty" class="empty" hidden>Aucun lot ne correspond à cette recherche.</p>
   </section>
 
+  <!-- Vue 3 : les lots terminés (archive) -->
+  <section id="view-fin" hidden>
+    <p class="hint" id="hint-fin"></p>
+    <div id="fin" class="grid-lots"></div>
+    <p id="fin-empty" class="empty" hidden>Aucun lot terminé pour l'instant — l'archive se remplit à chaque clôture.</p>
+  </section>
+
   <!-- Vue 2 : les lots d'un dépôt -->
   <section id="view-lots" hidden>
     <button class="back" id="back">← Tous les dépôts</button>
@@ -41,6 +50,27 @@
     <div id="lots" class="lots"></div>
   </section>
 </main>
+
+<!-- Réglages : synchronisation de la poubelle sur GitHub -->
+<dialog id="dlg-set">
+  <form method="dialog" class="setform">
+    <h3>Poubelle synchronisée</h3>
+    <p class="muted">Sans jeton, la poubelle reste dans ce navigateur (perdue si tu vides le cache,
+      différente sur chaque appareil). Avec un jeton, elle est enregistrée dans le dépôt GitHub :
+      partagée entre tes appareils, jamais perdue.</p>
+    <label>Jeton GitHub <span class="muted">(fine-grained, limité à ce dépôt, permission « Contents » en écriture)</span>
+      <input id="set-token" type="password" autocomplete="off" placeholder="github_pat_…" />
+    </label>
+    <p class="muted small">Créer le jeton : GitHub → Settings → Developer settings → Fine-grained tokens →
+      <em>Only select repositories</em> : veille-hightech → Repository permissions → Contents : Read and write.
+      Le jeton reste dans ce navigateur, il n'est envoyé qu'à api.github.com.</p>
+    <p id="set-status" class="muted small"></p>
+    <div class="row-end">
+      <button value="clear" class="btn">Retirer le jeton</button>
+      <button value="save" class="btn primary">Enregistrer</button>
+    </div>
+  </form>
+</dialog>
 
 <!-- Visionneuse photo -->
 <div id="viewer" class="viewer" hidden>

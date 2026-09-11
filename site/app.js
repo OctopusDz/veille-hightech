@@ -24,6 +24,7 @@ function remain(end) {
 }
 
 let LOTS = [];
+let ARCH = [];
 let HOME = '';
 let state = { status: 14, q: '', depot: null, showTrash: false, dateFilter: 'all' };
 
@@ -67,24 +68,92 @@ function majFiltreDates() {
 }
 
 /* Poubelle : les lots écartés ne sont jamais supprimés, seulement masqués.
- * Stockée dans le navigateur, elle survit aux rafraîchissements de données
- * (on garde l'identifiant du lot, pas sa position). */
+ *
+ * Deux modes :
+ *  - sans jeton : mémorisée dans ce navigateur seulement (perdue si on vide
+ *    le cache, différente sur chaque appareil) ;
+ *  - avec un jeton GitHub (fine-grained, limité à ce dépôt) : enregistrée dans
+ *    site/data/poubelle.json du dépôt — partagée entre appareils, jamais perdue.
+ *    Le dépôt est alors la source de vérité ; le navigateur n'est qu'un cache.
+ * On garde l'identifiant du lot, pas sa position : le tri survit aux collectes. */
+const GH = { repo: 'OctopusDz/veille-hightech', path: 'site/data/poubelle.json', branch: 'main' };
 const TRASH = {
-  key: 'lotsEcartes',
-  set: new Set(),
+  key: 'lotsEcartes', tokenKey: 'ghToken',
+  set: new Set(), sha: null, timer: null, etat: 'local', detail: '',
+  get token() { try { return localStorage.getItem(this.tokenKey) || ''; } catch { return ''; } },
+  set token(v) { try { v ? localStorage.setItem(this.tokenKey, v) : localStorage.removeItem(this.tokenKey); } catch {} },
   load() {
     try { this.set = new Set(JSON.parse(localStorage.getItem(this.key) || '[]')); }
     catch { this.set = new Set(); }
   },
-  save() { try { localStorage.setItem(this.key, JSON.stringify([...this.set])); } catch {} },
+  persist() { try { localStorage.setItem(this.key, JSON.stringify([...this.set])); } catch {} },
   has(id) { return this.set.has(String(id)); },
   toggle(id) {
     const k = String(id);
     if (this.set.has(k)) this.set.delete(k); else this.set.add(k);
-    this.save();
+    this.persist();
+    if (this.token) { clearTimeout(this.timer); this.timer = setTimeout(() => this.push(), 1200); }
+  },
+  headers() {
+    const h = { Accept: 'application/vnd.github+json' };
+    if (this.token) h.Authorization = 'Bearer ' + this.token;
+    return h;
+  },
+  url() { return `https://api.github.com/repos/${GH.repo}/contents/${GH.path}`; },
+  // Lit la poubelle du dépôt et remplace la version locale.
+  async pull() {
+    if (!this.token) { this.etat = 'local'; return; }
+    try {
+      const r = await fetch(this.url() + `?ref=${GH.branch}&t=${Date.now()}`, { headers: this.headers() });
+      if (r.status === 404) { this.sha = null; this.etat = 'ok'; this.detail = 'fichier absent (créé au 1er écart)'; return; }
+      if (r.status === 401 || r.status === 403) { this.etat = 'ko'; this.detail = 'jeton refusé (' + r.status + ')'; return; }
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      const j = await r.json();
+      this.sha = j.sha;
+      const bin = atob((j.content || '').replace(/\n/g, ''));
+      const txt = new TextDecoder().decode(Uint8Array.from(bin, (c) => c.charCodeAt(0)));
+      const data = JSON.parse(txt || '{}');
+      this.set = new Set((data.ecartes || []).map(String));
+      this.persist();
+      this.etat = 'ok'; this.detail = `${this.set.size} lot(s) écarté(s), synchronisé`;
+    } catch (e) { this.etat = 'ko'; this.detail = 'lecture impossible : ' + e.message; }
+    majSync();
+  },
+  // Écrit la poubelle dans le dépôt (un commit par changement, regroupés).
+  async push(retry = true) {
+    if (!this.token) return;
+    const body = JSON.stringify({ updated: new Date().toISOString(), ecartes: [...this.set] }, null, 1);
+    const b64 = btoa(String.fromCharCode(...new TextEncoder().encode(body)));
+    try {
+      const r = await fetch(this.url(), {
+        method: 'PUT', headers: { ...this.headers(), 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: `Poubelle : ${this.set.size} lot(s) écarté(s)`, content: b64,
+                               branch: GH.branch, ...(this.sha ? { sha: this.sha } : {}) }),
+      });
+      if (r.status === 409 || r.status === 422) {
+        // Le fichier a bougé (autre appareil) : on relit puis on réessaie une fois.
+        if (retry) { await this.pull(); return this.push(false); }
+        throw new Error('conflit');
+      }
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      const j = await r.json();
+      this.sha = j.content && j.content.sha;
+      this.etat = 'ok'; this.detail = `${this.set.size} lot(s) écarté(s), enregistré sur GitHub`;
+    } catch (e) { this.etat = 'ko'; this.detail = 'enregistrement impossible : ' + e.message; }
+    majSync();
   },
 };
 TRASH.load();
+
+// Indicateur d'état de la poubelle, en haut à droite.
+function majSync() {
+  const el = $('#sync');
+  if (!el) return;
+  el.className = 'sync ' + (TRASH.etat === 'ok' ? 'ok' : TRASH.etat === 'ko' ? 'ko' : '');
+  el.textContent = TRASH.etat === 'ok' ? '· poubelle synchronisée ✓'
+    : TRASH.etat === 'ko' ? '· poubelle : erreur de synchro' : '· poubelle locale';
+  el.title = TRASH.detail || '';
+}
 
 // --- Filtrage + regroupement par ville de dépôt ---------------------------
 function visible() {
@@ -174,6 +243,60 @@ function renderDepots() {
   document.querySelectorAll('.dep').forEach((el) => {
     el.addEventListener('click', () => openDepot(el.dataset.key));
   });
+}
+
+// --- Vue 3 : les lots terminés (archive) ----------------------------------
+function renderFin() {
+  const q = state.q.trim().toLowerCase();
+  const liste = ARCH
+    .filter((l) => !q || [l.name, l.desc, l.city, l.depot, l.org, l.lot].join(' ').toLowerCase().includes(q))
+    .sort((a, b) => new Date(b.end) - new Date(a.end));
+  $('#fin-empty').hidden = liste.length > 0;
+  if (!ARCH.length) $('#fin-empty').textContent = "Aucun lot terminé pour l'instant — l'archive se remplit à chaque clôture.";
+  else if (!liste.length) $('#fin-empty').textContent = 'Aucun lot terminé ne correspond à cette recherche.';
+  const vendus = liste.filter((l) => l.vendu).length;
+  $('#hint-fin').textContent = liste.length
+    ? `${liste.length} lot${liste.length > 1 ? 's' : ''} terminé${liste.length > 1 ? 's' : ''} · ${vendus} vendu${vendus > 1 ? 's' : ''} · ${liste.length - vendus} invendu${liste.length - vendus > 1 ? 's' : ''}. Du plus récent au plus ancien.`
+    : '';
+  $('#fin').innerHTML = liste.map((l) => {
+    const dep = l.prixDepart, der = l.dernierBid, adj = l.prixAdjuge;
+    const final = adj != null && adj !== 0 ? adj : der;
+    const ecart = (final != null && dep != null) ? final - dep : null;
+    return `<article class="lot fin">
+      <div class="ph" style="background-image:url('${esc(l.img || '')}')">
+        <div class="tags">${l.pro ? '<span class="tag pro">PRO</span>' : ''}<span class="tag">n°${esc(l.lot)}</span></div>
+      </div>
+      <div class="body">
+        <h3>${esc(l.name)}</h3>
+        <div class="where">${esc(l.city || '')}${l.cp ? ' (' + esc(l.cp) + ')' : ''}${l.depot ? ' · ' + esc(l.depot) : ''}</div>
+        <div class="where">Clôturé le <b>${fmt(l.end)}</b> · <span class="badge ${l.vendu ? 'ok' : 'ko'}">${l.vendu ? 'Vendu' : 'Invendu'}</span>
+          ${l.statutFinal ? `<span class="muted"> · ${esc(l.statutFinal)}</span>` : ''}</div>
+        <div class="res">
+          <div><span class="k">Mise à prix</span><span class="v">${euro(dep)}</span></div>
+          <div class="arrow">→</div>
+          <div><span class="k">${adj != null && adj !== 0 ? 'Adjugé' : 'Dernière enchère'}</span>
+            <span class="v ${l.vendu ? 'win' : 'lost'}">${euro(final)}</span>
+            ${ecart != null && ecart > 0 ? `<span class="k">+${ecart.toLocaleString('fr-FR')} € sur la mise</span>` : ''}</div>
+        </div>
+        ${l.desc ? `<div class="desc">${esc(l.desc)}</div><button class="more-btn">Lire la suite</button>` : ''}
+      </div>
+      <a class="go" href="${esc(l.url)}" target="_blank" rel="noopener">Annonce officielle ↗</a>
+    </article>`;
+  }).join('');
+  document.querySelectorAll('#fin .more-btn').forEach((b) => b.addEventListener('click', () => {
+    const d = b.previousElementSibling; d.classList.toggle('open');
+    b.textContent = d.classList.contains('open') ? 'Réduire' : 'Lire la suite';
+  }));
+}
+
+// Affiche la bonne vue selon l'onglet.
+function afficherOnglet() {
+  const fin = state.status === 'fin';
+  $('#view-fin').hidden = !fin;
+  $('#view-depots').hidden = fin || !!state.depot;
+  $('#view-lots').hidden = fin || !state.depot;
+  $('#fdate').hidden = fin;
+  if (fin) renderFin(); else renderDepots();
 }
 
 // --- Vue 2 : les lots d'un dépôt ------------------------------------------
@@ -320,10 +443,10 @@ $('#back').addEventListener('click', closeDepot);
 document.querySelectorAll('.tab').forEach((t) => t.addEventListener('click', () => {
   document.querySelectorAll('.tab').forEach((x) => x.classList.remove('active'));
   t.classList.add('active');
-  state.status = +t.dataset.st;
-  closeDepot();
-  majFiltreDates();
-  renderDepots();
+  state.status = t.dataset.st === 'fin' ? 'fin' : +t.dataset.st;
+  closeDepot(true);
+  if (state.status !== 'fin') majFiltreDates();
+  afficherOnglet();
 }));
 $('#fdate').addEventListener('change', (e) => {
   state.dateFilter = e.target.value;
@@ -334,7 +457,30 @@ $('#fdate').addEventListener('change', (e) => {
 $('#q').addEventListener('input', (e) => {
   state.q = e.target.value;
   if (state.depot) closeDepot();
-  renderDepots();
+  afficherOnglet();
+});
+
+// --- Réglages : jeton GitHub pour la poubelle synchronisée ------------------
+const dlgSet = $('#dlg-set');
+$('#btn-set').addEventListener('click', () => {
+  $('#set-token').value = TRASH.token;
+  $('#set-status').textContent = TRASH.token ? (TRASH.detail || 'jeton enregistré') : 'aucun jeton : poubelle locale';
+  dlgSet.showModal();
+});
+dlgSet.addEventListener('close', async () => {
+  if (dlgSet.returnValue === 'clear') { TRASH.token = ''; TRASH.etat = 'local'; TRASH.detail = ''; majSync(); return; }
+  if (dlgSet.returnValue !== 'save') return;
+  const v = $('#set-token').value.trim();
+  if (!v) return;
+  TRASH.token = v;
+  const locale = new Set(TRASH.set);          // ce qu'on avait avant d'activer la synchro
+  await TRASH.pull();
+  // Dépôt vide (ou fichier absent) mais poubelle locale remplie : on ne perd rien,
+  // on envoie la locale sur GitHub.
+  if (TRASH.etat === 'ok' && locale.size && TRASH.set.size === 0) {
+    TRASH.set = locale; TRASH.persist(); await TRASH.push();
+  }
+  afficherOnglet();
 });
 
 // --- Démarrage -------------------------------------------------------------
@@ -347,11 +493,22 @@ $('#q').addEventListener('input', (e) => {
       ? 'Données du ' + new Date(raw.updated).toLocaleString('fr-FR')
       : '';
   } catch { LOTS = []; $('#upd').textContent = 'données introuvables'; }
+  try { ARCH = (await (await fetch('data/archive.json?_=' + Date.now())).json()).lots || []; } catch { ARCH = []; }
+  $('#nfin').textContent = ARCH.length;
+  $('#upd').insertAdjacentHTML('beforeend', ' <span id="sync" class="sync"></span>');
+  await TRASH.pull();
+  majSync();
   $('#n14').textContent = LOTS.filter((l) => l.status === 14).length;
   $('#n13').textContent = LOTS.filter((l) => l.status === 13).length;
 
-  // Reprise depuis l'URL : #<statut>/<ville|cp>
+  // Reprise depuis l'URL : #fin (terminés) ou #<statut>/<ville|cp>
   const h = decodeURIComponent(location.hash.slice(1));
+  if (h === 'fin') {
+    state.status = 'fin';
+    document.querySelectorAll('.tab').forEach((t) => t.classList.toggle('active', t.dataset.st === 'fin'));
+    afficherOnglet();
+    return;
+  }
   const slash = h.indexOf('/');
   if (slash > 0) {
     const st = +h.slice(0, slash);

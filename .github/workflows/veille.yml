@@ -18,6 +18,7 @@ permissions:
   contents: write             # committer lots.json + archive.json
   pages: write                # publier le site
   id-token: write
+  issues: write               # ouvrir/commenter l'issue d'alerte en cas d'échec
 
 # Deux collectes simultanées se marcheraient dessus au commit : on sérialise.
 concurrency:
@@ -112,6 +113,37 @@ jobs:
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 
+      # Si la collecte tombe (ou est refusée car partielle), on prévient :
+      # notification ntfy sur le téléphone si NTFY_TOPIC est défini, et une issue
+      # GitHub (donc un mail). Une seule issue ouverte à la fois : on la commente.
+      - name: Alerte en cas d'échec
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          QUAND=$(date -u +%d/%m\ %H:%M)
+          URL="https://github.com/$GH_REPO/actions/runs/${{ github.run_id }}"
+          if [ -n "$NTFY_TOPIC" ]; then
+            curl -s -o /dev/null -H "Title: Collecte high-tech en échec ($QUAND UTC)" \
+              -H "Priority: high" -H "Tags: warning" -H "Click: $URL" \
+              -d "La collecte a échoué. Le site garde les données du passage précédent." \
+              "https://ntfy.sh/$NTFY_TOPIC" || true
+          fi
+          gh label create collecte-echec --color d73a4a \
+            --description "La collecte automatique a échoué" 2>/dev/null || true
+          NUM=$(gh issue list --label collecte-echec --state open --json number --jq '.[0].number' 2>/dev/null || true)
+          if [ -n "$NUM" ]; then
+            gh issue comment "$NUM" --body "Nouvel échec le $QUAND UTC : $URL"
+          else
+            gh issue create --title "⚠️ Collecte high-tech en échec ($QUAND UTC)" --label collecte-echec \
+              --body "La collecte automatique a échoué. Le site conserve les données du passage précédent.
+
+Détail : $URL
+
+Cette issue restera ouverte tant que les échecs continuent ; ferme-la quand c'est réglé."
+          fi
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
