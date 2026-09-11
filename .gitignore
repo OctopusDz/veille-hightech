@@ -18,3 +18,12 @@ logs/
 
 # macOS
 .DS_Store
+
+# Environnement Python local
+.venv/
+data/collecte.json
+data/termines.json
+
+# Python
+__pycache__/
+*.pyc

@@ -1,0 +1,129 @@
+name: Veille high-tech
+
+# Cinq passages par jour. Heures en UTC — Paris est à UTC+2 l'été, UTC+1
+# l'hiver ; on vise des créneaux utiles sans chercher la minute.
+on:
+  schedule:
+    - cron: "0 4 * * *"      # ~06h00 Paris
+    - cron: "30 7 * * *"     # ~09h30
+    - cron: "0 11 * * *"     # ~13h00
+    - cron: "0 15 * * *"     # ~17h00
+    - cron: "0 19 * * *"     # ~21h00
+  workflow_dispatch:          # « Lancer une collecte » depuis l'interface ou l'onglet Actions
+  push:
+    branches: [main]
+    paths: ["site/**", "scraper/**", "tools/**", "requirements.txt", ".github/workflows/veille.yml"]
+
+permissions:
+  contents: write             # committer lots.json + archive.json
+  pages: write                # publier le site
+  id-token: write
+
+# Deux collectes simultanées se marcheraient dessus au commit : on sérialise.
+concurrency:
+  group: veille
+  cancel-in-progress: false
+
+jobs:
+  collecte:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      # Les photos ne sont pas versionnées (elles feraient gonfler l'historique
+      # sans fin). On les garde d'un passage à l'autre dans le cache, et on ne
+      # télécharge que celles des nouveaux lots.
+      - uses: actions/cache@v4
+        with:
+          path: site/img
+          key: photos-${{ github.run_id }}
+          restore-keys: photos-
+
+      # Le contrôle anti-robot refuse parfois une page, d'autant plus depuis un
+      # centre de données. Le collecteur réessaie chaque appel ; on réessaie
+      # aussi la collecte entière si elle tombe.
+      - name: Collecte (lots + photos manquantes)
+        run: |
+          for tentative in 1 2 3; do
+            echo "── tentative $tentative ──"
+            if python3 -m scraper.collecte --photos 2>&1 | tee sortie.txt; then
+              break
+            fi
+            sleep $((tentative * 20))
+          done
+
+      # Une collecte partielle ne doit pas écraser des données complètes.
+      - name: Contrôle du fichier produit
+        run: |
+          python3 - <<'PY'
+          import json, sys
+          from pathlib import Path
+          f = Path("data/collecte.json")
+          if not f.exists():
+              sys.exit("data/collecte.json absent — collecte échouée")
+          n = len(json.loads(f.read_text(encoding="utf-8")).get("lots") or [])
+          if n < 10:
+              sys.exit(f"seulement {n} lots — collecte manifestement partielle, on ne publie pas")
+          print(f"{n} lots collectés")
+          PY
+
+      - name: Fusion avec l'existant + archivage des lots terminés
+        run: python3 tools/fusion.py data/collecte.json --termines data/termines.json
+
+      - name: Distances depuis chez moi
+        env:
+          CHEZ_MOI: ${{ secrets.CHEZ_MOI }}
+        run: python3 tools/distances.py
+
+      - name: Publier les données collectées
+        run: |
+          git config user.name "veille-hightech[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/data/lots.json
+          [ -f site/data/archive.json ] && git add site/data/archive.json
+          if git diff --staged --quiet; then
+            echo "aucun changement de données"
+            exit 0
+          fi
+          git commit -m "Collecte du $(date -u +%Y-%m-%d\ %H:%M) UTC"
+          # Une collecte manuelle pendant un passage planifié pousserait sur un
+          # dépôt qui a bougé : on se replace au-dessus avant d'insister.
+          for essai in 1 2 3; do
+            git push && exit 0
+            echo "poussée refusée, on se rebase ($essai/3)"
+            git pull --rebase origin main || exit 1
+          done
+          git push
+
+      - name: Récapitulatif
+        if: always()
+        run: |
+          {
+            echo "## Veille high-tech"
+            echo '```'
+            tail -25 sortie.txt 2>/dev/null || echo "(pas de sortie)"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploiement:
+    needs: collecte
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.pages.outputs.page_url }}
+    steps:
+      - id: pages
+        uses: actions/deploy-pages@v4

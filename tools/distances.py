@@ -5,12 +5,17 @@ Géocodage : API Adresse (BAN) de data.gouv.fr — ouverte, sans anti-bot.
 La distance routière est estimée par la distance à vol d'oiseau × 1,30
 (sinuosité moyenne du réseau français). Suffisant pour classer les dépôts.
 
-Usage : python3 tools/distances.py ["Le Port-Marly 78560"]
+Le point de départ vient de la variable d'environnement CHEZ_MOI (secret GitHub
+Actions en production) : il n'apparaît ni dans le code, ni dans les données —
+seuls les kilomètres par dépôt sont écrits.
+
+Usage : CHEZ_MOI="Ville 12345" python3 tools/distances.py
 """
 from __future__ import annotations
 
 import json
 import math
+import os
 import sys
 import time
 import urllib.parse
@@ -21,7 +26,7 @@ ROOT = Path(__file__).resolve().parent.parent
 LOTS = ROOT / "site" / "data" / "lots.json"
 CACHE = ROOT / "tools" / ".geocache.json"
 
-CHEZ_MOI = sys.argv[1] if len(sys.argv) > 1 else "Le Port-Marly 78560"
+CHEZ_MOI = os.environ.get("CHEZ_MOI", "").strip() or (sys.argv[1] if len(sys.argv) > 1 else "")
 SINUOSITE = 1.30          # trajet réel / vol d'oiseau
 VITESSE_KMH = 95.0        # moyenne porte-à-porte (mix nationale / autoroute)
 
@@ -60,11 +65,14 @@ def haversine(a: tuple[float, float], b: tuple[float, float]) -> float:
 def main() -> int:
     cache = json.loads(CACHE.read_text(encoding="utf-8")) if CACHE.exists() else {}
 
+    if not CHEZ_MOI:
+        print("CHEZ_MOI non défini (variable d'environnement ou argument)")
+        return 1
     home = geocode(CHEZ_MOI, cache)
     if not home:
-        print(f"point de départ introuvable : {CHEZ_MOI!r}")
+        print("point de départ introuvable")
         return 1
-    print(f"départ : {cache[' '.join(CHEZ_MOI.split())][2]}")
+    print("départ : configuré (non affiché)")
 
     data = json.loads(LOTS.read_text(encoding="utf-8"))
     lots = data["lots"]
@@ -103,7 +111,7 @@ def main() -> int:
         h = int(heures)
         lignes.append((km, f"  {key[0]} ({key[1]}) : {km} km · {h}h{round((heures - h) * 60):02d}"))
 
-    data["home"] = {"query": CHEZ_MOI, "lat": home[0], "lon": home[1]}
+    data.pop("home", None)          # jamais d'adresse personnelle dans les données
     LOTS.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
 
     for _, ligne in sorted(lignes):

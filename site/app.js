@@ -139,7 +139,7 @@ function renderDepots() {
       : 'Aucun lot ne correspond à cette recherche.';
   }
   $('#hint').textContent = groups.length
-    ? `${lots.length} lot${lots.length > 1 ? 's' : ''} sur ${groups.length} dépôt${groups.length > 1 ? 's' : ''}, du plus proche au plus loin${HOME ? ' de ' + HOME : ''}. Clique sur un dépôt pour voir ses lots.`
+    ? `${lots.length} lot${lots.length > 1 ? 's' : ''} sur ${groups.length} dépôt${groups.length > 1 ? 's' : ''}, du plus proche au plus loin de chez moi. Clique sur un dépôt pour voir ses lots.`
     : '';
 
   $('#depots').innerHTML = groups.map((g) => {
@@ -204,7 +204,7 @@ function openDepot(key, silent) {
     <div class="sub">${esc(g.depot || '')}${g.org ? ' · organisateur ' + esc(g.org) : ''}</div>
     <div class="meta">
       ${g.street ? `<div><span class="k">Adresse</span><span class="v">${esc(g.street)}<br>${esc(g.cp)} ${esc(g.city)}</span><br><a href="${maps}" target="_blank" rel="noopener">Itinéraire ↗</a></div>` : ''}
-      ${g.km != null ? `<div><span class="k">Depuis ${esc(HOME)}</span><span class="v"><b>${g.km} km</b><br>~${fmtTrajet(g.heures)} de route</span></div>` : ''}
+      ${g.km != null ? `<div><span class="k">Depuis chez moi</span><span class="v"><b>${g.km} km</b><br>~${fmtTrajet(g.heures)} de route</span></div>` : ''}
       <div><span class="k">Enchères</span><span class="v">du <b>${fmt(g.start)}</b><br>au <b>${fmt(g.end)}</b></span></div>
       ${g.hours ? `<div><span class="k">Horaires</span><span class="v">${esc(g.hours)}</span></div>` : ''}
       ${g.access ? `<div><span class="k">Accès / retrait</span><span class="v">${esc(g.access)}</span></div>` : ''}
