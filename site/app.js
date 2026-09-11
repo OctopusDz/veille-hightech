@@ -89,51 +89,87 @@ function renderCote(lot) {
     ? Number(cote.quick_sale_lot_eur) - maxAcquisition.purchaseTotal
     : null;
   const maxBidExceeded = Number.isFinite(maxBid) && current > maxBid;
-  const marginClass = quickMargin >= 0 ? 'positive' : 'negative';
-  const vatLabel = cote.vat_status === 'mentionnee_a_ajouter'
-    ? (vatRate == null ? 'TVA mentionnée : taux à vérifier' : `TVA ${vatRate} % : ${euro(vat)}`)
-    : 'TVA non mentionnée : 0 €';
+  const confidence = Number(cote.confidence_percent) || 0;
+  const confidenceTone = confidence >= 70 ? 'high' : confidence >= 50 ? 'medium' : 'low';
+  const confidenceLabel = confidence >= 70 ? 'bonne' : confidence >= 50 ? 'moyenne' : 'faible';
+  const signedEuro = (value) => `${value >= 0 ? '+' : ''}${euro(value)}`;
+  const currentVatLabel = vat
+    ? ` + ${euro(vat)} de TVA (${vatRate} %)`
+    : ' · aucune TVA ajoutée';
+  const maxVatLabel = maxAcquisition && maxAcquisition.vat
+    ? ` + ${euro(maxAcquisition.vat)} de TVA (${maxAcquisition.vatRate} %)`
+    : ' · aucune TVA ajoutée';
   const sources = (cote.source_urls || []).map((url, index) =>
     `<a href="${esc(url)}" target="_blank" rel="noopener">source ${index + 1}</a>`
   ).join(' · ');
   const deviceChecks = (cote.device_checks || []).map((check) => {
     const verified = check.verification_basis === 'verified';
-    const statusLabel = verified ? 'contrôlé' : 'hypothèse prudente';
+    const statusLabel = verified ? 'état contrôlé' : 'hypothèse prudente';
     const imeiLabel = check.imei_suffix ? `IMEI ••••${esc(check.imei_suffix)} · ` : '';
     return `<div class="cote-alert ${verified ? 'verified' : 'assumed'}">
-      <b>⚠ ${esc(check.device)} : verrouillage d’activation / Localiser ${esc(check.find_my_iphone)}</b>
+      <b>${verified ? 'Contrôle appareil' : 'Risque appareil'} · ${esc(check.device)}</b>
+      <strong>Localiser / verrouillage d’activation : ${esc(check.find_my_iphone)}</strong>
       <span>${esc(statusLabel)} · ${imeiLabel}${esc(check.valuation_effect)}</span></div>`;
   }).join('');
 
   return `<section class="cote" aria-label="Cote de revente estimée">
-    <div class="cote-head"><strong>Cote revente</strong><span>${cote.confidence_percent} % confiance</span></div>
+    <div class="cote-head">
+      <div class="cote-title"><span>Estimation du lot</span><strong>Prix de revente</strong></div>
+      <span class="confidence ${confidenceTone}">Confiance ${confidenceLabel} · ${confidence} %</span>
+    </div>
     ${deviceChecks}
     <div class="cote-values">
-      <div><span>Vente rapide</span><b>${euro(cote.quick_sale_lot_eur)}</b></div>
-      <div><span>Revente normale</span><b>${euro(cote.normal_resale_gross_eur)}</b></div>
+      <div class="cote-value quick">
+        <span>Si tu veux vendre vite</span>
+        <b>${euro(cote.quick_sale_lot_eur)}</b>
+        <small>prix prudent</small>
+      </div>
+      <div class="cote-value normal">
+        <span>Si tu peux attendre</span>
+        <b>${euro(cote.normal_resale_gross_eur)}</b>
+        <small>revente normale</small>
+      </div>
     </div>
-    <div class="cote-cost">
-      <div><span>Coût d'achat estimé</span><strong>${euro(purchaseTotal)}</strong></div>
-      <small>${euro(current)} + ${euro(fees)} de frais (${feeRate} %) · ${vatLabel}</small>
-    </div>
-    ${Number.isFinite(maxBid) ? `<div class="cote-max${maxBidExceeded ? ' exceeded' : ''}">
-      <div><span>Enchère max conseillée</span><small>montant marteau · hors 11 %</small></div>
-      <strong>${euro(maxBid)}</strong>
-      <small class="max-cost">Au plafond : ${euro(maxBid)} + ${euro(maxAcquisition.fees)} de frais (${feeRate} %)${maxAcquisition.vat ? ` + ${euro(maxAcquisition.vat)} de TVA` : ''} = ${euro(maxAcquisition.purchaseTotal)}</small>
-      <div class="max-margin"><span>Écart brut rapide au plafond</span><b>${euro(quickMarginAtMax)}</b></div>
-      ${maxBidExceeded ? `<em>dépassée de ${euro(current - maxBid)}</em>` : ''}
+    ${Number.isFinite(maxBid) ? `<div class="cote-limit${maxBidExceeded ? ' exceeded' : ''}">
+      <div class="limit-heading">
+        <span>Ta limite d’enchère</span>
+        <strong>${maxBidExceeded ? 'Plafond dépassé' : 'Ne dépasse pas'}</strong>
+      </div>
+      <b class="limit-bid">${euro(maxBid)}</b>
+      <div class="limit-total">
+        <span>Total maximum à payer</span>
+        <b>${euro(maxAcquisition.purchaseTotal)}</b>
+        <small>${euro(maxBid)} d’enchère + ${euro(maxAcquisition.fees)} de frais (${feeRate} %)${maxVatLabel}</small>
+      </div>
+      <div class="limit-margin ${quickMarginAtMax >= 0 ? 'positive' : 'negative'}">
+        <span>Marge estimée si tu revends vite</span>
+        <b>${signedEuro(quickMarginAtMax)}</b>
+        <small>si tu enchéris jusqu’à la limite</small>
+      </div>
+      ${maxBidExceeded ? `<em>N’enchéris plus : l’offre actuelle dépasse la limite de ${euro(current - maxBid)}.</em>` : ''}
     </div>` : ''}
-    <div class="cote-margin ${marginClass}">
-      <span>Écart brut actuel · rapide <b>${euro(quickMargin)}</b></span>
-      <span>normal <b>${euro(normalMargin)}</b></span>
+    <div class="cote-current">
+      <div class="current-heading">
+        <span>Si tu remportes le lot maintenant</span>
+        <strong>${euro(purchaseTotal)} à payer</strong>
+      </div>
+      <small>${euro(current)} d’enchère + ${euro(fees)} de frais (${feeRate} %)${currentVatLabel}</small>
+      <div class="current-margin ${quickMargin >= 0 ? 'positive' : 'negative'}">
+        <span>Marge estimée en vente rapide</span>
+        <b>${signedEuro(quickMargin)}</b>
+      </div>
     </div>
-    <div class="cote-meta">Demande ${esc(cote.demand)} · vente estimée ${cote.estimated_sale_days_min}–${cote.estimated_sale_days_max} jours</div>
+    <p class="cote-margin-note">Les marges sont avant transport, réparations, commissions de revente et temps de travail.</p>
+    <div class="cote-meta">
+      <span>Demande : <b>${esc(cote.demand)}</b></span>
+      <span>Délai estimé : <b>${cote.estimated_sale_days_min} à ${cote.estimated_sale_days_max} jours</b></span>
+    </div>
     <details class="cote-details">
-      <summary>Méthode, risques et sources</summary>
+      <summary>Pourquoi cette estimation ?</summary>
+      <p><b>Marge estimée en revente normale aujourd’hui :</b> ${signedEuro(normalMargin)}</p>
       <p><b>Méthode :</b> ${esc(cote.valuation_method)}</p>
       <p><b>Risques :</b> ${esc(cote.main_risks)}</p>
       ${sources ? `<p><b>Comparables :</b> ${sources}</p>` : '<p>Estimation par inventaire et décote de risque, sans comparable direct retenu.</p>'}
-      <p class="cote-warning">Cotes brutes : transport, réparation, commissions de revente et temps de travail restent à déduire.</p>
     </details>
   </section>`;
 }
