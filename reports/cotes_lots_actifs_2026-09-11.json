@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-09-11",
-  "generated_at": "2026-09-11T21:05:39+00:00",
+  "generated_at": "2026-09-11T21:35:59+00:00",
   "currency": "EUR",
   "lot_count": 112,
   "photo_count": 588,
@@ -10,8 +10,8 @@
     "auction_fees_eur": 3269.2,
     "vat_eur": 0.0,
     "purchase_total_eur": 32989.2,
-    "quick_sale_lot_eur": 72480.0,
-    "normal_resale_gross_eur": 123540.0
+    "quick_sale_lot_eur": 71680.0,
+    "normal_resale_gross_eur": 121640.0
   },
   "definitions": {
     "purchase_total_eur": "Prix d'enchère courant ou mise à prix + 11 % de frais d'enchère + TVA uniquement si son application et son taux sont explicitement indiqués dans la description.",
@@ -3368,17 +3368,27 @@
       "vat_eur": 0.0,
       "purchase_total_eur": 444.0,
       "photo_count": 7,
-      "quick_sale_lot_eur": 1500,
-      "normal_resale_gross_eur": 3500,
-      "quick_margin_before_other_costs_eur": 1056.0,
-      "normal_margin_before_other_costs_eur": 3056.0,
-      "confidence_percent": 42,
+      "quick_sale_lot_eur": 700,
+      "normal_resale_gross_eur": 1600,
+      "quick_margin_before_other_costs_eur": 256.0,
+      "normal_margin_before_other_costs_eur": 1156.0,
+      "confidence_percent": 50,
       "demand": "moyenne",
       "estimated_sale_days_min": 90,
       "estimated_sale_days_max": 300,
-      "valuation_method": "22 iPad, 10 autres tablettes, 14 Kindle et 8 Kobo, selon valeurs par numéro de modèle.",
-      "main_risks": "55 appareils non testés, activation/batteries/écrans inconnus; vente et effacement très chronophages.",
-      "device_checks": [],
+      "valuation_method": "22 iPad valorisés uniquement comme donneurs de pièces sous hypothèse Activation Lock/iCloud ON; 10 autres tablettes et les 22 liseuses détaillées sont décotées comme non testées.",
+      "main_risks": "Le titre annonce 23 liseuses mais le détail n'en énumère que 22 (14 Kindle et 8 Kobo), soit 54 appareils détaillés contre 55 annoncés. Écrans, batteries, comptes Android et état des pièces inconnus; ventes séparées très chronophages.",
+      "device_checks": [
+        {
+          "device": "22 iPad du lot",
+          "imei_suffix": null,
+          "find_my_iphone": "ON",
+          "verification_basis": "assumed",
+          "checked_on": null,
+          "source": "Règle prudente demandée — aucun contrôle IMEI revendiqué",
+          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+        }
+      ],
       "source_ids": [
         "lbc_ipad10",
         "lbc_ipadpro12"

@@ -169,11 +169,11 @@ SOURCES = {
 }
 
 
-# Politique prudente demandée : tout iPhone est valorisé comme iCloud/FMI ON,
-# sauf si l'annonce affirme explicitement qu'il est fonctionnel ET non bloqué.
-# Aucune des annonces ci-dessous ne réunit ces deux preuves. Un seul contrôle
-# réel a été communiqué (iPhone 12 du lot 338443) ; les autres lignes sont donc
-# clairement marquées comme hypothèses et non comme résultats de vérification.
+# Politique prudente demandée : les appareils Apple explicitement listés ici
+# sont valorisés comme iCloud/FMI ON, sauf si l'annonce affirme qu'ils sont à
+# la fois fonctionnels et non bloqués. Un seul contrôle réel a été communiqué
+# (iPhone 12 du lot 338443) ; les autres lignes sont donc clairement marquées
+# comme hypothèses et non comme résultats de vérification.
 def assumed_icloud_on(device):
     return {
         "device": device,
@@ -197,6 +197,7 @@ DEVICE_CHECKS = {
     "306168": [assumed_icloud_on("5 iPhone du lot")],
     "308035": [assumed_icloud_on("15 iPhone du lot")],
     "309023": [assumed_icloud_on("iPhone 15 A3090")],
+    "318313": [assumed_icloud_on("22 iPad du lot")],
     "338443": [
         assumed_icloud_on("iPhone 11 Pro"),
         {
@@ -455,9 +456,9 @@ v(317922, 700, 1800, 46, "moyenne", (60, 240),
 v(318200, 350, 750, 52, "moyenne", (45, 180),
   "Neuf JBL dont Charge 4/5, treize enceintes entrée de gamme et trois baladeurs.",
   "Modèles JBL incomplets, batteries et fonctionnement non testés.", ["lbc_jbl"])
-v(318313, 1500, 3500, 42, "moyenne", (90, 300),
-  "22 iPad, 10 autres tablettes, 14 Kindle et 8 Kobo, selon valeurs par numéro de modèle.",
-  "55 appareils non testés, activation/batteries/écrans inconnus; vente et effacement très chronophages.", ["lbc_ipad10", "lbc_ipadpro12"])
+v(318313, 700, 1600, 50, "moyenne", (90, 300),
+  "22 iPad valorisés uniquement comme donneurs de pièces sous hypothèse Activation Lock/iCloud ON; 10 autres tablettes et les 22 liseuses détaillées sont décotées comme non testées.",
+  "Le titre annonce 23 liseuses mais le détail n'en énumère que 22 (14 Kindle et 8 Kobo), soit 54 appareils détaillés contre 55 annoncés. Écrans, batteries, comptes Android et état des pièces inconnus; ventes séparées très chronophages.", ["lbc_ipad10", "lbc_ipadpro12"])
 v(318327, 300, 600, 61, "forte", (21, 90),
   "PS5, Switch, 3DS XL, 3DS, Wii et deux jeux.",
   "Tout non testé; accessoires et chargeurs non détaillés.", ["lbc_ps5", "lbc_switch_oled"])
