@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-09-11",
-  "generated_at": "2026-09-11T22:29:30+00:00",
+  "generated_at": "2026-09-11T22:36:53+00:00",
   "currency": "EUR",
   "lot_count": 112,
   "photo_count": 588,
@@ -10,8 +10,8 @@
     "auction_fees_eur": 3269.2,
     "vat_eur": 0.0,
     "purchase_total_eur": 32989.2,
-    "quick_sale_lot_eur": 71680.0,
-    "normal_resale_gross_eur": 121640.0
+    "quick_sale_lot_eur": 71610.0,
+    "normal_resale_gross_eur": 121470.0
   },
   "definitions": {
     "purchase_total_eur": "Prix d'enchère courant ou mise à prix + 11 % de frais d'enchère + TVA uniquement si son application et son taux sont explicitement indiqués dans la description.",
@@ -23,7 +23,8 @@
     "quick_margin_before_other_costs_eur": "Cote de vente rapide moins le coût d'achat incluant les 11 % de frais d'enchère et l'éventuelle TVA explicitement indiquée.",
     "normal_margin_before_other_costs_eur": "Cote de revente normale moins le coût d'achat incluant les 11 % de frais d'enchère et l'éventuelle TVA explicitement indiquée.",
     "confidence_percent": "Confiance dans l'ordre de grandeur, pas probabilité de vente.",
-    "apple_phone_policy": "Tout iPhone est supposé iCloud/Find My ON et valorisé uniquement pour pièces, sauf si la description affirme explicitement qu'il est fonctionnel et non bloqué."
+    "apple_phone_policy": "Tout iPhone est supposé iCloud/Find My ON et valorisé uniquement pour pièces, sauf si la description affirme explicitement qu'il est fonctionnel et non bloqué.",
+    "apple_watch_policy": "Toute Apple Watch non testée est supposée sous verrouillage d'activation et valorisée uniquement pour pièces, sauf preuve explicite qu'elle est fonctionnelle, effacée et dissociée du compte de l'ancien propriétaire."
   },
   "limitations": [
     "Les frais d'enchère sont calculés au taux demandé de 11 % sur le prix courant. Aucune TVA n'est ajoutée sans mention explicite dans la description du lot.",
@@ -133,6 +134,26 @@
       "title": "JBL Charge 5 d'occasion — leboncoin",
       "url": "https://www.leboncoin.fr/ck/photo_audio_video/jbl-charge-5",
       "observed": "590 annonces; la majorité des exemples pertinents est autour de 80 à 120 EUR."
+    },
+    "lbc_jbl_flip6": {
+      "title": "JBL Flip 6 d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/ck/photo_audio_video/jbl-flip6",
+      "observed": "184 annonces relevées; exemples récents principalement autour de 45 à 100 EUR selon l'état."
+    },
+    "lbc_apple_watch_se2": {
+      "title": "Apple Watch SE 2 d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/ck/telephones_objets_connectes/apple-watch-se-2",
+      "observed": "981 annonces relevées; une SE 2 fonctionnelle et non bloquée est souvent affichée autour de 90 à 150 EUR."
+    },
+    "lbc_apple_watch_parts": {
+      "title": "Apple Watch pour pièces — leboncoin",
+      "url": "https://www.leboncoin.fr/ck/telephones_objets_connectes/apple-watch-pour-piece",
+      "observed": "251 annonces relevées; exemples pour pièces autour de 25 à 60 EUR, avec forte variation selon le modèle et les composants récupérables."
+    },
+    "apple_watch_activation_lock": {
+      "title": "Verrouillage d'activation de l'Apple Watch — Assistance Apple",
+      "url": "https://support.apple.com/fr-fr/102542",
+      "observed": "Apple confirme que l'ancien propriétaire doit retirer le verrouillage d'activation pour que la montre puisse être configurée et utilisée."
     },
     "lbc_sony_xm4": {
       "title": "Sony WH-1000XM4 d'occasion — leboncoin",
@@ -3517,30 +3538,49 @@
       "vat_eur": 0.0,
       "purchase_total_eur": 33.3,
       "photo_count": 11,
-      "quick_sale_lot_eur": 150,
-      "normal_resale_gross_eur": 300,
-      "recommended_max_bid_eur": 80,
-      "recommended_max_bid_fees_eur": 8.8,
+      "quick_sale_lot_eur": 80,
+      "normal_resale_gross_eur": 130,
+      "recommended_max_bid_eur": 45,
+      "recommended_max_bid_fees_eur": 4.95,
       "recommended_max_bid_vat_eur": 0.0,
-      "recommended_max_purchase_total_eur": 88.8,
-      "quick_margin_at_recommended_max_bid_eur": 61.2,
-      "quick_margin_before_other_costs_eur": 116.7,
-      "normal_margin_before_other_costs_eur": 266.7,
-      "confidence_percent": 39,
+      "recommended_max_purchase_total_eur": 49.95,
+      "quick_margin_at_recommended_max_bid_eur": 30.05,
+      "quick_margin_before_other_costs_eur": 46.7,
+      "normal_margin_before_other_costs_eur": 96.7,
+      "confidence_percent": 58,
       "demand": "moyenne",
-      "estimated_sale_days_min": 30,
+      "estimated_sale_days_min": 21,
       "estimated_sale_days_max": 120,
-      "valuation_method": "Deux Apple Watch inconnues, JBL Flip 6 et mini-imprimante LG.",
-      "main_risks": "Modèles/tailles des montres inconnus, boîtes parfois vides, tout non testé.",
-      "device_checks": [],
+      "valuation_method": "Photos contrôlées : une Apple Watch SE 2 40 mm A2722 et une seconde Apple Watch non identifiée, toutes deux valorisées uniquement pour pièces sous hypothèse Activation Lock ON; valeur prudente ajoutée pour la JBL Flip 6 et la mini-imprimante LG PD233 non testées.",
+      "main_risks": "Aucune preuve de déverrouillage, aucun chargeur de montre visible, seconde Apple Watch non identifiée et fonctionnement de tous les appareils inconnu.",
+      "device_checks": [
+        {
+          "device": "2 Apple Watch du lot, dont une SE 2 40 mm A2722 identifiée sur les photos",
+          "imei_suffix": null,
+          "find_my_iphone": "ON",
+          "verification_basis": "assumed",
+          "checked_on": null,
+          "source": "Règle prudente demandée — aucun contrôle IMEI revendiqué",
+          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+        }
+      ],
       "source_ids": [
-        "lbc_jbl"
+        "lbc_apple_watch_se2",
+        "lbc_apple_watch_parts",
+        "lbc_jbl_flip6",
+        "apple_watch_activation_lock"
       ],
       "source_titles": [
-        "JBL Charge 5 d'occasion — leboncoin"
+        "Apple Watch SE 2 d'occasion — leboncoin",
+        "Apple Watch pour pièces — leboncoin",
+        "JBL Flip 6 d'occasion — leboncoin",
+        "Verrouillage d'activation de l'Apple Watch — Assistance Apple"
       ],
       "source_urls": [
-        "https://www.leboncoin.fr/ck/photo_audio_video/jbl-charge-5"
+        "https://www.leboncoin.fr/ck/telephones_objets_connectes/apple-watch-se-2",
+        "https://www.leboncoin.fr/ck/telephones_objets_connectes/apple-watch-pour-piece",
+        "https://www.leboncoin.fr/ck/photo_audio_video/jbl-flip6",
+        "https://support.apple.com/fr-fr/102542"
       ]
     },
     {

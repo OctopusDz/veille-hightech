@@ -190,6 +190,26 @@ SOURCES = {
         "url": "https://www.leboncoin.fr/ck/photo_audio_video/jbl-charge-5",
         "observed": "590 annonces; la majorité des exemples pertinents est autour de 80 à 120 EUR.",
     },
+    "lbc_jbl_flip6": {
+        "title": "JBL Flip 6 d'occasion — leboncoin",
+        "url": "https://www.leboncoin.fr/ck/photo_audio_video/jbl-flip6",
+        "observed": "184 annonces relevées; exemples récents principalement autour de 45 à 100 EUR selon l'état.",
+    },
+    "lbc_apple_watch_se2": {
+        "title": "Apple Watch SE 2 d'occasion — leboncoin",
+        "url": "https://www.leboncoin.fr/ck/telephones_objets_connectes/apple-watch-se-2",
+        "observed": "981 annonces relevées; une SE 2 fonctionnelle et non bloquée est souvent affichée autour de 90 à 150 EUR.",
+    },
+    "lbc_apple_watch_parts": {
+        "title": "Apple Watch pour pièces — leboncoin",
+        "url": "https://www.leboncoin.fr/ck/telephones_objets_connectes/apple-watch-pour-piece",
+        "observed": "251 annonces relevées; exemples pour pièces autour de 25 à 60 EUR, avec forte variation selon le modèle et les composants récupérables.",
+    },
+    "apple_watch_activation_lock": {
+        "title": "Verrouillage d'activation de l'Apple Watch — Assistance Apple",
+        "url": "https://support.apple.com/fr-fr/102542",
+        "observed": "Apple confirme que l'ancien propriétaire doit retirer le verrouillage d'activation pour que la montre puisse être configurée et utilisée.",
+    },
     "lbc_sony_xm4": {
         "title": "Sony WH-1000XM4 d'occasion — leboncoin",
         "url": "https://www.leboncoin.fr/ck/photo_audio_video/casque-sony-wh-1000xm4",
@@ -236,6 +256,7 @@ DEVICE_CHECKS = {
     "306168": [assumed_icloud_on("5 iPhone du lot")],
     "308035": [assumed_icloud_on("15 iPhone du lot")],
     "309023": [assumed_icloud_on("iPhone 15 A3090")],
+    "309881": [assumed_icloud_on("2 Apple Watch du lot, dont une SE 2 40 mm A2722 identifiée sur les photos")],
     "318313": [assumed_icloud_on("22 iPad du lot")],
     "338443": [
         assumed_icloud_on("iPhone 11 Pro"),
@@ -474,9 +495,9 @@ v(309616, 120, 200, 76, "forte", (7, 30),
 v(309654, 250, 360, 78, "forte", (7, 30),
   "Xbox Series X avec manette, casque Sony et câbles.",
   "Fonctionnement non testé; une seule manette.", ["lbc_xbox_x"])
-v(309881, 150, 300, 39, "moyenne", (30, 120),
-  "Deux Apple Watch inconnues, JBL Flip 6 et mini-imprimante LG.",
-  "Modèles/tailles des montres inconnus, boîtes parfois vides, tout non testé.", ["lbc_jbl"])
+v(309881, 80, 130, 58, "moyenne", (21, 120),
+  "Photos contrôlées : une Apple Watch SE 2 40 mm A2722 et une seconde Apple Watch non identifiée, toutes deux valorisées uniquement pour pièces sous hypothèse Activation Lock ON; valeur prudente ajoutée pour la JBL Flip 6 et la mini-imprimante LG PD233 non testées.",
+  "Aucune preuve de déverrouillage, aucun chargeur de montre visible, seconde Apple Watch non identifiée et fonctionnement de tous les appareils inconnu.", ["lbc_apple_watch_se2", "lbc_apple_watch_parts", "lbc_jbl_flip6", "apple_watch_activation_lock"])
 v(304101, 300, 420, 79, "forte", (7, 30),
   "PS5 Slim CFI-2016 et deux manettes, non testées.",
   "Fonctionnement et dérive des sticks non vérifiés.", ["lbc_ps5", "lbc_ps5_bundles"])
@@ -658,6 +679,7 @@ def main() -> None:
             "normal_margin_before_other_costs_eur": "Cote de revente normale moins le coût d'achat incluant les 11 % de frais d'enchère et l'éventuelle TVA explicitement indiquée.",
             "confidence_percent": "Confiance dans l'ordre de grandeur, pas probabilité de vente.",
             "apple_phone_policy": "Tout iPhone est supposé iCloud/Find My ON et valorisé uniquement pour pièces, sauf si la description affirme explicitement qu'il est fonctionnel et non bloqué.",
+            "apple_watch_policy": "Toute Apple Watch non testée est supposée sous verrouillage d'activation et valorisée uniquement pour pièces, sauf preuve explicite qu'elle est fonctionnelle, effacée et dissociée du compte de l'ancien propriétaire.",
         },
         "limitations": [
             "Les frais d'enchère sont calculés au taux demandé de 11 % sur le prix courant. Aucune TVA n'est ajoutée sans mention explicite dans la description du lot.",

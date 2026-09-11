@@ -101,7 +101,7 @@ function renderCote(lot) {
     const statusLabel = verified ? 'contrôlé' : 'hypothèse prudente';
     const imeiLabel = check.imei_suffix ? `IMEI ••••${esc(check.imei_suffix)} · ` : '';
     return `<div class="cote-alert ${verified ? 'verified' : 'assumed'}">
-      <b>⚠ ${esc(check.device)} : iCloud / Find My ${esc(check.find_my_iphone)}</b>
+      <b>⚠ ${esc(check.device)} : verrouillage d’activation / Localiser ${esc(check.find_my_iphone)}</b>
       <span>${esc(statusLabel)} · ${imeiLabel}${esc(check.valuation_effect)}</span></div>`;
   }).join('');
 
