@@ -106,10 +106,14 @@ function renderCote(lot) {
     const verified = check.verification_basis === 'verified';
     const statusLabel = verified ? 'état contrôlé' : 'hypothèse prudente';
     const imeiLabel = check.imei_suffix ? `IMEI ••••${esc(check.imei_suffix)} · ` : '';
+    const imeiCount = Number(check.imei_count) || 0;
+    const imeiCountLabel = !verified && imeiCount
+      ? `${imeiCount} IMEI présent${imeiCount > 1 ? 's' : ''} dans l’annonce, non contrôlé${imeiCount > 1 ? 's' : ''} · `
+      : '';
     return `<div class="cote-alert ${verified ? 'verified' : 'assumed'}">
       <b>${verified ? 'Contrôle appareil' : 'Risque appareil'} · ${esc(check.device)}</b>
       <strong>Localiser / verrouillage d’activation : ${esc(check.find_my_iphone)}</strong>
-      <span>${esc(statusLabel)} · ${imeiLabel}${esc(check.valuation_effect)}</span></div>`;
+      <span>${esc(statusLabel)} · ${imeiLabel}${esc(imeiCountLabel)}${esc(check.valuation_effect)}</span></div>`;
   }).join('');
 
   return `<section class="cote" aria-label="Cote de revente estimée">
@@ -167,6 +171,7 @@ function renderCote(lot) {
     <details class="cote-details">
       <summary>Pourquoi cette estimation ?</summary>
       <p><b>Marge estimée en revente normale aujourd’hui :</b> ${signedEuro(normalMargin)}</p>
+      ${cote.photos_reviewed ? `<p><b>Photos vérifiées :</b> ${cote.photo_count} sur ${cote.photo_count} · passe du ${esc(cote.photos_reviewed_on || cote.market_checked_on || '')}</p>` : ''}
       <p><b>Méthode :</b> ${esc(cote.valuation_method)}</p>
       <p><b>Risques :</b> ${esc(cote.main_risks)}</p>
       ${sources ? `<p><b>Comparables :</b> ${sources}</p>` : '<p>Estimation par inventaire et décote de risque, sans comparable direct retenu.</p>'}
