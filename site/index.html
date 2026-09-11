@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Enchères High-Tech — Domaine</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap topin">
+    <div class="brand">Enchères <span>High-Tech</span></div>
+    <input id="q" type="search" autocomplete="off" placeholder="Rechercher un lot, une marque, une ville…" />
+    <select id="fdate" autocomplete="off" title="Filtrer par date de clôture"></select>
+    <div class="upd" id="upd"></div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="wrap tabsin">
+    <button class="tab active" data-st="14">En cours <span class="b" id="n14">0</span></button>
+    <button class="tab" data-st="13">À venir <span class="b" id="n13">0</span></button>
+  </div>
+</nav>
+
+<main class="wrap">
+  <!-- Vue 1 : les dépôts -->
+  <section id="view-depots">
+    <p class="hint" id="hint"></p>
+    <div id="depots" class="depots"></div>
+    <p id="empty" class="empty" hidden>Aucun lot ne correspond à cette recherche.</p>
+  </section>
+
+  <!-- Vue 2 : les lots d'un dépôt -->
+  <section id="view-lots" hidden>
+    <button class="back" id="back">← Tous les dépôts</button>
+    <div id="dephead"></div>
+    <div id="lots" class="lots"></div>
+  </section>
+</main>
+
+<!-- Visionneuse photo -->
+<div id="viewer" class="viewer" hidden>
+  <button class="vclose" id="vclose" aria-label="Fermer">×</button>
+  <button class="vnav vprev" id="vprev" aria-label="Précédent">‹</button>
+  <img id="vimg" alt="" />
+  <button class="vnav vnext" id="vnext" aria-label="Suivant">›</button>
+  <div class="vcount" id="vcount"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

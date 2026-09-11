@@ -1,0 +1,20 @@
+# Photos des lots : régénérées par la collecte, ~45 Mo et renouvelées 5×/jour.
+# Les versionner ferait gonfler l'historique indéfiniment et irréversiblement.
+site/img/
+
+# Fichiers bruts déposés par la collecte (le navigateur télécharge ici)
+tools/_telechargements/
+*.bin
+
+# Cache de géocodage (reconstruit tout seul)
+tools/.geocache.json
+
+# Profil Chrome dédié à la collecte
+tools/.chrome-profil/
+
+# Journaux
+*.log
+logs/
+
+# macOS
+.DS_Store

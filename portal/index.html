@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Veille High-Tech</title>
+  <meta name="theme-color" content="#0b1020" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icons/icon.svg" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">💻</span> Veille High-Tech</div>
+    <button id="btn-settings" class="icon-btn" title="Réglages">⚙️</button>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab active" data-tab="depots">🚚 Dépôts <span id="depots-count" class="badge">0</span></button>
+    <button class="tab" data-tab="lots">🔦 Lots <span id="lots-count" class="badge">0</span></button>
+    <button class="tab" data-tab="cote">💰 Cote</button>
+  </nav>
+
+  <main>
+    <section id="tab-depots" class="tabpane active">
+      <div id="depots-status" class="status">Calcul des trajets…</div>
+      <div id="depots-list"></div>
+      <p id="depots-empty" class="empty" hidden>
+        Aucun lot à regrouper. Lance ta collecte puis dépose le résultat dans
+        <code>data/lots.json</code>.
+      </p>
+    </section>
+
+    <section id="tab-lots" class="tabpane">
+      <div class="controls">
+        <input id="lots-search" type="search" placeholder="Filtrer (iphone, macbook, ps5…)" />
+        <label class="chk"><input type="checkbox" id="only-deals" /> Bonnes affaires</label>
+        <label class="chk"><input type="checkbox" id="hide-pro" /> Masquer pros</label>
+      </div>
+      <div id="lots-status" class="status"></div>
+      <div id="lots-grid" class="grid"></div>
+      <p id="lots-empty" class="empty" hidden>
+        Aucun lot dans <code>data/lots.json</code>. Lance ta collecte
+        (<code>python3 -m scraper --categories 47,48,49,51,52</code>) et dépose le
+        résultat ici, ou laisse la routine quotidienne le faire.
+      </p>
+    </section>
+
+    <section id="tab-cote" class="tabpane">
+      <div class="controls">
+        <input id="cote-search" type="search" placeholder="Chercher un type (iphone, tv, console…)" />
+      </div>
+      <p class="muted" id="cote-meta"></p>
+      <div id="cote-grid" class="grid"></div>
+    </section>
+  </main>
+
+  <dialog id="settings">
+    <form method="dialog" class="settings-form">
+      <h3>Réglages</h3>
+      <label>📍 Mon point de départ (commune ou code postal)
+        <input id="set-home" type="text" placeholder="ex. Maule 78580" />
+      </label>
+      <label>Marge de revente visée : <b id="margin-val"></b>%
+        <input id="set-margin" type="range" min="0" max="80" step="5" />
+      </label>
+      <label>Marge nette mini pour se déplacer (€) : <b id="minnet-val"></b>
+        <input id="set-minnet" type="range" min="0" max="1000" step="25" />
+      </label>
+      <label>Bascule voiture → train au-delà de : <b id="drive-val"></b> h de route
+        <input id="set-drive" type="range" min="1" max="6" step="0.5" />
+      </label>
+      <div class="two">
+        <label>Péage (€/km)
+          <input id="set-toll" type="text" inputmode="decimal" placeholder="0.07" />
+        </label>
+        <label>Carburant (€/km)
+          <input id="set-fuel" type="text" inputmode="decimal" placeholder="0.12" />
+        </label>
+      </div>
+      <label>Topic ntfy (pour les notifs push, optionnel)
+        <input id="set-topic" type="text" placeholder="hightech-xxxx" />
+      </label>
+      <p class="muted small">Le trajet est estimé (distance × sinuosité). Le verdict d'un dépôt =
+        revente − achat − 1 trajet (A/R) − coût du temps ≥ marge nette mini.</p>
+      <div class="row-end">
+        <button id="set-save" class="btn primary" value="save">Enregistrer</button>
+        <button value="cancel" class="btn">Fermer</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="engine.js"></script>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+  </script>
+</body>
+</html>

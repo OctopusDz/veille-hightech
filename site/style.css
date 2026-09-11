@@ -1,0 +1,149 @@
+:root{
+  --bg:#0d1117; --panel:#161b22; --panel2:#1c2333; --line:#2b3444;
+  --txt:#e6edf3; --muted:#8b98ab; --accent:#e8a33d; --link:#58a6ff;
+  --live:#3fb950; --soon:#a371f7; --pro:#d29922; --danger:#f85149;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0;background:var(--bg);color:var(--txt);
+  font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:1400px;margin:0 auto;padding:0 24px}
+a{color:var(--link)}
+
+.top{background:linear-gradient(180deg,#11161f,#0d1117);border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:20}
+.topin{display:flex;align-items:center;gap:20px;padding:16px 24px}
+.brand{font-size:19px;font-weight:700;white-space:nowrap}
+.brand span{color:var(--accent)}
+#q{flex:1;max-width:520px;padding:9px 14px;background:var(--panel);border:1px solid var(--line);
+  border-radius:8px;color:var(--txt);font-size:14px}
+#q:focus{outline:none;border-color:var(--accent)}
+#fdate{padding:9px 12px;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+  color:var(--txt);font-size:14px;max-width:260px;cursor:pointer}
+#fdate:focus{outline:none;border-color:var(--accent)}
+#fdate.on{border-color:var(--accent);color:var(--accent);font-weight:600}
+.upd{margin-left:auto;color:var(--muted);font-size:12px;white-space:nowrap}
+
+.tabs{background:var(--bg);border-bottom:1px solid var(--line);position:sticky;top:65px;z-index:19}
+.tabsin{display:flex;gap:4px;padding:0 24px}
+.tab{background:none;border:none;border-bottom:2px solid transparent;color:var(--muted);
+  padding:13px 18px;font-size:15px;font-weight:600;cursor:pointer}
+.tab:hover{color:var(--txt)}
+.tab.active{color:var(--txt);border-bottom-color:var(--accent)}
+.b{display:inline-block;min-width:22px;padding:1px 7px;margin-left:6px;background:var(--panel2);
+  border-radius:999px;font-size:12px;color:var(--muted)}
+.tab.active .b{background:var(--accent);color:#1a1200}
+
+main{padding:24px 0 60px}
+.hint{color:var(--muted);font-size:13px;margin:0 0 18px}
+.empty{color:var(--muted);background:var(--panel);border:1px dashed var(--line);
+  padding:24px;border-radius:10px;text-align:center}
+
+/* ---- Dépôts ---- */
+.depots{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:16px}
+.dep{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  cursor:pointer;transition:border-color .12s,transform .12s}
+.dep:hover{border-color:var(--accent);transform:translateY(-2px)}
+.dep .dtop{padding:16px 18px 12px}
+.dep .city{font-size:19px;font-weight:700;letter-spacing:.2px}
+.dep .city .cp{color:var(--muted);font-weight:400;font-size:14px;margin-left:6px}
+.dep .dname{color:var(--muted);font-size:13px;margin-top:3px}
+.dep .drow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px;font-size:13px}
+.pill{padding:3px 10px;border-radius:999px;font-size:12px;font-weight:600}
+.pill.n{background:var(--panel2);color:var(--txt);border:1px solid var(--line)}
+.pill.live{background:rgba(63,185,80,.15);color:var(--live);border:1px solid rgba(63,185,80,.4)}
+.pill.soon{background:rgba(163,113,247,.15);color:var(--soon);border:1px solid rgba(163,113,247,.4)}
+.pill.org{background:transparent;color:var(--muted);border:1px solid var(--line)}
+.pill.km{background:rgba(232,163,61,.15);color:var(--accent);border:1px solid rgba(232,163,61,.45)}
+.dates{padding:10px 18px;background:var(--panel2);border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);font-size:13px;display:flex;gap:18px;flex-wrap:wrap}
+.dates b{font-weight:600}
+.dates .lbl{color:var(--muted);margin-right:5px}
+.left{color:var(--accent);font-weight:600}
+.strip{display:flex;gap:2px;height:82px;background:#0a0e14}
+.strip div{flex:1;background-size:cover;background-position:center}
+.strip .more{display:flex;align-items:center;justify-content:center;color:var(--muted);
+  font-size:13px;background:var(--panel2);flex:0 0 62px}
+
+/* ---- Détail dépôt ---- */
+.back{background:var(--panel);border:1px solid var(--line);color:var(--txt);padding:8px 14px;
+  border-radius:8px;cursor:pointer;font-size:14px;font-weight:600;margin-bottom:18px}
+.back:hover{border-color:var(--accent)}
+.dephead{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  padding:18px 20px;margin-bottom:22px}
+.dephead h2{margin:0 0 4px;font-size:22px}
+.dephead .sub{color:var(--muted);font-size:14px}
+.meta{display:flex;gap:22px;flex-wrap:wrap;margin-top:14px;font-size:13px}
+.meta div{max-width:420px}
+.meta .k{color:var(--muted);display:block;font-size:12px;margin-bottom:2px}
+.meta .v{white-space:pre-line}
+
+/* ---- Lots ---- */
+.grid-lots{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:18px}
+
+/* Barre « retenus / poubelle » */
+.bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+.bar .cnt{font-size:15px;font-weight:600}
+.bar .note{color:var(--muted);font-size:13px}
+.tgl{background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:7px 14px;
+  border-radius:8px;cursor:pointer;font-size:13px;font-weight:600}
+.tgl:hover{border-color:var(--danger);color:var(--txt)}
+.tgl.retour{background:var(--accent);border-color:var(--accent);color:#201400;font-size:14px}
+.tgl.retour:hover{filter:brightness(1.1);color:#201400}
+.pill.trash{background:transparent;color:var(--danger);border:1px solid rgba(248,81,73,.45)}
+
+/* Pied de carte : écarter / annonce officielle */
+.actions{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.bin{background:var(--panel2);border:none;border-right:1px solid var(--line);color:var(--muted);
+  padding:11px 8px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
+.bin:hover{background:rgba(248,81,73,.18);color:#ffc9c5}
+.lot.ecarte .bin{color:var(--live)}
+.lot.ecarte .bin:hover{background:rgba(63,185,80,.18);color:#bff5cd}
+.lot.ecarte{opacity:.6}
+.lot.ecarte:hover{opacity:1}
+.lot{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  display:flex;flex-direction:column}
+.lot .ph{position:relative;aspect-ratio:4/3;background:#0a0e14 center/cover no-repeat;cursor:zoom-in}
+.lot .nph{position:absolute;right:8px;bottom:8px;background:rgba(0,0,0,.72);color:#fff;
+  font-size:11px;padding:3px 8px;border-radius:6px}
+.lot .tags{position:absolute;left:8px;top:8px;display:flex;gap:6px}
+.tag{font-size:10px;font-weight:700;padding:3px 7px;border-radius:6px;background:rgba(0,0,0,.72);color:#fff}
+.tag.pro{background:var(--pro);color:#1a1200}
+.lot .body{padding:14px 16px;display:flex;flex-direction:column;gap:9px;flex:1}
+.lot .num{color:var(--muted);font-size:12px}
+.lot h3{margin:0;font-size:15px;line-height:1.35;font-weight:600}
+.price{display:flex;align-items:baseline;gap:8px}
+.price .v{font-size:20px;font-weight:700;color:var(--accent)}
+.price .k{font-size:12px;color:var(--muted)}
+.desc{font-size:13px;color:#b8c4d4;line-height:1.55;max-height:66px;overflow:hidden;position:relative}
+.desc.open{max-height:none}
+.desc:not(.open):after{content:"";position:absolute;left:0;right:0;bottom:0;height:26px;
+  background:linear-gradient(transparent,var(--panel))}
+.more-btn{background:none;border:none;color:var(--link);font-size:12px;cursor:pointer;
+  padding:0;text-align:left;font-weight:600}
+.lot .go{display:flex;align-items:center;justify-content:center;text-align:center;padding:11px 8px;
+  background:var(--panel2);color:var(--link);text-decoration:none;font-weight:600;font-size:13px}
+.lot .go:hover{background:#222b3d}
+
+/* ---- Visionneuse ---- */
+.viewer{position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:50;
+  display:flex;align-items:center;justify-content:center}
+.viewer img{max-width:88vw;max-height:88vh;object-fit:contain}
+.vclose{position:absolute;top:18px;right:24px;background:none;border:none;color:#fff;
+  font-size:40px;line-height:1;cursor:pointer}
+.vnav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.1);
+  border:none;color:#fff;font-size:44px;width:58px;height:92px;cursor:pointer}
+.vprev{left:14px}.vnext{right:14px}
+.vnav:hover{background:rgba(255,255,255,.2)}
+.vcount{position:absolute;bottom:22px;color:#fff;font-size:14px;background:rgba(0,0,0,.6);
+  padding:5px 14px;border-radius:999px}
+
+@media(max-width:760px){
+  .wrap{padding:0 14px}
+  .topin{flex-wrap:wrap;gap:12px;padding:12px 14px}
+  #q{order:3;max-width:none;flex:1 1 100%}
+  .upd{margin-left:0}
+  .tabs{top:auto;position:static}
+  .tabsin{padding:0 14px}
+  .depots,.grid-lots{grid-template-columns:1fr}
+}

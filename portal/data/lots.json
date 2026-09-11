@@ -1,0 +1,66 @@
+{
+  "updated": "2026-09-11T09:00:00.000Z",
+  "demo": true,
+  "note": "Jeu de DÉMONSTRATION pour visualiser le regroupement par dépôt + verdict. Remplacé par la collecte réelle (data/lots.json produit par ta veille).",
+  "lots": [
+    {
+      "sku": "294796", "lot_number": 408,
+      "name": "100 PC portables LENOVO E595",
+      "description": "100 ordinateurs portables Lenovo ThinkPad E595, AMD Ryzen, sans chargeur, état d'usage professionnel.",
+      "category": "Informatique", "depot": "MAGASIN DOMANIAL RENNES", "depot_street": "11 RUE D'OUESSANT",
+      "postcode": "35768", "city": "SAINT-GREGOIRE",
+      "depot_phone": "02 23 35 44 00", "depot_email": "cav035.dnid@dgfip.finances.gouv.fr",
+      "depot_hours": "Lundi à vendredi 09h00-12h00 / 13h30-16h00",
+      "price": 500, "bid": 3100, "qty": 100, "bulky": true, "resellable": true,
+      "condition_factor": 0.55,
+      "url": "https://encheres-domaine.gouv.fr/lot/ordinateursportableslenovo-1.html",
+      "end": "2026-09-11T15:00:00.000Z"
+    },
+    {
+      "sku": "301001", "lot_number": 412,
+      "name": "12 iPhone 11 / 12 divers",
+      "description": "Lot de 12 smartphones Apple iPhone 11 et 12, fonctionnels, écrans à vérifier.",
+      "category": "Smartphones et téléphonie", "depot": "MAGASIN DOMANIAL RENNES", "depot_street": "11 RUE D'OUESSANT",
+      "postcode": "35768", "city": "SAINT-GREGOIRE",
+      "depot_phone": "02 23 35 44 00", "depot_email": "cav035.dnid@dgfip.finances.gouv.fr",
+      "depot_hours": "Lundi à vendredi 09h00-12h00 / 13h30-16h00",
+      "price": 400, "bid": 950, "qty": 12, "resellable": true, "condition_factor": 0.7,
+      "end": "2026-09-11T15:00:00.000Z"
+    },
+    {
+      "sku": "301050", "lot_number": 415,
+      "name": "5 consoles PS4 + manettes",
+      "description": "5 consoles Sony PlayStation 4 avec manettes, testées.",
+      "category": "Consoles et jeux vidéo", "depot": "MAGASIN DOMANIAL RENNES", "depot_street": "11 RUE D'OUESSANT",
+      "postcode": "35768", "city": "SAINT-GREGOIRE",
+      "depot_phone": "02 23 35 44 00", "depot_email": "cav035.dnid@dgfip.finances.gouv.fr",
+      "depot_hours": "Lundi à vendredi 09h00-12h00 / 13h30-16h00",
+      "price": 120, "bid": 280, "qty": 5, "resellable": true, "condition_factor": 0.75,
+      "end": "2026-09-11T15:00:00.000Z"
+    },
+    {
+      "sku": "302200", "lot_number": 88,
+      "name": "30 barrettes RAM DDR4 8 Go",
+      "description": "30 modules mémoire DDR4 8 Go, retirés de PC de bureau.",
+      "category": "Informatique", "depot": "Vannes", "city": "Vannes", "postcode": "56000",
+      "price": 60, "bid": 60, "qty": 30, "resellable": true, "condition_factor": 0.8,
+      "end": "2026-09-12T15:00:00.000Z"
+    },
+    {
+      "sku": "302250", "lot_number": 91,
+      "name": "Imprimante laser HS",
+      "description": "Imprimante laser en panne, vendue pour pièces.",
+      "category": "Informatique", "depot": "Vannes", "city": "Vannes", "postcode": "56000",
+      "price": 5, "bid": 5, "qty": 1, "resellable": false,
+      "end": "2026-09-12T15:00:00.000Z"
+    },
+    {
+      "sku": "305000", "lot_number": 210,
+      "name": "8 TV LED 55\" Samsung",
+      "description": "8 téléviseurs LED Samsung 55 pouces, occasion, avec télécommandes.",
+      "category": "TV, Vidéo, Son", "depot": "Marseille - La Valentine", "city": "Marseille", "postcode": "13011",
+      "price": 300, "bid": 600, "qty": 8, "bulky": true, "resellable": true, "condition_factor": 0.7,
+      "end": "2026-09-13T15:00:00.000Z"
+    }
+  ]
+}
