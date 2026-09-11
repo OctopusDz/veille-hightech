@@ -603,6 +603,58 @@ document.addEventListener('keydown', (e) => {
 });
 
 // --- Navigation ------------------------------------------------------------
+function activateTab(status) {
+  document.querySelectorAll('.tab').forEach((tab) => {
+    const tabStatus = tab.dataset.st === 'fin' || tab.dataset.st === 'trash'
+      ? tab.dataset.st
+      : Number(tab.dataset.st);
+    tab.classList.toggle('active', tabStatus === status);
+  });
+}
+
+// Chrome modifie l'URL lors d'un clic sur Retour/Suivant sans recharger cette
+// application. On doit donc relire le hash et remettre l'interface dans l'état
+// correspondant, au lieu de laisser l'ancien dépôt affiché.
+function applyRouteFromLocation() {
+  const h = decodeURIComponent(location.hash.slice(1));
+
+  if (h === 'fin' || h === 'trash') {
+    state.status = h;
+    state.depot = null;
+    activateTab(h);
+    afficherOnglet();
+    return;
+  }
+
+  const slash = h.indexOf('/');
+  if (slash > 0) {
+    const status = Number(h.slice(0, slash));
+    const key = h.slice(slash + 1);
+    if (status === 13 || status === 14) {
+      // L'ouverture normale a déjà rendu le dépôt avant que l'événement
+      // hashchange arrive. Ce garde-fou évite de refaire tout le rendu.
+      if (state.status === status && state.depot === key) return;
+      state.status = status;
+      state.depot = null;
+      activateTab(status);
+      majFiltreDates();
+      renderDepots();
+      if (!openDepot(key, true)) afficherOnglet();
+      return;
+    }
+  }
+
+  // URL sans hash : retour à la liste des dépôts. On conserve l'onglet
+  // En cours/À venir qui était actif avant l'ouverture du dépôt.
+  if (state.status !== 13 && state.status !== 14) state.status = 14;
+  closeDepot(true);
+  activateTab(state.status);
+  majFiltreDates();
+  afficherOnglet();
+}
+
+window.addEventListener('hashchange', applyRouteFromLocation);
+
 $('#back').addEventListener('click', () => { closeDepot(); renderDepots(); });
 document.querySelectorAll('.tab').forEach((t) => t.addEventListener('click', () => {
   document.querySelectorAll('.tab').forEach((x) => x.classList.remove('active'));
@@ -680,26 +732,7 @@ dlgSet.addEventListener('close', async () => {
   majSync();
   updateCounters();
 
-  // Reprise depuis l'URL : #fin, #trash ou #<statut>/<ville|cp>
-  const h = decodeURIComponent(location.hash.slice(1));
-  if (h === 'fin' || h === 'trash') {
-    state.status = h;
-    document.querySelectorAll('.tab').forEach((t) => t.classList.toggle('active', t.dataset.st === h));
-    afficherOnglet();
-    return;
-  }
-  const slash = h.indexOf('/');
-  if (slash > 0) {
-    const st = +h.slice(0, slash);
-    if (st === 13 || st === 14) {
-      state.status = st;
-      document.querySelectorAll('.tab').forEach((t) => t.classList.toggle('active', +t.dataset.st === st));
-    }
-    majFiltreDates();
-    renderDepots();
-    openDepot(h.slice(slash + 1), true);
-    return;
-  }
-  majFiltreDates();
-  renderDepots();
+  // Reprise depuis l'URL : #fin, #trash ou #<statut>/<ville|cp>.
+  // La même fonction gère ensuite les flèches Retour et Suivant de Chrome.
+  applyRouteFromLocation();
 })();
