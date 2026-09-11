@@ -169,17 +169,47 @@ SOURCES = {
 }
 
 
-# Résultats de contrôles communiqués manuellement. L'IMEI complet reste dans la
-# description officielle du lot ; seule sa fin est répétée dans la cote.
-DEVICE_CHECKS = {
-    "338443": [{
-        "device": "iPhone 12 A2403",
-        "imei_suffix": "4229",
+# Politique prudente demandée : tout iPhone est valorisé comme iCloud/FMI ON,
+# sauf si l'annonce affirme explicitement qu'il est fonctionnel ET non bloqué.
+# Aucune des annonces ci-dessous ne réunit ces deux preuves. Un seul contrôle
+# réel a été communiqué (iPhone 12 du lot 338443) ; les autres lignes sont donc
+# clairement marquées comme hypothèses et non comme résultats de vérification.
+def assumed_icloud_on(device):
+    return {
+        "device": device,
+        "imei_suffix": None,
         "find_my_iphone": "ON",
-        "checked_on": SNAPSHOT_DATE,
-        "source": "IMEICheck.com — résultat communiqué par l'utilisateur",
-        "valuation_effect": "Appareil valorisé uniquement pour pièces tant que le propriétaire d'origine ne retire pas le verrouillage d'activation.",
-    }],
+        "verification_basis": "assumed",
+        "checked_on": None,
+        "source": "Règle prudente demandée — aucun contrôle IMEI revendiqué",
+        "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé.",
+    }
+
+
+DEVICE_CHECKS = {
+    "302000": [assumed_icloud_on("iPhone 16 128 Go")],
+    "296119": [assumed_icloud_on("iPhone X ou XS, écran HS")],
+    "336701": [assumed_icloud_on("10 iPhone du lot")],
+    "340354": [assumed_icloud_on("7 iPhone du lot")],
+    "314274": [assumed_icloud_on("iPhone 13 Pro Max, vitre arrière cassée")],
+    "314267": [assumed_icloud_on("iPhone 13 Pro Max")],
+    "304783": [assumed_icloud_on("6 iPhone du lot")],
+    "306168": [assumed_icloud_on("5 iPhone du lot")],
+    "308035": [assumed_icloud_on("15 iPhone du lot")],
+    "309023": [assumed_icloud_on("iPhone 15 A3090")],
+    "338443": [
+        assumed_icloud_on("iPhone 11 Pro"),
+        {
+            "device": "iPhone 12 A2403",
+            "imei_suffix": "4229",
+            "find_my_iphone": "ON",
+            "verification_basis": "verified",
+            "checked_on": SNAPSHOT_DATE,
+            "source": "IMEICheck.com — résultat communiqué par l'utilisateur",
+            "valuation_effect": "Valeur pièces uniquement tant que le propriétaire d'origine ne retire pas le verrouillage d'activation.",
+        },
+    ],
+    "343959": [assumed_icloud_on("iPhone 14 Pro")],
 }
 
 
@@ -256,12 +286,12 @@ v(324538, 170, 300, 67, "moyenne", (14, 60),
 v(297974, 400, 800, 54, "moyenne", (21, 90),
   "Écran gaming, tour inconnue, manette Astro C40, disques LaCie et petit matériel.",
   "CPU/RAM de la tour inconnus; tout est non testé; nombreuses petites pièces lentes à écouler.", [])
-v(302000, 350, 520, 70, "forte", (7, 30),
-  "iPhone 16 128 Go non testé, avec décote activation/batterie; batterie externe marginale.",
-  "Activation, IMEI, batterie et fonctionnement non vérifiés.", ["lbc_iphone16"])
-v(296119, 180, 350, 48, "moyenne", (30, 120),
-  "Valeur pièces du MacBook, de trois iPad mini et d'un iPhone X/XS cassés.",
-  "Écrans HS, modèles/capacités incomplets, aucun chargeur, tout non testé.", ["lbc_macbook_m1"])
+v(302000, 105, 180, 58, "moyenne", (21, 90),
+  "iPhone 16 valorisé uniquement comme donneur de pièces sous hypothèse iCloud ON; 5-10 EUR pour la batterie externe.",
+  "Aucune valeur d'usage: fonctionnement, authenticité des pièces, batterie et état interne inconnus.", ["lbc_iphone16"])
+v(296119, 160, 300, 48, "moyenne", (30, 150),
+  "Valeur pièces du MacBook et des trois iPad mini; l'iPhone X/XS écran HS est aussi limité aux pièces sous hypothèse iCloud ON.",
+  "Écrans HS, modèles/capacités incomplets, aucun chargeur, tout non testé; aucune valeur d'usage pour l'iPhone.", ["lbc_macbook_m1"])
 v(324620, 180, 340, 59, "moyenne", (14, 75),
   "AirPods Pro, deux Jabra Elite 5 et deux anciennes GoPro valorisés après test.",
   "Authenticité, batteries et fonctionnement non vérifiés.", ["lbc_gopro10"])
@@ -316,18 +346,18 @@ v(336845, 200, 420, 62, "moyenne", (21, 90),
 v(348147, 160, 350, 58, "faible", (30, 150),
   "Rollei 35 domine la valeur, complété par Nikon F65, Yashica et flash.",
   "Tout non testé; cellule, obturateur et optiques à contrôler.", [])
-v(336701, 1250, 2500, 43, "forte", (21, 120),
-  "Somme prudente de dix générations d'iPhone, avec coefficient de risque non-testé/activation.",
-  "Aucune capacité ni batterie; blocage iCloud/IMEI et pannes possibles; mini-réplique sans valeur.", ["lbc_iphone16", "lbc_iphone14pro", "lbc_iphone13pm"])
+v(336701, 350, 750, 55, "moyenne", (45, 180),
+  "Dix iPhone valorisés exclusivement comme donneurs de pièces sous hypothèse iCloud ON; décote supplémentaire pour vente en lot non testé.",
+  "Aucune valeur d'usage ou de déblocage; capacités, batteries, authenticité et état des composants inconnus; mini-réplique sans valeur.", ["lbc_iphone16", "lbc_iphone14pro", "lbc_iphone13pm"])
 v(336751, 350, 750, 48, "moyenne", (30, 150),
   "Dix Android de générations variées, A54/A55/Edge 30 étant les principaux contributeurs.",
   "Tout non testé, aucune capacité, aucun chargeur, risque de comptes/verrouillages.", [])
 v(288890, 450, 850, 54, "forte", (21, 90),
   "Deux iPad 10, iPad 9, Tab S4, Lenovo M10 et P11 après décote non-testé.",
   "Capacités inconnues, aucun chargeur, activation et batteries non vérifiées.", ["lbc_ipad10"])
-v(340354, 600, 1100, 49, "forte", (21, 120),
-  "Sept iPhone, dont 14 Pro et deux 13, avec décote importante non-testé.",
-  "Capacités, batteries, IMEI et activation inconnus; aucun chargeur.", ["lbc_iphone14pro", "lbc_iphone13pm"])
+v(340354, 220, 480, 56, "moyenne", (45, 180),
+  "Sept iPhone valorisés exclusivement comme donneurs de pièces sous hypothèse iCloud ON, avec décote de lot non testé.",
+  "Aucune valeur d'usage ou de déblocage; capacités, batteries et état des composants inconnus; aucun chargeur.", ["lbc_iphone14pro", "lbc_iphone13pm"])
 v(340341, 450, 900, 49, "forte", (21, 120),
   "S25 et S22 portent l'essentiel de la valeur; six smartphones milieu/entrée de gamme.",
   "Tout non testé; authenticité du S25, capacités, comptes et IMEI à contrôler.", [])
@@ -365,24 +395,24 @@ for lot_id in (314372, 314336, 314296):
 v(314295, 30, 60, 82, "faible", (30, 120),
   "Time Capsule A1409 2 To fonctionnelle supposée, avec cordon.",
   "Produit réseau 2012 obsolète; disque dur ancien.", [])
-v(314274, 180, 300, 73, "forte", (14, 60),
-  "iPhone 13 Pro Max avec vitre arrière à remplacer et écran rayé.",
-  "Capacité, batterie, Face ID et activation non indiqués; coût de réparation.", ["lbc_iphone13pm"])
-v(314267, 330, 430, 82, "forte", (7, 30),
-  "iPhone 13 Pro Max en bon état avec chargeur, capacité médiane supposée 128 Go.",
-  "Capacité et santé batterie non indiquées; activation à confirmer.", ["lbc_iphone13pm"])
+v(314274, 55, 110, 62, "moyenne", (21, 90),
+  "iPhone 13 Pro Max valorisé uniquement pour pièces sous hypothèse iCloud ON, avec décote pour vitre arrière cassée et écran rayé.",
+  "Aucune valeur d'usage; capacité, batterie, Face ID et état des composants récupérables inconnus.", ["lbc_iphone13pm"])
+v(314267, 95, 180, 64, "moyenne", (21, 90),
+  "Malgré le bon état annoncé, l'iPhone 13 Pro Max reste valorisé uniquement pour pièces: l'annonce ne confirme ni fonctionnement ni absence de blocage.",
+  "Aucune valeur d'usage ou de déblocage; capacité, santé batterie et authenticité des composants inconnues.", ["lbc_iphone13pm"])
 v(314363, 100, 150, 78, "moyenne", (14, 45),
   "iPad 7 Cellular 32 Go avec clavier, sans chargeur ni boîte.",
   "Batterie et activation à vérifier.", ["lbc_ipad10"])
-v(304783, 350, 900, 35, "moyenne", (45, 180),
-  "Valeur pièces d'un lot de 24 téléphones, dont plusieurs iPhone/Samsung, après tri.",
-  "Nombreux écrans/coques cassés; certains bloqués; tout non testé; réparation chronophage.", ["lbc_iphone13pm", "lbc_iphone14pro"])
-v(306168, 500, 1100, 36, "forte", (30, 150),
-  "Six téléphones dominés par iPhone 16 Pro Max, iPhone 16 et iPhone 14.",
-  "Deux écrans à revoir, blocages possibles, capacités et batteries inconnues.", ["lbc_iphone16", "lbc_iphone14pro"])
-v(308035, 1400, 3200, 30, "forte", (45, 210),
-  "Dix-sept téléphones récents, dont iPhone 17/17 Pro Max déclarés, 14 Pro Max et S23, avec décote extrême.",
-  "Plusieurs écrans/coques endommagés, IMEI manquants, blocages possibles et modèles à authentifier.", ["lbc_iphone16", "lbc_iphone14pro", "lbc_iphone13pm"])
+v(304783, 200, 450, 48, "moyenne", (60, 240),
+  "Les six iPhone sont limités aux pièces sous hypothèse iCloud ON; les 18 autres téléphones non testés sont valorisés après tri avec forte décote.",
+  "Nombreux écrans/coques cassés, certains appareils annoncés bloqués, pannes et comptes Android possibles; travail de tri important.", ["lbc_iphone13pm", "lbc_iphone14pro"])
+v(306168, 260, 560, 50, "moyenne", (45, 180),
+  "Les cinq iPhone, y compris 16 Pro Max/16/14, sont valorisés uniquement pour pièces sous hypothèse iCloud ON; le Galaxy A15 reste non testé.",
+  "Aucune valeur d'usage pour les iPhone; écrans à revoir, capacités, batteries, authenticité et état interne inconnus.", ["lbc_iphone16", "lbc_iphone14pro"])
+v(308035, 550, 1250, 45, "moyenne", (60, 300),
+  "Les quinze iPhone sont valorisés exclusivement comme donneurs de pièces sous hypothèse iCloud ON; S23 et Redmi restent fortement décotés non testés.",
+  "Plusieurs écrans/coques endommagés, modèles iPhone 17/A3293 à authentifier, pièces potentiellement non récupérables et démontage très chronophage.", ["lbc_iphone16", "lbc_iphone14pro", "lbc_iphone13pm"])
 v(176842, 110, 170, 72, "forte", (7, 30),
   "Switch OLED non testée; valeur basse faute d'accessoires explicitement confirmés.",
   "Fonctionnement, dock, chargeur et Joy-Con à confirmer.", ["lbc_switch_oled"])
@@ -416,9 +446,9 @@ v(310961, 220, 420, 62, "moyenne", (21, 90),
 v(311309, 180, 350, 60, "forte", (21, 90),
   "Galaxy Tab A9+ SM-X210, iPad 10 A2696 et deux caméras génériques.",
   "Capacités, activation et fonctionnement non testés; caméras mal identifiées.", ["lbc_ipad10"])
-v(309023, 180, 350, 45, "forte", (21, 90),
-  "iPhone 15 valorisé comme appareil à risque/éventuellement pour pièces.",
-  "Potentiellement bloqué, non testé, capacité et batterie inconnues.", ["lbc_iphone16"])
+v(309023, 45, 90, 58, "moyenne", (21, 90),
+  "iPhone 15 valorisé uniquement comme donneur de pièces sous hypothèse iCloud ON; aucun déblocage futur supposé.",
+  "Non testé et potentiellement bloqué selon l'annonce; capacité, batterie, authenticité et état interne inconnus.", ["lbc_iphone16"])
 v(317922, 700, 1800, 46, "moyenne", (60, 240),
   "58 casques dont plusieurs Bose/Sony haut de gamme, deux écouteurs, baladeurs et 30 vinyles.",
   "Tout non testé; batteries/coussinets; inventaire textuel possiblement imprécis; très nombreuses ventes.", ["lbc_sony_xm4"])
@@ -476,12 +506,12 @@ v(41076, 150, 220, 78, "moyenne", (14, 45),
 v(126221, 140, 220, 65, "moyenne", (14, 60),
   "Asus M509D 8/512 Go avec chargeur, estimation médiane faute de CPU.",
   "Processeur exact, batterie et état écran non indiqués.", [])
-v(338443, 60, 100, 64, "moyenne", (21, 90),
-  "Cote de sécurité sans supposer aucun fonctionnement: iPhone 12 FMI ON et iPhone 11 Pro non testé sont tous deux valorisés pour pièces. Toute valeur d'usage de l'iPhone 11 Pro reste exclue jusqu'à un test concluant et un statut FMI OFF.",
-  "Le statut FMI peut changer si le propriétaire d'origine retire l'appareil de son compte; capacité, batterie et état des deux téléphones restent inconnus.", ["lbc_iphone13pm"])
-v(343959, 350, 600, 36, "forte", (21, 90),
-  "iPhone 14 Pro et second téléphone visuellement OnePlus/Samsung non identifié.",
-  "Modèle 'SAMSUNG ONE' incohérent, capacités, batteries et activation inconnues.", ["lbc_iphone14pro"])
+v(338443, 35, 70, 68, "moyenne", (21, 90),
+  "iPhone 12 contrôlé FMI ON et iPhone 11 Pro supposé iCloud ON: les deux sont valorisés uniquement comme donneurs de pièces.",
+  "Aucune valeur d'usage ou de déblocage; capacité, batterie, écrans, cartes mères et autres composants récupérables restent inconnus.", ["lbc_iphone13pm"])
+v(343959, 70, 160, 48, "moyenne", (30, 120),
+  "iPhone 14 Pro valorisé uniquement pour pièces sous hypothèse iCloud ON; faible valeur prudente ajoutée pour le second téléphone non identifié.",
+  "Modèle 'SAMSUNG ONE' incohérent; aucune valeur d'usage pour l'iPhone; capacités, batteries et fonctionnement inconnus.", ["lbc_iphone14pro"])
 v(321714, 80, 170, 68, "faible", (30, 120),
   "Wii, PS3 Slim, DS Lite et casque filaire.",
   "Tout non testé; câbles PS3 absents; faible valeur unitaire.", [])
@@ -576,9 +606,11 @@ def main() -> None:
             "quick_margin_before_other_costs_eur": "Cote de vente rapide moins le coût d'achat incluant les 11 % de frais d'enchère et l'éventuelle TVA explicitement indiquée.",
             "normal_margin_before_other_costs_eur": "Cote de revente normale moins le coût d'achat incluant les 11 % de frais d'enchère et l'éventuelle TVA explicitement indiquée.",
             "confidence_percent": "Confiance dans l'ordre de grandeur, pas probabilité de vente.",
+            "apple_phone_policy": "Tout iPhone est supposé iCloud/Find My ON et valorisé uniquement pour pièces, sauf si la description affirme explicitement qu'il est fonctionnel et non bloqué.",
         },
         "limitations": [
             "Les frais d'enchère sont calculés au taux demandé de 11 % sur le prix courant. Aucune TVA n'est ajoutée sans mention explicite dans la description du lot.",
+            "La mention iCloud/Find My ON affichée comme hypothèse prudente n'est pas un contrôle IMEI. Seul un statut explicitement marqué contrôlé provient d'un résultat communiqué.",
             "Les prix leboncoin relevés sont surtout des prix demandés, pas des prix de transaction certifiés.",
             "La date de mise en ligne et le délai réel de vente ne sont pas exposés de façon fiable pour chaque comparable; aucun délai n'est présenté comme une mesure leboncoin exacte.",
             "Les lots non testés, bloqués ou incomplets peuvent valoir nettement moins après contrôle.",

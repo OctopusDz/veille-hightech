@@ -52,10 +52,14 @@ function renderCote(lot) {
   const sources = (cote.source_urls || []).map((url, index) =>
     `<a href="${esc(url)}" target="_blank" rel="noopener">source ${index + 1}</a>`
   ).join(' · ');
-  const deviceChecks = (cote.device_checks || []).map((check) =>
-    `<div class="cote-alert"><b>⚠ ${esc(check.device)} : Find My iPhone ${esc(check.find_my_iphone)}</b>
-      <span>IMEI ••••${esc(check.imei_suffix)} · ${esc(check.valuation_effect)}</span></div>`
-  ).join('');
+  const deviceChecks = (cote.device_checks || []).map((check) => {
+    const verified = check.verification_basis === 'verified';
+    const statusLabel = verified ? 'contrôlé' : 'hypothèse prudente';
+    const imeiLabel = check.imei_suffix ? `IMEI ••••${esc(check.imei_suffix)} · ` : '';
+    return `<div class="cote-alert ${verified ? 'verified' : 'assumed'}">
+      <b>⚠ ${esc(check.device)} : iCloud / Find My ${esc(check.find_my_iphone)}</b>
+      <span>${esc(statusLabel)} · ${imeiLabel}${esc(check.valuation_effect)}</span></div>`;
+  }).join('');
 
   return `<section class="cote" aria-label="Cote de revente estimée">
     <div class="cote-head"><strong>Cote revente</strong><span>${cote.confidence_percent} % confiance</span></div>
