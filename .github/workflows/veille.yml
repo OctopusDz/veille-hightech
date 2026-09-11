@@ -137,12 +137,13 @@ jobs:
           if [ -n "$NUM" ]; then
             gh issue comment "$NUM" --body "Nouvel échec le $QUAND UTC : $URL"
           else
-            gh issue create --title "⚠️ Collecte high-tech en échec ($QUAND UTC)" --label collecte-echec \
-              --body "La collecte automatique a échoué. Le site conserve les données du passage précédent.
-
-Détail : $URL
-
-Cette issue restera ouverte tant que les échecs continuent ; ferme-la quand c'est réglé."
+            printf '%s\n' \
+              "La collecte automatique a échoué. Le site conserve les données du passage précédent." \
+              "" "Détail : $URL" "" \
+              "Cette issue restera ouverte tant que les échecs continuent ; ferme-la quand c'est réglé." \
+              > /tmp/corps.md
+            gh issue create --title "⚠️ Collecte high-tech en échec ($QUAND UTC)" \
+              --label collecte-echec --body-file /tmp/corps.md
           fi
       - uses: actions/configure-pages@v5
 
