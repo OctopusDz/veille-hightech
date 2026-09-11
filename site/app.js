@@ -47,11 +47,8 @@ let state = {
 
 // Chiffres dynamiques d'une cote : l'enchère courante peut bouger après la
 // création de l'estimation, donc le tri utilise le même calcul que la carte.
-function valuationNumbers(lot) {
-  const cote = COTES.get(String(lot.id));
-  if (!cote) return { confidence: -1, quickMargin: -Infinity, adjustedMargin: -Infinity };
-
-  const current = Number(lot.bid != null && lot.bid !== '' ? lot.bid : lot.price) || 0;
+function acquisitionAtBid(cote, bid) {
+  const current = Number(bid) || 0;
   const feeRate = Number(cote.auction_fee_rate_percent) || 11;
   const fees = Math.round(current * feeRate) / 100;
   const vatRate = cote.vat_status === 'mentionnee_a_ajouter' && cote.vat_rate_percent != null
@@ -59,12 +56,21 @@ function valuationNumbers(lot) {
     : null;
   const vat = vatRate == null ? 0 : Math.round((current + fees) * vatRate) / 100;
   const purchaseTotal = Math.round((current + fees + vat) * 100) / 100;
+  return { current, feeRate, fees, vatRate, vat, purchaseTotal };
+}
+
+function valuationNumbers(lot) {
+  const cote = COTES.get(String(lot.id));
+  if (!cote) return { confidence: -1, quickMargin: -Infinity, adjustedMargin: -Infinity };
+
+  const bid = lot.bid != null && lot.bid !== '' ? lot.bid : lot.price;
+  const acquisition = acquisitionAtBid(cote, bid);
   const confidence = Number(cote.confidence_percent) || 0;
-  const quickMargin = Number(cote.quick_sale_lot_eur) - purchaseTotal;
+  const quickMargin = Number(cote.quick_sale_lot_eur) - acquisition.purchaseTotal;
 
   return {
-    current, feeRate, fees, vatRate, vat, purchaseTotal, confidence, quickMargin,
-    normalMargin: Number(cote.normal_resale_gross_eur) - purchaseTotal,
+    ...acquisition, confidence, quickMargin,
+    normalMargin: Number(cote.normal_resale_gross_eur) - acquisition.purchaseTotal,
     // Marge rapide pondérée par la fiabilité de l'estimation.
     adjustedMargin: quickMargin * confidence / 100,
   };
@@ -78,6 +84,10 @@ function renderCote(lot) {
   // suit l'enchère courante de lots.json à chaque actualisation du SaaS.
   const { current, feeRate, fees, vatRate, vat, purchaseTotal, quickMargin, normalMargin } = valuationNumbers(lot);
   const maxBid = Number(cote.recommended_max_bid_eur);
+  const maxAcquisition = Number.isFinite(maxBid) ? acquisitionAtBid(cote, maxBid) : null;
+  const quickMarginAtMax = maxAcquisition
+    ? Number(cote.quick_sale_lot_eur) - maxAcquisition.purchaseTotal
+    : null;
   const maxBidExceeded = Number.isFinite(maxBid) && current > maxBid;
   const marginClass = quickMargin >= 0 ? 'positive' : 'negative';
   const vatLabel = cote.vat_status === 'mentionnee_a_ajouter'
@@ -109,10 +119,12 @@ function renderCote(lot) {
     ${Number.isFinite(maxBid) ? `<div class="cote-max${maxBidExceeded ? ' exceeded' : ''}">
       <div><span>Enchère max conseillée</span><small>montant marteau · hors 11 %</small></div>
       <strong>${euro(maxBid)}</strong>
+      <small class="max-cost">Au plafond : ${euro(maxBid)} + ${euro(maxAcquisition.fees)} de frais (${feeRate} %)${maxAcquisition.vat ? ` + ${euro(maxAcquisition.vat)} de TVA` : ''} = ${euro(maxAcquisition.purchaseTotal)}</small>
+      <div class="max-margin"><span>Écart brut rapide au plafond</span><b>${euro(quickMarginAtMax)}</b></div>
       ${maxBidExceeded ? `<em>dépassée de ${euro(current - maxBid)}</em>` : ''}
     </div>` : ''}
     <div class="cote-margin ${marginClass}">
-      <span>Écart brut rapide <b>${euro(quickMargin)}</b></span>
+      <span>Écart brut actuel · rapide <b>${euro(quickMargin)}</b></span>
       <span>normal <b>${euro(normalMargin)}</b></span>
     </div>
     <div class="cote-meta">Demande ${esc(cote.demand)} · vente estimée ${cote.estimated_sale_days_min}–${cote.estimated_sale_days_max} jours</div>

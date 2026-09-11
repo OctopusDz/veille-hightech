@@ -29,6 +29,20 @@ def money(value: float | int | None) -> float:
     return round(float(value or 0), 2)
 
 
+def acquisition_at_bid(
+    bid: float | int,
+    fee_rate: float,
+    vat_status: str,
+    vat_rate: float | None,
+) -> tuple[float, float, float]:
+    """Return auction fees, explicit VAT and total cost for a hammer bid."""
+    hammer = money(bid)
+    fees = money(hammer * fee_rate)
+    vat = money((hammer + fees) * vat_rate / 100) \
+        if vat_status == "mentionnee_a_ajouter" and vat_rate is not None else 0.0
+    return fees, vat, money(hammer + fees + vat)
+
+
 def recommended_max_bid(
     quick_sale: float | int,
     confidence: float | int,
@@ -570,15 +584,15 @@ def main() -> None:
         quick, normal, confidence, demand, dmin, dmax, method, risks, source_ids = VALUES[lot_id]
         current = lot.get("bid") if lot.get("bid") is not None else lot.get("price")
         current = money(current)
-        auction_fees = money(current * AUCTION_FEE_RATE)
         vat_status, vat_rate = vat_from_description(lot.get("desc"))
-        # Add VAT only when both its applicability and exact rate are explicit.
-        # There is deliberately no guessed default rate.
-        vat_amount = money((current + auction_fees) * vat_rate / 100) \
-            if vat_status == "mentionnee_a_ajouter" and vat_rate is not None else 0.0
-        purchase_total = money(current + auction_fees + vat_amount)
+        auction_fees, vat_amount, purchase_total = acquisition_at_bid(
+            current, AUCTION_FEE_RATE, vat_status, vat_rate
+        )
         max_bid = recommended_max_bid(
             quick, confidence, AUCTION_FEE_RATE, vat_status, vat_rate
+        )
+        max_bid_fees, max_bid_vat, max_purchase_total = acquisition_at_bid(
+            max_bid, AUCTION_FEE_RATE, vat_status, vat_rate
         )
         rows.append({
             "id": lot_id,
@@ -598,6 +612,10 @@ def main() -> None:
             "quick_sale_lot_eur": quick,
             "normal_resale_gross_eur": normal,
             "recommended_max_bid_eur": max_bid,
+            "recommended_max_bid_fees_eur": max_bid_fees,
+            "recommended_max_bid_vat_eur": max_bid_vat,
+            "recommended_max_purchase_total_eur": max_purchase_total,
+            "quick_margin_at_recommended_max_bid_eur": money(quick - max_purchase_total),
             "quick_margin_before_other_costs_eur": money(quick - purchase_total),
             "normal_margin_before_other_costs_eur": money(normal - purchase_total),
             "confidence_percent": confidence,
@@ -634,6 +652,8 @@ def main() -> None:
             "quick_sale_lot_eur": "Prix brut plausible pour céder rapidement le lot dans son état annoncé, sans garantie.",
             "normal_resale_gross_eur": "Recette brute plausible après contrôle, nettoyage et ventes séparées lorsque pertinent; transport, réparations, commissions de revente et temps de travail non déduits.",
             "recommended_max_bid_eur": "Montant marteau maximal conseillé, affiché hors 11 % de frais. Il limite le coût d'acquisition complet à 50–75 % de la cote de vente rapide selon la confiance, conserve donc 25–50 % de réserve, puis retire les frais d'enchère et l'éventuelle TVA explicitement indiquée. Arrondi par prudence aux 5 EUR inférieurs.",
+            "recommended_max_purchase_total_eur": "Coût total au plafond conseillé : enchère maximale + 11 % de frais + TVA uniquement lorsqu'elle est explicitement indiquée.",
+            "quick_margin_at_recommended_max_bid_eur": "Cote de vente rapide moins le coût total au plafond conseillé, avec les 11 % de frais et l'éventuelle TVA inclus dans le calcul.",
             "quick_margin_before_other_costs_eur": "Cote de vente rapide moins le coût d'achat incluant les 11 % de frais d'enchère et l'éventuelle TVA explicitement indiquée.",
             "normal_margin_before_other_costs_eur": "Cote de revente normale moins le coût d'achat incluant les 11 % de frais d'enchère et l'éventuelle TVA explicitement indiquée.",
             "confidence_percent": "Confiance dans l'ordre de grandeur, pas probabilité de vente.",

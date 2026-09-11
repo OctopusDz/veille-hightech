@@ -147,9 +147,14 @@ main{padding:24px 0 60px}
 .cote-max span{color:#bce8c6;font-size:12px;font-weight:700}
 .cote-max small{color:var(--muted);font-size:10px}
 .cote-max strong{color:#8eea9f;font-size:20px}
+.cote-max .max-cost{grid-column:1/-1;padding-top:3px}
+.cote-max .max-margin{grid-column:1/-1;display:flex;flex-direction:row;align-items:center;
+  justify-content:space-between;gap:10px;margin-top:5px;padding-top:7px;border-top:1px solid rgba(63,185,80,.28)}
+.cote-max .max-margin span{font-size:11px;color:#bce8c6}
+.cote-max .max-margin b{font-size:14px;color:#8eea9f}
 .cote-max em{grid-column:1/-1;color:#ffb2ad;font-size:11px;font-style:normal;font-weight:700}
 .cote-max.exceeded{background:rgba(248,81,73,.12);border-top-color:rgba(248,81,73,.36)}
-.cote-max.exceeded span,.cote-max.exceeded strong{color:#ffc1bd}
+.cote-max.exceeded>div:first-child>span,.cote-max.exceeded>strong{color:#ffc1bd}
 .cote-margin{display:flex;justify-content:space-between;gap:10px;padding:7px 11px;
   background:rgba(63,185,80,.08);font-size:11px;color:#a9d9b5}
 .cote-margin.negative{background:rgba(248,81,73,.1);color:#ffc1bd}
