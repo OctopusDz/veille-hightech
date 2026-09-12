@@ -26,8 +26,30 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
 
+      # Les photos ne sont pas dans Git : sans cette restauration, un simple
+      # rafraîchissement des prix publierait un site avec des cadres noirs.
+      - uses: actions/cache@v4
+        with:
+          path: site/img
+          key: photos-${{ github.run_id }}
+          restore-keys: photos-
+
       - name: Contrôler les prix sur chaque fiche officielle
         run: python3 -m scraper.prix
+
+      - name: Vérifier toutes les photos avant publication
+        run: |
+          python3 - <<'PY'
+          import json, sys
+          from pathlib import Path
+          site = Path("site")
+          lots = json.loads((site / "data/lots.json").read_text(encoding="utf-8")).get("lots", [])
+          references = [photo for lot in lots for photo in (lot.get("photos") or [])]
+          absentes = [photo for photo in references if not (site / photo).is_file()]
+          if absentes:
+              sys.exit(f"déploiement annulé : {len(absentes)} photo(s) absente(s), ex. {absentes[:5]}")
+          print(f"{len(references)} photos présentes — publication autorisée")
+          PY
 
       # Le fichier rafraîchi est publié dans l'artefact Pages sans créer un
       # commit toutes les 15 minutes. La collecte complète conserve les prix
