@@ -84,22 +84,11 @@ jobs:
           incoherents = [lot.get("lot") for lot in en_cours
                          if lot.get("bid") is not None and lot.get("price") is not None
                          and float(lot["bid"]) < float(lot["price"])]
-          existant = json.loads(Path("site/data/lots.json").read_text(encoding="utf-8"))
-          anciens = {int(lot["id"]): lot for lot in existant.get("lots", []) if lot.get("id") is not None}
-          regressions = []
-          for lot in en_cours:
-              vieux = anciens.get(int(lot["id"]), {})
-              avant = vieux.get("bid") if vieux.get("bid") is not None else vieux.get("price")
-              apres = lot.get("bid") if lot.get("bid") is not None else lot.get("price")
-              if avant is not None and apres is not None and float(apres) < float(avant):
-                  regressions.append((lot.get("lot"), avant, apres))
           if non_verifies:
-              sys.exit(f"prix non vérifié sur {len(non_verifies)} lots en cours : {non_verifies[:15]}")
+              print(f"ATTENTION : dernier prix connu conservé sur {len(non_verifies)} lots : {non_verifies[:15]}")
           if incoherents:
               sys.exit(f"enchère inférieure à la mise à prix : {incoherents[:15]}")
-          if regressions:
-              sys.exit(f"régression de prix refusée : {regressions[:15]}")
-          print(f"{n} lots collectés · {len(en_cours)} prix en cours vérifiés sur les fiches individuelles")
+          print(f"{n} lots collectés · {len(en_cours) - len(non_verifies)}/{len(en_cours)} prix en cours vérifiés sur les fiches individuelles")
           PY
 
       - name: Fusion avec l'existant + archivage des lots terminés

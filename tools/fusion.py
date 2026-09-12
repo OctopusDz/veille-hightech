@@ -37,7 +37,7 @@ CHAMPS_MAJ = (
     "name", "status", "statusLabel", "start", "end", "price", "bid", "reserve",
     "pro", "org", "url", "desc", "city", "cp", "depot", "street",
     "contact", "phone", "email", "hours", "access",
-    "bidVerified", "bidCheckedAt",
+    "bidVerified", "bidCheckedAt", "bidCheckAttemptedAt", "bidCheckError",
 )
 
 

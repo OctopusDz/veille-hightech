@@ -630,7 +630,11 @@ function renderLotCard(l, discarded = false) {
     ? (priceStale
       ? `${priceLabel} · à recontrôler (dernier : ${fmtShort(l.bidCheckedAt)})`
       : `${priceLabel} · vérifiée ${fmtShort(l.bidCheckedAt)}`)
-    : (String(l.status) === '14' ? `${priceLabel} · à actualiser` : priceLabel);
+    : (String(l.status) === '14'
+      ? (l.bidCheckedAt
+        ? `${priceLabel} · à recontrôler (dernier : ${fmtShort(l.bidCheckedAt)})`
+        : `${priceLabel} · à actualiser`)
+      : priceLabel);
   const action = discarded ? 'Remettre ce lot dans sa vente' : 'Écarter ce lot';
   return `<article class="lot${discarded ? ' ecarte' : ''}">
     <div class="ph" data-id="${l.id}" style="background-image:url('${esc(l.img || (l.photos || [])[0] || '')}')">
@@ -641,7 +645,7 @@ function renderLotCard(l, discarded = false) {
     <div class="body">
       <h3>${esc(l.name)}</h3>
       <div class="price"><span class="v">${euro(bid ? l.bid : l.price)}</span>
-        <span class="k${priceStale ? ' unverified' : ''}" title="${priceVerified && l.bidCheckedAt ? `Prix contrôlé le ${esc(fmt(l.bidCheckedAt))}` : ''}">${verificationLabel}</span></div>
+        <span class="k${priceStale ? ' unverified' : ''}" title="${priceVerified && l.bidCheckedAt ? `Prix contrôlé le ${esc(fmt(l.bidCheckedAt))}` : (l.bidCheckError ? esc(l.bidCheckError) : '')}">${verificationLabel}</span></div>
       ${renderCote(l)}
       ${l.desc ? `<div class="desc">${esc(l.desc)}</div>
         <button class="more-btn">Lire la suite</button>` : ''}

@@ -1,8 +1,9 @@
 """Rafraîchit uniquement les enchères des lots en cours depuis leur fiche.
 
 La liste de catégorie Magento peut conserver un ancien ``last_bid`` en cache.
-Ce passage léger interroge donc chaque fiche individuelle, refuse une régression
-de prix et ne remplace jamais le fichier public si un seul contrôle échoue.
+Ce passage léger interroge donc chaque fiche individuelle. Une baisse confirmée
+est acceptée car une offre peut être annulée. Après échec des nouvelles
+tentatives sur session propre, le dernier prix connu reste affiché et signalé.
 """
 from __future__ import annotations
 
@@ -55,32 +56,37 @@ def main() -> int:
                 "bidVerified": True,
             })
             avant, apres = prix_effectif(lot), prix_effectif(nouveau)
-            if avant is not None and apres is not None and apres < avant:
-                raise ValueError(f"régression refusée {avant:g} → {apres:g} EUR")
             controles.append((lot, nouveau))
             if avant != apres:
                 changements.append((lot.get("lot"), lot.get("name"), avant, apres))
         except Exception as exc:
             erreurs.append((lot.get("lot"), str(exc)))
+            nouveau = dict(lot)
+            nouveau["bidVerified"] = False
+            nouveau["bidCheckError"] = "fiche officielle momentanément inaccessible"
+            controles.append((lot, nouveau))
 
-    t.fermer()
+    collecteur.t.fermer()
     if erreurs:
         for numero, erreur in erreurs:
             print(f"lot {numero} : {erreur}")
-        print(f"AUCUNE PUBLICATION : {len(erreurs)} prix non vérifié(s)")
-        return 1
+        print(f"{len(erreurs)} dernier(s) prix connu(s) conservé(s) et marqué(s) à recontrôler")
 
     quand = datetime.now(timezone.utc).isoformat(timespec="seconds")
     remplacements = {int(nouveau["id"]): nouveau for _, nouveau in controles}
     for index, lot in enumerate(brut.get("lots", [])):
         neuf = remplacements.get(int(lot["id"]))
         if neuf:
-            neuf["bidCheckedAt"] = quand
+            neuf["bidCheckAttemptedAt"] = quand
+            if neuf.get("bidVerified"):
+                neuf["bidCheckedAt"] = quand
+                neuf.pop("bidCheckError", None)
             brut["lots"][index] = neuf
     brut["updated"] = quand
     brut["count"] = len(brut.get("lots", []))
 
-    print(f"{len(controles)}/{len(actifs)} prix en cours vérifiés · {len(changements)} changement(s)")
+    print(f"{len(controles) - len(erreurs)}/{len(actifs)} prix en cours vérifiés "
+          f"· {len(erreurs)} à recontrôler · {len(changements)} changement(s)")
     for numero, nom, avant, apres in changements:
         print(f"  lot {numero} {str(nom)[:42]} : {afficher_prix(avant)} → {afficher_prix(apres)} EUR")
     if not args.sec:
