@@ -86,13 +86,21 @@ class Collecteur:
         self.t = t
         self.appels = 0
 
-    def gql(self, query: str, op: str, variables: dict) -> dict:
-        url = (config.GRAPHQL_URL + "?query=" + urllib.parse.quote(query)
-               + "&operationName=" + op
-               + "&variables=" + urllib.parse.quote(json.dumps(variables)))
+    def gql(self, query: str, op: str, variables: dict, *, sans_cache: bool = False) -> dict:
         derniere: Exception | None = None
         for essai in range(config.MAX_RETRIES):
             try:
+                # Le CDN du Domaine peut continuer à servir un ancien
+                # ``last_bid`` même avec Cache-Control: no-cache. La page web
+                # officielle envoie elle aussi une requête réseau ; rendre la
+                # requête GraphQL unique force le CDN à consulter Magento.
+                # Un commentaire GraphQL ne change pas l'opération exécutée.
+                requete = query
+                if sans_cache:
+                    requete += f"\n# prix-direct-{time.time_ns()}-{essai}"
+                url = (config.GRAPHQL_URL + "?query=" + urllib.parse.quote(requete)
+                       + "&operationName=" + op
+                       + "&variables=" + urllib.parse.quote(json.dumps(variables)))
                 brut = transport.resoudre_challenge(self.t, url)
                 self.appels += 1
                 d = json.loads(brut)
@@ -125,7 +133,7 @@ class Collecteur:
                 "currentPage": page, "pageSize": config.PAGE_SIZE,
                 "sort": {"start_auction_lot_at": "ASC"},
                 "filter": {"category_uid": {"eq": cat}, "lot_status": {"in": STATUTS_ACTIFS}},
-            })
+            }, sans_cache=True)
             p = d["data"]["products"]
             lots.extend(p["items"])
             log.info("page %d/%d — %d lots", page, p["page_info"]["total_pages"], len(lots))
@@ -136,7 +144,7 @@ class Collecteur:
 
     # ---- 2. détail : dépôt, contact, photos ---------------------------
     def detail(self, url_key: str) -> dict:
-        d = self.gql(Q_DETAIL, "getProductPageMain", {"urlKey": url_key})
+        d = self.gql(Q_DETAIL, "getProductPageMain", {"urlKey": url_key}, sans_cache=True)
         items = d["data"]["products"]["items"]
         if not items:
             return {}
@@ -171,7 +179,7 @@ class Collecteur:
 
     # ---- 3. état final d'un lot disparu --------------------------------
     def final(self, url_key: str) -> dict | None:
-        d = self.gql(Q_FINAL, "getProductPageSide", {"urlKey": url_key})
+        d = self.gql(Q_FINAL, "getProductPageSide", {"urlKey": url_key}, sans_cache=True)
         items = d["data"]["products"]["items"]
         return items[0] if items else None
 
@@ -315,10 +323,14 @@ def main() -> int:
     from datetime import datetime, timezone
     quand = datetime.now(timezone.utc).isoformat(timespec="seconds")
     for lot in lots:
+        # Les horodatages de prix ne concernent que les ventes effectivement
+        # ouvertes. Auparavant ``bidCheckedAt`` était aussi renouvelé sur les
+        # lots à venir, ce qui faisait croire que tous les lots avaient changé
+        # à chaque collecte.
         if str(lot.get("status")) == "14":
             lot["bidCheckAttemptedAt"] = quand
-        if lot.get("bidVerified"):
-            lot["bidCheckedAt"] = quand
+            if lot.get("bidVerified"):
+                lot["bidCheckedAt"] = quand
     (DATA / "collecte.json").write_text(json.dumps(
         {"updated": quand, "source": "encheres-domaine.gouv.fr — High tech (46)",
          "count": len(lots), "lots": lots}, ensure_ascii=False, indent=1), encoding="utf-8")

@@ -40,6 +40,11 @@ CHAMPS_MAJ = (
     "bidVerified", "bidCheckedAt", "bidCheckAttemptedAt", "bidCheckError",
 )
 
+# Ces champs prouvent qu'une fiche a été relue, mais ne représentent pas une
+# modification du lot. Ils sont bien conservés dans le fichier sans gonfler le
+# compteur « mis à jour ».
+CHAMPS_CONTROLE = {"bidCheckedAt", "bidCheckAttemptedAt"}
+
 
 def charger(chemin: Path, defaut):
     if not chemin.exists():
@@ -126,7 +131,7 @@ def main() -> int:
     deja = {int(l["id"]) for l in arch.get("lots", []) if l.get("id") is not None}
 
     quand = datetime.now(timezone.utc).isoformat(timespec="seconds")
-    ajoutes, majs, inchanges, archives = [], [], 0, []
+    ajoutes, majs, inchanges, controles, archives = [], [], 0, 0, []
 
     fusionnes: dict[int, dict] = {}
     for lid, neuf in nouveaux.items():
@@ -137,9 +142,11 @@ def main() -> int:
             continue
         fusionne = dict(vieux)
         change = {}
+        suivi = {}
         for champ in CHAMPS_MAJ:
             if champ in neuf and neuf[champ] != vieux.get(champ):
-                change[champ] = (vieux.get(champ), neuf[champ])
+                cible = suivi if champ in CHAMPS_CONTROLE else change
+                cible[champ] = (vieux.get(champ), neuf[champ])
                 fusionne[champ] = neuf[champ]
         # Les photos locales ne sont remplacées que si la collecte en apporte.
         if neuf.get("photos"):
@@ -150,6 +157,8 @@ def main() -> int:
             majs.append((fusionne, change))
         else:
             inchanges += 1
+        if suivi:
+            controles += 1
 
     # Un lot connu absent de la collecte (ou passé hors 13/14) est terminé.
     for lid, vieux in anciens.items():
@@ -167,6 +176,7 @@ def main() -> int:
     print(f"  nouveaux    : {len(ajoutes)}")
     print(f"  mis à jour  : {len(majs)}")
     print(f"  inchangés   : {inchanges}")
+    print(f"  recontrôlés : {controles} (horodatage seulement)")
     print(f"  archivés    : {len(archives)}")
     for lot, ch in majs[:15]:
         detail = ", ".join(f"{c} {a}→{b}" for c, (a, b) in ch.items() if c in ("bid", "status", "statusLabel"))
