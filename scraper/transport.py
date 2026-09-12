@@ -44,6 +44,9 @@ ENTETES = {
     "Referer": config.PAGE_CATEGORIE,
     "store": config.STORE,
     "x-magento-cache-id": config.MAGENTO_CACHE_ID,
+    # Le prix de la fiche individuelle doit refléter l'enchère en cours.
+    "Cache-Control": "no-cache",
+    "Pragma": "no-cache",
 }
 
 

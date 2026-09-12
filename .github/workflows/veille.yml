@@ -52,13 +52,19 @@ jobs:
       # aussi la collecte entière si elle tombe.
       - name: Collecte (lots + photos manquantes)
         run: |
+          reussie=0
           for tentative in 1 2 3; do
             echo "── tentative $tentative ──"
             if python3 -m scraper.collecte --photos 2>&1 | tee sortie.txt; then
+              reussie=1
               break
             fi
             sleep $((tentative * 20))
           done
+          if [ "$reussie" -ne 1 ]; then
+            echo "collecte échouée après 3 tentatives"
+            exit 1
+          fi
 
       # Une collecte partielle ne doit pas écraser des données complètes.
       - name: Contrôle du fichier produit
@@ -72,7 +78,28 @@ jobs:
           n = len(json.loads(f.read_text(encoding="utf-8")).get("lots") or [])
           if n < 10:
               sys.exit(f"seulement {n} lots — collecte manifestement partielle, on ne publie pas")
-          print(f"{n} lots collectés")
+          lots = json.loads(f.read_text(encoding="utf-8")).get("lots") or []
+          en_cours = [lot for lot in lots if str(lot.get("status")) == "14"]
+          non_verifies = [lot.get("lot") for lot in en_cours if lot.get("bidVerified") is not True]
+          incoherents = [lot.get("lot") for lot in en_cours
+                         if lot.get("bid") is not None and lot.get("price") is not None
+                         and float(lot["bid"]) < float(lot["price"])]
+          existant = json.loads(Path("site/data/lots.json").read_text(encoding="utf-8"))
+          anciens = {int(lot["id"]): lot for lot in existant.get("lots", []) if lot.get("id") is not None}
+          regressions = []
+          for lot in en_cours:
+              vieux = anciens.get(int(lot["id"]), {})
+              avant = vieux.get("bid") if vieux.get("bid") is not None else vieux.get("price")
+              apres = lot.get("bid") if lot.get("bid") is not None else lot.get("price")
+              if avant is not None and apres is not None and float(apres) < float(avant):
+                  regressions.append((lot.get("lot"), avant, apres))
+          if non_verifies:
+              sys.exit(f"prix non vérifié sur {len(non_verifies)} lots en cours : {non_verifies[:15]}")
+          if incoherents:
+              sys.exit(f"enchère inférieure à la mise à prix : {incoherents[:15]}")
+          if regressions:
+              sys.exit(f"régression de prix refusée : {regressions[:15]}")
+          print(f"{n} lots collectés · {len(en_cours)} prix en cours vérifiés sur les fiches individuelles")
           PY
 
       - name: Fusion avec l'existant + archivage des lots terminés

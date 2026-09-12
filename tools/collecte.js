@@ -21,13 +21,14 @@
 
   const gq = async (q, op, v) => (await (await fetch(
     BASE + '/gateway/magento/graphql/?query=' + encodeURIComponent(q) +
-    '&operationName=' + op + '&variables=' + encodeURIComponent(JSON.stringify(v))
+    '&operationName=' + op + '&variables=' + encodeURIComponent(JSON.stringify(v)),
+    { cache: 'no-store' }
   )).json());
 
   // NB : le serveur exige la signature complète (currentPage + sort), sinon 500.
   const Q_LISTE = `query getCategoryLots($currentPage:Int$filter:ProductAttributeFilterInput!$pageSize:Int$sort:ProductAttributeSortInput){products(currentPage:$currentPage filter:$filter pageSize:$pageSize sort:$sort){items{id sku lot_number name url_key lot_status lot_status_label start_auction_lot_at end_auction_lot_at start_date end_date price_auction last_bid reserve_price professional_only auction description{html}short_description{html}small_image{url}sales_inspector_data{cav_name}}total_count}}`;
   // dropoff_location est NULL dans la liste : il n'est rempli que sur le détail.
-  const Q_DETAIL = `query getProductPageMain($urlKey:String!){products(filter:{url_key:{eq:$urlKey}}){items{id dropoff_location_id dropoff_location{city postcode}dropoff_location_fo{name address city postcode}contact_dropoff_location{name email telephone physical_schedule tel_schedule}media_gallery_entries{file position disabled}}}}`;
+  const Q_DETAIL = `query getProductPageMain($urlKey:String!){products(filter:{url_key:{eq:$urlKey}}){items{id lot_status lot_status_label last_bid bid_winner_amount price_auction reserve_price dropoff_location_id dropoff_location{city postcode}dropoff_location_fo{name address city postcode}contact_dropoff_location{name email telephone physical_schedule tel_schedule}media_gallery_entries{file position disabled}}}}`;
 
   const strip = (h) => (h || '').replace(/<[^>]*>/g, ' ').replace(/&nbsp;/g, ' ')
     .replace(/&amp;/g, '&').replace(/&#039;/g, "'").replace(/&quot;/g, '"').replace(/\s+/g, ' ').trim();
@@ -52,6 +53,9 @@
         const it = j.data.products.items[0];
         const fo = it.dropoff_location_fo || {}, dl = it.dropoff_location || {}, c = it.contact_dropoff_location || {};
         d = {
+          status: it.lot_status, statusLabel: it.lot_status_label,
+          price: it.price_auction, bid: it.last_bid, reserve: it.reserve_price,
+          bidVerified: true, bidCheckedAt: new Date().toISOString(),
           depot: (fo.name || '').trim() || null, street: (fo.address || '').trim() || null,
           city: (dl.city || fo.city || '').trim() || null, cp: (dl.postcode || fo.postcode || '').trim() || null,
           contact: (c.name || '').trim() || null, phone: (c.telephone || '').trim() || null,

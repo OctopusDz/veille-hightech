@@ -11,7 +11,9 @@ const esc = (s) => (s == null ? '' : String(s)).replace(/[&<>"]/g, (c) => ({ '&'
 const euro = (v) => (v == null || v === '') ? '—' : Number(v).toLocaleString('fr-FR', { maximumFractionDigits: 2 }) + ' €';
 
 const DT = new Intl.DateTimeFormat('fr-FR', { weekday: 'short', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
+const SHORT_DT = new Intl.DateTimeFormat('fr-FR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
 const fmt = (s) => { const d = new Date(s); return isNaN(d) ? '—' : DT.format(d); };
+const fmtShort = (s) => { const d = new Date(s); return isNaN(d) ? '—' : SHORT_DT.format(d); };
 
 // Temps restant avant la clôture, en clair.
 function remain(end) {
@@ -620,6 +622,15 @@ function openDepot(key, silent) {
 function renderLotCard(l, discarded = false) {
   const n = (l.photos || []).length;
   const bid = l.bid != null && l.bid !== '';
+  const priceVerified = l.bidVerified === true;
+  const checkedAt = new Date(l.bidCheckedAt || '');
+  const priceStale = String(l.status) === '14' && (!priceVerified || isNaN(checkedAt) || Date.now() - checkedAt > 30 * 60 * 1000);
+  const priceLabel = bid ? 'enchère en cours' : 'mise à prix';
+  const verificationLabel = priceVerified
+    ? (priceStale
+      ? `${priceLabel} · à recontrôler (dernier : ${fmtShort(l.bidCheckedAt)})`
+      : `${priceLabel} · vérifiée ${fmtShort(l.bidCheckedAt)}`)
+    : (String(l.status) === '14' ? `${priceLabel} · à actualiser` : priceLabel);
   const action = discarded ? 'Remettre ce lot dans sa vente' : 'Écarter ce lot';
   return `<article class="lot${discarded ? ' ecarte' : ''}">
     <div class="ph" data-id="${l.id}" style="background-image:url('${esc(l.img || (l.photos || [])[0] || '')}')">
@@ -630,7 +641,7 @@ function renderLotCard(l, discarded = false) {
     <div class="body">
       <h3>${esc(l.name)}</h3>
       <div class="price"><span class="v">${euro(bid ? l.bid : l.price)}</span>
-        <span class="k">${bid ? 'enchère en cours' : 'mise à prix'}</span></div>
+        <span class="k${priceStale ? ' unverified' : ''}" title="${priceVerified && l.bidCheckedAt ? `Prix contrôlé le ${esc(fmt(l.bidCheckedAt))}` : ''}">${verificationLabel}</span></div>
       ${renderCote(l)}
       ${l.desc ? `<div class="desc">${esc(l.desc)}</div>
         <button class="more-btn">Lire la suite</button>` : ''}

@@ -120,6 +120,7 @@ main{padding:24px 0 60px}
 .price{display:flex;align-items:baseline;gap:8px}
 .price .v{font-size:20px;font-weight:700;color:var(--accent)}
 .price .k{font-size:12px;color:var(--muted)}
+.price .k.unverified{color:#ffb4ae;font-weight:700}
 .cote{margin:4px 0;border:1px solid #31445d;border-radius:14px;background:#101925;
   overflow:hidden;box-shadow:0 8px 22px rgba(0,0,0,.2)}
 .cote.missing{padding:12px 14px;color:var(--muted);font-size:13px;border-style:dashed}

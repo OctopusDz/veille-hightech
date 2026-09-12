@@ -58,7 +58,8 @@ Q_LISTE = (
 # dropoff_location est NULL dans la liste : il n'est rempli que sur le détail.
 Q_DETAIL = (
     "query getProductPageMain($urlKey:String!){products(filter:{url_key:{eq:$urlKey}})"
-    "{items{id dropoff_location_id dropoff_location{city postcode}"
+    "{items{id lot_status lot_status_label last_bid bid_winner_amount price_auction "
+    "reserve_price dropoff_location_id dropoff_location{city postcode}"
     "dropoff_location_fo{name address city postcode}"
     "contact_dropoff_location{name email telephone physical_schedule tel_schedule}"
     "media_gallery_entries{file position disabled}}}}"
@@ -138,6 +139,14 @@ class Collecteur:
         photos = sorted((m for m in (it.get("media_gallery_entries") or []) if not m.get("disabled")),
                         key=lambda m: m.get("position") or 0)
         return {
+            # Ces champs de prix proviennent de la fiche individuelle. Elle est
+            # la source fiable en direct ; la liste de catégorie reste un repli.
+            "status": it.get("lot_status"),
+            "statusLabel": it.get("lot_status_label"),
+            "price": it.get("price_auction"),
+            "bid": it.get("last_bid"),
+            "reserve": it.get("reserve_price"),
+            "bidVerified": True,
             "depotId": it.get("dropoff_location_id"),
             "depot": nettoie(fo.get("name")),
             "street": nettoie(fo.get("address")),
@@ -241,7 +250,7 @@ def main() -> int:
         bruts = bruts[: args.max]
     log.info("%d lots actifs — détail de chacun…", len(bruts))
 
-    lots, echecs = [], 0
+    lots, echecs, prix_non_verifies = [], 0, []
     for i, b in enumerate(bruts, 1):
         try:
             d = col.detail(b["url_key"])
@@ -249,6 +258,17 @@ def main() -> int:
             echecs += 1
             log.warning("détail lot %s : %s", b.get("lot_number"), exc)
             d = {}
+        precedent = connus.get(int(b["id"]), {})
+        ancien_effectif = precedent.get("bid") if precedent.get("bid") is not None else precedent.get("price")
+        nouveau_effectif = d.get("bid") if d.get("bid") is not None else d.get("price")
+        if (str(b.get("lot_status")) == "14" and d.get("bidVerified")
+                and ancien_effectif is not None and nouveau_effectif is not None
+                and float(nouveau_effectif) < float(ancien_effectif)):
+            log.error("lot %s : le prix vérifié recule de %s à %s", b.get("lot_number"),
+                      ancien_effectif, nouveau_effectif)
+            d["bidVerified"] = False
+        if str(b.get("lot_status")) == "14" and not d.get("bidVerified"):
+            prix_non_verifies.append(b.get("lot_number"))
         lots.append(normaliser(b, d))
         if i % 20 == 0:
             log.info("  %d/%d", i, len(bruts))
@@ -282,6 +302,9 @@ def main() -> int:
     DATA.mkdir(parents=True, exist_ok=True)
     from datetime import datetime, timezone
     quand = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    for lot in lots:
+        if lot.get("bidVerified"):
+            lot["bidCheckedAt"] = quand
     (DATA / "collecte.json").write_text(json.dumps(
         {"updated": quand, "source": "encheres-domaine.gouv.fr — High tech (46)",
          "count": len(lots), "lots": lots}, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -290,9 +313,12 @@ def main() -> int:
 
     en_cours = sum(1 for l in lots if l["status"] == 14)
     print(f"\n{len(lots)} lots actifs ({en_cours} en cours, {len(lots) - en_cours} à venir) "
-          f"· {echecs} détail(s) en échec · {len(termines)} terminé(s) · {col.appels} appels"
+          f"· {echecs} détail(s) en échec · {len(prix_non_verifies)} prix en cours non vérifié(s) "
+          f"· {len(termines)} terminé(s) · {col.appels} appels"
           + (f" · {nb_photos} photos" if args.photos else ""))
-    return 1 if (echecs and echecs > len(lots) // 4) else 0
+    if prix_non_verifies:
+        log.error("prix non vérifiés pour les lots en cours : %s", prix_non_verifies)
+    return 1 if prix_non_verifies or (echecs and echecs > len(lots) // 4) else 0
 
 
 if __name__ == "__main__":
