@@ -104,16 +104,35 @@ function renderCote(lot) {
   ).join(' · ');
   const deviceChecks = (cote.device_checks || []).map((check) => {
     const verified = check.verification_basis === 'verified';
-    const statusLabel = verified ? 'état contrôlé' : 'hypothèse prudente';
+    const items = check.items || [];
+    const hasOn = items.some((item) => item.find_my_iphone === 'ON');
+    const hasOff = items.some((item) => item.find_my_iphone === 'OFF');
+    const tone = verified
+      ? (hasOn && hasOff ? 'mixed' : hasOff ? 'cleared' : 'verified')
+      : 'unknown';
+    const statusLabel = verified
+      ? `contrôlé le ${esc(check.checked_on || cote.market_checked_on || '')}`
+      : 'analyse de la description et des photos';
     const imeiLabel = check.imei_suffix ? `IMEI ••••${esc(check.imei_suffix)} · ` : '';
-    const imeiCount = Number(check.imei_count) || 0;
-    const imeiCountLabel = !verified && imeiCount
-      ? `${imeiCount} IMEI présent${imeiCount > 1 ? 's' : ''} dans l’annonce, non contrôlé${imeiCount > 1 ? 's' : ''} · `
-      : '';
-    return `<div class="cote-alert ${verified ? 'verified' : 'assumed'}">
-      <b>${verified ? 'Contrôle appareil' : 'Risque appareil'} · ${esc(check.device)}</b>
+    const itemDetails = items.length ? `<details class="imei-details">
+      <summary>${items.length} IMEI contrôlé${items.length > 1 ? 's' : ''} — voir chaque appareil</summary>
+      <div class="imei-list">${items.map((item) => {
+        const fmi = item.find_my_iphone === 'OFF' ? 'off' : 'on';
+        const blacklist = item.blacklist === 'Clean' ? 'liste noire : Clean' : 'liste noire : non retournée';
+        const simLock = item.sim_lock === 'Unlocked'
+          ? 'SIM : désimlocké'
+          : item.sim_lock === 'Locked' ? 'SIM : verrouillé' : 'SIM : non retourné';
+        return `<div class="imei-item">
+          <div class="imei-item-head"><span>${esc(item.device)}</span><code>IMEI ••••${esc(item.imei_suffix)}</code><b class="fmi ${fmi}">Find My ${esc(item.find_my_iphone)}</b></div>
+          <small>${esc(blacklist)} · ${esc(simLock)} · ${esc(item.description_state)}</small>
+        </div>`;
+      }).join('')}</div>
+    </details>` : '';
+    return `<div class="cote-alert ${tone}">
+      <b>${verified ? 'Contrôle IMEI' : 'Statut Apple à confirmer'} · ${esc(check.device)}</b>
       <strong>Localiser / verrouillage d’activation : ${esc(check.find_my_iphone)}</strong>
-      <span>${esc(statusLabel)} · ${imeiLabel}${esc(imeiCountLabel)}${esc(check.valuation_effect)}</span></div>`;
+      <span>${statusLabel} · ${imeiLabel}${esc(check.valuation_effect)}</span>
+      ${itemDetails}</div>`;
   }).join('');
 
   return `<section class="cote" aria-label="Cote de revente estimée">

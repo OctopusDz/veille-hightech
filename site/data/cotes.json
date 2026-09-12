@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-09-12",
-  "generated_at": "2026-09-11T23:21:09+00:00",
+  "generated_at": "2026-09-12T07:24:25+00:00",
   "currency": "EUR",
   "lot_count": 112,
   "photo_count": 588,
@@ -10,8 +10,8 @@
     "auction_fees_eur": 3269.2,
     "vat_eur": 0.0,
     "purchase_total_eur": 32989.2,
-    "quick_sale_lot_eur": 67680.0,
-    "normal_resale_gross_eur": 119195.0
+    "quick_sale_lot_eur": 69685.0,
+    "normal_resale_gross_eur": 122615.0
   },
   "definitions": {
     "purchase_total_eur": "Prix d'enchère courant ou mise à prix + 11 % de frais d'enchère + TVA uniquement si son application et son taux sont explicitement indiqués dans la description.",
@@ -23,15 +23,16 @@
     "quick_margin_before_other_costs_eur": "Cote de vente rapide moins le coût d'achat incluant les 11 % de frais d'enchère et l'éventuelle TVA explicitement indiquée.",
     "normal_margin_before_other_costs_eur": "Cote de revente normale moins le coût d'achat incluant les 11 % de frais d'enchère et l'éventuelle TVA explicitement indiquée.",
     "confidence_percent": "Confiance dans l'ordre de grandeur, pas probabilité de vente.",
-    "apple_phone_policy": "Tout iPhone est supposé iCloud/Find My ON et valorisé uniquement pour pièces, sauf si la description affirme explicitement qu'il est fonctionnel et non bloqué.",
-    "apple_tablet_policy": "Tout iPad sans confirmation explicite de fonctionnement et de dissociation du compte Apple est supposé sous verrouillage d'activation et valorisé uniquement pour pièces.",
-    "apple_watch_policy": "Toute Apple Watch non testée est supposée sous verrouillage d'activation et valorisée uniquement pour pièces, sauf preuve explicite qu'elle est fonctionnelle, effacée et dissociée du compte de l'ancien propriétaire.",
+    "apple_phone_policy": "Quand un IMEI iPhone est publié, le statut Find My est contrôlé et daté: ON limite la cote aux pièces, OFF permet une cote d'après l'état tout en conservant la décote non testé. Sans IMEI, le statut reste INCONNU et la cote prudente s'appuie sur la description, les photos et les pièces récupérables.",
+    "apple_tablet_policy": "Sans IMEI ou contrôle d'activation, un iPad est marqué INCONNU et non ON. Sa cote avant achat est prudente et fondée sur la référence, l'état décrit, les photos et les pièces.",
+    "apple_watch_policy": "Sans identifiant ou preuve de dissociation, une Apple Watch est marquée INCONNU. Sa cote reste fondée sur l'état et les composants, sans supposer un déblocage.",
     "apple_mac_policy": "Un Mac Apple Silicon ou T2 peut rester sous verrouillage d'activation après effacement. Sans contrôle de l'écran d'activation, sa valeur réutilisable n'est pas retenue comme certaine.",
     "photos_reviewed": "Les photos publiées pour le lot ont été relues lors de cette passe afin de relever les références visibles, les accessoires, les écrans allumés et les dommages apparents."
   },
   "limitations": [
     "Les frais d'enchère sont calculés au taux demandé de 11 % sur le prix courant. Aucune TVA n'est ajoutée sans mention explicite dans la description du lot.",
-    "La mention iCloud/Find My ON affichée comme hypothèse prudente n'est pas un contrôle IMEI. Seul un statut explicitement marqué contrôlé provient d'un résultat communiqué.",
+    "Les 21 IMEI iPhone publiés ont été contrôlés le 12/09/2026: 10 Find My OFF et 11 ON. Un appareil sans IMEI reste INCONNU; aucun statut ON ou OFF n'est inventé.",
+    "IMEICheck est une source tierce: un statut peut évoluer et la confirmation la plus forte reste le démarrage physique après effacement jusqu'à l'écran Bonjour, sans demande du compte de l'ancien propriétaire.",
     "Les prix leboncoin relevés sont surtout des prix demandés, pas des prix de transaction certifiés.",
     "La date de mise en ligne et le délai réel de vente ne sont pas exposés de façon fiable pour chaque comparable; aucun délai n'est présenté comme une mesure leboncoin exacte.",
     "Un écran allumé sur une photo ne prouve ni le fonctionnement complet, ni l'absence de compte, de MDM ou de verrouillage d'activation.",
@@ -83,6 +84,31 @@
       "title": "iPhone bloqués et pour pièces — leboncoin",
       "url": "https://www.leboncoin.fr/ck/telephones_objets_connectes/bloque",
       "observed": "Comparables très dispersés: iPhone 13 Pro Max iCloud à 100 EUR, iPhone 15 Plus bloqué à 180 EUR et iPhone 17 bloqué autour de 450 à 600 EUR. Prix demandés, pas ventes certifiées. Relevé du 12/09/2026."
+    },
+    "imeicheck_20260912": {
+      "title": "Contrôles IMEI, liste noire et Find My — IMEICheck.com",
+      "url": "https://imeicheck.com/imei-check",
+      "observed": "21 IMEI iPhone publiés dans les annonces ont été contrôlés le 12/09/2026: 10 Find My OFF et 11 Find My ON. Les résultats sont datés et affichés appareil par appareil."
+    },
+    "lbc_iphone13_current": {
+      "title": "iPhone 13 et 13 Pro d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/recherche?category=17&text=iphone%2013&sort=time&order=desc",
+      "observed": "Relevé trié par annonces récentes le 12/09/2026: iPhone 13 principalement autour de 185 à 230 EUR; 13 Pro autour de 235 à 320 EUR, avant décote pour écran cassé ou appareil non testé."
+    },
+    "lbc_iphone12pro_current": {
+      "title": "iPhone 12 Pro d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/c/telephones_objets_connectes/phone_brand%3Aapple%2Bphone_model%3Aiphone12pro",
+      "observed": "Relevé du 12/09/2026: offres récentes généralement autour de 160 à 280 EUR; exemplaires pour pièces ou endommagés autour de 95 à 190 EUR."
+    },
+    "lbc_iphone15_current": {
+      "title": "iPhone 15 128 Go d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/recherche?category=17&text=iphone%2015%20128go&sort=time&order=desc",
+      "observed": "Relevé trié par annonces récentes le 12/09/2026: nombreux iPhone 15 128 Go entre 320 et 490 EUR selon état, batterie et garantie."
+    },
+    "lbc_iphone17pm_current": {
+      "title": "iPhone 17 Pro Max d'occasion — leboncoin",
+      "url": "https://www.leboncoin.fr/recherche?category=17&text=iphone%2017%20pro%20max&sort=time&order=desc",
+      "observed": "Relevé trié par annonces récentes le 12/09/2026: 256 Go vu à 1 050 EUR, 512 Go à 1 400 EUR et 1 To à 1 359 EUR. Une forte décote reste appliquée au lot non testé."
     },
     "ebay_iphone_locked_parts": {
       "title": "iPhone bloqués pour pièces — eBay France",
@@ -1587,47 +1613,44 @@
       "photos_reviewed": true,
       "photos_reviewed_on": "2026-09-12",
       "market_checked_on": "2026-09-12",
-      "quick_sale_lot_eur": 120,
-      "normal_resale_gross_eur": 200,
-      "recommended_max_bid_eur": 70,
-      "recommended_max_bid_fees_eur": 7.7,
+      "quick_sale_lot_eur": 160,
+      "normal_resale_gross_eur": 300,
+      "recommended_max_bid_eur": 90,
+      "recommended_max_bid_fees_eur": 9.9,
       "recommended_max_bid_vat_eur": 0.0,
-      "recommended_max_purchase_total_eur": 77.7,
-      "quick_margin_at_recommended_max_bid_eur": 42.3,
-      "quick_margin_before_other_costs_eur": 31.2,
-      "normal_margin_before_other_costs_eur": 111.2,
-      "confidence_percent": 61,
+      "recommended_max_purchase_total_eur": 99.9,
+      "quick_margin_at_recommended_max_bid_eur": 60.1,
+      "quick_margin_before_other_costs_eur": 71.2,
+      "normal_margin_before_other_costs_eur": 211.2,
+      "confidence_percent": 58,
       "demand": "moyenne",
       "estimated_sale_days_min": 21,
       "estimated_sale_days_max": 90,
-      "valuation_method": "La photo montre l'iPhone 16 allumé, mais cela ne prouve pas la dissociation iCloud: valeur donneur de pièces uniquement, plus 5-10 EUR pour la batterie externe.",
-      "main_risks": "Aucune valeur d'usage: verrouillage, batterie, authenticité des pièces et état interne restent inconnus.",
+      "valuation_method": "La photo montre l'iPhone 16 allumé et la description confirme un 128 Go, mais le fonctionnement complet et l'activation restent inconnus; cote prudente d'état/pièces, plus la batterie externe.",
+      "main_risks": "Aucun IMEI publié; un écran allumé ne prouve pas l'absence de verrouillage, ni l'état de la batterie, de Face ID ou des composants.",
       "device_checks": [
         {
           "device": "iPhone 16 128 Go",
           "imei_suffix": null,
           "imei_count": 0,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
+          "find_my_iphone": "INCONNU",
+          "verification_basis": "description_only",
           "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+          "source": "Aucun IMEI publié — analyse de la description et des photos",
+          "valuation_effect": "Cote prudente fondée sur l'état annoncé et les pièces récupérables ; l'absence de verrouillage n'est pas supposée."
         }
       ],
       "source_ids": [
         "lbc_iphone16",
-        "lbc_iphone_locked_parts",
-        "ebay_iphone_locked_parts"
+        "lbc_iphone_locked_parts"
       ],
       "source_titles": [
         "iPhone 16 128 Go d'occasion — leboncoin",
-        "iPhone bloqués et pour pièces — leboncoin",
-        "iPhone bloqués pour pièces — eBay France"
+        "iPhone bloqués et pour pièces — leboncoin"
       ],
       "source_urls": [
         "https://www.leboncoin.fr/c/telephones_objets_connectes/phone_brand%3Aapple%2Bphone_memory%3A128go%2Bphone_model%3Aiphone16",
-        "https://www.leboncoin.fr/ck/telephones_objets_connectes/bloque",
-        "https://www.ebay.fr/b/Iphone-bloque/bn_7006314156"
+        "https://www.leboncoin.fr/ck/telephones_objets_connectes/bloque"
       ]
     },
     {
@@ -1661,28 +1684,28 @@
       "demand": "moyenne",
       "estimated_sale_days_min": 30,
       "estimated_sale_days_max": 150,
-      "valuation_method": "Valeur pièces du MacBook et des trois iPad mini; l'iPhone X/XS écran HS est aussi limité aux pièces sous hypothèse iCloud ON.",
-      "main_risks": "Écrans HS, modèles/capacités incomplets, aucun chargeur, tout non testé; aucune valeur d'usage pour l'iPhone.",
+      "valuation_method": "Valeur des pièces récupérables du MacBook, des trois iPad mini et de l'iPhone X/XS dont l'écran est annoncé HS; aucun statut d'activation n'est inventé.",
+      "main_risks": "Écrans HS, modèles/capacités incomplets, aucun IMEI ni chargeur et tout non testé.",
       "device_checks": [
         {
           "device": "iPhone X ou XS, écran HS",
           "imei_suffix": null,
           "imei_count": 0,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
+          "find_my_iphone": "INCONNU",
+          "verification_basis": "description_only",
           "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+          "source": "Aucun IMEI publié — analyse de la description et des photos",
+          "valuation_effect": "Cote prudente fondée sur l'état annoncé et les pièces récupérables ; l'absence de verrouillage n'est pas supposée."
         },
         {
           "device": "3 iPad mini, écrans HS",
           "imei_suffix": null,
           "imei_count": 0,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
+          "find_my_iphone": "INCONNU",
+          "verification_basis": "description_only",
           "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+          "source": "Aucun IMEI publié — analyse de la description et des photos",
+          "valuation_effect": "Cote prudente fondée sur l'état annoncé et les pièces récupérables ; l'absence de verrouillage n'est pas supposée."
         }
       ],
       "source_ids": [
@@ -2490,42 +2513,45 @@
       "photos_reviewed": true,
       "photos_reviewed_on": "2026-09-12",
       "market_checked_on": "2026-09-12",
-      "quick_sale_lot_eur": 600,
-      "normal_resale_gross_eur": 1000,
-      "recommended_max_bid_eur": 345,
-      "recommended_max_bid_fees_eur": 37.95,
+      "quick_sale_lot_eur": 850,
+      "normal_resale_gross_eur": 1500,
+      "recommended_max_bid_eur": 480,
+      "recommended_max_bid_fees_eur": 52.8,
       "recommended_max_bid_vat_eur": 0.0,
-      "recommended_max_purchase_total_eur": 382.95,
-      "quick_margin_at_recommended_max_bid_eur": 217.05,
-      "quick_margin_before_other_costs_eur": 477.9,
-      "normal_margin_before_other_costs_eur": 877.9,
-      "confidence_percent": 57,
+      "recommended_max_purchase_total_eur": 532.8,
+      "quick_margin_at_recommended_max_bid_eur": 317.2,
+      "quick_margin_before_other_costs_eur": 727.9,
+      "normal_margin_before_other_costs_eur": 1377.9,
+      "confidence_percent": 52,
       "demand": "moyenne",
       "estimated_sale_days_min": 45,
       "estimated_sale_days_max": 180,
-      "valuation_method": "Somme prudente des pièces récupérables sur les iPhone 16, 15, 14 Pro Max, 14, 13, 12, 11 et SE, puis décote de lot non testé; aucune valeur d'usage retenue.",
-      "main_risks": "Aucun IMEI fourni; capacités, batteries, authenticité et état des composants inconnus; mini-réplique sans valeur.",
+      "valuation_method": "Inventaire précis des dix iPhone (16 à SE), valorisé par état d'usage, risque de panne et valeur des pièces; aucun verrouillage ON/OFF n'est supposé sans IMEI.",
+      "main_risks": "Aucun IMEI fourni; fonctionnement, activation, capacités, batteries et authenticité inconnus; mini-réplique sans valeur.",
       "device_checks": [
         {
           "device": "10 iPhone du lot",
           "imei_suffix": null,
           "imei_count": 0,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
+          "find_my_iphone": "INCONNU",
+          "verification_basis": "description_only",
           "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+          "source": "Aucun IMEI publié — analyse de la description et des photos",
+          "valuation_effect": "Cote prudente fondée sur l'état annoncé et les pièces récupérables ; l'absence de verrouillage n'est pas supposée."
         }
       ],
       "source_ids": [
+        "lbc_iphone16",
         "lbc_iphone_locked_parts",
         "ebay_iphone_locked_parts"
       ],
       "source_titles": [
+        "iPhone 16 128 Go d'occasion — leboncoin",
         "iPhone bloqués et pour pièces — leboncoin",
         "iPhone bloqués pour pièces — eBay France"
       ],
       "source_urls": [
+        "https://www.leboncoin.fr/c/telephones_objets_connectes/phone_brand%3Aapple%2Bphone_memory%3A128go%2Bphone_model%3Aiphone16",
         "https://www.leboncoin.fr/ck/telephones_objets_connectes/bloque",
         "https://www.ebay.fr/b/Iphone-bloque/bn_7006314156"
       ]
@@ -2605,18 +2631,18 @@
       "demand": "moyenne",
       "estimated_sale_days_min": 30,
       "estimated_sale_days_max": 120,
-      "valuation_method": "Les deux iPad 10 et l'iPad 9 sont limités aux pièces sous hypothèse Activation Lock ON; valeur non testée ajoutée pour Tab S4, Lenovo M10 et P11.",
-      "main_risks": "Capacités inconnues, aucun chargeur, batteries et comptes Android non vérifiés.",
+      "valuation_method": "Les deux iPad 10 et l'iPad 9 sont cotés prudemment d'après leur état non testé et leurs pièces; valeur ajoutée pour Tab S4, Lenovo M10 et P11.",
+      "main_risks": "Aucun IMEI iPad; activation et capacités inconnues, aucun chargeur, batteries et comptes Android non vérifiés.",
       "device_checks": [
         {
           "device": "3 iPad du lot (2 iPad 10 et 1 iPad 9)",
           "imei_suffix": null,
           "imei_count": 0,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
+          "find_my_iphone": "INCONNU",
+          "verification_basis": "description_only",
           "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+          "source": "Aucun IMEI publié — analyse de la description et des photos",
+          "valuation_effect": "Cote prudente fondée sur l'état annoncé et les pièces récupérables ; l'absence de verrouillage n'est pas supposée."
         }
       ],
       "source_ids": [
@@ -2650,42 +2676,45 @@
       "photos_reviewed": true,
       "photos_reviewed_on": "2026-09-12",
       "market_checked_on": "2026-09-12",
-      "quick_sale_lot_eur": 350,
-      "normal_resale_gross_eur": 650,
-      "recommended_max_bid_eur": 200,
-      "recommended_max_bid_fees_eur": 22.0,
+      "quick_sale_lot_eur": 550,
+      "normal_resale_gross_eur": 950,
+      "recommended_max_bid_eur": 310,
+      "recommended_max_bid_fees_eur": 34.1,
       "recommended_max_bid_vat_eur": 0.0,
-      "recommended_max_purchase_total_eur": 222.0,
-      "quick_margin_at_recommended_max_bid_eur": 128.0,
-      "quick_margin_before_other_costs_eur": 194.6,
-      "normal_margin_before_other_costs_eur": 494.6,
-      "confidence_percent": 58,
+      "recommended_max_purchase_total_eur": 344.1,
+      "quick_margin_at_recommended_max_bid_eur": 205.9,
+      "quick_margin_before_other_costs_eur": 394.6,
+      "normal_margin_before_other_costs_eur": 794.6,
+      "confidence_percent": 52,
       "demand": "moyenne",
       "estimated_sale_days_min": 45,
       "estimated_sale_days_max": 180,
-      "valuation_method": "Somme prudente des pièces récupérables sur les iPhone 14 Pro, 13, 12, 11 et SE, puis décote de lot; aucune valeur d'usage retenue.",
-      "main_risks": "Aucun IMEI fourni; capacités, batteries et état des composants inconnus; aucun chargeur.",
+      "valuation_method": "Inventaire des sept iPhone 14 Pro à SE valorisé par état d'usage, risque de panne et pièces récupérables; aucun statut iCloud n'est supposé.",
+      "main_risks": "Aucun IMEI fourni; fonctionnement, activation, capacités et batteries inconnus; aucun chargeur.",
       "device_checks": [
         {
           "device": "7 iPhone du lot",
           "imei_suffix": null,
           "imei_count": 0,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
+          "find_my_iphone": "INCONNU",
+          "verification_basis": "description_only",
           "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+          "source": "Aucun IMEI publié — analyse de la description et des photos",
+          "valuation_effect": "Cote prudente fondée sur l'état annoncé et les pièces récupérables ; l'absence de verrouillage n'est pas supposée."
         }
       ],
       "source_ids": [
+        "lbc_iphone13_current",
         "lbc_iphone_locked_parts",
         "ebay_iphone_locked_parts"
       ],
       "source_titles": [
+        "iPhone 13 et 13 Pro d'occasion — leboncoin",
         "iPhone bloqués et pour pièces — leboncoin",
         "iPhone bloqués pour pièces — eBay France"
       ],
       "source_urls": [
+        "https://www.leboncoin.fr/recherche?category=17&text=iphone%2013&sort=time&order=desc",
         "https://www.leboncoin.fr/ck/telephones_objets_connectes/bloque",
         "https://www.ebay.fr/b/Iphone-bloque/bn_7006314156"
       ]
@@ -2765,18 +2794,18 @@
       "demand": "moyenne",
       "estimated_sale_days_min": 30,
       "estimated_sale_days_max": 150,
-      "valuation_method": "Les sept iPad, dont Air 5 et modèle A16, sont limités aux pièces sous hypothèse Activation Lock ON; valeur prudente ajoutée aux trois autres tablettes.",
-      "main_risks": "Capacités inconnues, aucun chargeur, pannes possibles et modèle 'iPad A16' à confirmer.",
+      "valuation_method": "Les sept iPad, dont Air 5 et modèle A16, sont cotés selon l'état non testé et la valeur des composants; valeur prudente ajoutée aux trois autres tablettes.",
+      "main_risks": "Aucun IMEI iPad; activation/capacités inconnues, aucun chargeur, pannes possibles et modèle 'iPad A16' à confirmer.",
       "device_checks": [
         {
           "device": "7 iPad du lot, dont Air 5 et modèle A16",
           "imei_suffix": null,
           "imei_count": 0,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
+          "find_my_iphone": "INCONNU",
+          "verification_basis": "description_only",
           "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+          "source": "Aucun IMEI publié — analyse de la description et des photos",
+          "valuation_effect": "Cote prudente fondée sur l'état annoncé et les pièces récupérables ; l'absence de verrouillage n'est pas supposée."
         }
       ],
       "source_ids": [
@@ -2823,18 +2852,18 @@
       "demand": "moyenne",
       "estimated_sale_days_min": 45,
       "estimated_sale_days_max": 180,
-      "valuation_method": "Les sept iPad sont valorisés uniquement comme donneurs de pièces; les deux Pro non identifiés créent une large fourchette.",
-      "main_risks": "Générations/capacités des Pro et Air inconnues; activation supposée ON, batteries et écrans non testés.",
+      "valuation_method": "Les sept iPad sont valorisés d'après leur état non testé et les pièces récupérables; les deux Pro non identifiés créent une large fourchette.",
+      "main_risks": "Générations/capacités des Pro et Air inconnues; aucun IMEI ni statut d'activation, batteries et écrans non testés.",
       "device_checks": [
         {
           "device": "7 iPad du lot, dont 2 iPad Pro",
           "imei_suffix": null,
           "imei_count": 0,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
+          "find_my_iphone": "INCONNU",
+          "verification_basis": "description_only",
           "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+          "source": "Aucun IMEI publié — analyse de la description et des photos",
+          "valuation_effect": "Cote prudente fondée sur l'état annoncé et les pièces récupérables ; l'absence de verrouillage n'est pas supposée."
         }
       ],
       "source_ids": [
@@ -3018,18 +3047,18 @@
       "demand": "faible",
       "estimated_sale_days_min": 30,
       "estimated_sale_days_max": 120,
-      "valuation_method": "iPad 7 Cellular 32 Go valorisé en pièces sous hypothèse Activation Lock ON; aucun bonus d'accessoire.",
-      "main_risks": "L'annonce ne confirme ni fonctionnement ni dissociation du compte; sans chargeur ni boîte.",
+      "valuation_method": "iPad 7 Cellular 32 Go coté d'après l'état non testé et les pièces récupérables; aucun bonus d'accessoire.",
+      "main_risks": "Aucun IMEI; activation et fonctionnement inconnus, sans chargeur ni boîte.",
       "device_checks": [
         {
           "device": "iPad 7 Cellular 32 Go",
           "imei_suffix": null,
           "imei_count": 0,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
+          "find_my_iphone": "INCONNU",
+          "verification_basis": "description_only",
           "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+          "source": "Aucun IMEI publié — analyse de la description et des photos",
+          "valuation_effect": "Cote prudente fondée sur l'état annoncé et les pièces récupérables ; l'absence de verrouillage n'est pas supposée."
         }
       ],
       "source_ids": [
@@ -3158,18 +3187,18 @@
       "demand": "moyenne",
       "estimated_sale_days_min": 30,
       "estimated_sale_days_max": 120,
-      "valuation_method": "iPad Pro 12,9 M2 Cellular valorisé comme donneur de pièces sous hypothèse Activation Lock ON; boîte présente.",
-      "main_risks": "Le bon état cosmétique ne prouve ni fonctionnement ni dissociation iCloud; capacité et batterie inconnues.",
+      "valuation_method": "iPad Pro 12,9 M2 Cellular coté selon le bon état cosmétique annoncé, le risque non testé et les composants; boîte présente.",
+      "main_risks": "Aucun IMEI; le bon état ne prouve ni fonctionnement ni dissociation du compte; capacité et batterie inconnues.",
       "device_checks": [
         {
           "device": "iPad Pro 12,9 pouces M2 Cellular",
           "imei_suffix": null,
           "imei_count": 0,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
+          "find_my_iphone": "INCONNU",
+          "verification_basis": "description_only",
           "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+          "source": "Aucun IMEI publié — analyse de la description et des photos",
+          "valuation_effect": "Cote prudente fondée sur l'état annoncé et les pièces récupérables ; l'absence de verrouillage n'est pas supposée."
         }
       ],
       "source_ids": [
@@ -3216,18 +3245,18 @@
       "demand": "faible",
       "estimated_sale_days_min": 30,
       "estimated_sale_days_max": 120,
-      "valuation_method": "iPad 7 Cellular 32 Go valorisé en pièces sous hypothèse Activation Lock ON; 20-30 EUR conservés pour boîte, clavier et chargeur.",
-      "main_risks": "Le bon état cosmétique ne confirme ni fonctionnement ni dissociation du compte; clavier probablement tiers.",
+      "valuation_method": "iPad 7 Cellular 32 Go coté d'après le bon état annoncé et les pièces; 20-30 EUR conservés pour boîte, clavier et chargeur.",
+      "main_risks": "Aucun IMEI; le bon état cosmétique ne confirme ni fonctionnement ni dissociation du compte; clavier probablement tiers.",
       "device_checks": [
         {
           "device": "iPad 7 Cellular 32 Go",
           "imei_suffix": null,
           "imei_count": 0,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
+          "find_my_iphone": "INCONNU",
+          "verification_basis": "description_only",
           "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+          "source": "Aucun IMEI publié — analyse de la description et des photos",
+          "valuation_effect": "Cote prudente fondée sur l'état annoncé et les pièces récupérables ; l'absence de verrouillage n'est pas supposée."
         }
       ],
       "source_ids": [
@@ -3274,18 +3303,18 @@
       "demand": "faible",
       "estimated_sale_days_min": 30,
       "estimated_sale_days_max": 120,
-      "valuation_method": "iPad 7 Cellular 32 Go valorisé en pièces sous hypothèse Activation Lock ON; 20-30 EUR conservés pour boîte, clavier et chargeur.",
-      "main_risks": "Le bon état cosmétique ne confirme ni fonctionnement ni dissociation du compte; clavier probablement tiers.",
+      "valuation_method": "iPad 7 Cellular 32 Go coté d'après le bon état annoncé et les pièces; 20-30 EUR conservés pour boîte, clavier et chargeur.",
+      "main_risks": "Aucun IMEI; le bon état cosmétique ne confirme ni fonctionnement ni dissociation du compte; clavier probablement tiers.",
       "device_checks": [
         {
           "device": "iPad 7 Cellular 32 Go",
           "imei_suffix": null,
           "imei_count": 0,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
+          "find_my_iphone": "INCONNU",
+          "verification_basis": "description_only",
           "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+          "source": "Aucun IMEI publié — analyse de la description et des photos",
+          "valuation_effect": "Cote prudente fondée sur l'état annoncé et les pièces récupérables ; l'absence de verrouillage n'est pas supposée."
         }
       ],
       "source_ids": [
@@ -3332,18 +3361,18 @@
       "demand": "faible",
       "estimated_sale_days_min": 30,
       "estimated_sale_days_max": 120,
-      "valuation_method": "iPad 7 Cellular 32 Go valorisé en pièces sous hypothèse Activation Lock ON; 20-30 EUR conservés pour boîte, clavier et chargeur.",
-      "main_risks": "Le bon état cosmétique ne confirme ni fonctionnement ni dissociation du compte; clavier probablement tiers.",
+      "valuation_method": "iPad 7 Cellular 32 Go coté d'après le bon état annoncé et les pièces; 20-30 EUR conservés pour boîte, clavier et chargeur.",
+      "main_risks": "Aucun IMEI; le bon état cosmétique ne confirme ni fonctionnement ni dissociation du compte; clavier probablement tiers.",
       "device_checks": [
         {
           "device": "iPad 7 Cellular 32 Go",
           "imei_suffix": null,
           "imei_count": 0,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
+          "find_my_iphone": "INCONNU",
+          "verification_basis": "description_only",
           "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+          "source": "Aucun IMEI publié — analyse de la description et des photos",
+          "valuation_effect": "Cote prudente fondée sur l'état annoncé et les pièces récupérables ; l'absence de verrouillage n'est pas supposée."
         }
       ],
       "source_ids": [
@@ -3428,28 +3457,31 @@
       "demand": "moyenne",
       "estimated_sale_days_min": 21,
       "estimated_sale_days_max": 90,
-      "valuation_method": "iPhone 13 Pro Max valorisé uniquement pour pièces sous hypothèse iCloud ON, avec décote pour vitre arrière cassée et écran rayé.",
-      "main_risks": "Aucune valeur d'usage; capacité, batterie, Face ID et état des composants récupérables inconnus.",
+      "valuation_method": "iPhone 13 Pro Max coté d'après le mauvais état annoncé, la vitre arrière à remplacer, l'écran rayé et les pièces récupérables.",
+      "main_risks": "Aucun IMEI; activation, fonctionnement, capacité, batterie, Face ID et état interne inconnus.",
       "device_checks": [
         {
           "device": "iPhone 13 Pro Max, vitre arrière cassée",
           "imei_suffix": null,
           "imei_count": 0,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
+          "find_my_iphone": "INCONNU",
+          "verification_basis": "description_only",
           "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+          "source": "Aucun IMEI publié — analyse de la description et des photos",
+          "valuation_effect": "Cote prudente fondée sur l'état annoncé et les pièces récupérables ; l'absence de verrouillage n'est pas supposée."
         }
       ],
       "source_ids": [
-        "lbc_iphone13pm"
+        "lbc_iphone13pm",
+        "lbc_iphone_locked_parts"
       ],
       "source_titles": [
-        "iPhone 13 Pro Max d'occasion — leboncoin"
+        "iPhone 13 Pro Max d'occasion — leboncoin",
+        "iPhone bloqués et pour pièces — leboncoin"
       ],
       "source_urls": [
-        "https://www.leboncoin.fr/ck/telephones_objets_connectes/iphone13-pro-max"
+        "https://www.leboncoin.fr/ck/telephones_objets_connectes/iphone13-pro-max",
+        "https://www.leboncoin.fr/ck/telephones_objets_connectes/bloque"
       ]
     },
     {
@@ -3470,31 +3502,31 @@
       "photos_reviewed": true,
       "photos_reviewed_on": "2026-09-12",
       "market_checked_on": "2026-09-12",
-      "quick_sale_lot_eur": 85,
-      "normal_resale_gross_eur": 120,
-      "recommended_max_bid_eur": 50,
-      "recommended_max_bid_fees_eur": 5.5,
+      "quick_sale_lot_eur": 100,
+      "normal_resale_gross_eur": 180,
+      "recommended_max_bid_eur": 55,
+      "recommended_max_bid_fees_eur": 6.05,
       "recommended_max_bid_vat_eur": 0.0,
-      "recommended_max_purchase_total_eur": 55.5,
-      "quick_margin_at_recommended_max_bid_eur": 29.5,
-      "quick_margin_before_other_costs_eur": -137.0,
-      "normal_margin_before_other_costs_eur": -102.0,
-      "confidence_percent": 68,
+      "recommended_max_purchase_total_eur": 61.05,
+      "quick_margin_at_recommended_max_bid_eur": 38.95,
+      "quick_margin_before_other_costs_eur": -122.0,
+      "normal_margin_before_other_costs_eur": -42.0,
+      "confidence_percent": 57,
       "demand": "moyenne",
       "estimated_sale_days_min": 21,
       "estimated_sale_days_max": 90,
-      "valuation_method": "Malgré le bon état annoncé, l'iPhone 13 Pro Max reste valorisé uniquement pour pièces: l'annonce ne confirme ni fonctionnement ni absence de blocage.",
-      "main_risks": "Aucune valeur d'usage ou de déblocage; capacité, santé batterie et authenticité des composants inconnues.",
+      "valuation_method": "iPhone 13 Pro Max avec chargeur coté d'après le bon état annoncé et une forte réserve pour activation/fonctionnement non contrôlés.",
+      "main_risks": "Aucun IMEI; capacité, activation, fonctionnement, santé batterie et authenticité des composants inconnus.",
       "device_checks": [
         {
-          "device": "iPhone 13 Pro Max",
+          "device": "iPhone 13 Pro Max annoncé en bon état",
           "imei_suffix": null,
           "imei_count": 0,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
+          "find_my_iphone": "INCONNU",
+          "verification_basis": "description_only",
           "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+          "source": "Aucun IMEI publié — analyse de la description et des photos",
+          "valuation_effect": "Cote prudente fondée sur l'état annoncé et les pièces récupérables ; l'absence de verrouillage n'est pas supposée."
         }
       ],
       "source_ids": [
@@ -3541,18 +3573,18 @@
       "demand": "faible",
       "estimated_sale_days_min": 30,
       "estimated_sale_days_max": 120,
-      "valuation_method": "iPad 7 Cellular 32 Go valorisé en pièces sous hypothèse Activation Lock ON; petit bonus pour le clavier.",
-      "main_risks": "L'annonce ne confirme ni fonctionnement ni dissociation du compte; sans chargeur ni boîte.",
+      "valuation_method": "iPad 7 Cellular 32 Go coté d'après l'état non testé et les pièces récupérables; petit bonus pour le clavier.",
+      "main_risks": "Aucun IMEI; activation et fonctionnement inconnus, sans chargeur ni boîte.",
       "device_checks": [
         {
           "device": "iPad 7 Cellular 32 Go",
           "imei_suffix": null,
           "imei_count": 0,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
+          "find_my_iphone": "INCONNU",
+          "verification_basis": "description_only",
           "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+          "source": "Aucun IMEI publié — analyse de la description et des photos",
+          "valuation_effect": "Cote prudente fondée sur l'état annoncé et les pièces récupérables ; l'absence de verrouillage n'est pas supposée."
         }
       ],
       "source_ids": [
@@ -3586,46 +3618,99 @@
       "photos_reviewed": true,
       "photos_reviewed_on": "2026-09-12",
       "market_checked_on": "2026-09-12",
-      "quick_sale_lot_eur": 300,
-      "normal_resale_gross_eur": 700,
-      "recommended_max_bid_eur": 165,
-      "recommended_max_bid_fees_eur": 18.15,
+      "quick_sale_lot_eur": 600,
+      "normal_resale_gross_eur": 1100,
+      "recommended_max_bid_eur": 355,
+      "recommended_max_bid_fees_eur": 39.05,
       "recommended_max_bid_vat_eur": 0.0,
-      "recommended_max_purchase_total_eur": 183.15,
-      "quick_margin_at_recommended_max_bid_eur": 116.85,
-      "quick_margin_before_other_costs_eur": 161.25,
-      "normal_margin_before_other_costs_eur": 561.25,
-      "confidence_percent": 51,
+      "recommended_max_purchase_total_eur": 394.05,
+      "quick_margin_at_recommended_max_bid_eur": 205.95,
+      "quick_margin_before_other_costs_eur": 461.25,
+      "normal_margin_before_other_costs_eur": 961.25,
+      "confidence_percent": 64,
       "demand": "moyenne",
-      "estimated_sale_days_min": 60,
-      "estimated_sale_days_max": 240,
-      "valuation_method": "Les six iPhone sont limités aux pièces sous hypothèse iCloud ON; les 18 Android/autres téléphones sont valorisés après tri, modèle par modèle, avec décote de gros.",
-      "main_risks": "Six IMEI iPhone sont publiés mais non contrôlés; nombreux écrans/coques cassés, certains appareils bloqués et travail de tri important.",
+      "estimated_sale_days_min": 45,
+      "estimated_sale_days_max": 180,
+      "valuation_method": "Six IMEI contrôlés: iPhone 13, XR et 11 sont Find My OFF et cotés selon leurs dommages/non-test; SE 2020, 13 Pro et 12 sont ON et restent en pièces. Les 18 autres téléphones sont inventoriés avec décote de gros.",
+      "main_risks": "Trois iPhone restent verrouillés; plusieurs écrans/coques sont à revoir, aucun appareil n'est testé et le tri de 24 unités est important.",
       "device_checks": [
         {
           "device": "6 iPhone du lot",
           "imei_suffix": null,
           "imei_count": 6,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
-          "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+          "find_my_iphone": "3 OFF · 3 ON",
+          "verification_basis": "verified",
+          "checked_on": "2026-09-12",
+          "source": "IMEICheck.com — contrôles IMEI, liste noire et Find My effectués dans le navigateur",
+          "valuation_effect": "3 appareil(s) peuvent être cotés selon leur état ; 3 restent limités à la valeur des pièces.",
+          "items": [
+            {
+              "device": "iPhone 13 A2633",
+              "imei_suffix": "9573",
+              "find_my_iphone": "OFF",
+              "sim_lock": "Unlocked",
+              "blacklist": "Clean",
+              "description_state": "écran et coque à revoir · non testé"
+            },
+            {
+              "device": "iPhone SE 2 (2020) A2296",
+              "imei_suffix": "1306",
+              "find_my_iphone": "ON",
+              "sim_lock": "Unlocked",
+              "blacklist": "Clean",
+              "description_state": "non testé"
+            },
+            {
+              "device": "iPhone 13 Pro A2638",
+              "imei_suffix": "7518",
+              "find_my_iphone": "ON",
+              "sim_lock": "Unlocked",
+              "blacklist": "Clean",
+              "description_state": "écran à revoir · non testé"
+            },
+            {
+              "device": "iPhone XR A2105",
+              "imei_suffix": "0211",
+              "find_my_iphone": "OFF",
+              "sim_lock": "Unlocked",
+              "blacklist": "Clean",
+              "description_state": "non testé"
+            },
+            {
+              "device": "iPhone 12 A2403",
+              "imei_suffix": "6972",
+              "find_my_iphone": "ON",
+              "sim_lock": "Unlocked",
+              "blacklist": "Clean",
+              "description_state": "écran à revoir · non testé"
+            },
+            {
+              "device": "iPhone 11 A2221",
+              "imei_suffix": "9620",
+              "find_my_iphone": "OFF",
+              "sim_lock": "Unlocked",
+              "blacklist": "Clean",
+              "description_state": "écran à revoir · non testé"
+            }
+          ]
         }
       ],
       "source_ids": [
+        "imeicheck_20260912",
+        "lbc_iphone13_current",
         "lbc_iphone_locked_parts",
-        "ebay_iphone_locked_parts",
         "lbc_samsung_midrange"
       ],
       "source_titles": [
+        "Contrôles IMEI, liste noire et Find My — IMEICheck.com",
+        "iPhone 13 et 13 Pro d'occasion — leboncoin",
         "iPhone bloqués et pour pièces — leboncoin",
-        "iPhone bloqués pour pièces — eBay France",
         "Samsung A54/A55 d'occasion — leboncoin"
       ],
       "source_urls": [
+        "https://imeicheck.com/imei-check",
+        "https://www.leboncoin.fr/recherche?category=17&text=iphone%2013&sort=time&order=desc",
         "https://www.leboncoin.fr/ck/telephones_objets_connectes/bloque",
-        "https://www.ebay.fr/b/Iphone-bloque/bn_7006314156",
         "https://www.leboncoin.fr/c/telephones_objets_connectes/phone_brand%3Asamsung%2Bphone_model%3Asamsung_galaxya5"
       ]
     },
@@ -3647,47 +3732,83 @@
       "photos_reviewed": true,
       "photos_reviewed_on": "2026-09-12",
       "market_checked_on": "2026-09-12",
-      "quick_sale_lot_eur": 400,
-      "normal_resale_gross_eur": 650,
-      "recommended_max_bid_eur": 225,
-      "recommended_max_bid_fees_eur": 24.75,
+      "quick_sale_lot_eur": 500,
+      "normal_resale_gross_eur": 850,
+      "recommended_max_bid_eur": 295,
+      "recommended_max_bid_fees_eur": 32.45,
       "recommended_max_bid_vat_eur": 0.0,
-      "recommended_max_purchase_total_eur": 249.75,
-      "quick_margin_at_recommended_max_bid_eur": 150.25,
-      "quick_margin_before_other_costs_eur": 178.0,
-      "normal_margin_before_other_costs_eur": 428.0,
-      "confidence_percent": 55,
+      "recommended_max_purchase_total_eur": 327.45,
+      "quick_margin_at_recommended_max_bid_eur": 172.55,
+      "quick_margin_before_other_costs_eur": 278.0,
+      "normal_margin_before_other_costs_eur": 628.0,
+      "confidence_percent": 62,
       "demand": "moyenne",
       "estimated_sale_days_min": 45,
       "estimated_sale_days_max": 180,
-      "valuation_method": "Valeur pièces pondérée du 16 Pro Max écran HS, du 16, du 14 écran HS, du XS Max et du 8 Plus, plus valeur prudente du Galaxy A15 non testé.",
-      "main_risks": "Trois IMEI iPhone sont publiés mais non contrôlés; aucune valeur d'usage Apple, capacités et état interne inconnus.",
+      "valuation_method": "Trois IMEI contrôlés: iPhone 8 Plus OFF, 16 Pro Max et XS Max ON. L'iPhone 14 écran à revoir et l'iPhone 16 sans IMEI restent cotés par état/pièces, avec le Galaxy A15.",
+      "main_risks": "Deux iPhone sans IMEI; tout est non testé, le 16 Pro Max est aussi SimLock Locked et son écran est à revoir.",
       "device_checks": [
         {
-          "device": "5 iPhone du lot",
+          "device": "3 iPhone avec IMEI sur les 5 du lot",
           "imei_suffix": null,
           "imei_count": 3,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
+          "find_my_iphone": "1 OFF · 2 ON",
+          "verification_basis": "verified",
+          "checked_on": "2026-09-12",
+          "source": "IMEICheck.com — contrôles IMEI, liste noire et Find My effectués dans le navigateur",
+          "valuation_effect": "1 appareil(s) peuvent être cotés selon leur état ; 2 restent limités à la valeur des pièces.",
+          "items": [
+            {
+              "device": "iPhone 16 Pro Max A3084",
+              "imei_suffix": "2017",
+              "find_my_iphone": "ON",
+              "sim_lock": "Locked",
+              "blacklist": "Clean",
+              "description_state": "écran à revoir · non testé"
+            },
+            {
+              "device": "iPhone XS Max A2101",
+              "imei_suffix": "9523",
+              "find_my_iphone": "ON",
+              "sim_lock": "Unlocked",
+              "blacklist": "Clean",
+              "description_state": "non testé"
+            },
+            {
+              "device": "iPhone 8 Plus A1897",
+              "imei_suffix": "4614",
+              "find_my_iphone": "OFF",
+              "sim_lock": "Unlocked",
+              "blacklist": "Clean",
+              "description_state": "non testé"
+            }
+          ]
+        },
+        {
+          "device": "iPhone 14 écran à revoir et iPhone 16 sans IMEI",
+          "imei_suffix": null,
+          "imei_count": 0,
+          "find_my_iphone": "INCONNU",
+          "verification_basis": "description_only",
           "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+          "source": "Aucun IMEI publié — analyse de la description et des photos",
+          "valuation_effect": "Cote prudente fondée sur l'état annoncé et les pièces récupérables ; l'absence de verrouillage n'est pas supposée."
         }
       ],
       "source_ids": [
+        "imeicheck_20260912",
         "lbc_iphone16",
-        "lbc_iphone_locked_parts",
-        "ebay_iphone_locked_parts"
+        "lbc_iphone_locked_parts"
       ],
       "source_titles": [
+        "Contrôles IMEI, liste noire et Find My — IMEICheck.com",
         "iPhone 16 128 Go d'occasion — leboncoin",
-        "iPhone bloqués et pour pièces — leboncoin",
-        "iPhone bloqués pour pièces — eBay France"
+        "iPhone bloqués et pour pièces — leboncoin"
       ],
       "source_urls": [
+        "https://imeicheck.com/imei-check",
         "https://www.leboncoin.fr/c/telephones_objets_connectes/phone_brand%3Aapple%2Bphone_memory%3A128go%2Bphone_model%3Aiphone16",
-        "https://www.leboncoin.fr/ck/telephones_objets_connectes/bloque",
-        "https://www.ebay.fr/b/Iphone-bloque/bn_7006314156"
+        "https://www.leboncoin.fr/ck/telephones_objets_connectes/bloque"
       ]
     },
     {
@@ -3708,47 +3829,137 @@
       "photos_reviewed": true,
       "photos_reviewed_on": "2026-09-12",
       "market_checked_on": "2026-09-12",
-      "quick_sale_lot_eur": 900,
-      "normal_resale_gross_eur": 1600,
-      "recommended_max_bid_eur": 500,
-      "recommended_max_bid_fees_eur": 55.0,
+      "quick_sale_lot_eur": 1800,
+      "normal_resale_gross_eur": 3200,
+      "recommended_max_bid_eur": 1055,
+      "recommended_max_bid_fees_eur": 116.05,
       "recommended_max_bid_vat_eur": 0.0,
-      "recommended_max_purchase_total_eur": 555.0,
-      "quick_margin_at_recommended_max_bid_eur": 345.0,
-      "quick_margin_before_other_costs_eur": 345.0,
-      "normal_margin_before_other_costs_eur": 1045.0,
-      "confidence_percent": 48,
+      "recommended_max_purchase_total_eur": 1171.05,
+      "quick_margin_at_recommended_max_bid_eur": 628.95,
+      "quick_margin_before_other_costs_eur": 1245.0,
+      "normal_margin_before_other_costs_eur": 2645.0,
+      "confidence_percent": 61,
       "demand": "moyenne",
-      "estimated_sale_days_min": 60,
-      "estimated_sale_days_max": 300,
-      "valuation_method": "Valeur pièces des quinze iPhone, rehaussée par les 17/17 Pro Max et 14 Pro Max, plus S23/Redmi; forte décote de lot et d'authenticité.",
-      "main_risks": "Neuf IMEI iPhone sont publiés mais non contrôlés; plusieurs écrans/coques endommagés, modèles 17/A3293 à authentifier et démontage chronophage.",
+      "estimated_sale_days_min": 45,
+      "estimated_sale_days_max": 240,
+      "valuation_method": "Neuf IMEI contrôlés: cinq OFF dont le 17 Pro Max propre/désimlocké en boîte, le 12 Pro, deux XR et le 13; quatre ON restent en pièces. Les six iPhone sans IMEI sont cotés par description et risque.",
+      "main_risks": "Tous les appareils restent non testés; six iPhone sans IMEI, plusieurs écrans/coques endommagés, modèles 17/A3293 à authentifier et ventes nombreuses.",
       "device_checks": [
         {
-          "device": "15 iPhone du lot",
+          "device": "9 iPhone avec IMEI sur les 15 du lot",
           "imei_suffix": null,
           "imei_count": 9,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
+          "find_my_iphone": "5 OFF · 4 ON",
+          "verification_basis": "verified",
+          "checked_on": "2026-09-12",
+          "source": "IMEICheck.com — contrôles IMEI, liste noire et Find My effectués dans le navigateur",
+          "valuation_effect": "5 appareil(s) peuvent être cotés selon leur état ; 4 restent limités à la valeur des pièces.",
+          "items": [
+            {
+              "device": "iPhone SE 2 (2020) A2296",
+              "imei_suffix": "6424",
+              "find_my_iphone": "ON",
+              "sim_lock": "Unlocked",
+              "blacklist": "Clean",
+              "description_state": "non testé"
+            },
+            {
+              "device": "iPhone XR A2105",
+              "imei_suffix": "1406",
+              "find_my_iphone": "OFF",
+              "sim_lock": "Unlocked",
+              "blacklist": "Clean",
+              "description_state": "non testé"
+            },
+            {
+              "device": "iPhone 12 Pro A2407",
+              "imei_suffix": "0492",
+              "find_my_iphone": "OFF",
+              "sim_lock": "Unlocked",
+              "blacklist": "Clean",
+              "description_state": "non testé"
+            },
+            {
+              "device": "iPhone 12 Pro Max A2412",
+              "imei_suffix": "2517",
+              "find_my_iphone": "ON",
+              "sim_lock": "Unlocked",
+              "blacklist": "Clean",
+              "description_state": "non testé"
+            },
+            {
+              "device": "iPhone XR A2105",
+              "imei_suffix": "7362",
+              "find_my_iphone": "OFF",
+              "sim_lock": "Unlocked",
+              "blacklist": "Non retourné",
+              "description_state": "écran et coque à revoir · non testé"
+            },
+            {
+              "device": "iPhone 11 A2221",
+              "imei_suffix": "4591",
+              "find_my_iphone": "ON",
+              "sim_lock": "Unlocked",
+              "blacklist": "Clean",
+              "description_state": "écran à revoir · non testé"
+            },
+            {
+              "device": "iPhone 11 A2221",
+              "imei_suffix": "4337",
+              "find_my_iphone": "ON",
+              "sim_lock": "Unlocked",
+              "blacklist": "Clean",
+              "description_state": "écran à revoir · non testé"
+            },
+            {
+              "device": "iPhone 13 A2633",
+              "imei_suffix": "9026",
+              "find_my_iphone": "OFF",
+              "sim_lock": "Unlocked",
+              "blacklist": "Clean",
+              "description_state": "écran à revoir · non testé"
+            },
+            {
+              "device": "iPhone 17 Pro Max A3526",
+              "imei_suffix": "6589",
+              "find_my_iphone": "OFF",
+              "sim_lock": "Unlocked",
+              "blacklist": "Clean",
+              "description_state": "boîte ouverte · non testé"
+            }
+          ]
+        },
+        {
+          "device": "6 iPhone sans IMEI : deux 17, 14 Pro Max, A3293, 12 probable et 14",
+          "imei_suffix": null,
+          "imei_count": 0,
+          "find_my_iphone": "INCONNU",
+          "verification_basis": "description_only",
           "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+          "source": "Aucun IMEI publié — analyse de la description et des photos",
+          "valuation_effect": "Cote prudente fondée sur l'état annoncé et les pièces récupérables ; l'absence de verrouillage n'est pas supposée."
         }
       ],
       "source_ids": [
-        "lbc_iphone_locked_parts",
-        "ebay_iphone_locked_parts",
-        "lbc_samsung_midrange"
+        "imeicheck_20260912",
+        "lbc_iphone17pm_current",
+        "lbc_iphone12pro_current",
+        "lbc_iphone13_current",
+        "lbc_iphone_locked_parts"
       ],
       "source_titles": [
-        "iPhone bloqués et pour pièces — leboncoin",
-        "iPhone bloqués pour pièces — eBay France",
-        "Samsung A54/A55 d'occasion — leboncoin"
+        "Contrôles IMEI, liste noire et Find My — IMEICheck.com",
+        "iPhone 17 Pro Max d'occasion — leboncoin",
+        "iPhone 12 Pro d'occasion — leboncoin",
+        "iPhone 13 et 13 Pro d'occasion — leboncoin",
+        "iPhone bloqués et pour pièces — leboncoin"
       ],
       "source_urls": [
-        "https://www.leboncoin.fr/ck/telephones_objets_connectes/bloque",
-        "https://www.ebay.fr/b/Iphone-bloque/bn_7006314156",
-        "https://www.leboncoin.fr/c/telephones_objets_connectes/phone_brand%3Asamsung%2Bphone_model%3Asamsung_galaxya5"
+        "https://imeicheck.com/imei-check",
+        "https://www.leboncoin.fr/recherche?category=17&text=iphone%2017%20pro%20max&sort=time&order=desc",
+        "https://www.leboncoin.fr/c/telephones_objets_connectes/phone_brand%3Aapple%2Bphone_model%3Aiphone12pro",
+        "https://www.leboncoin.fr/recherche?category=17&text=iphone%2013&sort=time&order=desc",
+        "https://www.leboncoin.fr/ck/telephones_objets_connectes/bloque"
       ]
     },
     {
@@ -4090,18 +4301,18 @@
       "demand": "moyenne",
       "estimated_sale_days_min": 21,
       "estimated_sale_days_max": 120,
-      "valuation_method": "Photos contrôlées : une Apple Watch SE 2 40 mm A2722 et une seconde Apple Watch non identifiée, toutes deux valorisées uniquement pour pièces sous hypothèse Activation Lock ON; valeur prudente ajoutée pour la JBL Flip 6 et la mini-imprimante LG PD233 non testées.",
-      "main_risks": "Aucune preuve de déverrouillage, aucun chargeur de montre visible, seconde Apple Watch non identifiée et fonctionnement de tous les appareils inconnu.",
+      "valuation_method": "Photos contrôlées : une Apple Watch SE 2 40 mm A2722 et une seconde Watch non identifiée, cotées par état et pièces sans inventer leur activation; valeur ajoutée pour la JBL Flip 6 et la mini-imprimante LG PD233.",
+      "main_risks": "Aucun identifiant de montre ni preuve de dissociation, aucun chargeur visible, seconde Watch non identifiée et fonctionnement de tous les appareils inconnu.",
       "device_checks": [
         {
           "device": "2 Apple Watch du lot, dont une SE 2 40 mm A2722 identifiée sur les photos",
           "imei_suffix": null,
           "imei_count": 0,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
+          "find_my_iphone": "INCONNU",
+          "verification_basis": "description_only",
           "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+          "source": "Aucun IMEI publié — analyse de la description et des photos",
+          "valuation_effect": "Cote prudente fondée sur l'état annoncé et les pièces récupérables ; l'absence de verrouillage n'est pas supposée."
         }
       ],
       "source_ids": [
@@ -4239,18 +4450,18 @@
       "demand": "moyenne",
       "estimated_sale_days_min": 30,
       "estimated_sale_days_max": 120,
-      "valuation_method": "Galaxy Tab A9+ non testée, iPad 10 limité aux pièces sous hypothèse Activation Lock ON et faible valeur pour les deux caméras génériques.",
-      "main_risks": "Capacités et fonctionnement non testés; caméras mal identifiées.",
+      "valuation_method": "Galaxy Tab A9+ non testée, iPad 10 coté par état/pièces faute d'IMEI et faible valeur pour les deux caméras génériques.",
+      "main_risks": "Capacités, activation et fonctionnement non testés; caméras mal identifiées.",
       "device_checks": [
         {
           "device": "iPad 10 A2696",
           "imei_suffix": null,
           "imei_count": 0,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
+          "find_my_iphone": "INCONNU",
+          "verification_basis": "description_only",
           "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+          "source": "Aucun IMEI publié — analyse de la description et des photos",
+          "valuation_effect": "Cote prudente fondée sur l'état annoncé et les pièces récupérables ; l'absence de verrouillage n'est pas supposée."
         }
       ],
       "source_ids": [
@@ -4284,44 +4495,54 @@
       "photos_reviewed": true,
       "photos_reviewed_on": "2026-09-12",
       "market_checked_on": "2026-09-12",
-      "quick_sale_lot_eur": 80,
-      "normal_resale_gross_eur": 140,
-      "recommended_max_bid_eur": 45,
-      "recommended_max_bid_fees_eur": 4.95,
+      "quick_sale_lot_eur": 280,
+      "normal_resale_gross_eur": 400,
+      "recommended_max_bid_eur": 170,
+      "recommended_max_bid_fees_eur": 18.7,
       "recommended_max_bid_vat_eur": 0.0,
-      "recommended_max_purchase_total_eur": 49.95,
-      "quick_margin_at_recommended_max_bid_eur": 30.05,
-      "quick_margin_before_other_costs_eur": 24.5,
-      "normal_margin_before_other_costs_eur": 84.5,
-      "confidence_percent": 62,
-      "demand": "moyenne",
-      "estimated_sale_days_min": 21,
-      "estimated_sale_days_max": 90,
-      "valuation_method": "iPhone 15 valorisé uniquement comme donneur de pièces sous hypothèse iCloud ON; aucun déblocage futur supposé.",
-      "main_risks": "IMEI publié mais contrôle externe non abouti; capacité, batterie, authenticité et état interne inconnus.",
+      "recommended_max_purchase_total_eur": 188.7,
+      "quick_margin_at_recommended_max_bid_eur": 91.3,
+      "quick_margin_before_other_costs_eur": 224.5,
+      "normal_margin_before_other_costs_eur": 344.5,
+      "confidence_percent": 74,
+      "demand": "forte",
+      "estimated_sale_days_min": 7,
+      "estimated_sale_days_max": 45,
+      "valuation_method": "IMEI contrôlé: iPhone 15 A3090 Find My OFF et liste noire Clean. Cote placée sous les annonces 128 Go fonctionnelles car l'appareil reste non testé.",
+      "main_risks": "SimLock non retourné faute de numéro de série; capacité, batterie, authenticité, caméras et état interne inconnus.",
       "device_checks": [
         {
           "device": "iPhone 15 A3090",
           "imei_suffix": null,
           "imei_count": 1,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
-          "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+          "find_my_iphone": "OFF (1/1)",
+          "verification_basis": "verified",
+          "checked_on": "2026-09-12",
+          "source": "IMEICheck.com — contrôles IMEI, liste noire et Find My effectués dans le navigateur",
+          "valuation_effect": "Le verrouillage d'activation n'est pas détecté ; la décote restante vient de l'état décrit et du fonctionnement non testé.",
+          "items": [
+            {
+              "device": "iPhone 15 A3090",
+              "imei_suffix": "5089",
+              "find_my_iphone": "OFF",
+              "sim_lock": "Non retourné",
+              "blacklist": "Clean",
+              "description_state": "non testé · potentiellement bloqué selon l'annonce"
+            }
+          ]
         }
       ],
       "source_ids": [
-        "lbc_iphone_locked_parts",
-        "ebay_iphone_locked_parts"
+        "imeicheck_20260912",
+        "lbc_iphone15_current"
       ],
       "source_titles": [
-        "iPhone bloqués et pour pièces — leboncoin",
-        "iPhone bloqués pour pièces — eBay France"
+        "Contrôles IMEI, liste noire et Find My — IMEICheck.com",
+        "iPhone 15 128 Go d'occasion — leboncoin"
       ],
       "source_urls": [
-        "https://www.leboncoin.fr/ck/telephones_objets_connectes/bloque",
-        "https://www.ebay.fr/b/Iphone-bloque/bn_7006314156"
+        "https://imeicheck.com/imei-check",
+        "https://www.leboncoin.fr/recherche?category=17&text=iphone%2015%20128go&sort=time&order=desc"
       ]
     },
     {
@@ -4443,18 +4664,18 @@
       "demand": "moyenne",
       "estimated_sale_days_min": 90,
       "estimated_sale_days_max": 300,
-      "valuation_method": "Les 22 iPad sont identifiés par référence et valorisés en pièces sous hypothèse Activation Lock ON; A2377, A2230, A2588/A2589 et A2602 portent la valeur. Les tablettes Android et liseuses sont décotées non testées.",
-      "main_risks": "Le titre annonce 23 liseuses mais le détail n'en énumère que 22 (14 Kindle et 8 Kobo), soit 54 appareils détaillés contre 55 annoncés. Écrans, batteries et comptes restent inconnus; ventes séparées très chronophages.",
+      "valuation_method": "Les 22 iPad sont identifiés par référence et cotés selon l'état non testé et les pièces; A2377, A2230, A2588/A2589 et A2602 portent la valeur. Android et liseuses sont décotés.",
+      "main_risks": "Aucun IMEI iPad; activation, écrans et batteries inconnus. Le titre annonce 23 liseuses mais le détail n'en énumère que 22, soit 54 appareils détaillés contre 55 annoncés; ventes séparées très longues.",
       "device_checks": [
         {
           "device": "22 iPad du lot",
           "imei_suffix": null,
           "imei_count": 0,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
+          "find_my_iphone": "INCONNU",
+          "verification_basis": "description_only",
           "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+          "source": "Aucun IMEI publié — analyse de la description et des photos",
+          "valuation_effect": "Cote prudente fondée sur l'état annoncé et les pièces récupérables ; l'absence de verrouillage n'est pas supposée."
         }
       ],
       "source_ids": [
@@ -4758,18 +4979,18 @@
       "demand": "moyenne",
       "estimated_sale_days_min": 30,
       "estimated_sale_days_max": 120,
-      "valuation_method": "iPad 9 A2602 limité aux pièces sous hypothèse Activation Lock ON, plus Olympus E-P2 et petits appareils non testés.",
-      "main_risks": "Tout non testé; référence Samsung probablement mal saisie et batterie de l'appareil photo ancienne.",
+      "valuation_method": "iPad 9 A2602 coté par état/pièces faute d'IMEI, plus Olympus E-P2 et petits appareils non testés.",
+      "main_risks": "Activation et fonctionnement inconnus; référence Samsung probablement mal saisie et batterie de l'appareil photo ancienne.",
       "device_checks": [
         {
           "device": "iPad 9 A2602",
           "imei_suffix": null,
           "imei_count": 0,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
+          "find_my_iphone": "INCONNU",
+          "verification_basis": "description_only",
           "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+          "source": "Aucun IMEI publié — analyse de la description et des photos",
+          "valuation_effect": "Cote prudente fondée sur l'état annoncé et les pièces récupérables ; l'absence de verrouillage n'est pas supposée."
         }
       ],
       "source_ids": [
@@ -5244,39 +5465,50 @@
       "demand": "moyenne",
       "estimated_sale_days_min": 21,
       "estimated_sale_days_max": 90,
-      "valuation_method": "iPhone 12 contrôlé FMI ON et iPhone 11 Pro supposé iCloud ON: les deux sont valorisés uniquement comme donneurs de pièces.",
+      "valuation_method": "Les deux IMEI sont contrôlés: iPhone 11 Pro et iPhone 12 sont tous deux Find My ON, liste noire Clean et désimlockés; valeur des pièces uniquement.",
       "main_risks": "Aucune valeur d'usage ou de déblocage; capacité, batterie, écrans, cartes mères et autres composants récupérables restent inconnus.",
       "device_checks": [
         {
-          "device": "iPhone 11 Pro",
+          "device": "Les 2 iPhone du lot",
           "imei_suffix": null,
-          "imei_count": 1,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
-          "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
-        },
-        {
-          "device": "iPhone 12 A2403",
-          "imei_suffix": "4229",
-          "imei_count": 1,
-          "find_my_iphone": "ON",
+          "imei_count": 2,
+          "find_my_iphone": "ON (2/2)",
           "verification_basis": "verified",
           "checked_on": "2026-09-12",
-          "source": "IMEICheck.com — résultat communiqué par l'utilisateur",
-          "valuation_effect": "Valeur pièces uniquement tant que le propriétaire d'origine ne retire pas le verrouillage d'activation."
+          "source": "IMEICheck.com — contrôles IMEI, liste noire et Find My effectués dans le navigateur",
+          "valuation_effect": "Valeur pièces uniquement tant que l'ancien propriétaire ne retire pas le verrouillage d'activation.",
+          "items": [
+            {
+              "device": "iPhone 11 Pro A2160",
+              "imei_suffix": "8592",
+              "find_my_iphone": "ON",
+              "sim_lock": "Unlocked",
+              "blacklist": "Clean",
+              "description_state": "sans câble · fonctionnement non indiqué"
+            },
+            {
+              "device": "iPhone 12 A2403",
+              "imei_suffix": "4229",
+              "find_my_iphone": "ON",
+              "sim_lock": "Unlocked",
+              "blacklist": "Clean",
+              "description_state": "sans câble · fonctionnement non indiqué"
+            }
+          ]
         }
       ],
       "source_ids": [
+        "imeicheck_20260912",
         "lbc_iphone_locked_parts",
         "ebay_iphone_locked_parts"
       ],
       "source_titles": [
+        "Contrôles IMEI, liste noire et Find My — IMEICheck.com",
         "iPhone bloqués et pour pièces — leboncoin",
         "iPhone bloqués pour pièces — eBay France"
       ],
       "source_urls": [
+        "https://imeicheck.com/imei-check",
         "https://www.leboncoin.fr/ck/telephones_objets_connectes/bloque",
         "https://www.ebay.fr/b/Iphone-bloque/bn_7006314156"
       ]
@@ -5312,31 +5544,31 @@
       "demand": "moyenne",
       "estimated_sale_days_min": 30,
       "estimated_sale_days_max": 120,
-      "valuation_method": "iPhone 14 Pro valorisé uniquement pour pièces sous hypothèse iCloud ON; faible valeur prudente ajoutée pour le second téléphone non identifié.",
-      "main_risks": "Modèle 'SAMSUNG ONE' incohérent; aucune valeur d'usage pour l'iPhone; capacités, batteries et fonctionnement inconnus.",
+      "valuation_method": "iPhone 14 Pro sans IMEI coté par état et pièces, sans inventer son activation; faible valeur ajoutée pour le second téléphone non identifié.",
+      "main_risks": "Modèle 'SAMSUNG ONE' incohérent; activation, capacités, batteries et fonctionnement inconnus.",
       "device_checks": [
         {
           "device": "iPhone 14 Pro",
           "imei_suffix": null,
           "imei_count": 0,
-          "find_my_iphone": "ON",
-          "verification_basis": "assumed",
+          "find_my_iphone": "INCONNU",
+          "verification_basis": "description_only",
           "checked_on": null,
-          "source": "Règle prudente demandée — aucun résultat IMEI n'est revendiqué sans réponse vérifiable du service externe",
-          "valuation_effect": "Valeur pièces uniquement ; aucune valeur d'usage ni déblocage futur n'est supposé."
+          "source": "Aucun IMEI publié — analyse de la description et des photos",
+          "valuation_effect": "Cote prudente fondée sur l'état annoncé et les pièces récupérables ; l'absence de verrouillage n'est pas supposée."
         }
       ],
       "source_ids": [
-        "lbc_iphone_locked_parts",
-        "ebay_iphone_locked_parts"
+        "lbc_iphone14pro",
+        "lbc_iphone_locked_parts"
       ],
       "source_titles": [
-        "iPhone bloqués et pour pièces — leboncoin",
-        "iPhone bloqués pour pièces — eBay France"
+        "iPhone 14 Pro d'occasion — leboncoin",
+        "iPhone bloqués et pour pièces — leboncoin"
       ],
       "source_urls": [
-        "https://www.leboncoin.fr/ck/telephones_objets_connectes/bloque",
-        "https://www.ebay.fr/b/Iphone-bloque/bn_7006314156"
+        "https://www.leboncoin.fr/c/telephones_objets_connectes/phone_brand%3Aapple%2Bphone_model%3Aiphone14pro",
+        "https://www.leboncoin.fr/ck/telephones_objets_connectes/bloque"
       ]
     },
     {
