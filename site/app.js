@@ -28,22 +28,70 @@ let LOTS = [];
 let ARCH = [];
 let COTES = new Map();
 let HOME = '';
-const DEPOT_SORTS = ['lot', 'confidence', 'quick-margin', 'confidence-margin'];
+const DEPOT_SORTS = ['lot', 'demand', 'confidence', 'quick-margin', 'confidence-margin', 'opportunity'];
+const DEPOT_DEMANDS = ['all', 'forte', 'moyenne', 'faible'];
 function savedDepotSort() {
   try {
     const value = localStorage.getItem('depotSort');
     return DEPOT_SORTS.includes(value) ? value : 'lot';
   } catch { return 'lot'; }
 }
+function savedDepotDemand() {
+  try {
+    const value = localStorage.getItem('depotDemand');
+    return DEPOT_DEMANDS.includes(value) ? value : 'all';
+  } catch { return 'all'; }
+}
 let state = {
   status: 14,
   q: '',
   depot: null,
   depotSort: savedDepotSort(),
+  depotDemand: savedDepotDemand(),
   dateFilter: 'all',
   trashDepot: 'all',
   trashStatus: 'all',
 };
+
+const DEMAND_SCORES = { faible: 0, moyenne: 50, forte: 100 };
+function demandScore(cote) {
+  return cote ? (DEMAND_SCORES[String(cote.demand || '').toLowerCase()] ?? -1) : -1;
+}
+
+function phoneDetails(lot) {
+  let digits = String(lot.phone || '').replace(/\D/g, '');
+  if (!digits) return null;
+  if (digits.startsWith('33') && digits.length === 11) {
+    return {
+      href: `+${digits}`,
+      label: `+33 ${digits.slice(2).match(/.{1,2}/g).join(' ')}`,
+    };
+  }
+  if (digits.length === 10) {
+    return { href: `+33${digits.slice(1)}`, label: digits.match(/.{1,2}/g).join(' ') };
+  }
+  return { href: `+${digits}`, label: `+${digits}` };
+}
+
+// Un appel est recommandé quand l'information qui change réellement la cote
+// manque : activation Apple, fonctionnement, référence/configuration ou état.
+function callAdviceFor(lot, cote) {
+  const checks = cote.device_checks || [];
+  const text = `${lot.name || ''} ${lot.desc || ''} ${cote.main_risks || ''}`.toLowerCase();
+  const reasons = [];
+  if (checks.some((check) => check.verification_basis !== 'verified' || String(check.find_my_iphone).includes('INCONNU'))) {
+    reasons.push('IMEI ou verrouillage non confirmé');
+  }
+  if (/non[\s-]?test|fonctionnement non (?:indiqu|garanti|confirm)|fonctionnement inconnu/.test(text)) {
+    reasons.push('fonctionnement non confirmé');
+  }
+  if (/(?:référence|modele|modèle|configuration|capacité|stockage)[^.;]{0,40}(?:inconnu|non précisé|non indiqu|à confirmer)/.test(text)) {
+    reasons.push('référence ou configuration incomplète');
+  }
+  if (Number(cote.confidence_percent) < 50) reasons.push('confiance faible');
+  if (!reasons.length) return null;
+  return { reasons: [...new Set(reasons)], phone: phoneDetails(lot) };
+}
 
 // Chiffres dynamiques d'une cote : l'enchère courante peut bouger après la
 // création de l'estimation, donc le tri utilise le même calcul que la carte.
@@ -61,7 +109,7 @@ function acquisitionAtBid(cote, bid) {
 
 function valuationNumbers(lot) {
   const cote = COTES.get(String(lot.id));
-  if (!cote) return { confidence: -1, quickMargin: -Infinity, adjustedMargin: -Infinity };
+  if (!cote) return { confidence: -1, demand: -1, quickMargin: -Infinity, adjustedMargin: -Infinity };
 
   const bid = lot.bid != null && lot.bid !== '' ? lot.bid : lot.price;
   const acquisition = acquisitionAtBid(cote, bid);
@@ -69,7 +117,7 @@ function valuationNumbers(lot) {
   const quickMargin = Number(cote.quick_sale_lot_eur) - acquisition.purchaseTotal;
 
   return {
-    ...acquisition, confidence, quickMargin,
+    ...acquisition, confidence, demand: demandScore(cote), quickMargin,
     normalMargin: Number(cote.normal_resale_gross_eur) - acquisition.purchaseTotal,
     // Marge rapide pondérée par la fiabilité de l'estimation.
     adjustedMargin: quickMargin * confidence / 100,
@@ -92,6 +140,7 @@ function renderCote(lot) {
   const confidence = Number(cote.confidence_percent) || 0;
   const confidenceTone = confidence >= 70 ? 'high' : confidence >= 50 ? 'medium' : 'low';
   const confidenceLabel = confidence >= 70 ? 'bonne' : confidence >= 50 ? 'moyenne' : 'faible';
+  const callAdvice = callAdviceFor(lot, cote);
   const signedEuro = (value) => `${value >= 0 ? '+' : ''}${euro(value)}`;
   const currentVatLabel = vat
     ? ` + ${euro(vat)} de TVA (${vatRate} %)`
@@ -141,6 +190,15 @@ function renderCote(lot) {
       <span class="confidence ${confidenceTone}">Confiance ${confidenceLabel} · ${confidence} %</span>
     </div>
     ${deviceChecks}
+    ${callAdvice ? `<div class="call-advice">
+      <div>
+        <b>Informations insuffisantes : appelle le dépôt</b>
+        <span>${esc(callAdvice.reasons.join(' · '))}${lot.contact ? ` · Contact : ${esc(lot.contact)}` : ''}</span>
+      </div>
+      ${callAdvice.phone
+        ? `<a href="tel:${esc(callAdvice.phone.href)}" aria-label="Appeler le dépôt au ${esc(callAdvice.phone.label)}">☎ Appeler ${esc(callAdvice.phone.label)}</a>`
+        : `<a href="${esc(lot.url)}" target="_blank" rel="noopener">Voir le contact ↗</a>`}
+    </div>` : ''}
     <div class="cote-values">
       <div class="cote-value quick">
         <span>Si tu veux vendre vite</span>
@@ -602,36 +660,67 @@ function bindLotCards(root, onToggle) {
 // Liste claire des lots conservés du dépôt. Les écartés ont leur propre écran.
 function renderDepotLots(g) {
   const tieBreak = (a, b) => (Number(a.lot) || 0) - (Number(b.lot) || 0);
+  const gardesSansFiltre = g.lots.filter((l) => !TRASH.has(l.id));
+  const marges = gardesSansFiltre.map((l) => valuationNumbers(l).quickMargin).filter(Number.isFinite);
+  const maxMarge = Math.max(1, ...marges.filter((margin) => margin > 0));
+  const opportunityScore = (lot) => {
+    const values = valuationNumbers(lot);
+    const marginScore = Number.isFinite(values.quickMargin)
+      ? Math.max(0, Math.min(100, values.quickMargin / maxMarge * 100))
+      : 0;
+    // Demande et marge pèsent chacune 35 %, confiance 30 %.
+    return values.demand * .35 + values.confidence * .30 + marginScore * .35;
+  };
   const compare = (a, b) => {
     const av = valuationNumbers(a), bv = valuationNumbers(b);
+    if (state.depotSort === 'demand') return bv.demand - av.demand || bv.confidence - av.confidence || tieBreak(a, b);
     if (state.depotSort === 'confidence') return bv.confidence - av.confidence || tieBreak(a, b);
     if (state.depotSort === 'quick-margin') return bv.quickMargin - av.quickMargin || tieBreak(a, b);
     if (state.depotSort === 'confidence-margin') return bv.adjustedMargin - av.adjustedMargin || tieBreak(a, b);
+    if (state.depotSort === 'opportunity') return opportunityScore(b) - opportunityScore(a) || tieBreak(a, b);
     return tieBreak(a, b);
   };
-  const gardes = g.lots
-    .filter((l) => !TRASH.has(l.id))
+  const gardes = gardesSansFiltre
+    .filter((l) => state.depotDemand === 'all' || String(COTES.get(String(l.id))?.demand || '').toLowerCase() === state.depotDemand)
     .sort(compare);
 
-  if (!gardes.length) {
+  if (!gardesSansFiltre.length) {
     closeDepot();
     renderDepots();
     return;
   }
 
   $('#lots').innerHTML = `<div class="bar">
-      <span class="cnt">${gardes.length} lot${gardes.length > 1 ? 's' : ''} à examiner</span>
+      <span class="cnt">${gardes.length} lot${gardes.length > 1 ? 's' : ''} affiché${gardes.length > 1 ? 's' : ''}</span>
+      <label class="sort-label">Demande
+        <select id="depot-demand" aria-label="Filtrer les lots par demande">
+          <option value="all"${state.depotDemand === 'all' ? ' selected' : ''}>Toutes</option>
+          <option value="forte"${state.depotDemand === 'forte' ? ' selected' : ''}>Forte seulement</option>
+          <option value="moyenne"${state.depotDemand === 'moyenne' ? ' selected' : ''}>Moyenne seulement</option>
+          <option value="faible"${state.depotDemand === 'faible' ? ' selected' : ''}>Faible seulement</option>
+        </select>
+      </label>
       <label class="sort-label">Trier par
         <select id="depot-sort" aria-label="Trier les lots du dépôt">
           <option value="lot"${state.depotSort === 'lot' ? ' selected' : ''}>Numéro de lot</option>
+          <option value="demand"${state.depotSort === 'demand' ? ' selected' : ''}>Demande : forte → faible</option>
           <option value="confidence"${state.depotSort === 'confidence' ? ' selected' : ''}>Confiance : élevée → faible</option>
           <option value="quick-margin"${state.depotSort === 'quick-margin' ? ' selected' : ''}>Écart brut rapide : élevé → faible</option>
           <option value="confidence-margin"${state.depotSort === 'confidence-margin' ? ' selected' : ''}>Confiance + écart : meilleur d'abord</option>
+          <option value="opportunity"${state.depotSort === 'opportunity' ? ' selected' : ''}>Demande + confiance + écart</option>
         </select>
       </label>
       <span class="note">Pour écarter un lot, touche la poubelle en haut à droite de sa photo.</span>
     </div>
-    <div class="grid-lots">${gardes.map((l) => renderLotCard(l)).join('')}</div>`;
+    ${gardes.length
+      ? `<div class="grid-lots">${gardes.map((l) => renderLotCard(l)).join('')}</div>`
+      : '<p class="empty">Aucun lot ne correspond à ce niveau de demande dans ce dépôt.</p>'}`;
+
+  $('#depot-demand').addEventListener('change', (e) => {
+    state.depotDemand = e.target.value;
+    try { localStorage.setItem('depotDemand', state.depotDemand); } catch {}
+    renderDepotLots(g);
+  });
 
   $('#depot-sort').addEventListener('change', (e) => {
     state.depotSort = e.target.value;
