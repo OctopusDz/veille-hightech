@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -29,22 +29,9 @@ jobs:
       - name: Contrôler les prix sur chaque fiche officielle
         run: python3 -m scraper.prix
 
-      - name: Publier les prix vérifiés
-        run: |
-          git config user.name "veille-hightech[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add site/data/lots.json
-          if git diff --staged --quiet; then
-            echo "aucun changement de prix"
-            exit 0
-          fi
-          git commit -m "Prix vérifiés du $(date -u +%Y-%m-%d\ %H:%M) UTC"
-          for essai in 1 2 3; do
-            git push && exit 0
-            git pull --rebase origin main || exit 1
-          done
-          git push
-
+      # Le fichier rafraîchi est publié dans l'artefact Pages sans créer un
+      # commit toutes les 15 minutes. La collecte complète conserve les prix
+      # dans Git lors de ses passages habituels.
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
