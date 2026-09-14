@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-14T04:14:39+00:00",
+ "updated": "2026-09-14T07:48:23+00:00",
  "source": "encheres-domaine.gouv.fr — categorie High tech (46)",
  "count": 112,
  "lots": [
@@ -8,8 +8,8 @@
    "sku": "260633BR302468",
    "lot": 271,
    "name": "Lot de 19 ordinateurs portables DYNABOOK Satellite Pro C40",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 1150,
@@ -39,15 +39,16 @@
    "lat": 44.836685,
    "lon": -0.579184,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 302466,
    "sku": "260633BR302466",
    "lot": 272,
    "name": "Lot de 30 ordinateurs portable DYNABOOK Satellite Pro C40",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 1600,
@@ -78,15 +79,16 @@
    "lat": 44.836685,
    "lon": -0.579184,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 302464,
    "sku": "260633BR302464",
    "lot": 273,
    "name": "Lot de 20 ordinateurs portables DYNABOOK Satellite Pro C40",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 1200,
@@ -117,15 +119,16 @@
    "lat": 44.836685,
    "lon": -0.579184,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 302462,
    "sku": "260633BR302462",
    "lot": 274,
    "name": "Lot de 11 ordinateurs portables  DELL avec station d'accueil",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 300,
@@ -155,15 +158,16 @@
    "lat": 44.836685,
    "lon": -0.579184,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 302459,
    "sku": "260633BR302459",
    "lot": 275,
    "name": "Lot de switch ARUBA et HP",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 100,
@@ -203,15 +207,16 @@
    "lat": 44.836685,
    "lon": -0.579184,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 302453,
    "sku": "260633BR302453",
    "lot": 276,
    "name": "Lot de 27 bornes Wifi ARUBA",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 80,
@@ -241,15 +246,16 @@
    "lat": 44.836685,
    "lon": -0.579184,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 302452,
    "sku": "260633BR302452",
    "lot": 277,
    "name": "Lot de 10 ordinateurs portables TOSHIBA",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 200,
@@ -283,15 +289,16 @@
    "lat": 44.836685,
    "lon": -0.579184,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 302451,
    "sku": "260633BR302451",
    "lot": 278,
    "name": "Lot de 14 ordinaterus portables TOSHIBA R50",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 350,
@@ -324,15 +331,16 @@
    "lat": 44.836685,
    "lon": -0.579184,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 302450,
    "sku": "260633BR302450",
    "lot": 279,
    "name": "Lot de 13 ordinateurs portables TOSHIBA R50",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 320,
@@ -364,15 +372,16 @@
    "lat": 44.836685,
    "lon": -0.579184,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 302449,
    "sku": "260633BR302449",
    "lot": 280,
    "name": "Lot de 10 ordinateurs portables TOSHIBA R50",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 250,
@@ -403,15 +412,16 @@
    "lat": 44.836685,
    "lon": -0.579184,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 302446,
    "sku": "260633BR302446",
    "lot": 281,
    "name": "Lot de 11 ordinateurs portables TOSHIBA R40",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 260,
@@ -441,15 +451,16 @@
    "lat": 44.836685,
    "lon": -0.579184,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 302443,
    "sku": "260633BR302443",
    "lot": 282,
    "name": "Lot de 20 ordinateurs portables TOSHIBA R40",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 500,
@@ -480,15 +491,16 @@
    "lat": 44.836685,
    "lon": -0.579184,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 302442,
    "sku": "260633BR302442",
    "lot": 283,
    "name": "Lot de 6 ordinateurs portables DYNABOOK Satellite Pro C40",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 200,
@@ -520,15 +532,16 @@
    "lat": 44.836685,
    "lon": -0.579184,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 302440,
    "sku": "260633BR302440",
    "lot": 284,
    "name": "Lot de 17 ordinateurs portables DYNABOOK Satellite Pro C40",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 1000,
@@ -560,15 +573,16 @@
    "lat": 44.836685,
    "lon": -0.579184,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 302439,
    "sku": "260633BR302439",
    "lot": 285,
    "name": "Lot de 20 ordinateurs portables DYNABOOK Satellite Pro C40",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 1200,
@@ -601,15 +615,16 @@
    "lat": 44.836685,
    "lon": -0.579184,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 302437,
    "sku": "260633BR302437",
    "lot": 286,
    "name": "Lot de 21 ordinateurs  portables  DYNABOOK Satellite Pro C40",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 600,
@@ -641,15 +656,16 @@
    "lat": 44.836685,
    "lon": -0.579184,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 302436,
    "sku": "260633BR302436",
    "lot": 287,
    "name": "Lot de 11 ordinateurs portables DYNABOOK  Satellite Pro C40",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 650,
@@ -682,15 +698,16 @@
    "lat": 44.836685,
    "lon": -0.579184,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 302434,
    "sku": "260633BR302434",
    "lot": 288,
    "name": "Lot de 19 ordinateurs portables DYNABOOK",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 1100,
@@ -723,15 +740,16 @@
    "lat": 44.836685,
    "lon": -0.579184,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 302433,
    "sku": "260633BR302433",
    "lot": 289,
    "name": "Lot de 16 ordinateurs portables DYNABOOK  Satellite Pro C40",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 950,
@@ -764,15 +782,16 @@
    "lat": 44.836685,
    "lon": -0.579184,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 302432,
    "sku": "260633BR302432",
    "lot": 290,
    "name": "Lot de 10 ordinateurs portables DYNABOOK Satellite Pro C40",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 600,
@@ -805,15 +824,16 @@
    "lat": 44.836685,
    "lon": -0.579184,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 302420,
    "sku": "260633BR302420",
    "lot": 291,
    "name": "Lot de 59 PC fixes",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 300,
@@ -848,15 +868,16 @@
    "lat": 44.836685,
    "lon": -0.579184,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 338394,
    "sku": "260833BA338394",
    "lot": 300,
    "name": "Trottinette électrique WISPEED X1030",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 40,
@@ -895,15 +916,16 @@
    "lat": 44.841683,
    "lon": -0.601088,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 300850,
    "sku": "260433BA270842",
    "lot": 302,
    "name": "Drone DJI Matrice 210",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 1000,
@@ -943,15 +965,16 @@
    "lat": 44.841683,
    "lon": -0.601088,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 297104,
    "sku": "260633BA297104",
    "lot": 304,
    "name": "TV LG et console de jeu SONY PS5",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 100,
@@ -983,15 +1006,16 @@
    "lat": 44.841683,
    "lon": -0.601088,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 297230,
    "sku": "260633BA297230",
    "lot": 305,
    "name": "Lot TV SONY, console de jeu SONY PS4 et jeux vidéos",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 80,
@@ -1027,15 +1051,16 @@
    "lat": 44.841683,
    "lon": -0.601088,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 324131,
    "sku": "260733BA324131",
    "lot": 306,
    "name": "Lot TV et consoles de jeux",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 50,
@@ -1068,15 +1093,16 @@
    "lat": 44.841683,
    "lon": -0.601088,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 324273,
    "sku": "260733BA324273",
    "lot": 307,
    "name": "Lot TV SAMSUNG et consoles de jeux",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 50,
@@ -1109,15 +1135,16 @@
    "lat": 44.841683,
    "lon": -0.601088,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 324364,
    "sku": "260733BA324364",
    "lot": 308,
    "name": "Lot TV LG et console de jeux",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 30,
@@ -1150,15 +1177,16 @@
    "lat": 44.841683,
    "lon": -0.601088,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 324538,
    "sku": "260733BA324538",
    "lot": 309,
    "name": "Lot TV SAMSUNG et console de jeux",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 30,
@@ -1190,15 +1218,16 @@
    "lat": 44.841683,
    "lon": -0.601088,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 297974,
    "sku": "260633BA297974",
    "lot": 310,
    "name": "Lot informatique : écran, unité centrale et accessoires",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 80,
@@ -1235,15 +1264,16 @@
    "lat": 44.841683,
    "lon": -0.601088,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 302000,
    "sku": "260633BA302000",
    "lot": 311,
    "name": "APPLE iPhone 16 et batterie externe",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 80,
@@ -1278,15 +1308,16 @@
    "lat": 44.841683,
    "lon": -0.601088,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 296119,
    "sku": "260633BA296119",
    "lot": 312,
    "name": "Lot APPLE",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 20,
@@ -1325,15 +1356,16 @@
    "lat": 44.841683,
    "lon": -0.601088,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 324620,
    "sku": "260733BA324620",
    "lot": 313,
    "name": "Lot multimédia",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 50,
@@ -1366,15 +1398,16 @@
    "lat": 44.841683,
    "lon": -0.601088,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 340395,
    "sku": "260833BA340395",
    "lot": 314,
    "name": "Lot de casques de musique LOGITECH",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 200,
@@ -1411,15 +1444,16 @@
    "lat": 44.841683,
    "lon": -0.601088,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 311011,
    "sku": "260733BA311011",
    "lot": 317,
    "name": "Enceinte MARSHALL",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 30,
@@ -1451,15 +1485,16 @@
    "lat": 44.841683,
    "lon": -0.601088,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 341436,
    "sku": "260833BA341436",
    "lot": 319,
    "name": "Lot HIFI",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 20,
@@ -1498,15 +1533,16 @@
    "lat": 44.841683,
    "lon": -0.601088,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 306147,
    "sku": "260633BA306147",
    "lot": 321,
    "name": "PC Gamer et souris sans fil",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 40,
@@ -1539,15 +1575,16 @@
    "lat": 44.841683,
    "lon": -0.601088,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 303750,
    "sku": "260633BA303750",
    "lot": 344,
    "name": "Table de mixage PIONEER DJ DDJ-REV7",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 500,
@@ -1585,7 +1622,8 @@
    "lat": 44.841683,
    "lon": -0.601088,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 304500,
@@ -1623,8 +1661,8 @@
    "lat": 48.410141,
    "lon": -4.526574,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 299305,
@@ -1663,8 +1701,8 @@
    "lat": 48.004809,
    "lon": 0.200823,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 319895,
@@ -2465,8 +2503,8 @@
    "sku": "260533BR282757",
    "lot": 292,
    "name": "Photocopieur Multifonctions HP laser",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 300,
@@ -2496,15 +2534,16 @@
    "lat": 45.193579,
    "lon": 0.728594,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 300859,
    "sku": "260533BR272488",
    "lot": 293,
    "name": "Lot de 30 imprimantes HP",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-14T07:00:00+00:00",
    "end": "2026-09-17T08:00:00+00:00",
    "price": 250,
@@ -2534,7 +2573,8 @@
    "lat": 45.193579,
    "lon": 0.728594,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 314403,
@@ -2573,8 +2613,8 @@
    "lat": 48.534986,
    "lon": -2.770519,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 314391,
@@ -2613,8 +2653,8 @@
    "lat": 48.534986,
    "lon": -2.770519,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 314385,
@@ -2652,8 +2692,8 @@
    "lat": 48.534986,
    "lon": -2.770519,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 314379,
@@ -2691,8 +2731,8 @@
    "lat": 48.534986,
    "lon": -2.770519,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 314372,
@@ -2730,8 +2770,8 @@
    "lat": 48.534986,
    "lon": -2.770519,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 314336,
@@ -2769,8 +2809,8 @@
    "lat": 48.534986,
    "lon": -2.770519,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 314296,
@@ -2808,8 +2848,8 @@
    "lat": 48.534986,
    "lon": -2.770519,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 314295,
@@ -2848,8 +2888,8 @@
    "lat": 48.534986,
    "lon": -2.770519,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 314274,
@@ -2888,8 +2928,8 @@
    "lat": 48.534986,
    "lon": -2.770519,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 314267,
@@ -2928,8 +2968,8 @@
    "lat": 48.534986,
    "lon": -2.770519,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 314363,
@@ -2968,8 +3008,8 @@
    "lat": 48.534986,
    "lon": -2.770519,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 304783,
@@ -2981,7 +3021,7 @@
    "start": "2026-09-11T07:00:00+00:00",
    "end": "2026-09-15T08:00:00+00:00",
    "price": 125,
-   "bid": 135,
+   "bid": 140,
    "reserve": 0,
    "pro": true,
    "auction": 472,
@@ -3010,8 +3050,8 @@
    "lat": 48.159953,
    "lon": -1.691326,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 306168,
@@ -3050,8 +3090,8 @@
    "lat": 48.159953,
    "lon": -1.691326,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 308035,
@@ -3063,7 +3103,7 @@
    "start": "2026-09-11T07:00:00+00:00",
    "end": "2026-09-15T08:00:00+00:00",
    "price": 500,
-   "bid": 560,
+   "bid": 570,
    "reserve": 0,
    "pro": true,
    "auction": 472,
@@ -3092,8 +3132,8 @@
    "lat": 48.159953,
    "lon": -1.691326,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 176842,
@@ -3133,8 +3173,8 @@
    "lat": 48.159953,
    "lon": -1.691326,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 308277,
@@ -3176,8 +3216,8 @@
    "lat": 48.159953,
    "lon": -1.691326,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 308310,
@@ -3189,7 +3229,7 @@
    "start": "2026-09-11T07:00:00+00:00",
    "end": "2026-09-15T08:00:00+00:00",
    "price": 60,
-   "bid": 145,
+   "bid": 150,
    "reserve": 60,
    "pro": false,
    "auction": 472,
@@ -3218,8 +3258,8 @@
    "lat": 48.159953,
    "lon": -1.691326,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 308750,
@@ -3269,8 +3309,8 @@
    "lat": 48.159953,
    "lon": -1.691326,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 309602,
@@ -3311,8 +3351,8 @@
    "lat": 48.159953,
    "lon": -1.691326,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 309616,
@@ -3356,8 +3396,8 @@
    "lat": 48.159953,
    "lon": -1.691326,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 309654,
@@ -3399,8 +3439,8 @@
    "lat": 48.159953,
    "lon": -1.691326,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 309881,
@@ -3412,7 +3452,7 @@
    "start": "2026-09-11T07:00:00+00:00",
    "end": "2026-09-15T08:00:00+00:00",
    "price": 30,
-   "bid": 65,
+   "bid": 70,
    "reserve": 30,
    "pro": false,
    "auction": 472,
@@ -3448,8 +3488,8 @@
    "lat": 48.159953,
    "lon": -1.691326,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 304101,
@@ -3488,8 +3528,8 @@
    "lat": 48.159953,
    "lon": -1.691326,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 310961,
@@ -3535,8 +3575,8 @@
    "lat": 48.159953,
    "lon": -1.691326,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 311309,
@@ -3586,8 +3626,8 @@
    "lat": 48.159953,
    "lon": -1.691326,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 309023,
@@ -3599,7 +3639,7 @@
    "start": "2026-09-11T07:00:00+00:00",
    "end": "2026-09-15T08:00:00+00:00",
    "price": 50,
-   "bid": 50,
+   "bid": 55,
    "reserve": 50,
    "pro": true,
    "auction": 472,
@@ -3626,8 +3666,8 @@
    "lat": 48.159953,
    "lon": -1.691326,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 317922,
@@ -3679,8 +3719,8 @@
    "lat": 48.159953,
    "lon": -1.691326,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 318200,
@@ -3692,7 +3732,7 @@
    "start": "2026-09-11T07:00:00+00:00",
    "end": "2026-09-15T08:00:00+00:00",
    "price": 100,
-   "bid": 125,
+   "bid": 130,
    "reserve": 0,
    "pro": false,
    "auction": 472,
@@ -3720,8 +3760,8 @@
    "lat": 48.159953,
    "lon": -1.691326,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 318313,
@@ -3765,8 +3805,8 @@
    "lat": 48.159953,
    "lon": -1.691326,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 318327,
@@ -3807,8 +3847,8 @@
    "lat": 48.159953,
    "lon": -1.691326,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 318370,
@@ -3856,8 +3896,8 @@
    "lat": 48.159953,
    "lon": -1.691326,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 318430,
@@ -3898,8 +3938,8 @@
    "lat": 48.159953,
    "lon": -1.691326,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 318523,
@@ -3941,8 +3981,8 @@
    "lat": 48.159953,
    "lon": -1.691326,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 318544,
@@ -3985,8 +4025,8 @@
    "lat": 48.159953,
    "lon": -1.691326,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 336599,
@@ -4032,8 +4072,8 @@
    "lat": 48.159953,
    "lon": -1.691326,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 282679,
@@ -4517,8 +4557,8 @@
    "lat": 48.678228,
    "lon": 5.884397,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 343959,
@@ -4530,7 +4570,7 @@
    "start": "2026-09-10T10:00:00+00:00",
    "end": "2026-09-14T08:00:00+00:00",
    "price": 30,
-   "bid": null,
+   "bid": 30,
    "reserve": 0,
    "pro": true,
    "auction": 470,
@@ -4557,8 +4597,8 @@
    "lat": 48.678228,
    "lon": 5.884397,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 321714,
@@ -4614,8 +4654,8 @@
    "lat": 48.678228,
    "lon": 5.884397,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 329193,
@@ -4627,7 +4667,7 @@
    "start": "2026-09-10T10:00:00+00:00",
    "end": "2026-09-14T08:00:00+00:00",
    "price": 200,
-   "bid": 390,
+   "bid": 460,
    "reserve": null,
    "pro": false,
    "auction": 470,
@@ -4654,8 +4694,8 @@
    "lat": 48.678228,
    "lon": 5.884397,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 304620,
@@ -4697,8 +4737,8 @@
    "lat": 47.661378,
    "lon": -2.760148,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 294796,
@@ -4736,8 +4776,8 @@
    "lat": 47.661378,
    "lon": -2.760148,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   },
   {
    "id": 294805,
@@ -4776,8 +4816,8 @@
    "lat": 47.661378,
    "lon": -2.760148,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-14T04:14:39+00:00",
-   "bidCheckAttemptedAt": "2026-09-14T04:14:39+00:00"
+   "bidCheckedAt": "2026-09-14T07:48:23+00:00",
+   "bidCheckAttemptedAt": "2026-09-14T07:48:23+00:00"
   }
  ]
 }
