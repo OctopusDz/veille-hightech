@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-18T11:05:26+00:00",
+ "updated": "2026-09-18T15:05:07+00:00",
  "source": "encheres-domaine.gouv.fr — categorie High tech (46)",
  "count": 28,
  "lots": [
@@ -802,8 +802,8 @@
    "sku": "2605JUSTBA282679",
    "lot": 16,
    "name": "Console Nintendo Switch OLED",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-18T15:00:00+00:00",
    "end": "2026-09-22T12:00:00+00:00",
    "price": 180,
@@ -841,19 +841,20 @@
    "lat": 48.816215,
    "lon": 2.461544,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-18T15:05:07+00:00",
+   "bidCheckAttemptedAt": "2026-09-18T15:05:07+00:00"
   },
   {
    "id": 309638,
    "sku": "2601JUSTBA199748",
    "lot": 17,
    "name": "Console SONY PlayStation 5",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-18T15:00:00+00:00",
    "end": "2026-09-22T12:00:00+00:00",
    "price": 250,
-   "bid": null,
+   "bid": 330,
    "reserve": null,
    "pro": false,
    "auction": 609,
@@ -884,15 +885,16 @@
    "lat": 48.816215,
    "lon": 2.461544,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-18T15:05:07+00:00",
+   "bidCheckAttemptedAt": "2026-09-18T15:05:07+00:00"
   },
   {
    "id": 84173,
    "sku": "2507JUSTBA84173",
    "lot": 18,
    "name": "Console NINTENDO Switch",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-18T15:00:00+00:00",
    "end": "2026-09-22T12:00:00+00:00",
    "price": 150,
@@ -928,19 +930,20 @@
    "lat": 48.816215,
    "lon": 2.461544,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-18T15:05:07+00:00",
+   "bidCheckAttemptedAt": "2026-09-18T15:05:07+00:00"
   },
   {
    "id": 309642,
    "sku": "2511JUSTBA166921",
    "lot": 19,
    "name": "Console SONY PlayStation 5",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-18T15:00:00+00:00",
    "end": "2026-09-22T12:00:00+00:00",
    "price": 300,
-   "bid": null,
+   "bid": 300,
    "reserve": null,
    "pro": false,
    "auction": 609,
@@ -973,15 +976,16 @@
    "lat": 48.816215,
    "lon": 2.461544,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-18T15:05:07+00:00",
+   "bidCheckAttemptedAt": "2026-09-18T15:05:07+00:00"
   },
   {
    "id": 347811,
    "sku": "2609JUSTBA347811",
    "lot": 48,
    "name": "Caméra GoPro Hero 10 Black",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-18T15:00:00+00:00",
    "end": "2026-09-22T12:00:00+00:00",
    "price": 100,
@@ -1017,15 +1021,16 @@
    "lat": 48.816215,
    "lon": 2.461544,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-18T15:05:07+00:00",
+   "bidCheckAttemptedAt": "2026-09-18T15:05:07+00:00"
   },
   {
    "id": 347828,
    "sku": "2609JUSTBA347828",
    "lot": 49,
    "name": "Appareil photo hybride Fujifilm X-T20",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-18T15:00:00+00:00",
    "end": "2026-09-22T12:00:00+00:00",
    "price": 200,
@@ -1060,15 +1065,16 @@
    "lat": 48.816215,
    "lon": 2.461544,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-18T15:05:07+00:00",
+   "bidCheckAttemptedAt": "2026-09-18T15:05:07+00:00"
   },
   {
    "id": 347842,
    "sku": "2609JUSTBA347842",
    "lot": 50,
    "name": "Appareil photo hybride SONY Alpha 6000",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-18T15:00:00+00:00",
    "end": "2026-09-22T12:00:00+00:00",
    "price": 250,
@@ -1102,15 +1108,16 @@
    "lat": 48.816215,
    "lon": 2.461544,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-18T15:05:07+00:00",
+   "bidCheckAttemptedAt": "2026-09-18T15:05:07+00:00"
   },
   {
    "id": 303291,
    "sku": "2606JUSTBA303291",
    "lot": 51,
    "name": "Ordinateur portable HP",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-18T15:00:00+00:00",
    "end": "2026-09-22T12:00:00+00:00",
    "price": 150,
@@ -1146,15 +1153,16 @@
    "lat": 48.816215,
    "lon": 2.461544,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-18T15:05:07+00:00",
+   "bidCheckAttemptedAt": "2026-09-18T15:05:07+00:00"
   },
   {
    "id": 41076,
    "sku": "2506JUSTBA41076",
    "lot": 52,
    "name": "Ordinateur portable LENOVO",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-18T15:00:00+00:00",
    "end": "2026-09-22T12:00:00+00:00",
    "price": 100,
@@ -1190,15 +1198,16 @@
    "lat": 48.816215,
    "lon": 2.461544,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-18T15:05:07+00:00",
+   "bidCheckAttemptedAt": "2026-09-18T15:05:07+00:00"
   },
   {
    "id": 126221,
    "sku": "2509JUSTBA126221",
    "lot": 53,
    "name": "Ordinateur portable ASUS",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-09-18T15:00:00+00:00",
    "end": "2026-09-22T12:00:00+00:00",
    "price": 150,
@@ -1235,7 +1244,8 @@
    "lat": 48.816215,
    "lon": 2.461544,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-12T15:05:12+00:00"
+   "bidCheckedAt": "2026-09-18T15:05:07+00:00",
+   "bidCheckAttemptedAt": "2026-09-18T15:05:07+00:00"
   }
  ]
 }
