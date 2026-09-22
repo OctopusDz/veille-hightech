@@ -1,7 +1,7 @@
 {
- "updated": "2026-09-22T07:40:32+00:00",
+ "updated": "2026-09-22T11:06:28+00:00",
  "source": "encheres-domaine.gouv.fr — categorie High tech (46)",
- "count": 28,
+ "count": 29,
  "lots": [
   {
    "id": 319895,
@@ -52,8 +52,8 @@
    "lat": 43.278578,
    "lon": 5.392632,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 315491,
@@ -102,8 +102,8 @@
    "lat": 43.278578,
    "lon": 5.392632,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 322440,
@@ -150,8 +150,8 @@
    "lat": 43.278578,
    "lon": 5.392632,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 322018,
@@ -199,8 +199,8 @@
    "lat": 43.278578,
    "lon": 5.392632,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 351136,
@@ -212,7 +212,7 @@
    "start": "2026-09-21T07:00:00+00:00",
    "end": "2026-09-24T08:00:00+00:00",
    "price": 100,
-   "bid": 100,
+   "bid": 120,
    "reserve": 0,
    "pro": false,
    "auction": 487,
@@ -240,8 +240,8 @@
    "lat": 43.278578,
    "lon": 5.392632,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 322431,
@@ -290,8 +290,8 @@
    "lat": 43.278578,
    "lon": 5.392632,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 336780,
@@ -335,8 +335,8 @@
    "lat": 43.278578,
    "lon": 5.392632,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 319661,
@@ -378,8 +378,8 @@
    "lat": 43.278578,
    "lon": 5.392632,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 336845,
@@ -424,8 +424,8 @@
    "lat": 43.278578,
    "lon": 5.392632,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 348147,
@@ -473,8 +473,8 @@
    "lat": 43.278578,
    "lon": 5.392632,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 336701,
@@ -514,8 +514,8 @@
    "lat": 43.278578,
    "lon": 5.392632,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 336751,
@@ -555,8 +555,8 @@
    "lat": 43.278578,
    "lon": 5.392632,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 288890,
@@ -595,8 +595,8 @@
    "lat": 43.278578,
    "lon": 5.392632,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 340354,
@@ -640,8 +640,8 @@
    "lat": 43.278578,
    "lon": 5.392632,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 340341,
@@ -680,8 +680,8 @@
    "lat": 43.278578,
    "lon": 5.392632,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 336669,
@@ -720,8 +720,8 @@
    "lat": 43.278578,
    "lon": 5.392632,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 340268,
@@ -760,8 +760,8 @@
    "lat": 43.278578,
    "lon": 5.392632,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 328386,
@@ -812,8 +812,55 @@
    "lat": 43.278578,
    "lon": 5.392632,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
+  },
+  {
+   "id": 345185,
+   "sku": "2607974BA327409",
+   "lot": 29,
+   "name": "TELEPHONES PORTABLES",
+   "status": 13,
+   "statusLabel": "Vente à venir",
+   "start": "2026-10-12T10:00:00+00:00",
+   "end": "2026-10-14T08:00:00+00:00",
+   "price": 100,
+   "bid": null,
+   "reserve": null,
+   "pro": true,
+   "auction": 635,
+   "org": "LA REUNION",
+   "url": "https://encheres-domaine.gouv.fr/lot/telephones-portables-1.html",
+   "urlKey": "telephones-portables-1",
+   "desc": "Réservé aux professionnels audio/vidéo/informatique Lot de 89 téléphones ( état de fonctionnement inconnu), codes inconnus, pas de câbles d'alimentation ( 29 samsung, 25 iphone, 17 redmi, 3 blackview, 02 xiaomi, 2 huawai, 02 honor, 09 divers) + 1 caméra Canon , 1 appreil photo vtech, 03 écouteurs superstef, 1 étylotest 1 tablette samsung. etat de fonctionnement inconnu. Visites uniquement le vendredi 21/08/2026 de 08h00 à 10h00 sur rendez vous pris par courriel à christophe.lefloch@dgfip.finances.gouv.fr (Tél 0693931661)",
+   "bidVerified": true,
+   "depotId": 24538,
+   "depot": "DRFIP REUNION - 97490",
+   "street": "7  AV ANDRE MALRAUX",
+   "city": "SAINT DENIS",
+   "cp": "97490",
+   "contact": "LE FLOC H CHRISTOPHE",
+   "phone": "0262940581",
+   "email": "christophe.lefloch@dgfip.finances.gouv.fr",
+   "hours": "08h00-11h00",
+   "access": "08H00-11H00",
+   "photosDistantes": [
+    "https://encheres-domaine.gouv.fr/admin/media/catalog/product/d/s/dscn3033-6a94f8af60e94_1.jpg",
+    "https://encheres-domaine.gouv.fr/admin/media/catalog/product/d/s/dscn3034-6a94f8af65a5a_1.jpg",
+    "https://encheres-domaine.gouv.fr/admin/media/catalog/product/d/s/dscn3035-6a94f8af6889a_1.jpg",
+    "https://encheres-domaine.gouv.fr/admin/media/catalog/product/d/s/dscn3036-6a94f8af6acfb_1.jpg"
+   ],
+   "photos": [
+    "img/345185/0.jpg",
+    "img/345185/1.jpg",
+    "img/345185/2.jpg",
+    "img/345185/3.jpg"
+   ],
+   "img": "img/345185/0.jpg",
+   "km": 12196,
+   "heures": 128.38,
+   "lat": -20.887293,
+   "lon": 55.466146
   },
   {
    "id": 282679,
@@ -859,8 +906,8 @@
    "lat": 48.816215,
    "lon": 2.461544,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 309638,
@@ -903,8 +950,8 @@
    "lat": 48.816215,
    "lon": 2.461544,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 84173,
@@ -916,7 +963,7 @@
    "start": "2026-09-18T15:00:00+00:00",
    "end": "2026-09-22T12:00:00+00:00",
    "price": 150,
-   "bid": 155,
+   "bid": 165,
    "reserve": null,
    "pro": false,
    "auction": 609,
@@ -948,8 +995,8 @@
    "lat": 48.816215,
    "lon": 2.461544,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 309642,
@@ -961,7 +1008,7 @@
    "start": "2026-09-18T15:00:00+00:00",
    "end": "2026-09-22T12:00:00+00:00",
    "price": 300,
-   "bid": 410,
+   "bid": 420,
    "reserve": null,
    "pro": false,
    "auction": 609,
@@ -994,8 +1041,8 @@
    "lat": 48.816215,
    "lon": 2.461544,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 347811,
@@ -1007,7 +1054,7 @@
    "start": "2026-09-18T15:00:00+00:00",
    "end": "2026-09-22T12:00:00+00:00",
    "price": 100,
-   "bid": 155,
+   "bid": 160,
    "reserve": null,
    "pro": false,
    "auction": 609,
@@ -1039,8 +1086,8 @@
    "lat": 48.816215,
    "lon": 2.461544,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 347828,
@@ -1052,7 +1099,7 @@
    "start": "2026-09-18T15:00:00+00:00",
    "end": "2026-09-22T12:00:00+00:00",
    "price": 200,
-   "bid": 360,
+   "bid": 370,
    "reserve": null,
    "pro": false,
    "auction": 609,
@@ -1083,8 +1130,8 @@
    "lat": 48.816215,
    "lon": 2.461544,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 347842,
@@ -1126,8 +1173,8 @@
    "lat": 48.816215,
    "lon": 2.461544,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 303291,
@@ -1139,7 +1186,7 @@
    "start": "2026-09-18T15:00:00+00:00",
    "end": "2026-09-22T12:00:00+00:00",
    "price": 150,
-   "bid": 300,
+   "bid": 360,
    "reserve": null,
    "pro": false,
    "auction": 609,
@@ -1171,8 +1218,8 @@
    "lat": 48.816215,
    "lon": 2.461544,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 41076,
@@ -1184,7 +1231,7 @@
    "start": "2026-09-18T15:00:00+00:00",
    "end": "2026-09-22T12:00:00+00:00",
    "price": 100,
-   "bid": 115,
+   "bid": 135,
    "reserve": 0,
    "pro": false,
    "auction": 609,
@@ -1216,8 +1263,8 @@
    "lat": 48.816215,
    "lon": 2.461544,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   },
   {
    "id": 126221,
@@ -1229,7 +1276,7 @@
    "start": "2026-09-18T15:00:00+00:00",
    "end": "2026-09-22T12:00:00+00:00",
    "price": 150,
-   "bid": 195,
+   "bid": 250,
    "reserve": null,
    "pro": false,
    "auction": 609,
@@ -1262,8 +1309,8 @@
    "lat": 48.816215,
    "lon": 2.461544,
    "bidVerified": true,
-   "bidCheckedAt": "2026-09-22T07:40:32+00:00",
-   "bidCheckAttemptedAt": "2026-09-22T07:40:32+00:00"
+   "bidCheckedAt": "2026-09-22T11:06:28+00:00",
+   "bidCheckAttemptedAt": "2026-09-22T11:06:28+00:00"
   }
  ]
 }
