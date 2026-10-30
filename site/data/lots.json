@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-30T11:05:08+00:00",
+ "updated": "2026-10-30T15:04:39+00:00",
  "source": "encheres-domaine.gouv.fr — categorie High tech (46)",
  "count": 58,
  "lots": [
@@ -1582,8 +1582,8 @@
    "heures": 3.8,
    "lat": 48.678228,
    "lon": 5.884397,
-   "bidCheckedAt": "2026-10-30T11:05:08+00:00",
-   "bidCheckAttemptedAt": "2026-10-30T11:05:08+00:00"
+   "bidCheckedAt": "2026-10-30T15:04:39+00:00",
+   "bidCheckAttemptedAt": "2026-10-30T15:04:39+00:00"
   },
   {
    "id": 345256,
@@ -1627,8 +1627,8 @@
    "heures": 3.8,
    "lat": 48.678228,
    "lon": 5.884397,
-   "bidCheckedAt": "2026-10-30T11:05:08+00:00",
-   "bidCheckAttemptedAt": "2026-10-30T11:05:08+00:00"
+   "bidCheckedAt": "2026-10-30T15:04:39+00:00",
+   "bidCheckAttemptedAt": "2026-10-30T15:04:39+00:00"
   },
   {
    "id": 374083,
@@ -1672,8 +1672,8 @@
    "heures": 3.8,
    "lat": 48.678228,
    "lon": 5.884397,
-   "bidCheckedAt": "2026-10-30T11:05:08+00:00",
-   "bidCheckAttemptedAt": "2026-10-30T11:05:08+00:00"
+   "bidCheckedAt": "2026-10-30T15:04:39+00:00",
+   "bidCheckAttemptedAt": "2026-10-30T15:04:39+00:00"
   },
   {
    "id": 334538,
@@ -1715,8 +1715,8 @@
    "heures": 3.8,
    "lat": 48.678228,
    "lon": 5.884397,
-   "bidCheckedAt": "2026-10-30T11:05:08+00:00",
-   "bidCheckAttemptedAt": "2026-10-30T11:05:08+00:00"
+   "bidCheckedAt": "2026-10-30T15:04:39+00:00",
+   "bidCheckAttemptedAt": "2026-10-30T15:04:39+00:00"
   },
   {
    "id": 353019,
@@ -1762,8 +1762,8 @@
    "heures": 3.8,
    "lat": 48.678228,
    "lon": 5.884397,
-   "bidCheckedAt": "2026-10-30T11:05:08+00:00",
-   "bidCheckAttemptedAt": "2026-10-30T11:05:08+00:00"
+   "bidCheckedAt": "2026-10-30T15:04:39+00:00",
+   "bidCheckAttemptedAt": "2026-10-30T15:04:39+00:00"
   },
   {
    "id": 364026,
@@ -1827,8 +1827,8 @@
    "heures": 3.8,
    "lat": 48.678228,
    "lon": 5.884397,
-   "bidCheckedAt": "2026-10-30T11:05:08+00:00",
-   "bidCheckAttemptedAt": "2026-10-30T11:05:08+00:00"
+   "bidCheckedAt": "2026-10-30T15:04:39+00:00",
+   "bidCheckAttemptedAt": "2026-10-30T15:04:39+00:00"
   },
   {
    "id": 361608,
@@ -1878,8 +1878,8 @@
    "heures": 3.8,
    "lat": 48.678228,
    "lon": 5.884397,
-   "bidCheckedAt": "2026-10-30T11:05:08+00:00",
-   "bidCheckAttemptedAt": "2026-10-30T11:05:08+00:00"
+   "bidCheckedAt": "2026-10-30T15:04:39+00:00",
+   "bidCheckAttemptedAt": "2026-10-30T15:04:39+00:00"
   },
   {
    "id": 361612,
@@ -1927,8 +1927,8 @@
    "heures": 3.8,
    "lat": 48.678228,
    "lon": 5.884397,
-   "bidCheckedAt": "2026-10-30T11:05:08+00:00",
-   "bidCheckAttemptedAt": "2026-10-30T11:05:08+00:00"
+   "bidCheckedAt": "2026-10-30T15:04:39+00:00",
+   "bidCheckAttemptedAt": "2026-10-30T15:04:39+00:00"
   },
   {
    "id": 361594,
@@ -1982,8 +1982,8 @@
    "heures": 3.8,
    "lat": 48.678228,
    "lon": 5.884397,
-   "bidCheckedAt": "2026-10-30T11:05:08+00:00",
-   "bidCheckAttemptedAt": "2026-10-30T11:05:08+00:00"
+   "bidCheckedAt": "2026-10-30T15:04:39+00:00",
+   "bidCheckAttemptedAt": "2026-10-30T15:04:39+00:00"
   },
   {
    "id": 362826,
@@ -2039,8 +2039,8 @@
    "heures": 3.8,
    "lat": 48.678228,
    "lon": 5.884397,
-   "bidCheckedAt": "2026-10-30T11:05:08+00:00",
-   "bidCheckAttemptedAt": "2026-10-30T11:05:08+00:00"
+   "bidCheckedAt": "2026-10-30T15:04:39+00:00",
+   "bidCheckAttemptedAt": "2026-10-30T15:04:39+00:00"
   },
   {
    "id": 347227,
@@ -2052,7 +2052,7 @@
    "start": "2026-10-29T08:00:00+00:00",
    "end": "2026-11-02T09:00:00+00:00",
    "price": 50,
-   "bid": 50,
+   "bid": 55,
    "reserve": null,
    "pro": true,
    "auction": 600,
@@ -2086,8 +2086,8 @@
    "heures": 3.8,
    "lat": 48.678228,
    "lon": 5.884397,
-   "bidCheckedAt": "2026-10-30T11:05:08+00:00",
-   "bidCheckAttemptedAt": "2026-10-30T11:05:08+00:00"
+   "bidCheckedAt": "2026-10-30T15:04:39+00:00",
+   "bidCheckAttemptedAt": "2026-10-30T15:04:39+00:00"
   },
   {
    "id": 363149,
@@ -2135,8 +2135,8 @@
    "heures": 3.8,
    "lat": 48.678228,
    "lon": 5.884397,
-   "bidCheckedAt": "2026-10-30T11:05:08+00:00",
-   "bidCheckAttemptedAt": "2026-10-30T11:05:08+00:00"
+   "bidCheckedAt": "2026-10-30T15:04:39+00:00",
+   "bidCheckAttemptedAt": "2026-10-30T15:04:39+00:00"
   },
   {
    "id": 363677,
@@ -2222,8 +2222,8 @@
    "heures": 3.8,
    "lat": 48.678228,
    "lon": 5.884397,
-   "bidCheckedAt": "2026-10-30T11:05:08+00:00",
-   "bidCheckAttemptedAt": "2026-10-30T11:05:08+00:00"
+   "bidCheckedAt": "2026-10-30T15:04:39+00:00",
+   "bidCheckAttemptedAt": "2026-10-30T15:04:39+00:00"
   },
   {
    "id": 362855,
@@ -2271,8 +2271,8 @@
    "heures": 3.8,
    "lat": 48.678228,
    "lon": 5.884397,
-   "bidCheckedAt": "2026-10-30T11:05:08+00:00",
-   "bidCheckAttemptedAt": "2026-10-30T11:05:08+00:00"
+   "bidCheckedAt": "2026-10-30T15:04:39+00:00",
+   "bidCheckAttemptedAt": "2026-10-30T15:04:39+00:00"
   },
   {
    "id": 354987,
@@ -2291,7 +2291,7 @@
    "org": "NANCY TOUL",
    "url": "https://encheres-domaine.gouv.fr/lot/lot-de-13-iphone.html",
    "urlKey": "lot-de-13-iphone",
-   "desc": "Lot réservé aux professionnels de l'audiovisuel, de l'informatique et de la vidéo Lot de 13 iPhone dont un iPhone 14 noir, un iPhone beige, un iPhone 15 Scellé, un iPhone 15 Pro, un iPhone 14 Pro, un iPhone 17 PRO orange, un iPhone 14 PRO MAX coque fissurée, un iPhone gris clair, un iPhone 15 noir, un iPhone 15 PRO bleu argenté, un iPhone 14 PRO noir, un iPhone 17 bleu, et un iPhone couleur rose pastel. Vendu en l'état. Matériel non testé. Pour retirer le lot, le bon d'enlèvement imprimé sera requis. Les objets sont susceptibles de contenir des données concernant la vie privée de leurs anciens propriétaires. L'acquéreur s'engage à ne pas divulguer ces éléments privés et à vider ou faire vider, sous sa responsabilité, les mémoires internes des objets avant toute utilisation, cession ou transmission de ceux-ci.",
+   "desc": "Lot réservé aux professionnels de l'audiovisuel, de l'informatique et de la vidéo Lot de 13 iPhone dont un iPhone 14 noir, un iPhone beige, un iPhone 15, un iPhone 15 Pro, un iPhone 14 Pro, un iPhone 17 PRO orange, un iPhone 14 PRO MAX coque fissurée, un iPhone gris clair, un iPhone 15 noir, un iPhone 15 PRO bleu argenté, un iPhone 14 PRO noir, un iPhone 17 bleu, et un iPhone couleur rose pastel. Vendu en l'état. Matériel non testé. Pour retirer le lot, le bon d'enlèvement imprimé sera requis. Les objets sont susceptibles de contenir des données concernant la vie privée de leurs anciens propriétaires. L'acquéreur s'engage à ne pas divulguer ces éléments privés et à vider ou faire vider, sous sa responsabilité, les mémoires internes des objets avant toute utilisation, cession ou transmission de ceux-ci.",
    "bidVerified": true,
    "depotId": 31807,
    "depot": "MAGASIN DOMANIAL NANCY TOUL",
@@ -2320,8 +2320,8 @@
    "heures": 3.8,
    "lat": 48.678228,
    "lon": 5.884397,
-   "bidCheckedAt": "2026-10-30T11:05:08+00:00",
-   "bidCheckAttemptedAt": "2026-10-30T11:05:08+00:00"
+   "bidCheckedAt": "2026-10-30T15:04:39+00:00",
+   "bidCheckAttemptedAt": "2026-10-30T15:04:39+00:00"
   },
   {
    "id": 374513,
@@ -2365,8 +2365,8 @@
    "heures": 3.8,
    "lat": 48.678228,
    "lon": 5.884397,
-   "bidCheckedAt": "2026-10-30T11:05:08+00:00",
-   "bidCheckAttemptedAt": "2026-10-30T11:05:08+00:00"
+   "bidCheckedAt": "2026-10-30T15:04:39+00:00",
+   "bidCheckAttemptedAt": "2026-10-30T15:04:39+00:00"
   },
   {
    "id": 374528,
@@ -2418,8 +2418,8 @@
    "heures": 3.8,
    "lat": 48.678228,
    "lon": 5.884397,
-   "bidCheckedAt": "2026-10-30T11:05:08+00:00",
-   "bidCheckAttemptedAt": "2026-10-30T11:05:08+00:00"
+   "bidCheckedAt": "2026-10-30T15:04:39+00:00",
+   "bidCheckAttemptedAt": "2026-10-30T15:04:39+00:00"
   },
   {
    "id": 371849,
@@ -2463,8 +2463,8 @@
    "heures": 3.8,
    "lat": 48.678228,
    "lon": 5.884397,
-   "bidCheckedAt": "2026-10-30T11:05:08+00:00",
-   "bidCheckAttemptedAt": "2026-10-30T11:05:08+00:00"
+   "bidCheckedAt": "2026-10-30T15:04:39+00:00",
+   "bidCheckAttemptedAt": "2026-10-30T15:04:39+00:00"
   },
   {
    "id": 371826,
@@ -2508,8 +2508,8 @@
    "heures": 3.8,
    "lat": 48.678228,
    "lon": 5.884397,
-   "bidCheckedAt": "2026-10-30T11:05:08+00:00",
-   "bidCheckAttemptedAt": "2026-10-30T11:05:08+00:00"
+   "bidCheckedAt": "2026-10-30T15:04:39+00:00",
+   "bidCheckAttemptedAt": "2026-10-30T15:04:39+00:00"
   },
   {
    "id": 371906,
@@ -2521,7 +2521,7 @@
    "start": "2026-10-29T08:00:00+00:00",
    "end": "2026-11-02T09:00:00+00:00",
    "price": 20,
-   "bid": 40,
+   "bid": 45,
    "reserve": 0,
    "pro": true,
    "auction": 600,
@@ -2563,8 +2563,8 @@
    "heures": 3.8,
    "lat": 48.678228,
    "lon": 5.884397,
-   "bidCheckedAt": "2026-10-30T11:05:08+00:00",
-   "bidCheckAttemptedAt": "2026-10-30T11:05:08+00:00"
+   "bidCheckedAt": "2026-10-30T15:04:39+00:00",
+   "bidCheckAttemptedAt": "2026-10-30T15:04:39+00:00"
   },
   {
    "id": 368596,
@@ -2650,8 +2650,8 @@
    "heures": 3.8,
    "lat": 48.678228,
    "lon": 5.884397,
-   "bidCheckedAt": "2026-10-30T11:05:08+00:00",
-   "bidCheckAttemptedAt": "2026-10-30T11:05:08+00:00"
+   "bidCheckedAt": "2026-10-30T15:04:39+00:00",
+   "bidCheckAttemptedAt": "2026-10-30T15:04:39+00:00"
   },
   {
    "id": 369358,
