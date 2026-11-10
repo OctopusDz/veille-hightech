@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T11:04:41+00:00",
+ "updated": "2026-11-10T15:04:18+00:00",
  "source": "encheres-domaine.gouv.fr — categorie High tech (46)",
  "count": 32,
  "lots": [
@@ -39,18 +39,18 @@
     "img/374098/0.jpg"
    ],
    "img": "img/374098/0.jpg",
-   "km": 157,
-   "heures": 1.65,
-   "lat": 49.720348,
-   "lon": 1.046732
+   "km": 158,
+   "heures": 1.66,
+   "lat": 49.725778,
+   "lon": 1.04335
   },
   {
    "id": 303795,
    "sku": "260633BA303795",
    "lot": 102,
    "name": "Enceinte DEVIALET Phantom",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-11-10T12:30:00+00:00",
    "end": "2026-11-10T16:30:00+00:00",
    "price": 800,
@@ -93,15 +93,17 @@
    "km": 641,
    "heures": 6.75,
    "lat": 44.8437,
-   "lon": -0.574548
+   "lon": -0.574548,
+   "bidCheckedAt": "2026-11-10T15:04:18+00:00",
+   "bidCheckAttemptedAt": "2026-11-10T15:04:18+00:00"
   },
   {
    "id": 352754,
    "sku": "260933BA352754",
    "lot": 103,
    "name": "Enceintes DEVIALET Phantom",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-11-10T12:30:00+00:00",
    "end": "2026-11-10T16:30:00+00:00",
    "price": 500,
@@ -138,15 +140,17 @@
    "km": 641,
    "heures": 6.75,
    "lat": 44.8437,
-   "lon": -0.574548
+   "lon": -0.574548,
+   "bidCheckedAt": "2026-11-10T15:04:18+00:00",
+   "bidCheckAttemptedAt": "2026-11-10T15:04:18+00:00"
   },
   {
    "id": 297250,
    "sku": "2606JUSTBA297250",
    "lot": 104,
    "name": "Enceinte DEVIALET Phantom",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-11-10T12:30:00+00:00",
    "end": "2026-11-10T16:30:00+00:00",
    "price": 200,
@@ -179,15 +183,17 @@
    "km": 641,
    "heures": 6.75,
    "lat": 44.8437,
-   "lon": -0.574548
+   "lon": -0.574548,
+   "bidCheckedAt": "2026-11-10T15:04:18+00:00",
+   "bidCheckAttemptedAt": "2026-11-10T15:04:18+00:00"
   },
   {
    "id": 297177,
    "sku": "2606JUSTBA297177",
    "lot": 105,
    "name": "Coffret Creator Combo avec caméra DJI Osmo Pocket 3",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-11-10T12:30:00+00:00",
    "end": "2026-11-10T16:30:00+00:00",
    "price": 200,
@@ -220,15 +226,17 @@
    "km": 641,
    "heures": 6.75,
    "lat": 44.8437,
-   "lon": -0.574548
+   "lon": -0.574548,
+   "bidCheckedAt": "2026-11-10T15:04:18+00:00",
+   "bidCheckAttemptedAt": "2026-11-10T15:04:18+00:00"
   },
   {
    "id": 298705,
    "sku": "2606JUSTBA298705",
    "lot": 106,
    "name": "Appareil photo HASSELBLAD",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-11-10T12:30:00+00:00",
    "end": "2026-11-10T16:30:00+00:00",
    "price": 1500,
@@ -261,15 +269,17 @@
    "km": 641,
    "heures": 6.75,
    "lat": 44.8437,
-   "lon": -0.574548
+   "lon": -0.574548,
+   "bidCheckedAt": "2026-11-10T15:04:18+00:00",
+   "bidCheckAttemptedAt": "2026-11-10T15:04:18+00:00"
   },
   {
    "id": 298717,
    "sku": "2606JUSTBA298717",
    "lot": 107,
    "name": "Appareil photo CANON EOS",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-11-10T12:30:00+00:00",
    "end": "2026-11-10T16:30:00+00:00",
    "price": 400,
@@ -302,15 +312,17 @@
    "km": 641,
    "heures": 6.75,
    "lat": 44.8437,
-   "lon": -0.574548
+   "lon": -0.574548,
+   "bidCheckedAt": "2026-11-10T15:04:18+00:00",
+   "bidCheckAttemptedAt": "2026-11-10T15:04:18+00:00"
   },
   {
    "id": 298737,
    "sku": "2606JUSTBA298737",
    "lot": 108,
    "name": "Appareil photo CANON EOS",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-11-10T12:30:00+00:00",
    "end": "2026-11-10T16:30:00+00:00",
    "price": 600,
@@ -343,15 +355,17 @@
    "km": 641,
    "heures": 6.75,
    "lat": 44.8437,
-   "lon": -0.574548
+   "lon": -0.574548,
+   "bidCheckedAt": "2026-11-10T15:04:18+00:00",
+   "bidCheckAttemptedAt": "2026-11-10T15:04:18+00:00"
   },
   {
    "id": 298710,
    "sku": "2606JUSTBA298710",
    "lot": 109,
    "name": "Appareil photo CANON EOS",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-11-10T12:30:00+00:00",
    "end": "2026-11-10T16:30:00+00:00",
    "price": 400,
@@ -384,15 +398,17 @@
    "km": 641,
    "heures": 6.75,
    "lat": 44.8437,
-   "lon": -0.574548
+   "lon": -0.574548,
+   "bidCheckedAt": "2026-11-10T15:04:18+00:00",
+   "bidCheckAttemptedAt": "2026-11-10T15:04:18+00:00"
   },
   {
    "id": 298740,
    "sku": "2606JUSTBA298740",
    "lot": 110,
    "name": "Appareil photo SONY Alpha 7",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-11-10T12:30:00+00:00",
    "end": "2026-11-10T16:30:00+00:00",
    "price": 900,
@@ -425,15 +441,17 @@
    "km": 641,
    "heures": 6.75,
    "lat": 44.8437,
-   "lon": -0.574548
+   "lon": -0.574548,
+   "bidCheckedAt": "2026-11-10T15:04:18+00:00",
+   "bidCheckAttemptedAt": "2026-11-10T15:04:18+00:00"
   },
   {
    "id": 298690,
    "sku": "2606JUSTBA298690",
    "lot": 111,
    "name": "Appareil photo HASSELBLAD",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-11-10T12:30:00+00:00",
    "end": "2026-11-10T16:30:00+00:00",
    "price": 1500,
@@ -466,15 +484,17 @@
    "km": 641,
    "heures": 6.75,
    "lat": 44.8437,
-   "lon": -0.574548
+   "lon": -0.574548,
+   "bidCheckedAt": "2026-11-10T15:04:18+00:00",
+   "bidCheckAttemptedAt": "2026-11-10T15:04:18+00:00"
   },
   {
    "id": 297187,
    "sku": "2606JUSTBA297187",
    "lot": 112,
    "name": "Coffret Creator Combo avec caméra DJI Osmo Pocket 3",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-11-10T12:30:00+00:00",
    "end": "2026-11-10T16:30:00+00:00",
    "price": 200,
@@ -507,15 +527,17 @@
    "km": 641,
    "heures": 6.75,
    "lat": 44.8437,
-   "lon": -0.574548
+   "lon": -0.574548,
+   "bidCheckedAt": "2026-11-10T15:04:18+00:00",
+   "bidCheckAttemptedAt": "2026-11-10T15:04:18+00:00"
   },
   {
    "id": 298563,
    "sku": "2606JUSTBA298563",
    "lot": 113,
    "name": "Montre GARMIN Fénix 8",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-11-10T12:30:00+00:00",
    "end": "2026-11-10T16:30:00+00:00",
    "price": 400,
@@ -548,15 +570,17 @@
    "km": 641,
    "heures": 6.75,
    "lat": 44.8437,
-   "lon": -0.574548
+   "lon": -0.574548,
+   "bidCheckedAt": "2026-11-10T15:04:18+00:00",
+   "bidCheckAttemptedAt": "2026-11-10T15:04:18+00:00"
   },
   {
    "id": 330604,
    "sku": "2607JUSTBA330604",
    "lot": 114,
    "name": "APPLE Watch Ultra 2",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-11-10T12:30:00+00:00",
    "end": "2026-11-10T16:30:00+00:00",
    "price": 200,
@@ -589,15 +613,17 @@
    "km": 641,
    "heures": 6.75,
    "lat": 44.8437,
-   "lon": -0.574548
+   "lon": -0.574548,
+   "bidCheckedAt": "2026-11-10T15:04:18+00:00",
+   "bidCheckAttemptedAt": "2026-11-10T15:04:18+00:00"
   },
   {
    "id": 298561,
    "sku": "2606JUSTBA298561",
    "lot": 115,
    "name": "Montre GARMIN Fénix 8",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-11-10T12:30:00+00:00",
    "end": "2026-11-10T16:30:00+00:00",
    "price": 400,
@@ -630,15 +656,17 @@
    "km": 641,
    "heures": 6.75,
    "lat": 44.8437,
-   "lon": -0.574548
+   "lon": -0.574548,
+   "bidCheckedAt": "2026-11-10T15:04:18+00:00",
+   "bidCheckAttemptedAt": "2026-11-10T15:04:18+00:00"
   },
   {
    "id": 330603,
    "sku": "2607JUSTBA330603",
    "lot": 116,
    "name": "Montre APPLE Watch Ultra 2",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-11-10T12:30:00+00:00",
    "end": "2026-11-10T16:30:00+00:00",
    "price": 200,
@@ -671,15 +699,17 @@
    "km": 641,
    "heures": 6.75,
    "lat": 44.8437,
-   "lon": -0.574548
+   "lon": -0.574548,
+   "bidCheckedAt": "2026-11-10T15:04:18+00:00",
+   "bidCheckAttemptedAt": "2026-11-10T15:04:18+00:00"
   },
   {
    "id": 298725,
    "sku": "2606JUSTBA298725",
    "lot": 117,
    "name": "Console NINTENDO Switch 2",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-11-10T12:30:00+00:00",
    "end": "2026-11-10T16:30:00+00:00",
    "price": 200,
@@ -716,15 +746,17 @@
    "km": 641,
    "heures": 6.75,
    "lat": 44.8437,
-   "lon": -0.574548
+   "lon": -0.574548,
+   "bidCheckedAt": "2026-11-10T15:04:18+00:00",
+   "bidCheckAttemptedAt": "2026-11-10T15:04:18+00:00"
   },
   {
    "id": 267473,
    "sku": "260431BA267473",
    "lot": 118,
    "name": "SONY PlayStation 5",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-11-10T12:30:00+00:00",
    "end": "2026-11-10T16:30:00+00:00",
    "price": 150,
@@ -757,15 +789,17 @@
    "km": 641,
    "heures": 6.75,
    "lat": 44.8437,
-   "lon": -0.574548
+   "lon": -0.574548,
+   "bidCheckedAt": "2026-11-10T15:04:18+00:00",
+   "bidCheckAttemptedAt": "2026-11-10T15:04:18+00:00"
   },
   {
    "id": 303726,
    "sku": "260633BA303726",
    "lot": 119,
    "name": "SONY PlayStation 5 et casque VR2 SON",
-   "status": 13,
-   "statusLabel": "Vente à venir",
+   "status": 14,
+   "statusLabel": "Vente en cours",
    "start": "2026-11-10T12:30:00+00:00",
    "end": "2026-11-10T16:30:00+00:00",
    "price": 200,
@@ -798,7 +832,9 @@
    "km": 641,
    "heures": 6.75,
    "lat": 44.8437,
-   "lon": -0.574548
+   "lon": -0.574548,
+   "bidCheckedAt": "2026-11-10T15:04:18+00:00",
+   "bidCheckAttemptedAt": "2026-11-10T15:04:18+00:00"
   },
   {
    "id": 369529,
