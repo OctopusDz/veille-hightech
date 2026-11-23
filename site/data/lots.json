@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T15:05:46+00:00",
+ "updated": "2026-11-23T19:06:19+00:00",
  "source": "encheres-domaine.gouv.fr — categorie High tech (46)",
  "count": 60,
  "lots": [
@@ -43,8 +43,8 @@
    "heures": 3.48,
    "lat": 47.445722,
    "lon": -0.570129,
-   "bidCheckedAt": "2026-11-23T15:05:46+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T15:05:46+00:00"
+   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
   },
   {
    "id": 357346,
@@ -86,8 +86,8 @@
    "heures": 3.48,
    "lat": 47.445722,
    "lon": -0.570129,
-   "bidCheckedAt": "2026-11-23T15:05:46+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T15:05:46+00:00"
+   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
   },
   {
    "id": 357356,
@@ -99,7 +99,7 @@
    "start": "2026-11-20T08:00:00+00:00",
    "end": "2026-11-24T09:00:00+00:00",
    "price": 400,
-   "bid": 1000,
+   "bid": 1050,
    "reserve": null,
    "pro": false,
    "auction": 664,
@@ -129,8 +129,8 @@
    "heures": 3.48,
    "lat": 47.445722,
    "lon": -0.570129,
-   "bidCheckedAt": "2026-11-23T15:05:46+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T15:05:46+00:00"
+   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
   },
   {
    "id": 392826,
@@ -378,7 +378,7 @@
    "org": "RENNES",
    "url": "https://encheres-domaine.gouv.fr/lot/materieldebureau-2.html",
    "urlKey": "materieldebureau-2",
-   "desc": "Lot réservé aux professionnels. Ensemble de 2 photocopieurs, 1 imprimante, 1destructeur de document (RICOH FW 780, TOSHIBA STUDIO 2520AC, HP DESIGNJET 450C modèle C4716A). Pour pièce ou à réparer. Chargement et enlèvement à la charge exclusive de l'acquéreur.",
+   "desc": "Lot réservé aux professionnels. Ensemble de 1 photocopieur, 1 imprimante, 1destructeur de document (RICOH FW 780, HP DESIGNJET 450C modèle C4716A). Pour pièce ou à réparer. Chargement et enlèvement à la charge exclusive de l'acquéreur.",
    "bidVerified": true,
    "depotId": 11059,
    "depot": "ENTREPOT DE LA MARINE",
@@ -919,8 +919,8 @@
    "heures": 4.48,
    "lat": 47.226085,
    "lon": -1.535854,
-   "bidCheckedAt": "2026-11-23T15:05:46+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T15:05:46+00:00"
+   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
   },
   {
    "id": 378842,
@@ -1054,8 +1054,8 @@
    "heures": 3.94,
    "lat": 46.583631,
    "lon": 0.346826,
-   "bidCheckedAt": "2026-11-23T15:05:46+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T15:05:46+00:00"
+   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
   },
   {
    "id": 376971,
@@ -1067,7 +1067,7 @@
    "start": "2026-11-20T08:00:00+00:00",
    "end": "2026-11-24T09:00:00+00:00",
    "price": 100,
-   "bid": 330,
+   "bid": 360,
    "reserve": null,
    "pro": false,
    "auction": 664,
@@ -1099,8 +1099,8 @@
    "heures": 3.94,
    "lat": 46.583631,
    "lon": 0.346826,
-   "bidCheckedAt": "2026-11-23T15:05:46+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T15:05:46+00:00"
+   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
   },
   {
    "id": 376972,
@@ -1112,7 +1112,7 @@
    "start": "2026-11-20T08:00:00+00:00",
    "end": "2026-11-24T09:00:00+00:00",
    "price": 100,
-   "bid": 300,
+   "bid": 320,
    "reserve": null,
    "pro": false,
    "auction": 664,
@@ -1144,8 +1144,8 @@
    "heures": 3.94,
    "lat": 46.583631,
    "lon": 0.346826,
-   "bidCheckedAt": "2026-11-23T15:05:46+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T15:05:46+00:00"
+   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
   },
   {
    "id": 381199,
@@ -1207,8 +1207,8 @@
    "img": "img/381199/0.jpg",
    "km": null,
    "heures": null,
-   "bidCheckedAt": "2026-11-23T15:05:46+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T15:05:46+00:00"
+   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
   },
   {
    "id": 381197,
@@ -1258,8 +1258,8 @@
    "img": "img/381197/0.jpg",
    "km": null,
    "heures": null,
-   "bidCheckedAt": "2026-11-23T15:05:46+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T15:05:46+00:00"
+   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
   },
   {
    "id": 315620,
@@ -1309,8 +1309,8 @@
    "img": "img/315620/0.jpg",
    "km": null,
    "heures": null,
-   "bidCheckedAt": "2026-11-23T15:05:46+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T15:05:46+00:00"
+   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
   },
   {
    "id": 381202,
@@ -1360,8 +1360,8 @@
    "img": "img/381202/0.jpg",
    "km": null,
    "heures": null,
-   "bidCheckedAt": "2026-11-23T15:05:46+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T15:05:46+00:00"
+   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
   },
   {
    "id": 381217,
@@ -1411,8 +1411,8 @@
    "img": "img/381217/0.jpg",
    "km": null,
    "heures": null,
-   "bidCheckedAt": "2026-11-23T15:05:46+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T15:05:46+00:00"
+   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
   },
   {
    "id": 381222,
@@ -1468,8 +1468,8 @@
    "img": "img/381222/0.jpg",
    "km": null,
    "heures": null,
-   "bidCheckedAt": "2026-11-23T15:05:46+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T15:05:46+00:00"
+   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
   },
   {
    "id": 381228,
@@ -1525,8 +1525,8 @@
    "img": "img/381228/0.jpg",
    "km": null,
    "heures": null,
-   "bidCheckedAt": "2026-11-23T15:05:46+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T15:05:46+00:00"
+   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
   },
   {
    "id": 360066,
