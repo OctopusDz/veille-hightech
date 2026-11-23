@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-23T07:35:28+00:00",
+ "updated": "2026-11-23T11:05:02+00:00",
  "source": "encheres-domaine.gouv.fr — categorie High tech (46)",
- "count": 58,
+ "count": 60,
  "lots": [
   {
    "id": 357339,
@@ -43,8 +43,8 @@
    "heures": 3.48,
    "lat": 47.445722,
    "lon": -0.570129,
-   "bidCheckedAt": "2026-11-23T07:35:28+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T07:35:28+00:00"
+   "bidCheckedAt": "2026-11-23T11:05:02+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T11:05:02+00:00"
   },
   {
    "id": 357346,
@@ -56,7 +56,7 @@
    "start": "2026-11-20T08:00:00+00:00",
    "end": "2026-11-24T09:00:00+00:00",
    "price": 500,
-   "bid": 500,
+   "bid": 990,
    "reserve": null,
    "pro": false,
    "auction": 664,
@@ -86,8 +86,8 @@
    "heures": 3.48,
    "lat": 47.445722,
    "lon": -0.570129,
-   "bidCheckedAt": "2026-11-23T07:35:28+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T07:35:28+00:00"
+   "bidCheckedAt": "2026-11-23T11:05:02+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T11:05:02+00:00"
   },
   {
    "id": 357356,
@@ -99,7 +99,7 @@
    "start": "2026-11-20T08:00:00+00:00",
    "end": "2026-11-24T09:00:00+00:00",
    "price": 400,
-   "bid": 810,
+   "bid": 1000,
    "reserve": null,
    "pro": false,
    "auction": 664,
@@ -129,8 +129,8 @@
    "heures": 3.48,
    "lat": 47.445722,
    "lon": -0.570129,
-   "bidCheckedAt": "2026-11-23T07:35:28+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T07:35:28+00:00"
+   "bidCheckedAt": "2026-11-23T11:05:02+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T11:05:02+00:00"
   },
   {
    "id": 392826,
@@ -407,10 +407,10 @@
     "img/380436/5.jpg"
    ],
    "img": "img/380436/0.jpg",
-   "km": 639,
-   "heures": 6.73,
-   "lat": 48.41935,
-   "lon": -4.550485
+   "km": 640,
+   "heures": 6.74,
+   "lat": 48.42166,
+   "lon": -4.55948
   },
   {
    "id": 380439,
@@ -448,10 +448,10 @@
     "img/380439/0.jpg"
    ],
    "img": "img/380439/0.jpg",
-   "km": 639,
-   "heures": 6.73,
-   "lat": 48.41935,
-   "lon": -4.550485
+   "km": 640,
+   "heures": 6.74,
+   "lat": 48.42166,
+   "lon": -4.55948
   },
   {
    "id": 380442,
@@ -497,10 +497,10 @@
     "img/380442/4.jpg"
    ],
    "img": "img/380442/0.jpg",
-   "km": 639,
-   "heures": 6.73,
-   "lat": 48.41935,
-   "lon": -4.550485
+   "km": 640,
+   "heures": 6.74,
+   "lat": 48.42166,
+   "lon": -4.55948
   },
   {
    "id": 383623,
@@ -887,7 +887,7 @@
    "start": "2026-11-20T08:00:00+00:00",
    "end": "2026-11-24T09:00:00+00:00",
    "price": 500,
-   "bid": 700,
+   "bid": 780,
    "reserve": null,
    "pro": false,
    "auction": 664,
@@ -919,8 +919,8 @@
    "heures": 4.48,
    "lat": 47.226085,
    "lon": -1.535854,
-   "bidCheckedAt": "2026-11-23T07:35:28+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T07:35:28+00:00"
+   "bidCheckedAt": "2026-11-23T11:05:02+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T11:05:02+00:00"
   },
   {
    "id": 378842,
@@ -1022,7 +1022,7 @@
    "start": "2026-11-20T08:00:00+00:00",
    "end": "2026-11-24T09:00:00+00:00",
    "price": 100,
-   "bid": 200,
+   "bid": 340,
    "reserve": null,
    "pro": false,
    "auction": 664,
@@ -1054,8 +1054,8 @@
    "heures": 3.94,
    "lat": 46.583631,
    "lon": 0.346826,
-   "bidCheckedAt": "2026-11-23T07:35:28+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T07:35:28+00:00"
+   "bidCheckedAt": "2026-11-23T11:05:02+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T11:05:02+00:00"
   },
   {
    "id": 376971,
@@ -1099,8 +1099,8 @@
    "heures": 3.94,
    "lat": 46.583631,
    "lon": 0.346826,
-   "bidCheckedAt": "2026-11-23T07:35:28+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T07:35:28+00:00"
+   "bidCheckedAt": "2026-11-23T11:05:02+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T11:05:02+00:00"
   },
   {
    "id": 376972,
@@ -1144,8 +1144,8 @@
    "heures": 3.94,
    "lat": 46.583631,
    "lon": 0.346826,
-   "bidCheckedAt": "2026-11-23T07:35:28+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T07:35:28+00:00"
+   "bidCheckedAt": "2026-11-23T11:05:02+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T11:05:02+00:00"
   },
   {
    "id": 381199,
@@ -1157,7 +1157,7 @@
    "start": "2026-11-20T08:00:00+00:00",
    "end": "2026-11-24T09:00:00+00:00",
    "price": 250,
-   "bid": 450,
+   "bid": 460,
    "reserve": 0,
    "pro": false,
    "auction": 664,
@@ -1207,8 +1207,8 @@
    "img": "img/381199/0.jpg",
    "km": null,
    "heures": null,
-   "bidCheckedAt": "2026-11-23T07:35:28+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T07:35:28+00:00"
+   "bidCheckedAt": "2026-11-23T11:05:02+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T11:05:02+00:00"
   },
   {
    "id": 381197,
@@ -1258,8 +1258,8 @@
    "img": "img/381197/0.jpg",
    "km": null,
    "heures": null,
-   "bidCheckedAt": "2026-11-23T07:35:28+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T07:35:28+00:00"
+   "bidCheckedAt": "2026-11-23T11:05:02+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T11:05:02+00:00"
   },
   {
    "id": 315620,
@@ -1271,7 +1271,7 @@
    "start": "2026-11-20T08:00:00+00:00",
    "end": "2026-11-24T09:00:00+00:00",
    "price": 200,
-   "bid": 430,
+   "bid": 440,
    "reserve": null,
    "pro": false,
    "auction": 664,
@@ -1309,8 +1309,8 @@
    "img": "img/315620/0.jpg",
    "km": null,
    "heures": null,
-   "bidCheckedAt": "2026-11-23T07:35:28+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T07:35:28+00:00"
+   "bidCheckedAt": "2026-11-23T11:05:02+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T11:05:02+00:00"
   },
   {
    "id": 381202,
@@ -1360,8 +1360,8 @@
    "img": "img/381202/0.jpg",
    "km": null,
    "heures": null,
-   "bidCheckedAt": "2026-11-23T07:35:28+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T07:35:28+00:00"
+   "bidCheckedAt": "2026-11-23T11:05:02+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T11:05:02+00:00"
   },
   {
    "id": 381217,
@@ -1411,8 +1411,8 @@
    "img": "img/381217/0.jpg",
    "km": null,
    "heures": null,
-   "bidCheckedAt": "2026-11-23T07:35:28+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T07:35:28+00:00"
+   "bidCheckedAt": "2026-11-23T11:05:02+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T11:05:02+00:00"
   },
   {
    "id": 381222,
@@ -1468,8 +1468,8 @@
    "img": "img/381222/0.jpg",
    "km": null,
    "heures": null,
-   "bidCheckedAt": "2026-11-23T07:35:28+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T07:35:28+00:00"
+   "bidCheckedAt": "2026-11-23T11:05:02+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T11:05:02+00:00"
   },
   {
    "id": 381228,
@@ -1525,8 +1525,8 @@
    "img": "img/381228/0.jpg",
    "km": null,
    "heures": null,
-   "bidCheckedAt": "2026-11-23T07:35:28+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T07:35:28+00:00"
+   "bidCheckedAt": "2026-11-23T11:05:02+00:00",
+   "bidCheckAttemptedAt": "2026-11-23T11:05:02+00:00"
   },
   {
    "id": 360066,
@@ -2565,6 +2565,94 @@
     "img/383948/4.jpg"
    ],
    "img": "img/383948/0.jpg",
+   "km": 378,
+   "heures": 3.98,
+   "lat": 48.159953,
+   "lon": -1.691326
+  },
+  {
+   "id": 399935,
+   "sku": "261135BA399935",
+   "lot": 325,
+   "name": "SONY Playstation 5 et divers",
+   "status": 13,
+   "statusLabel": "Vente à venir",
+   "start": "2026-11-27T11:00:00+00:00",
+   "end": "2026-11-30T09:00:00+00:00",
+   "price": 130,
+   "bid": null,
+   "reserve": 0,
+   "pro": false,
+   "auction": 690,
+   "org": "RENNES",
+   "url": "https://encheres-domaine.gouv.fr/lot/sony-playstation-5-et-divers.html",
+   "urlKey": "sony-playstation-5-et-divers",
+   "desc": "Console de jeux SONY Playstation 5, vendue avec 2 manettes, câbles HDMI et alimentation, année inconnue, non testés. Enlèvement exclusivement sur prise de RDV, par mail, uniquement à l'adresse suivante : cav035.dnid@dgfip.finances.gouv.fr",
+   "bidVerified": true,
+   "depotId": 31813,
+   "depot": "MAGASIN DOMANIAL RENNES",
+   "street": "11 RUE D'OUESSANT",
+   "city": "SAINT-GREGOIRE",
+   "cp": "35768",
+   "contact": null,
+   "phone": "02 23 35 44 00",
+   "email": "cav035.dnid@dgfip.finances.gouv.fr",
+   "hours": "Lundi à vendredi 09h00-12h00 / 13h30-16h00",
+   "access": "Lundi à vendredi 09h00-12h00 / 13h30-16h00",
+   "photosDistantes": [
+    "https://encheres-domaine.gouv.fr/admin/media/catalog/product/i/m/img_20261012_120321_1.jpg"
+   ],
+   "photos": [
+    "img/399935/0.jpg"
+   ],
+   "img": "img/399935/0.jpg",
+   "km": 378,
+   "heures": 3.98,
+   "lat": 48.159953,
+   "lon": -1.691326
+  },
+  {
+   "id": 399938,
+   "sku": "261135BA399938",
+   "lot": 326,
+   "name": "2 téléviseurs",
+   "status": 13,
+   "statusLabel": "Vente à venir",
+   "start": "2026-11-27T11:00:00+00:00",
+   "end": "2026-11-30T09:00:00+00:00",
+   "price": 50,
+   "bid": null,
+   "reserve": 0,
+   "pro": false,
+   "auction": 690,
+   "org": "RENNES",
+   "url": "https://encheres-domaine.gouv.fr/lot/2-televiseurs-doo-3.html",
+   "urlKey": "2-televiseurs-doo-3",
+   "desc": "2 téléviseurs, année inconnue, états divers, non testés, comprenant : CHANGHONG LED48D2080H, vendu avec câble d'alimentation, sans télécommande ; THOMSON 32HS3246 sans socle, vendu avec câble d'alimentation et 2 télécommandes. Enlèvement exclusivement sur prise de RDV, par mail, uniquement à l'adresse suivante : cav035.dnid@dgfip.finances.gouv.fr",
+   "bidVerified": true,
+   "depotId": 31813,
+   "depot": "MAGASIN DOMANIAL RENNES",
+   "street": "11 RUE D'OUESSANT",
+   "city": "SAINT-GREGOIRE",
+   "cp": "35768",
+   "contact": null,
+   "phone": "02 23 35 44 00",
+   "email": "cav035.dnid@dgfip.finances.gouv.fr",
+   "hours": "Lundi à vendredi 09h00-12h00 / 13h30-16h00",
+   "access": "Lundi à vendredi 09h00-12h00 / 13h30-16h00",
+   "photosDistantes": [
+    "https://encheres-domaine.gouv.fr/admin/media/catalog/product/1/_/1_104_2.jpg",
+    "https://encheres-domaine.gouv.fr/admin/media/catalog/product/2/_/2_94_2.jpg",
+    "https://encheres-domaine.gouv.fr/admin/media/catalog/product/3/_/3_72_2.jpg",
+    "https://encheres-domaine.gouv.fr/admin/media/catalog/product/4/_/4_60_24.jpg"
+   ],
+   "photos": [
+    "img/399938/0.jpg",
+    "img/399938/1.jpg",
+    "img/399938/2.jpg",
+    "img/399938/3.jpg"
+   ],
+   "img": "img/399938/0.jpg",
    "km": 378,
    "heures": 3.98,
    "lat": 48.159953,
