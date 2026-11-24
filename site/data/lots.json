@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T19:06:19+00:00",
+ "updated": "2026-11-24T04:09:06+00:00",
  "source": "encheres-domaine.gouv.fr — categorie High tech (46)",
  "count": 60,
  "lots": [
@@ -13,7 +13,7 @@
    "start": "2026-11-20T08:00:00+00:00",
    "end": "2026-11-24T09:00:00+00:00",
    "price": 50,
-   "bid": 160,
+   "bid": 165,
    "reserve": null,
    "pro": false,
    "auction": 664,
@@ -43,8 +43,8 @@
    "heures": 3.48,
    "lat": 47.445722,
    "lon": -0.570129,
-   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
+   "bidCheckedAt": "2026-11-24T04:09:06+00:00",
+   "bidCheckAttemptedAt": "2026-11-24T04:09:06+00:00"
   },
   {
    "id": 357346,
@@ -56,7 +56,7 @@
    "start": "2026-11-20T08:00:00+00:00",
    "end": "2026-11-24T09:00:00+00:00",
    "price": 500,
-   "bid": 1200,
+   "bid": 1950,
    "reserve": null,
    "pro": false,
    "auction": 664,
@@ -86,8 +86,8 @@
    "heures": 3.48,
    "lat": 47.445722,
    "lon": -0.570129,
-   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
+   "bidCheckedAt": "2026-11-24T04:09:06+00:00",
+   "bidCheckAttemptedAt": "2026-11-24T04:09:06+00:00"
   },
   {
    "id": 357356,
@@ -99,7 +99,7 @@
    "start": "2026-11-20T08:00:00+00:00",
    "end": "2026-11-24T09:00:00+00:00",
    "price": 400,
-   "bid": 1050,
+   "bid": 1600,
    "reserve": null,
    "pro": false,
    "auction": 664,
@@ -129,8 +129,8 @@
    "heures": 3.48,
    "lat": 47.445722,
    "lon": -0.570129,
-   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
+   "bidCheckedAt": "2026-11-24T04:09:06+00:00",
+   "bidCheckAttemptedAt": "2026-11-24T04:09:06+00:00"
   },
   {
    "id": 392826,
@@ -919,8 +919,8 @@
    "heures": 4.48,
    "lat": 47.226085,
    "lon": -1.535854,
-   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
+   "bidCheckedAt": "2026-11-24T04:09:06+00:00",
+   "bidCheckAttemptedAt": "2026-11-24T04:09:06+00:00"
   },
   {
    "id": 378842,
@@ -1022,7 +1022,7 @@
    "start": "2026-11-20T08:00:00+00:00",
    "end": "2026-11-24T09:00:00+00:00",
    "price": 100,
-   "bid": 350,
+   "bid": 630,
    "reserve": null,
    "pro": false,
    "auction": 664,
@@ -1054,8 +1054,8 @@
    "heures": 3.94,
    "lat": 46.583631,
    "lon": 0.346826,
-   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
+   "bidCheckedAt": "2026-11-24T04:09:06+00:00",
+   "bidCheckAttemptedAt": "2026-11-24T04:09:06+00:00"
   },
   {
    "id": 376971,
@@ -1067,7 +1067,7 @@
    "start": "2026-11-20T08:00:00+00:00",
    "end": "2026-11-24T09:00:00+00:00",
    "price": 100,
-   "bid": 360,
+   "bid": 650,
    "reserve": null,
    "pro": false,
    "auction": 664,
@@ -1099,8 +1099,8 @@
    "heures": 3.94,
    "lat": 46.583631,
    "lon": 0.346826,
-   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
+   "bidCheckedAt": "2026-11-24T04:09:06+00:00",
+   "bidCheckAttemptedAt": "2026-11-24T04:09:06+00:00"
   },
   {
    "id": 376972,
@@ -1112,7 +1112,7 @@
    "start": "2026-11-20T08:00:00+00:00",
    "end": "2026-11-24T09:00:00+00:00",
    "price": 100,
-   "bid": 320,
+   "bid": 630,
    "reserve": null,
    "pro": false,
    "auction": 664,
@@ -1144,8 +1144,8 @@
    "heures": 3.94,
    "lat": 46.583631,
    "lon": 0.346826,
-   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
+   "bidCheckedAt": "2026-11-24T04:09:06+00:00",
+   "bidCheckAttemptedAt": "2026-11-24T04:09:06+00:00"
   },
   {
    "id": 381199,
@@ -1157,7 +1157,7 @@
    "start": "2026-11-20T08:00:00+00:00",
    "end": "2026-11-24T09:00:00+00:00",
    "price": 250,
-   "bid": 470,
+   "bid": 610,
    "reserve": 0,
    "pro": false,
    "auction": 664,
@@ -1207,8 +1207,8 @@
    "img": "img/381199/0.jpg",
    "km": null,
    "heures": null,
-   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
+   "bidCheckedAt": "2026-11-24T04:09:06+00:00",
+   "bidCheckAttemptedAt": "2026-11-24T04:09:06+00:00"
   },
   {
    "id": 381197,
@@ -1220,7 +1220,7 @@
    "start": "2026-11-20T08:00:00+00:00",
    "end": "2026-11-24T09:00:00+00:00",
    "price": 250,
-   "bid": 250,
+   "bid": 260,
    "reserve": 0,
    "pro": true,
    "auction": 664,
@@ -1258,8 +1258,8 @@
    "img": "img/381197/0.jpg",
    "km": null,
    "heures": null,
-   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
+   "bidCheckedAt": "2026-11-24T04:09:06+00:00",
+   "bidCheckAttemptedAt": "2026-11-24T04:09:06+00:00"
   },
   {
    "id": 315620,
@@ -1309,8 +1309,8 @@
    "img": "img/315620/0.jpg",
    "km": null,
    "heures": null,
-   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
+   "bidCheckedAt": "2026-11-24T04:09:06+00:00",
+   "bidCheckAttemptedAt": "2026-11-24T04:09:06+00:00"
   },
   {
    "id": 381202,
@@ -1322,7 +1322,7 @@
    "start": "2026-11-20T08:00:00+00:00",
    "end": "2026-11-24T09:00:00+00:00",
    "price": 250,
-   "bid": 260,
+   "bid": 290,
    "reserve": 0,
    "pro": true,
    "auction": 664,
@@ -1360,8 +1360,8 @@
    "img": "img/381202/0.jpg",
    "km": null,
    "heures": null,
-   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
+   "bidCheckedAt": "2026-11-24T04:09:06+00:00",
+   "bidCheckAttemptedAt": "2026-11-24T04:09:06+00:00"
   },
   {
    "id": 381217,
@@ -1373,7 +1373,7 @@
    "start": "2026-11-20T08:00:00+00:00",
    "end": "2026-11-24T09:00:00+00:00",
    "price": 250,
-   "bid": 260,
+   "bid": 290,
    "reserve": 0,
    "pro": true,
    "auction": 664,
@@ -1411,8 +1411,8 @@
    "img": "img/381217/0.jpg",
    "km": null,
    "heures": null,
-   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
+   "bidCheckedAt": "2026-11-24T04:09:06+00:00",
+   "bidCheckAttemptedAt": "2026-11-24T04:09:06+00:00"
   },
   {
    "id": 381222,
@@ -1424,7 +1424,7 @@
    "start": "2026-11-20T08:00:00+00:00",
    "end": "2026-11-24T09:00:00+00:00",
    "price": 250,
-   "bid": 260,
+   "bid": 290,
    "reserve": 0,
    "pro": true,
    "auction": 664,
@@ -1468,8 +1468,8 @@
    "img": "img/381222/0.jpg",
    "km": null,
    "heures": null,
-   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
+   "bidCheckedAt": "2026-11-24T04:09:06+00:00",
+   "bidCheckAttemptedAt": "2026-11-24T04:09:06+00:00"
   },
   {
    "id": 381228,
@@ -1481,7 +1481,7 @@
    "start": "2026-11-20T08:00:00+00:00",
    "end": "2026-11-24T09:00:00+00:00",
    "price": 250,
-   "bid": 260,
+   "bid": 290,
    "reserve": 0,
    "pro": true,
    "auction": 664,
@@ -1525,8 +1525,8 @@
    "img": "img/381228/0.jpg",
    "km": null,
    "heures": null,
-   "bidCheckedAt": "2026-11-23T19:06:19+00:00",
-   "bidCheckAttemptedAt": "2026-11-23T19:06:19+00:00"
+   "bidCheckedAt": "2026-11-24T04:09:06+00:00",
+   "bidCheckAttemptedAt": "2026-11-24T04:09:06+00:00"
   },
   {
    "id": 360066,
