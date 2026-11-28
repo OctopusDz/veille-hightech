@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T07:38:12+00:00",
+ "updated": "2026-11-28T11:08:13+00:00",
  "source": "encheres-domaine.gouv.fr — categorie High tech (46)",
  "count": 229,
  "lots": [
@@ -212,8 +212,8 @@
    "heures": 6.33,
    "lat": 48.190344,
    "lon": -4.081565,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 304548,
@@ -255,8 +255,8 @@
    "heures": 6.33,
    "lat": 48.190344,
    "lon": -4.081565,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 392678,
@@ -302,8 +302,8 @@
    "heures": 4.85,
    "lat": 45.764382,
    "lon": 3.134383,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 376791,
@@ -1884,8 +1884,8 @@
    "heures": 6.73,
    "lat": 48.41935,
    "lon": -4.550485,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 380439,
@@ -1927,8 +1927,8 @@
    "heures": 6.73,
    "lat": 48.41935,
    "lon": -4.550485,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 380442,
@@ -1978,8 +1978,8 @@
    "heures": 6.73,
    "lat": 48.41935,
    "lon": -4.550485,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 383623,
@@ -2308,8 +2308,8 @@
    "heures": 4.74,
    "lat": 45.816972,
    "lon": 1.261016,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 389549,
@@ -2321,7 +2321,7 @@
    "start": "2026-11-27T08:00:00+00:00",
    "end": "2026-12-01T13:00:00+00:00",
    "price": 250,
-   "bid": null,
+   "bid": 270,
    "reserve": null,
    "pro": false,
    "auction": 700,
@@ -2357,8 +2357,8 @@
    "heures": 4.74,
    "lat": 45.816972,
    "lon": 1.261016,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 373103,
@@ -7165,8 +7165,8 @@
    "heures": 4.97,
    "lat": 48.482639,
    "lon": -2.799387,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 360066,
@@ -7218,8 +7218,8 @@
    "heures": 4.67,
    "lat": 45.884436,
    "lon": 3.109021,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 395782,
@@ -7289,8 +7289,8 @@
    "heures": 4.67,
    "lat": 45.884436,
    "lon": 3.109021,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 363067,
@@ -7340,8 +7340,8 @@
    "heures": 4.67,
    "lat": 45.884436,
    "lon": 3.109021,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 354879,
@@ -7389,8 +7389,8 @@
    "heures": 4.67,
    "lat": 45.884436,
    "lon": 3.109021,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 354869,
@@ -7402,7 +7402,7 @@
    "start": "2026-11-27T08:00:00+00:00",
    "end": "2026-12-01T13:00:00+00:00",
    "price": 40,
-   "bid": 45,
+   "bid": 85,
    "reserve": null,
    "pro": false,
    "auction": 700,
@@ -7442,8 +7442,8 @@
    "heures": 4.67,
    "lat": 45.884436,
    "lon": 3.109021,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 363205,
@@ -7491,8 +7491,8 @@
    "heures": 4.67,
    "lat": 45.884436,
    "lon": 3.109021,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 354946,
@@ -7504,7 +7504,7 @@
    "start": "2026-11-27T08:00:00+00:00",
    "end": "2026-12-01T13:00:00+00:00",
    "price": 30,
-   "bid": null,
+   "bid": 30,
    "reserve": 30,
    "pro": false,
    "auction": 700,
@@ -7538,8 +7538,8 @@
    "heures": 4.67,
    "lat": 45.884436,
    "lon": 3.109021,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 257528,
@@ -7593,8 +7593,8 @@
    "heures": 4.67,
    "lat": 45.884436,
    "lon": 3.109021,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 358643,
@@ -7646,8 +7646,8 @@
    "heures": 4.67,
    "lat": 45.884436,
    "lon": 3.109021,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 396573,
@@ -7701,8 +7701,8 @@
    "heures": 4.67,
    "lat": 45.884436,
    "lon": 3.109021,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 396561,
@@ -7754,8 +7754,8 @@
    "heures": 4.67,
    "lat": 45.884436,
    "lon": 3.109021,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 396877,
@@ -7819,8 +7819,8 @@
    "heures": 4.67,
    "lat": 45.884436,
    "lon": 3.109021,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 379947,
@@ -7864,8 +7864,8 @@
    "heures": 4.67,
    "lat": 45.884436,
    "lon": 3.109021,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 345772,
@@ -7927,8 +7927,8 @@
    "heures": 4.67,
    "lat": 45.884436,
    "lon": 3.109021,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 345773,
@@ -7984,8 +7984,8 @@
    "heures": 4.67,
    "lat": 45.884436,
    "lon": 3.109021,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 345777,
@@ -8055,8 +8055,8 @@
    "heures": 4.67,
    "lat": 45.884436,
    "lon": 3.109021,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 396495,
@@ -8798,8 +8798,8 @@
    "heures": 5.91,
    "lat": 45.06021,
    "lon": 3.104231,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 383948,
@@ -8849,8 +8849,8 @@
    "heures": 3.98,
    "lat": 48.159953,
    "lon": -1.691326,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 399935,
@@ -8892,8 +8892,8 @@
    "heures": 3.98,
    "lat": 48.159953,
    "lon": -1.691326,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 399938,
@@ -8941,8 +8941,8 @@
    "heures": 3.98,
    "lat": 48.159953,
    "lon": -1.691326,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 389513,
@@ -11291,8 +11291,8 @@
    "heures": 5.26,
    "lat": 47.661378,
    "lon": -2.760148,
-   "bidCheckedAt": "2026-11-28T07:38:12+00:00",
-   "bidCheckAttemptedAt": "2026-11-28T07:38:12+00:00"
+   "bidCheckedAt": "2026-11-28T11:08:13+00:00",
+   "bidCheckAttemptedAt": "2026-11-28T11:08:13+00:00"
   },
   {
    "id": 387006,
